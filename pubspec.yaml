@@ -1,0 +1,74 @@
+name: medical_appointments
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.8.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Riverpod (State Management)
+  flutter_riverpod: ^2.6.1
+  riverpod_annotation: ^2.6.1
+
+  # Routing
+  go_router: ^14.8.1
+
+  # Cached NetWork IMG
+  cached_network_image: ^3.4.1
+
+  # Device Preview (for responsive testing)
+  device_preview: ^1.2.0
+
+  # Screen Util (responsive UI)
+  flutter_screenutil: ^5.9.3
+
+  # SVG rendering
+  flutter_svg: ^2.0.17
+
+  # Comparing and Hashing
+  equatable: ^2.0.7
+  dartz: ^0.10.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Flutter Lints
+  flutter_lints: ^5.0.0
+
+  # Riverpod Lints
+  riverpod_lint: any
+
+  # Code Generation & runner
+  build_runner: ^2.4.15
+  riverpod_generator: ^2.6.3
+  analyzer: ^6.11.0
+
+
+flutter:
+  uses-material-design: true
+  generate: true
+  
+  # # Fonts Configuration
+  # fonts:
+  #   # InterTight Fonts
+  #   - family: InterTight
+  #     fonts:
+  #       - asset: assets/fonts/Inter_Tight/InterTight-Black.ttf
+  #       - asset: assets/fonts/Inter_Tight/InterTight-Bold.ttf
+  #       - asset: assets/fonts/Inter_Tight/InterTight-ExtraBold.ttf
+  #       - asset: assets/fonts/Inter_Tight/InterTight-ExtraLight.ttf
+  #       - asset: assets/fonts/Inter_Tight/InterTight-Light.ttf
+  #       - asset: assets/fonts/Inter_Tight/InterTight-Medium.ttf
+  #       - asset: assets/fonts/Inter_Tight/InterTight-Regular.ttf
+  #       - asset: assets/fonts/Inter_Tight/InterTight-SemiBold.ttf
+
+  # # Asset Paths
+  # assets:
+  #   - assets/icons/Splash/
+  #   - assets/imgs/
+  #   - assets/jsons/
