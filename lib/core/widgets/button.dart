@@ -37,7 +37,7 @@ class CustomButton extends ConsumerWidget
   Widget build(BuildContext context, WidgetRef ref)
   {
     return SizedBox(
-      width: buttonWidth ?? 142.w,
+      width: buttonWidth,
       height: buttonHeight ?? 52.h,
       child: ElevatedButton(
         style: ButtonStyle(

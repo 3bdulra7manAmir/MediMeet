@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../config/router/app_router.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget
 {
@@ -23,11 +22,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget
   Widget build(BuildContext context)
   {
     return AppBar(
-      leading: GestureDetector(
-        onTap: () => AppRouter.router.pop(),
-        child: barLeading,
-      ),
-      leadingWidth: barLeadingWidth ?? 65.w,
+      leading: barLeading,
+      leadingWidth: barLeadingWidth ?? 16.w,
       title: barTitle,
       actions: barActions,
       actionsPadding: barActionsPadding,

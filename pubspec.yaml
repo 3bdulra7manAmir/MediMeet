@@ -27,7 +27,7 @@ dependencies:
   flutter_screenutil: ^5.9.3
 
   # SVG rendering
-  flutter_svg: ^2.0.17
+  flutter_svg: ^2.2.0
 
   # Comparing and Hashing
   equatable: ^2.0.7
@@ -53,22 +53,25 @@ flutter:
   uses-material-design: true
   generate: true
   
-  # # Fonts Configuration
-  # fonts:
-  #   # InterTight Fonts
-  #   - family: InterTight
-  #     fonts:
-  #       - asset: assets/fonts/Inter_Tight/InterTight-Black.ttf
-  #       - asset: assets/fonts/Inter_Tight/InterTight-Bold.ttf
-  #       - asset: assets/fonts/Inter_Tight/InterTight-ExtraBold.ttf
-  #       - asset: assets/fonts/Inter_Tight/InterTight-ExtraLight.ttf
-  #       - asset: assets/fonts/Inter_Tight/InterTight-Light.ttf
-  #       - asset: assets/fonts/Inter_Tight/InterTight-Medium.ttf
-  #       - asset: assets/fonts/Inter_Tight/InterTight-Regular.ttf
-  #       - asset: assets/fonts/Inter_Tight/InterTight-SemiBold.ttf
+  # Fonts Configuration
+  fonts:
+    # InterTight Fonts
+    - family: InterTight
+      fonts:
+        - asset: assets/fonts/Inter_Tight/InterTight-Black.ttf
+        - asset: assets/fonts/Inter_Tight/InterTight-Bold.ttf
+        - asset: assets/fonts/Inter_Tight/InterTight-ExtraBold.ttf
+        - asset: assets/fonts/Inter_Tight/InterTight-ExtraLight.ttf
+        - asset: assets/fonts/Inter_Tight/InterTight-Light.ttf
+        - asset: assets/fonts/Inter_Tight/InterTight-Medium.ttf
+        - asset: assets/fonts/Inter_Tight/InterTight-Regular.ttf
+        - asset: assets/fonts/Inter_Tight/InterTight-SemiBold.ttf
 
-  # # Asset Paths
-  # assets:
-  #   - assets/icons/Splash/
-  #   - assets/imgs/
-  #   - assets/jsons/
+  # Asset Paths
+  assets:
+    - assets/fonts/Inter_Tight/
+    - assets/icons/appointments_empty/
+    - assets/icons/appointments_details/
+    - assets/icons/appointments/
+    - assets/imgs/
+    - assets/jsons/

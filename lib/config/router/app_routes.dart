@@ -2,6 +2,12 @@ abstract class AppRoutes
 {
   AppRoutes._();
 
-  // APP Splash
-  static const kSplash = '/Splash';
+  // Appointments
+  static const appointments = '/Appointments';
+
+  // Appointments Details
+  static const appointmentsDetails = '/AppointmentsDetails';
+
+  // Appointments Empty
+  static const appointmentsEmpty = '/AppointmentsEmpty';
 }

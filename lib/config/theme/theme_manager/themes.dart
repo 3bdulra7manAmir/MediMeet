@@ -14,10 +14,7 @@ class AppThemes
       scaffoldBackgroundColor: AppColors.color.kWhite001,
 
       elevatedButtonTheme: AppLightStyles.elevatedButtonTheme,
-      appBarTheme: AppBarTheme(
-        backgroundColor: AppColors.color.kWhite001,
-        centerTitle: true,
-      ),
+      appBarTheme: AppBarTheme(backgroundColor: AppColors.color.kWhite001,),
     );
   }
 }

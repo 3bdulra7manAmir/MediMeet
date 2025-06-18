@@ -13,7 +13,6 @@ class MedicalAppointment extends StatelessWidget
   Widget build(BuildContext context)
   {
     return DevicePreview(
-      enabled: false,
       builder: (context) => 
       ScreenUtilInit(
         designSize: const Size(430, 932),
