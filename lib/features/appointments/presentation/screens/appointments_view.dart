@@ -19,19 +19,21 @@ class Appointments extends StatelessWidget
   {
     return Scaffold(
       appBar: CustomAppBar(barTitle: Text(AppStrings.myAppointments, style: AppStyles.textStyle24(),),),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children:
-        [
-          Sizes.size24.verticalSpace,
-          Text(AppStrings.upComingAppointments, style: AppStyles.textStyle20(),).paddingDirectionalOnly(start: 16.w),
-          Sizes.size16.verticalSpace,
-          UpcomingAppointmentWidget(),
-          Sizes.size24.verticalSpace,
-          Text(AppStrings.pastAppointments, style: AppStyles.textStyle20(),).paddingDirectionalOnly(start: 16.w),
-          Sizes.size16.verticalSpace,
-          PastAppointmentWidget(),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children:
+          [
+            Sizes.size24.verticalSpace,
+            Text(AppStrings.upComingAppointments, style: AppStyles.textStyle20(),).paddingDirectionalOnly(start: 16.w),
+            Sizes.size16.verticalSpace,
+            UpcomingAppointmentWidget(),
+            Sizes.size24.verticalSpace,
+            Text(AppStrings.pastAppointments, style: AppStyles.textStyle20(),).paddingDirectionalOnly(start: 16.w),
+            Sizes.size16.verticalSpace,
+            PastAppointmentWidget(),
+          ],
+        ),
       ),
     );
   }

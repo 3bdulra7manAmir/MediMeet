@@ -1,12 +1,60 @@
-import 'package:flutter/material.dart';
+import 'dart:developer';
 
-class CancelNavBar extends StatelessWidget
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:medical_appointments/config/theme/color_manager/colors.dart';
+import 'package:medical_appointments/core/constants/app_borders.dart';
+import 'package:medical_appointments/core/constants/app_images.dart';
+import 'package:medical_appointments/core/constants/app_margins.dart';
+import 'package:medical_appointments/core/constants/app_sizes.dart';
+import 'package:medical_appointments/core/constants/app_styles.dart';
+
+import '../../../../core/constants/app_strings.dart';
+import '../../../../core/widgets/icon_button.dart';
+import 'cancel_dialog.dart';
+
+class NavBarWidget extends StatelessWidget
 {
-  const CancelNavBar({super.key});
+  const NavBarWidget({super.key});
 
   @override
   Widget build(BuildContext context)
   {
-    return Container();
+    return Container(
+      margin: AppMargins.symmetric.medium,
+      alignment: Alignment.center,
+      width: 430.w,
+      height: 105.h,
+      decoration: BoxDecoration(
+        borderRadius: AppRadiuses.circular.xsmall,
+        color: AppColors.color.kWhite002,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children:
+        [
+          Expanded(
+            child: CustomIconButton(
+              buttonText: AppStrings.cancel,
+              buttonTextStyle: AppStyles.textStyle16(fontColor: AppColors.color.kRed001),
+              buttonIcon: SvgPicture.asset(AppAssets.icons.cancelRed),
+              buttonOnPressed: () => showCancelDialog(context),
+              buttonBackgroundColor: AppColors.color.kWhite002,
+              buttonBorderWidth: Sizes.size4,
+              buttonBorderColor: AppColors.color.kWhite001,
+            ),
+          ),
+          Sizes.size16.horizontalSpace,
+          Expanded(
+            child: CustomIconButton(
+              buttonText: AppStrings.edit,
+              buttonIcon: SvgPicture.asset(AppAssets.icons.editPensileWhite),
+              buttonOnPressed: () => log("Edit"),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

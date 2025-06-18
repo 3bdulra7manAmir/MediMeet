@@ -68,7 +68,8 @@ class BillAmountWidget extends StatelessWidget
         Row(
           children:
           [
-            SvgPicture.asset(AppAssets.icons.saudiRiyal),
+            //SvgPicture.asset(AppAssets.icons.saudiRiyal, width: 14.w, height: 16.h,),
+            Image.asset(AppAssets.icons.saudiRiyalPNG,),
             Sizes.size4.horizontalSpace,
             Text("250", style: AppStyles.textStyle16(fontColor: AppColors.color.kBlack001, fontWeight: AppFontWeights.mediumWeight),),
           ],

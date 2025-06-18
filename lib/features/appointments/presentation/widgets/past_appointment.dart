@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:medical_appointments/core/extensions/widget_padding.dart';
 
-
 import '../../../../config/theme/color_manager/colors.dart';
 import '../../../../config/theme/font_manager/font_weights.dart';
 import '../../../../core/constants/app_borders.dart';
@@ -22,7 +21,6 @@ class PastAppointmentWidget extends StatelessWidget
     return Card(
       color: AppColors.color.kWhite005,
       child: Row(
-        //crossAxisAlignment: CrossAxisAlignment.start,
         children:
         [
           DateTimeWidget(),
@@ -128,7 +126,9 @@ class RateWidget extends StatelessWidget
         SvgPicture.asset(AppAssets.icons.filledRate),
         Sizes.size4.horizontalSpace,
         Text("4.5 – ", style: AppStyles.textStyle14(fontWeight: AppFontWeights.regularWeight, fontColor: AppColors.color.kGrey002),),
-        Text("Very professional and friendly.", style: AppStyles.textStyle14(fontWeight: AppFontWeights.regularWeight, fontColor: AppColors.color.kGrey002),)
+        Text("Very professional and friendly.", style: AppStyles.textStyle14(fontWeight: AppFontWeights.regularWeight, fontColor: AppColors.color.kGrey002),
+          maxLines: 1, overflow: TextOverflow.ellipsis,
+        ),
       ],
     );
   }

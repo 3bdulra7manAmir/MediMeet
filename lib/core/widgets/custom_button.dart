@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../config/theme/color_manager/colors.dart';
 import '../../config/theme/font_manager/font_weights.dart';
 import '../constants/app_borders.dart';
+import '../constants/app_sizes.dart';
 import '../constants/app_styles.dart';
 
 class CustomButton extends ConsumerWidget
@@ -12,26 +13,26 @@ class CustomButton extends ConsumerWidget
     super.key,
     this.buttonWidth,
     this.buttonHeight,
+    this.buttonPadding,
     this.buttonBorderRadius,
-    this.buttonBorderColor,
     this.buttonBorderWidth,
+    this.buttonBorderColor,
     this.buttonBackgroundColor,
+    required this.buttonOnPressed,
     required this.buttonText,
     this.buttonTextStyle,
-    required this.buttonOnPressed,
-    this.buttonPadding,
   });
 
   final double? buttonWidth;
   final double? buttonHeight;
+  final EdgeInsetsGeometry? buttonPadding;
   final BorderRadiusGeometry? buttonBorderRadius;
-  final Color? buttonBorderColor;
   final double? buttonBorderWidth;
+  final Color? buttonBorderColor;
   final Color? buttonBackgroundColor;
+  final void Function() buttonOnPressed;
   final String buttonText;
   final TextStyle? buttonTextStyle;
-  final void Function() buttonOnPressed;
-  final EdgeInsetsGeometry? buttonPadding;
 
   @override
   Widget build(BuildContext context, WidgetRef ref)
@@ -42,7 +43,10 @@ class CustomButton extends ConsumerWidget
       child: ElevatedButton(
         style: ButtonStyle(
           padding: WidgetStateProperty.all<EdgeInsetsGeometry?>(buttonPadding),
-          shape: WidgetStateProperty.all<RoundedRectangleBorder>(RoundedRectangleBorder(borderRadius: buttonBorderRadius ?? AppRadiuses.circular.small,),),
+          shape: WidgetStateProperty.all<RoundedRectangleBorder>(RoundedRectangleBorder(
+            borderRadius: buttonBorderRadius ?? AppRadiuses.circular.small,
+            side: BorderSide(width: buttonBorderWidth ?? (Sizes.size1).w, color: buttonBorderColor ?? AppColors.color.kTransparent)
+            ),),
           backgroundColor: WidgetStateProperty.all<Color>(buttonBackgroundColor ?? AppColors.color.kBlue001,),
         ),
         onPressed: buttonOnPressed,

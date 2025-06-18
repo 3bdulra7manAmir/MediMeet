@@ -47,7 +47,7 @@ abstract class AppStrings
   /// [ Cancel Appointment ]
   static const String cancelAppointment = "Cancel Appointment";
   /// [ Are you sure you want to cancel this appointment?  You won’t be charged, and you can rebook anytime ]
-  static const String areYouSure = "Are you sure you want to cancel this appointment?  You won’t be charged, and you can rebook anytime";
+  static const String areYouSure = "Are you sure you want to cancel this appointment? You won’t be charged, and you can rebook anytime";
   /// [ Confirm Cancel ]
   static const String confirmCancel = "Confirm Cancel";
   /// [ Back ]

@@ -19,12 +19,14 @@ class _Icons
   final String arrowLeft = "assets/icons/appointments_details/arrow_left.svg";
   final String calendar = "assets/icons/appointments_details/calendar.svg";
   final String cancelBanner = "assets/icons/appointments_details/cancel_banner.svg";
+  final String cancelBannerPNG = "assets/icons/appointments_details/cancel_banner.png";
   final String cancelRed = "assets/icons/appointments_details/cancel_red.svg";
   final String correctGreen = "assets/icons/appointments_details/correct_green.svg";
   final String editPensileWhite = "assets/icons/appointments_details/edit_pensile_white.svg";
   final String hart = "assets/icons/appointments_details/hart.svg";
   final String hartPNG = "assets/icons/appointments_details/hart.png";
   final String saudiRiyal = "assets/icons/appointments_details/saudi_riyal.svg";
+  final String saudiRiyalPNG = "assets/icons/appointments_details/saudi_riyal.png";
   final String locationBlue = "assets/icons/appointments_details/location_blue.svg";
 
   /// Appointments

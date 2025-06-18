@@ -32,7 +32,9 @@ class AppointmentsEmpty extends StatelessWidget
                 Sizes.size8.verticalSpace,
                 Text(AppStrings.startExploringClinics, style: AppStyles.textStyle16(),),
                 Sizes.size16.verticalSpace,
-                ExploreClinicsButton(),
+                ExploreClinicsButton(
+                  
+                ),
               ],
             ),
           ],

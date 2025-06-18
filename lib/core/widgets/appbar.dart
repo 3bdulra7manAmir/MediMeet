@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget
 {
@@ -23,7 +22,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget
   {
     return AppBar(
       leading: barLeading,
-      leadingWidth: barLeadingWidth ?? 16.w,
+      leadingWidth: barLeadingWidth,
       title: barTitle,
       actions: barActions,
       actionsPadding: barActionsPadding,

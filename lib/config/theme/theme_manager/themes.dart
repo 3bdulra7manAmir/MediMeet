@@ -17,6 +17,7 @@ class AppThemes
 
       elevatedButtonTheme: AppLightStyles.elevatedButtonTheme,
       appBarTheme: AppBarTheme(backgroundColor: AppColors.color.kWhite001,),
+      dialogTheme: DialogThemeData(backgroundColor: AppColors.color.kWhite002,) 
     );
   }
 }

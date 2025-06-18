@@ -10,7 +10,9 @@ import '../../../../core/widgets/appbar.dart';
 import '../../../../core/widgets/divider.dart';
 import '../widgets/appointment_billing.dart';
 import '../widgets/appointment_info.dart';
+import '../widgets/appointment_location.dart';
 import '../widgets/calendar_container.dart';
+import '../widgets/cancel_nav_bar.dart';
 
 class AppointmentsDetails extends StatelessWidget
 {
@@ -21,23 +23,27 @@ class AppointmentsDetails extends StatelessWidget
   {
     return Scaffold(
       appBar: CustomAppBar(barTitle: Text(AppStrings.appointmentsDetails, style: AppStyles.textStyle24(),).paddingDirectionalOnly()),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children:
-        [
-          Sizes.size16.verticalSpace,
-          CalendarWidget(),
-          Sizes.size16.verticalSpace,
-          AppointmentInfoWidget(),
-          Sizes.size16.verticalSpace,
-          AppDivider(color: AppColors.color.kWhite003, thickness: 2.h,),
-          Sizes.size16.verticalSpace,
-          AppointmentBillingWidget(),
-          Sizes.size16.verticalSpace,
-          AppDivider(color: AppColors.color.kWhite003, thickness: 2.h,),
-          Sizes.size16.verticalSpace,
-        ],
-      ).paddingSymmetric(horizontal: 16.w),
+      bottomNavigationBar: NavBarWidget(),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children:
+          [
+            Sizes.size16.verticalSpace,
+            CalendarWidget(),
+            Sizes.size16.verticalSpace,
+            AppointmentInfoWidget(),
+            Sizes.size16.verticalSpace,
+            AppDivider(color: AppColors.color.kWhite003, thickness: 2.h,),
+            Sizes.size16.verticalSpace,
+            AppointmentBillingWidget(),
+            Sizes.size16.verticalSpace,
+            AppDivider(color: AppColors.color.kWhite003, thickness: 2.h,),
+            Sizes.size16.verticalSpace,
+            AppointmentLocationWidget(),
+          ],
+        ).paddingSymmetric(horizontal: 16.w),
+      ),
     );
   }
 }
