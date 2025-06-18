@@ -97,7 +97,7 @@ class AppointmentOptionsWidget extends StatelessWidget
             buttonText: AppStrings.viewDetails, 
             buttonTextStyle: AppStyles.textStyle12(fontWeight: AppFontWeights.mediumWeight, fontColor: AppColors.color.kWhite002),
             buttonBackgroundColor: AppColors.color.kGreen003,
-            buttonBorderRadius: AppRadiuses.circular.medium,
+            buttonBorderRadius: AppRadiuses.circular.large,
             buttonOnPressed: () => AppRouter.router.pushNamed(AppRoutes.appointmentsDetails),
             buttonHeight: 40.h,
           ),
