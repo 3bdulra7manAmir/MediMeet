@@ -18,6 +18,9 @@ class LightColorScheme extends ColorManagerBase
   @override
   /// [ECEFF3]
   Color get kWhite003 => const Color(0xffECEFF3);
+  @override
+  /// [EAF7F1]
+  Color get kWhite004 => const Color(0xffEAF7F1);
 
   // Grey Color Range
   @override
@@ -29,11 +32,20 @@ class LightColorScheme extends ColorManagerBase
   /// [0D0D12]
   Color get kBlack001 => const Color(0xff0D0D12);
   
+  // Blue Color Range
   @override
   /// [_2563EB]
   Color get kBlue001 => const Color(0xff2563EB);
   
+  // Green Color Range
+  @override
+  /// [_60A77F]
+  Color get kGreen001 => const Color(0xff60A77F);
+  @override
+  /// [_7AC694]
+  Color get kGreen002 => const Color(0xff7AC694);
+  @override
+  /// [_468F69]
+  Color get kGreen003 => const Color(0xff468F69);
   
-  
-
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../core/constants/app_margins.dart';
 import '../color_manager/colors.dart';
 import 'themes_styles.dart';
 
@@ -12,6 +13,7 @@ class AppThemes
       useMaterial3: true,
       brightness: Brightness.light,
       scaffoldBackgroundColor: AppColors.color.kWhite001,
+      cardTheme: CardThemeData(margin: AppMargins.symmetric.medium,),
 
       elevatedButtonTheme: AppLightStyles.elevatedButtonTheme,
       appBarTheme: AppBarTheme(backgroundColor: AppColors.color.kWhite001,),

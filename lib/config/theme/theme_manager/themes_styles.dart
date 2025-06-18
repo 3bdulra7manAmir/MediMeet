@@ -11,8 +11,8 @@ abstract class AppLightStyles
         style: ButtonStyle(
           shape: WidgetStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
-              borderRadius: AppRadiuses.circular.xxLarge,
-              side: BorderSide(color: AppColors.color.kTransparent, width: AppBorderWidth.thin,),),
+              borderRadius: AppRadiuses.circular.small,
+              side: BorderSide(color: AppColors.color.kTransparent,),),
           ),
           backgroundColor: WidgetStateProperty.all<Color>(AppColors.color.kBlue001),
           overlayColor: WidgetStateProperty.all<Color>(Colors.transparent),

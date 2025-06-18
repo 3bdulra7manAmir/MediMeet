@@ -23,6 +23,8 @@ abstract class AppStrings
   static const String upComingAppointments = "Upcoming Appointments";
   /// [ Past Appointments ]
   static const String pastAppointments = "Past Appointments";
+  /// [ Past Appointments ]
+  static const String viewDetails = "View Details";
 
   //-----------------------//
   // Appointments Details  //
