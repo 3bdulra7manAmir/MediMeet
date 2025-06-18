@@ -23,24 +23,24 @@ class AppointmentsDetails extends StatelessWidget
   {
     return Scaffold(
       appBar: CustomAppBar(barTitle: Text(AppStrings.appointmentsDetails, style: AppStyles.textStyle24(),).paddingDirectionalOnly()),
-      bottomNavigationBar: NavBarWidget(),
+      bottomNavigationBar: const NavBarWidget(),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children:
           [
             Sizes.size16.verticalSpace,
-            CalendarWidget(),
+            const CalendarWidget(),
             Sizes.size16.verticalSpace,
-            AppointmentInfoWidget(),
-            Sizes.size16.verticalSpace,
-            AppDivider(color: AppColors.color.kWhite003, thickness: 2.h,),
-            Sizes.size16.verticalSpace,
-            AppointmentBillingWidget(),
+            const AppointmentInfoWidget(),
             Sizes.size16.verticalSpace,
             AppDivider(color: AppColors.color.kWhite003, thickness: 2.h,),
             Sizes.size16.verticalSpace,
-            AppointmentLocationWidget(),
+            const AppointmentBillingWidget(),
+            Sizes.size16.verticalSpace,
+            AppDivider(color: AppColors.color.kWhite003, thickness: 2.h,),
+            Sizes.size16.verticalSpace,
+            const AppointmentLocationWidget(),
           ],
         ).paddingSymmetric(horizontal: 16.w),
       ),

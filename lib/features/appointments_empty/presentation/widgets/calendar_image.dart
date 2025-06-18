@@ -8,7 +8,6 @@ class CalendarImage extends StatelessWidget
   @override
   Widget build(BuildContext context)
   {
-    return //SvgPicture.asset(AppAssets.icons.medicalCalendar),
-    Image.asset(AppAssets.icons.medicalCalendarPNG,);
+    return Image.asset(AppAssets.icons.medicalCalendarPNG,);
   }
 }

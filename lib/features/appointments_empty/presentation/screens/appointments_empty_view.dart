@@ -26,13 +26,13 @@ class AppointmentsEmpty extends StatelessWidget
             Column(
               children:
               [
-                CalendarImage(),
+                const CalendarImage(),
                 Sizes.size8.verticalSpace,
                 Text(AppStrings.uDontHaveAnyAppointments, style: AppStyles.textStyle20(),),
                 Sizes.size8.verticalSpace,
                 Text(AppStrings.startExploringClinics, style: AppStyles.textStyle16(),),
                 Sizes.size16.verticalSpace,
-                ExploreClinicsButton(
+                const ExploreClinicsButton(
                   
                 ),
               ],

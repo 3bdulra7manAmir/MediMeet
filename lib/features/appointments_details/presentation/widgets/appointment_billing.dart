@@ -23,11 +23,11 @@ class AppointmentBillingWidget extends StatelessWidget
       [
         Text("Bill Details", style: AppStyles.textStyle18(fontColor: AppColors.color.kBlack001),),
         Sizes.size12.verticalSpace,
-        IDWidget(),
+        const IDWidget(),
         Sizes.size8.verticalSpace,
-        BillAmountWidget(),
+        const BillAmountWidget(),
         Sizes.size8.verticalSpace,
-        StatusWidget(),
+        const StatusWidget(),
       ],
     );
   }
@@ -64,7 +64,7 @@ class BillAmountWidget extends StatelessWidget
       children:
       [
         Text("Bill amount", style: AppStyles.textStyle14(fontColor: AppColors.color.kGrey002, fontWeight: AppFontWeights.regularWeight),),
-        Spacer(),
+        const Spacer(),
         Row(
           children:
           [
