@@ -6,18 +6,18 @@ abstract class AppRadiuses
 {
   AppRadiuses._();
 
-  static final top = BorderTopOnly._();
+  static final only = BorderOnly._();
   static final circular = BorderCircular._();
 }
 
-class BorderTopOnly
+class BorderOnly
 {
-  BorderTopOnly._();
+  BorderOnly._();
 
   /// [topLeft: 12.r ,, topRight: 12.r]
   BorderRadiusGeometry get xSmall => BorderRadius.only(
         topLeft: Radius.circular(12.r),
-        topRight: Radius.circular(12.r),
+        bottomLeft: Radius.circular(12.r),
       );
 }
 

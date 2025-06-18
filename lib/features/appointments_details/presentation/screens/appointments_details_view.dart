@@ -29,7 +29,6 @@ class AppointmentsDetails extends StatelessWidget
           Sizes.size32.verticalSpace,
           AppointmentBillingWidget(),
           Sizes.size32.verticalSpace,
-
         ],
       ).paddingSymmetric(),
     );
