@@ -15,10 +15,10 @@ class DetailsModel
   factory DetailsModel.fromJson(Map<String, dynamic> json)
   {
     return DetailsModel(
-      detailsID:  json['id'] as String,
-      detailsTitle: json['title'] as String,
-      detailsDateTime: json['dateTime'] as String,
-      detailsCategory: json['category'] as String,
+      detailsID: json['id']?.toString(),
+      detailsTitle: json['title'] as String?,
+      detailsDateTime: json['dateTime'] as String?,
+      detailsCategory: json['category'] as String?,
     );
   }
 

@@ -17,11 +17,11 @@ class BillingModel
   factory BillingModel.fromJson(Map<String, dynamic> json)
   {
     return BillingModel(
-      id:  json['id'] as String,
-      billID:  json['billID'] as String,
-      billTitle: json['title'] as String,
-      billPrice: json['price'] as String,
-      billStatus: json['status'] as String,
+      id: json['id']?.toString(),
+      billID: json['billID'] as String?,
+      billTitle: json['title'] as String?,
+      billPrice: json['price'] as String?,
+      billStatus: json['status'] as String?,
     );
   }
 

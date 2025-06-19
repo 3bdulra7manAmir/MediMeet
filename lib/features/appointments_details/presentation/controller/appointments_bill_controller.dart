@@ -6,7 +6,7 @@ import '../../data/datasources/bill_local_data_source.dart';
 import '../../data/model/appointment_bill.dart';
 import '../../data/repository/bill_repository_impl.dart';
 
-part 'appointments_bill_controller.g.dart'; // 👈 Required for build_runner
+part 'appointments_bill_controller.g.dart';
 
 // Local Data Source
 @riverpod

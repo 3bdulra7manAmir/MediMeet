@@ -27,7 +27,7 @@ class UpcomingAppointmentList extends ConsumerWidget
           itemCount: items.length,
         );
       },
-      loading: () => const AppCircularIndicator(),
+      loading: () => SizedBox(height: 20.h, width: 20.w, child: const AppCircularIndicator()),
       error: (e, _) => CustomErrorWidget(e: e),
     );
   }

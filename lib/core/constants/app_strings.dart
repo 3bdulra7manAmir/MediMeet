@@ -53,5 +53,12 @@ abstract class AppStrings
   /// [ Back ]
   static const String back = "Back";
 
+  /// [ Status ]
+  static const String status = "Status";
+  /// [ "Bill amount" ]
+  static const String billAmount = "Bill amount";
+  /// [ "Appointment ID" ]
+  static const String appointmentID = "Appointment ID";
+
 
 }

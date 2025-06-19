@@ -11,7 +11,6 @@ import '../../../../core/widgets/divider.dart';
 import '../widgets/appointment_billing_body.dart';
 import '../widgets/appointment_info_body.dart';
 import '../widgets/appointment_location_body.dart';
-import '../widgets/appointment_info/calendar_widget.dart';
 import '../../../../core/widgets/nav_bar.dart';
 
 class AppointmentsDetails extends StatelessWidget
@@ -30,9 +29,7 @@ class AppointmentsDetails extends StatelessWidget
           children:
           [
             Sizes.size16.verticalSpace,
-            const CalendarWidget(),
-            Sizes.size16.verticalSpace,
-            const AppointmentInfoWidget(),
+            const AppointmentInfoBody(),
             Sizes.size16.verticalSpace,
             AppDivider(color: AppColors.color.kWhite003, thickness: 2.h,),
             Sizes.size16.verticalSpace,

@@ -16,7 +16,7 @@ class LocationRepoImpl implements LocationRepository
     }
     catch (e)
     {
-      throw Exception('Failed to get notifications: $e');
+      throw Exception('Failed to get Location: $e');
     }
   }
 

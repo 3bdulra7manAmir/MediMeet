@@ -16,7 +16,7 @@ class BillingRepoImpl implements BillingRepository
     }
     catch (e)
     {
-      throw Exception('Failed to get notifications: $e');
+      throw Exception('Failed to get Billing: $e');
     }
   }
 

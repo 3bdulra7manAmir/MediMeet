@@ -5,7 +5,7 @@ import '../../data/datasources/info_local_data_source.dart';
 import '../../data/model/appointment_info.dart';
 import '../../data/repository/info_repository_impl.dart';
 
-part 'appointments_info_controller.g.dart'; // Required for code generation
+part 'appointments_info_controller.g.dart';
 
 
 // Local Data Source

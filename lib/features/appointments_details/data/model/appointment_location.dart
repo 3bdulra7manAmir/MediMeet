@@ -15,10 +15,10 @@ class LocationModel
   factory LocationModel.fromJson(Map<String, dynamic> json)
   {
     return LocationModel(
-      billID:  json['id'] as String,
-      billTitle: json['title'] as String,
-      billLat: json['lat'] as double,
-      billLng: json['lng'] as double,
+      billID:  json['id']?.toString(),
+      billTitle: json['title'] as String?,
+      billLat: double.tryParse(json['lat'].toString()),
+      billLng: double.tryParse(json['lng'].toString()),
     );
   }
 

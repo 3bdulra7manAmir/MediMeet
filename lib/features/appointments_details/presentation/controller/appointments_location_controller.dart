@@ -5,7 +5,7 @@ import '../../data/datasources/location_local_data_source.dart';
 import '../../data/repository/location_repository_impl.dart';
 import '../../data/model/appointment_location.dart';
 
-part 'appointments_location_controller.g.dart'; // 👈 Required for code generation
+part 'appointments_location_controller.g.dart';
 
 
 // Local Data Source

@@ -16,7 +16,7 @@ class DetailsRepoImpl implements DetailsRepository
     }
     catch (e)
     {
-      throw Exception('Failed to get notifications: $e');
+      throw Exception('Failed to get Details: $e');
     }
   }
 

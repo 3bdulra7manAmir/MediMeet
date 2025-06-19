@@ -1,9 +1,11 @@
 class UpComingEntity
 {
-  final String? billAmount;
-  final String? billStatus;
+  final String? locationTitle;
+  final String? locationLat;
+  final String? locationLng;
 
-  UpComingEntity( this.billAmount, this.billStatus);
+  UpComingEntity(this.locationTitle, this.locationLat, this.locationLng);
+
 
   
 }
