@@ -37,7 +37,7 @@ class StatusWidget extends ConsumerWidget
           ],
         );
       },
-      loading: () => const CircularProgressIndicator(),
+      loading: () => const AppCircularIndicator(),
       error: (e, _) => CustomErrorWidget(e: e),
     );
   }

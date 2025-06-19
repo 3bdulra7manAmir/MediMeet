@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:medical_appointments/core/extensions/widget_padding.dart';
 
+import '../../../../config/router/app_router.dart';
 import '../../../../config/theme/color_manager/colors.dart';
+import '../../../../core/constants/app_images.dart';
 import '../../../../core/constants/app_sizes.dart';
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/constants/app_styles.dart';
@@ -21,8 +24,18 @@ class AppointmentsDetails extends StatelessWidget
   Widget build(BuildContext context)
   {
     return Scaffold(
-      appBar: CustomAppBar(barTitle: Text(AppStrings.appointmentsDetails, style: AppStyles.textStyle24(),).paddingDirectionalOnly()),
-      bottomNavigationBar: const NavBarWidget(),
+      appBar: CustomAppBar(
+        barTitle: 
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children:
+          [
+            GestureDetector(onTap: () => AppRouter.router.pop(),
+              child: SvgPicture.asset(AppAssets.icons.arrowLeft),),
+            Sizes.size8.verticalSpace,
+            Text(AppStrings.appointmentsDetails, style: AppStyles.textStyle24(),).paddingDirectionalOnly(),
+          ],
+        ), isDefaultBack: false, toolbarHeight: 63.h,),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,6 +54,7 @@ class AppointmentsDetails extends StatelessWidget
           ],
         ).paddingSymmetric(horizontal: 16.w),
       ),
+      bottomNavigationBar: const NavBarWidget(),
     );
   }
 }

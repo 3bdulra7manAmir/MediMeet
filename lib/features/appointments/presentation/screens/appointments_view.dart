@@ -1,5 +1,3 @@
-// ignore_for_file: unused_import
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:medical_appointments/core/extensions/widget_padding.dart';
@@ -8,9 +6,7 @@ import '../../../../core/constants/app_sizes.dart';
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/constants/app_styles.dart';
 import '../../../../core/widgets/appbar.dart';
-import '../widgets/past_appointment_body.dart';
 import '../widgets/past_appointment_list.dart';
-import '../widgets/upcoming_appointment_body.dart';
 import '../widgets/upcoming_appointment_list.dart';
 
 class Appointments extends StatelessWidget
@@ -20,8 +16,8 @@ class Appointments extends StatelessWidget
   @override
   Widget build(BuildContext context)
   {
-    return Scaffold(
-      appBar: CustomAppBar(barTitle: Text(AppStrings.myAppointments, style: AppStyles.textStyle24(),),),
+    return Scaffold(                                                                         /// [_True_] is Just for debugging ... When Live,, Remove it
+      appBar: CustomAppBar(barTitle: Text(AppStrings.myAppointments, style: AppStyles.textStyle24(),), isDefaultBack: true,),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children:

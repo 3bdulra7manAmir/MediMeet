@@ -7,6 +7,11 @@ class AppCircularIndicator extends StatelessWidget
   @override
   Widget build(BuildContext context)
   {
-    return const CircularProgressIndicator();
+    return const Center(
+      child: SizedBox(
+        width: 32, height: 32,
+        child: CircularProgressIndicator(strokeWidth: 2),
+      ),
+    );
   }
 }
