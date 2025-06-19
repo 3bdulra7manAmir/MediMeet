@@ -28,7 +28,7 @@ class NavBarWidget extends StatelessWidget
       width: 430.w,
       height: 105.h,
       decoration: BoxDecoration(
-        borderRadius: AppRadiuses.circular.xsmall,
+        borderRadius: AppRadiuses.circular.xxsmall,
         color: AppColors.color.kWhite002,
       ),
       child: Row(

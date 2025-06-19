@@ -18,7 +18,7 @@ class UpComingDateWidget extends StatelessWidget
       width: 48.w,
       decoration: BoxDecoration(
         border: Border.all(color: AppColors.color.kGreen002,),
-        borderRadius: AppRadiuses.circular.xsmall,
+        borderRadius: AppRadiuses.circular.xxsmall,
         color: AppColors.color.kGreen001,
       ),
       child: Column(

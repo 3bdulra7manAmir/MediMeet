@@ -45,6 +45,8 @@ abstract class ColorManagerBase
   Color get kBlue002;
   /// [_A6C1FA]
   Color get kBlue003;
+  /// [_rgba(37, 99, 235, 0.16)] ///d5dff4
+  Color get kBlue004;
 
   // Green Color Range
   /// [_60A77F]

@@ -63,6 +63,9 @@ class LightColorScheme extends ColorManagerBase
   @override
   /// [_A6C1FA]
   Color get kBlue003 => const Color(0xffA6C1FA);
+  @override
+  /// [rgba(37, 99, 235, 0.16)]
+  Color get kBlue004 => const Color(0xffD5DFF4).withAlpha((0.16 * 255).toInt());
   
   // Green Color Range
   @override

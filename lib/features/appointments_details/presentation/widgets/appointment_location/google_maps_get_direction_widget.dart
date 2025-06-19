@@ -21,7 +21,7 @@ class GetDirectionsWidget extends StatelessWidget
       alignment: Alignment.center,
       width: 128.w, height: 36.h,
       decoration: BoxDecoration(
-        borderRadius: AppRadiuses.circular.xsmall,
+        borderRadius: AppRadiuses.circular.xxsmall,
         border: Border.all(color: AppColors.color.kBlue003),
         color: AppColors.color.kWhite006,
       ),

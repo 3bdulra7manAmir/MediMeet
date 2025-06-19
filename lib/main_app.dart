@@ -26,3 +26,4 @@ class MedicalAppointment extends StatelessWidget
     );
   }
 }
+
