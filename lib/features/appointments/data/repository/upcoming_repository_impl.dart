@@ -1,26 +1,27 @@
-// import 'package:medical_appointments/features/appointments/domain/entity/upcoming_appointments_entity.dart';
+import '../../domain/repository/upcoming_repository.dart';
+import '../datasources/upcoming_local_data_source.dart';
+import '../model/upcoming_appointments.dart';
 
-// import '../../domain/repository/upcoming_repository.dart';
+class UpComingRepoImpl implements UpComingRepository
+{
+  final UpComingLocalDataSource localDataSource;
+  const UpComingRepoImpl({required this.localDataSource});
 
-// class NotificationsRepoImpl implements UpComingRepository
-// {
-//   //final NotificationsLocalDataSource localDataSource;
-//   //const NotificationsRepoImpl({required this.localDataSource});
+  @override
+  Future<List<UpComingModel>> getUpComingAppointments() async
+  {
+    try
+    {
+      return await localDataSource.getUpComingAppointments();
+    }
+    catch (e)
+    {
+      throw Exception('Failed to get notifications: $e');
+    }
+  }
 
-//   @override
-//   Future<UpComingEntity> getUpComingAppointments() async
-//   {
-//     try
-//     {
-//       return await localDataSource.getNotifications();
-//     }
-//     catch (e)
-//     {
-//       throw Exception('Failed to get notifications: $e');
-//     }
-//   }
 
   
 
   
-// }
+}

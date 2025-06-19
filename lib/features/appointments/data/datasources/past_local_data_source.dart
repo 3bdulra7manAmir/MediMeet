@@ -1,25 +1,25 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
 
-import '../model/details_model.dart';
+import '../model/past_appointments.dart';
 
-abstract class DetailsLocalDataSource
+abstract class PastLocalDataSource
 {
-  Future<List<DetailsModel>> getAppointmentDetails();
+  Future<List<PastModel>> getPastAppointments();
 }
 
-class DetailsLocalDataSourceImpl implements DetailsLocalDataSource
+class PastLocalDataSourceImpl implements PastLocalDataSource
 {
   @override
-  Future<List<DetailsModel>> getAppointmentDetails() async
+  Future<List<PastModel>> getPastAppointments() async
   {
     try
     {
       await Future.delayed(const Duration(seconds: 3));
       final String jsonString = await rootBundle.loadString('assets/json/.json');
       final Map<String, dynamic> jsonData = json.decode(jsonString);
-      final List<dynamic> detailsJson = jsonData[''] ?? [];
-      return detailsJson.map((details) => DetailsModel.fromJson(details)).toList();
+      final List<dynamic> pastJson = jsonData[''] ?? [];
+      return pastJson.map((past) => PastModel.fromJson(past)).toList();
     }
     catch (e)
     {

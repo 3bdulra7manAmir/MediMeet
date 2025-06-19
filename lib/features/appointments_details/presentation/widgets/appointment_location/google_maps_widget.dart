@@ -64,7 +64,7 @@ class GoogleMapsWidget extends StatelessWidget
                       },
                       zoomControlsEnabled: false, myLocationEnabled: true, //mapType: MapType.normal,
                     ),
-                    Positioned(bottom: 10.h, right: 10.w, 
+                    Positioned(bottom: 8.h, right: 12.w, 
                       child: GestureDetector(
                         onTap: () => launchMapsUrl(clinicLocation),
                         child: const GetDirectionsWidget()),

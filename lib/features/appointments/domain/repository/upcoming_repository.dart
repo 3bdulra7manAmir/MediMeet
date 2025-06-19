@@ -1,6 +1,6 @@
-import '../entity/upcoming_appointments_entity.dart';
+import '../../data/model/upcoming_appointments.dart';
 
 abstract class UpComingRepository
 {
-  Future<UpComingEntity> getUpComingAppointments();
+  Future<List<UpComingModel>> getUpComingAppointments();
 }
