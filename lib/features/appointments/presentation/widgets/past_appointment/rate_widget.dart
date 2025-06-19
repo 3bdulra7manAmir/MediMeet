@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:medical_appointments/core/extensions/string.dart';
+import 'package:medical_appointments/core/extensions/widget_padding.dart';
 
 import '../../../../../config/theme/color_manager/colors.dart';
 import '../../../../../config/theme/font_manager/font_weights.dart';
@@ -32,7 +33,7 @@ class RateWidget extends StatelessWidget
           Expanded(
             child: Text(description!, style: AppStyles.textStyle14(fontWeight: AppFontWeights.regularWeight, fontColor: AppColors.color.kGrey002),
               maxLines: 1, overflow: TextOverflow.ellipsis,
-            ),
+            ).paddingDirectionalOnly(end: 25.w),
           ),
         ],
       );
