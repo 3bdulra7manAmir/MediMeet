@@ -14,9 +14,9 @@ class UpcomingAppointmentList extends StatelessWidget
   {
     return AppListviewBuilder(
       scrollDirection: Axis.horizontal,
-      itemBuilder: (context, index) => const UpcomingAppointmentWidget(),
-      separatorBuilder: (context, index) => Sizes.size8.horizontalSpace,
-      itemCount: 2,
+      itemBuilder: (context, index) => SizedBox(width: 398.w, child: const UpcomingAppointmentWidget()),
+      separatorBuilder: (context, index) => Sizes.size0.horizontalSpace,
+      itemCount: 5,
     );
   }
 }

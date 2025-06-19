@@ -29,8 +29,11 @@ class Appointments extends StatelessWidget
           Sizes.size24.verticalSpace,
           Text(AppStrings.upComingAppointments, style: AppStyles.textStyle20(),).paddingDirectionalOnly(start: 16.w),
           Sizes.size16.verticalSpace,
-          const UpcomingAppointmentWidget(),
-          //const UpcomingAppointmentList(),
+          //const UpcomingAppointmentWidget(),
+          SizedBox(
+            height: 191.h,
+            child: const UpcomingAppointmentList(),
+          ),
           Sizes.size24.verticalSpace,
           Text(AppStrings.pastAppointments, style: AppStyles.textStyle20(),).paddingDirectionalOnly(start: 16.w),
           Sizes.size16.verticalSpace,

@@ -20,20 +20,23 @@ class UpcomingAppointmentWidget extends StatelessWidget
       color: AppColors.color.kGreen001,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
         children:
         [
           Row(
             children:
             [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children:
-                [
-                  Text("Al Noor Medical Center", style: AppStyles.textStyle18(),),
-                  Text("Monday, June 3, 2025 - 4:00 PM ", style: AppStyles.textStyle12(),),
-                ],
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children:
+                  [
+                    Text("Al Noor Medical Center", style: AppStyles.textStyle18(),),
+                    Text("Monday, June 3, 2025 - 4:00 PM ", style: AppStyles.textStyle12(),),
+                  ],
+                ),
               ),
-              const Spacer(),
+              //const Spacer(),
               const UpComingDateWidget(),
             ],
           ),
