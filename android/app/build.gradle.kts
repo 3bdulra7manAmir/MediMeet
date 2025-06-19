@@ -28,6 +28,9 @@ android {
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+        // Read from flutter build config
+        val apiKey = project.findProperty("API_KEY") as String? ?: ""
+        resValue("string", "api_key", apiKey)
     }
 
     buildTypes {

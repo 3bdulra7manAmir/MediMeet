@@ -26,7 +26,7 @@ class AppointmentInfoWidget extends ConsumerWidget
       data: (details)
       {
         final info = details.isNotEmpty ? details.first : null;
-        if (info == null) return const SizedBox.shrink();
+        if (info == null) return const AppCircularIndicator();
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children:
