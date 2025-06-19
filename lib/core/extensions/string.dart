@@ -47,3 +47,9 @@ extension AppointmentDateFormat on String
     }
   }
 }
+
+
+extension SmartDoubleFormat on double
+{
+  String cleanFormat() => this % 1 == 0 ? toInt().toString() : toStringAsFixed(1);
+}

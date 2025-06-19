@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:medical_appointments/core/extensions/string.dart';
 
 import '../../../../../config/theme/color_manager/colors.dart';
 import '../../../../../config/theme/font_manager/font_weights.dart';
@@ -27,12 +28,25 @@ class RateWidget extends StatelessWidget
         [
           SvgPicture.asset(AppAssets.icons.filledRate),
           Sizes.size4.horizontalSpace,
-          Text("${rate?.toStringAsFixed(1)} – ", style: AppStyles.textStyle14(fontWeight: AppFontWeights.regularWeight, fontColor: AppColors.color.kGrey002),),
+          Text("${rate?.cleanFormat()} – ", style: AppStyles.textStyle14(fontWeight: AppFontWeights.regularWeight, fontColor: AppColors.color.kGrey002),),
           Expanded(
             child: Text(description!, style: AppStyles.textStyle14(fontWeight: AppFontWeights.regularWeight, fontColor: AppColors.color.kGrey002),
               maxLines: 1, overflow: TextOverflow.ellipsis,
             ),
           ),
+        ],
+      );
+    }
+    else if (rate != null)
+    {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
+        children:
+        [
+          SvgPicture.asset(AppAssets.icons.filledRate),
+          Sizes.size4.horizontalSpace,
+          Text(rate!.cleanFormat(), style: AppStyles.textStyle14(fontWeight: AppFontWeights.regularWeight, fontColor: AppColors.color.kGrey002)),
         ],
       );
     }

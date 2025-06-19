@@ -7,7 +7,7 @@
       "dateTime": "Monday, June 9, 2025 - 3:00 PM",
       "category": "Pediatrics 3",
       "rate": "",
-      "rateDescription": "Very professional and friendly. 1"
+      "rateDescription": ""
     },
     {
       "id": 102,
@@ -23,7 +23,7 @@
       "dateTime": "Monday, June 3, 2025 - 1:00 AM",
       "category": "Pediatrics 2",
       "rate": "",
-      "rateDescription": "Very professional and friendly. 56"
+      "rateDescription": ""
     },
     {
       "id": 104,
@@ -46,8 +46,8 @@
       "title": "Al Abeer Clinic 6",
       "dateTime": "Monday, June 4, 2025 - 8:00 AM",
       "category": "Pediatrics 8",
-      "rate": "",
-      "rateDescription": "Very professional and friendly. 444"
+      "rate": "2",
+      "rateDescription": ""
     },
     {
       "id": 106,
@@ -55,7 +55,7 @@
       "dateTime": "Monday, June 4, 2025 - 8:00 AM",
       "category": "Pediatrics 8",
       "rate": "",
-      "rateDescription": "Very professional and friendly. 444"
+      "rateDescription": ""
     }
   ]
 }
