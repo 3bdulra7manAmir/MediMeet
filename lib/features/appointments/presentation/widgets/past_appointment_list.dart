@@ -1,21 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/constants/app_sizes.dart';
+import '../../../../core/widgets/circular_indicator.dart';
+import '../../../../core/widgets/error_widget.dart';
 import '../../../../core/widgets/listview_builder.dart';
+import '../../data/model/past_appointments.dart';
+import '../controller/past_appointment_controller.dart';
 import 'past_appointment_body.dart';
 
-class PastAppointmentList extends StatelessWidget
+class PastAppointmentList extends ConsumerWidget
 {
   const PastAppointmentList({super.key});
 
   @override
-  Widget build(BuildContext context)
+  Widget build(BuildContext context, WidgetRef ref)
   {
-    return AppListviewBuilder(
-      itemBuilder: (context, index) => const PastAppointmentWidget(),
-      separatorBuilder: (context, index) => Sizes.size16.verticalSpace,
-      itemCount: 6,
+    final pastAsync = ref.watch(pastAppointmentsProvider);
+    return pastAsync.when(
+      data: (appointments)
+      {
+        final items = appointments as List<PastModel>;
+        return AppListviewBuilder(
+          itemBuilder: (context, index) => PastAppointmentWidget(model: items[index]),
+          separatorBuilder: (context, index) => Sizes.size16.verticalSpace,
+          itemCount: items.length,
+        );
+      },
+      loading: () => const AppCircularIndicator(),
+      error: (e, _) => CustomErrorWidget(e: e),
     );
   }
 }

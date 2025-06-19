@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:medical_appointments/core/extensions/string.dart';
 
 import '../../../../../config/theme/color_manager/colors.dart';
 import '../../../../../config/theme/font_manager/font_weights.dart';
 import '../../../../../core/constants/app_sizes.dart';
 import '../../../../../core/constants/app_styles.dart';
 //import 'no_rate_widget.dart';
+import '../../../data/model/past_appointments.dart';
 import 'rate_widget.dart';
 
 class PastAppointmentInfoWidget extends StatelessWidget
 {
-  const PastAppointmentInfoWidget({super.key});
+  final PastModel model;
+  const PastAppointmentInfoWidget({super.key, required this.model});
 
   @override
   Widget build(BuildContext context)
@@ -19,14 +22,13 @@ class PastAppointmentInfoWidget extends StatelessWidget
       crossAxisAlignment: CrossAxisAlignment.start,
       children:
       [
-        Text("Al Abeer Clinic", style: AppStyles.textStyle16(fontColor: AppColors.color.kBlack001, fontWeight: AppFontWeights.mediumWeight),),
+        Text(model.pastTitle ?? '', style: AppStyles.textStyle16(fontColor: AppColors.color.kBlack001, fontWeight: AppFontWeights.mediumWeight),),
         Sizes.size4.verticalSpace,
-        Text("Pediatrics", style: AppStyles.textStyle14(fontColor: AppColors.color.kGrey002, fontWeight: AppFontWeights.regularWeight),),
+        Text(model.pastCategory ?? '', style: AppStyles.textStyle14(fontColor: AppColors.color.kGrey002, fontWeight: AppFontWeights.regularWeight),),
         Sizes.size4.verticalSpace,
-        Text("1:30 PM", style: AppStyles.textStyle14(fontColor: AppColors.color.kGrey002, fontWeight: AppFontWeights.regularWeight),),
+        Text(model.pastDateTime?.toTime ?? '', style: AppStyles.textStyle14(fontColor: AppColors.color.kGrey002, fontWeight: AppFontWeights.regularWeight),),
         Sizes.size8.verticalSpace,
-        //NoRateWidget(),
-        const RateWidget(),
+        RateWidget(rate: model.pastRate, description: model.pastRateDescription),
       ],
     );
   }

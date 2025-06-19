@@ -10,15 +10,20 @@ class UpComingModel
     this.upComingTitle, 
     this.upComingDateTime, 
     this.upComingLocation, 
-    });
+  });
 
   factory UpComingModel.fromJson(Map<String, dynamic> json)
   {
+    String? id;
+    if (json['id'] != null)
+    {
+      id = json['id'].toString();
+    }
     return UpComingModel(
-      upComingID:  json['id'] as String,
-      upComingTitle: json['title'] as String,
-      upComingDateTime: json['dateTime'] as String,
-      upComingLocation: json['location'] as String,
+      upComingID: id,
+      upComingTitle: json['title'] as String?,
+      upComingDateTime: json['dateTime'] as String?,
+      upComingLocation: json['location'] as String?,
     );
   }
 
@@ -32,5 +37,4 @@ class UpComingModel
       'location': upComingLocation,
     };
   }
-  
 }

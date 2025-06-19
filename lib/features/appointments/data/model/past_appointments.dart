@@ -18,13 +18,24 @@ class PastModel
 
   factory PastModel.fromJson(Map<String, dynamic> json)
   {
+    String? id;
+    if (json['id'] != null)
+    {
+      id = json['id'].toString();
+    }
+    
+    double? rate;
+    if (json['rate'] != null && json['rate'].toString().isNotEmpty)
+    {
+      rate = double.tryParse(json['rate'].toString());
+    }
     return PastModel(
-      pastID:  json['id'] as String,
-      pastTitle: json['title'] as String,
-      pastDateTime: json['dateTime'] as String,
-      pastCategory: json['category'] as String,
-      pastRate: json['rate'] as double,
-      pastRateDescription: json['rateDescription'] as String,
+      pastID: id,
+      pastTitle: json['title'] as String?,
+      pastDateTime: json['dateTime'] as String?,
+      pastCategory: json['category'] as String?,
+      pastRate: rate,
+      pastRateDescription: json['rateDescription'] as String?,
     );
   }
 

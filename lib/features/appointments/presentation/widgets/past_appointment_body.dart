@@ -3,12 +3,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../config/theme/color_manager/colors.dart';
 import '../../../../core/constants/app_sizes.dart';
+import '../../data/model/past_appointments.dart';
 import 'past_appointment/date_widget.dart';
 import 'past_appointment/appointment_info_widget.dart';
 
 class PastAppointmentWidget extends StatelessWidget
 {
-  const PastAppointmentWidget({super.key});
+  final PastModel model;
+  const PastAppointmentWidget({super.key, required this.model});
 
   @override
   Widget build(BuildContext context)
@@ -18,9 +20,9 @@ class PastAppointmentWidget extends StatelessWidget
       child: Row(
         children:
         [
-          const PastDateWidget(),
+          PastDateWidget(dateTime: model.pastDateTime ?? ''),
           Sizes.size16.horizontalSpace,
-          const Expanded(child: PastAppointmentInfoWidget()),
+          Expanded(child: PastAppointmentInfoWidget(model: model)),
         ],
       ),
     );

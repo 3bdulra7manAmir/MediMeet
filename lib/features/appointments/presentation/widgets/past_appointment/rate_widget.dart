@@ -7,29 +7,39 @@ import '../../../../../config/theme/font_manager/font_weights.dart';
 import '../../../../../core/constants/app_images.dart';
 import '../../../../../core/constants/app_sizes.dart';
 import '../../../../../core/constants/app_styles.dart';
+import 'no_rate_widget.dart';
 
 class RateWidget extends StatelessWidget
 {
-  const RateWidget({super.key});
+  final double? rate;
+  final String? description;
+  const RateWidget({super.key, this.rate, this.description});
 
   @override
   Widget build(BuildContext context)
   {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      mainAxisSize: MainAxisSize.min,
-      children:
-      [
-        SvgPicture.asset(AppAssets.icons.filledRate),
-        Sizes.size4.horizontalSpace,
-        Text("4.5 – ", style: AppStyles.textStyle14(fontWeight: AppFontWeights.regularWeight, fontColor: AppColors.color.kGrey002),),
-        Expanded(
-          child: Text("Very professional and friendly.", style: AppStyles.textStyle14(fontWeight: AppFontWeights.regularWeight, fontColor: AppColors.color.kGrey002),
-            maxLines: 1, overflow: TextOverflow.ellipsis,
+    if (rate != null && description != null && description!.isNotEmpty)
+    {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
+        children:
+        [
+          SvgPicture.asset(AppAssets.icons.filledRate),
+          Sizes.size4.horizontalSpace,
+          Text("${rate?.toStringAsFixed(1)} – ", style: AppStyles.textStyle14(fontWeight: AppFontWeights.regularWeight, fontColor: AppColors.color.kGrey002),),
+          Expanded(
+            child: Text(description!, style: AppStyles.textStyle14(fontWeight: AppFontWeights.regularWeight, fontColor: AppColors.color.kGrey002),
+              maxLines: 1, overflow: TextOverflow.ellipsis,
+            ),
           ),
-        ),
-      ],
-    );
+        ],
+      );
+    }
+    else
+    {
+      return const NoRateWidget();
+    }
   }
 }
 
