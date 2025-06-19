@@ -30,7 +30,8 @@ class AppointmentsDetails extends StatelessWidget
           crossAxisAlignment: CrossAxisAlignment.start,
           children:
           [
-            GestureDetector(onTap: () => AppRouter.router.pop(),
+            GestureDetector(
+              onTap: () => AppRouter.router.pop(),
               child: SvgPicture.asset(AppAssets.icons.arrowLeft),),
             Sizes.size8.verticalSpace,
             Text(AppStrings.appointmentsDetails, style: AppStyles.textStyle24(),).paddingDirectionalOnly(),
@@ -41,7 +42,7 @@ class AppointmentsDetails extends StatelessWidget
           crossAxisAlignment: CrossAxisAlignment.start,
           children:
           [
-            Sizes.size16.verticalSpace,
+            //Sizes.size16.verticalSpace,
             const AppointmentInfoBody(),
             Sizes.size16.verticalSpace,
             AppDivider(color: AppColors.color.kWhite003, thickness: 2.h,),

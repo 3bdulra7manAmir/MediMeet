@@ -2,19 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:medical_appointments/core/extensions/widget_padding.dart';
 
+
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget
 {
   const CustomAppBar({
     super.key,
+    this.backgroundColor,
     this.isDefaultBack,
     this.barLeading,
     this.barTitle,
     this.barActions,
     this.barActionsPadding,
     this.barLeadingWidth,
-    this.toolbarHeight,
+    this.toolbarHeight, 
   });
 
+  final Color? backgroundColor;
   final bool? isDefaultBack;
   final Widget? barLeading;
   final Widget? barTitle;
@@ -28,6 +31,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget
   Widget build(BuildContext context)
   {
     return AppBar(
+      backgroundColor: backgroundColor,
       automaticallyImplyLeading: isDefaultBack ?? false,
       leading: barLeading,
       leadingWidth: barLeadingWidth,
