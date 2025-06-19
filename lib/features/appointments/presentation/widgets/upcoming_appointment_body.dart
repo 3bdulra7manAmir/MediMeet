@@ -5,8 +5,8 @@ import 'package:medical_appointments/core/extensions/widget_padding.dart';
 import '../../../../config/theme/color_manager/colors.dart';
 import '../../../../core/constants/app_sizes.dart';
 import '../../../../core/constants/app_styles.dart';
-import 'upcoming_appointment/appointment_options_widget.dart';
-import 'upcoming_appointment/date_widget.dart';
+import 'upcoming_appointment/upcoming_appointment_options_widget.dart';
+import 'upcoming_appointment/upcoming_date_widget.dart';
 
 
 class UpcomingAppointmentWidget extends StatelessWidget

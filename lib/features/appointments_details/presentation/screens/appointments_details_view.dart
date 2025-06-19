@@ -8,9 +8,9 @@ import '../../../../core/constants/app_strings.dart';
 import '../../../../core/constants/app_styles.dart';
 import '../../../../core/widgets/appbar.dart';
 import '../../../../core/widgets/divider.dart';
-import '../widgets/appointment_billing.dart';
-import '../widgets/appointment_info.dart';
-import '../widgets/appointment_location.dart';
+import '../widgets/appointment_billing_body.dart';
+import '../widgets/appointment_info_body.dart';
+import '../widgets/appointment_location_body.dart';
 import '../widgets/appointment_info/calendar_widget.dart';
 import '../../../../core/widgets/nav_bar.dart';
 

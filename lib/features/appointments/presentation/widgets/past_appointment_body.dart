@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../config/theme/color_manager/colors.dart';
 import '../../../../core/constants/app_sizes.dart';
 import 'past_appointment/date_widget.dart';
-import 'past_appointment/past_appointment_info_widget.dart';
+import 'past_appointment/appointment_info_widget.dart';
 
 class PastAppointmentWidget extends StatelessWidget
 {
@@ -20,7 +20,7 @@ class PastAppointmentWidget extends StatelessWidget
         [
           const PastDateWidget(),
           Sizes.size16.horizontalSpace,
-          const PastAppointmentInfoWidget(),
+          const Expanded(child: PastAppointmentInfoWidget()),
         ],
       ),
     );

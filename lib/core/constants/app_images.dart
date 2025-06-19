@@ -29,6 +29,7 @@ class _Icons
   final String saudiRiyal = "assets/icons/appointments_details/saudi_riyal.svg";
   final String saudiRiyalPNG = "assets/icons/appointments_details/saudi_riyal.png";
   final String locationBlue = "assets/icons/appointments_details/location_blue.svg";
+  final String googleMapsPin = "assets/icons/appointments_details/google_maps_pin.png";
 
   /// Appointments
   final String cancelGreen = "assets/icons/appointments/cancel_green.svg";

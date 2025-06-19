@@ -5,6 +5,7 @@ import '../../../../../config/theme/color_manager/colors.dart';
 import '../../../../../config/theme/font_manager/font_weights.dart';
 import '../../../../../core/constants/app_sizes.dart';
 import '../../../../../core/constants/app_styles.dart';
+//import 'no_rate_widget.dart';
 import 'rate_widget.dart';
 
 class PastAppointmentInfoWidget extends StatelessWidget

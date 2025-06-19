@@ -17,13 +17,16 @@ class RateWidget extends StatelessWidget
   {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisSize: MainAxisSize.min,
       children:
       [
         SvgPicture.asset(AppAssets.icons.filledRate),
         Sizes.size4.horizontalSpace,
         Text("4.5 – ", style: AppStyles.textStyle14(fontWeight: AppFontWeights.regularWeight, fontColor: AppColors.color.kGrey002),),
-        Text("Very professional and friendly.", style: AppStyles.textStyle14(fontWeight: AppFontWeights.regularWeight, fontColor: AppColors.color.kGrey002),
-          maxLines: 1, overflow: TextOverflow.ellipsis,
+        Expanded(
+          child: Text("Very professional and friendly.", style: AppStyles.textStyle14(fontWeight: AppFontWeights.regularWeight, fontColor: AppColors.color.kGrey002),
+            maxLines: 1, overflow: TextOverflow.ellipsis,
+          ),
         ),
       ],
     );

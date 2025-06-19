@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/constants/app_sizes.dart';
 import '../../../../core/widgets/listview_builder.dart';
-import 'upcoming_appointment.dart';
+import 'upcoming_appointment_body.dart';
 
 class UpcomingAppointmentList extends StatelessWidget
 {

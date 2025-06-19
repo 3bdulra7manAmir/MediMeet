@@ -8,9 +8,9 @@ import '../../../../core/constants/app_sizes.dart';
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/constants/app_styles.dart';
 import '../../../../core/widgets/appbar.dart';
-import '../widgets/past_appointment.dart';
+import '../widgets/past_appointment_body.dart';
 import '../widgets/past_appointment_list.dart';
-import '../widgets/upcoming_appointment.dart';
+import '../widgets/upcoming_appointment_body.dart';
 import '../widgets/upcoming_appointment_list.dart';
 
 class Appointments extends StatelessWidget
@@ -30,7 +30,7 @@ class Appointments extends StatelessWidget
           Text(AppStrings.upComingAppointments, style: AppStyles.textStyle20(),).paddingDirectionalOnly(start: 16.w),
           Sizes.size16.verticalSpace,
           const UpcomingAppointmentWidget(),
-          //UpcomingAppointmentList(),
+          //const UpcomingAppointmentList(),
           Sizes.size24.verticalSpace,
           Text(AppStrings.pastAppointments, style: AppStyles.textStyle20(),).paddingDirectionalOnly(start: 16.w),
           Sizes.size16.verticalSpace,
