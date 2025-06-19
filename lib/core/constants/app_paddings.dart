@@ -28,6 +28,7 @@ class Symmetric
 
   /// 16px horizontal
   EdgeInsets get largeHorizontal => EdgeInsets.symmetric(horizontal: 16.w);
+
 }
 
 

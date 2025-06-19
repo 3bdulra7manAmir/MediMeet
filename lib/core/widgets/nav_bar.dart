@@ -3,14 +3,15 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:medical_appointments/config/theme/color_manager/colors.dart';
-import 'package:medical_appointments/core/constants/app_borders.dart';
-import 'package:medical_appointments/core/constants/app_images.dart';
-import 'package:medical_appointments/core/constants/app_margins.dart';
-import 'package:medical_appointments/core/constants/app_sizes.dart';
-import 'package:medical_appointments/core/constants/app_styles.dart';
 
+
+import '../../config/theme/color_manager/colors.dart';
+import '../constants/app_borders.dart';
+import '../constants/app_images.dart';
+import '../constants/app_paddings.dart';
+import '../constants/app_sizes.dart';
 import '../constants/app_strings.dart';
+import '../constants/app_styles.dart';
 import 'icon_button.dart';
 import '../../features/appointments_details/presentation/widgets/cancel_dialog.dart';
 
@@ -22,7 +23,7 @@ class NavBarWidget extends StatelessWidget
   Widget build(BuildContext context)
   {
     return Container(
-      margin: AppMargins.symmetric.medium,
+      padding: AppPadding.symmetric.largeHorizontal,
       alignment: Alignment.center,
       width: 430.w,
       height: 105.h,

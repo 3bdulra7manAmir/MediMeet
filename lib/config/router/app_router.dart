@@ -15,7 +15,7 @@ abstract class AppRouter
   static final router = GoRouter(
     navigatorKey: navigatorState,
     debugLogDiagnostics: kDebugMode,
-    initialLocation: AppRoutes.appointmentsDetails,
+    initialLocation: AppRoutes.appointmentsEmpty,
     errorBuilder: (_, _) => const Scaffold(body: Center(child: AppCircularIndicator()),),
     routes:
     [

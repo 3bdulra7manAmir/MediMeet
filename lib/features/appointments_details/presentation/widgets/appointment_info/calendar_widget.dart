@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:medical_appointments/config/theme/color_manager/colors.dart';
-import 'package:medical_appointments/core/constants/app_borders.dart';
-import 'package:medical_appointments/core/constants/app_images.dart';
+
+import '../../../../../config/theme/color_manager/colors.dart';
+import '../../../../../core/constants/app_borders.dart';
+import '../../../../../core/constants/app_images.dart';
+
 
 class CalendarWidget extends StatelessWidget
 {
