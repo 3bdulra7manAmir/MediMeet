@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../config/theme/color_manager/colors.dart';
 import '../../config/theme/font_manager/font_sizes.dart';
 import '../../config/theme/font_manager/font_weights.dart';
+import '../../config/theme/font_manager/fonts.dart';
 
 abstract class AppStyles
 {
@@ -22,7 +23,7 @@ abstract class AppStyles
       fontSize: AppFontSizes.xXXXLarge.sp,
       color: fontColor ?? AppColors.color.kBlack001,
       fontWeight: fontWeight ?? AppFontWeights.semiBoldWeight,
-      fontFamily: fontFamily,
+      fontFamily: AppFonts.font.fontName,
       decoration: textDecoration ?? TextDecoration.none,
       decorationColor: textDecorationColor,
       overflow: textOverflow ?? TextOverflow.ellipsis,
@@ -43,7 +44,7 @@ abstract class AppStyles
       fontSize: AppFontSizes.xXXLarge.sp,
       color: fontColor ?? AppColors.color.kBlack001,
       fontWeight: fontWeight ?? AppFontWeights.semiBoldWeight,
-      fontFamily: fontFamily,
+      fontFamily: AppFonts.font.fontName,
       decoration: textDecoration,
       decorationColor: textDecorationColor,
       overflow: textOverflow ?? TextOverflow.ellipsis,
@@ -64,7 +65,7 @@ abstract class AppStyles
       fontSize: AppFontSizes.xXLarge.sp,
       color: fontColor ?? AppColors.color.kWhite002,
       fontWeight: fontWeight ?? AppFontWeights.semiBoldWeight,
-      fontFamily: fontFamily,
+      fontFamily: AppFonts.font.fontName,
       decoration: textDecoration,
       decorationColor: textDecorationColor,
       overflow: textOverflow ?? TextOverflow.ellipsis,
@@ -84,7 +85,7 @@ abstract class AppStyles
       fontSize: AppFontSizes.large.sp,
       color: fontColor ?? AppColors.color.kGrey001,
       fontWeight: fontWeight ?? AppFontWeights.regularWeight,
-      fontFamily: fontFamily,
+      fontFamily: AppFonts.font.fontName,
       decoration: textDecoration,
       decorationColor: textDecorationColor,
       overflow: textOverflow ?? TextOverflow.ellipsis,
@@ -105,7 +106,7 @@ abstract class AppStyles
       fontSize: AppFontSizes.medium.sp,
       color: fontColor ?? AppColors.color.kWhite003,
       fontWeight: fontWeight ?? AppFontWeights.boldWeight,
-      fontFamily: fontFamily,
+      fontFamily: AppFonts.font.fontName,
       decoration: textDecoration,
       decorationColor: textDecorationColor,
       overflow: textOverflow ?? TextOverflow.ellipsis,
@@ -126,7 +127,7 @@ abstract class AppStyles
       fontSize: AppFontSizes.small.sp,
       color: fontColor ?? AppColors.color.kWhite002,
       fontWeight: fontWeight ?? AppFontWeights.regularWeight,
-      fontFamily: fontFamily,
+      fontFamily: AppFonts.font.fontName,
       decoration: textDecoration,
       decorationColor: textDecorationColor,
       overflow: textOverflow ?? TextOverflow.ellipsis,
