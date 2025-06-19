@@ -1,23 +1,26 @@
 class BillingModel
 {
+  final String? id;
   final String? billID;
   final String? billTitle;
-  final String? billDateTime;
+  final String? billPrice;
   final String? billStatus;
 
   BillingModel({
+    this.id,
     this.billID,
     this.billTitle, 
-    this.billDateTime, 
+    this.billPrice, 
     this.billStatus, 
     });
 
   factory BillingModel.fromJson(Map<String, dynamic> json)
   {
     return BillingModel(
-      billID:  json['id'] as String,
+      id:  json['id'] as String,
+      billID:  json['billID'] as String,
       billTitle: json['title'] as String,
-      billDateTime: json['dateTime'] as String,
+      billPrice: json['price'] as String,
       billStatus: json['status'] as String,
     );
   }
@@ -26,10 +29,11 @@ class BillingModel
   {
     return
     {
-      'id': billID,
+      'id': id,
+      'billID': billID,
       'title': billTitle,
-      'dateTime': billDateTime,
-      'category': billStatus,
+      'price': billPrice,
+      'status': billStatus,
     };
   }
   

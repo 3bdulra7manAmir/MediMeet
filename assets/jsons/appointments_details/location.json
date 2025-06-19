@@ -1,0 +1,23 @@
+{
+  "location":
+  [
+    {
+      "id": 101,
+      "title": "Al Noor Medical Center",
+      "lat": "21.4225",
+      "lng": "39.8262"
+    },
+    {
+      "id": 102,
+      "title": "Al Abeer Clinic 2",
+      "lat": "24.7136",
+      "lng": "46.6753"
+    },
+    {
+      "id": 103,
+      "title": "Al Abeer Clinic 3",
+      "lat": "21.4858",
+      "lng": "39.1925"
+    }
+  ]
+}

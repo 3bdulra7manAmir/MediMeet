@@ -5,6 +5,7 @@ class PastModel
   final String? pastDateTime;
   final String? pastCategory;
   final double? pastRate;
+  final String? pastRateDescription;
 
   PastModel({
     this.pastID,
@@ -12,6 +13,7 @@ class PastModel
     this.pastDateTime, 
     this.pastCategory,
     this.pastRate,
+    this.pastRateDescription,
     });
 
   factory PastModel.fromJson(Map<String, dynamic> json)
@@ -22,6 +24,7 @@ class PastModel
       pastDateTime: json['dateTime'] as String,
       pastCategory: json['category'] as String,
       pastRate: json['rate'] as double,
+      pastRateDescription: json['rateDescription'] as String,
     );
   }
 
@@ -34,6 +37,7 @@ class PastModel
       'dateTime': pastDateTime,
       'category': pastCategory,
       'rate': pastRate,
+      'rateDescription': pastRateDescription,
     };
   }
   

@@ -16,9 +16,9 @@ class DetailsLocalDataSourceImpl implements DetailsLocalDataSource
     try
     {
       await Future.delayed(const Duration(seconds: 3));
-      final String jsonString = await rootBundle.loadString('assets/json/.json');
+      final String jsonString = await rootBundle.loadString('assets/jsons/appointments_details/info.json');
       final Map<String, dynamic> jsonData = json.decode(jsonString);
-      final List<dynamic> detailsJson = jsonData[''] ?? [];
+      final List<dynamic> detailsJson = jsonData['info'] ?? [];
       return detailsJson.map((details) => DetailsModel.fromJson(details)).toList();
     }
     catch (e)

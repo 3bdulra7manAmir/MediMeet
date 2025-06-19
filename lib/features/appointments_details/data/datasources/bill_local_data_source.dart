@@ -16,14 +16,14 @@ class BillingLocalDataSourceImpl implements BillingLocalDataSource
     try
     {
       await Future.delayed(const Duration(seconds: 3));
-      final String jsonString = await rootBundle.loadString('assets/json/.json');
+      final String jsonString = await rootBundle.loadString('assets/jsons/appointments_details/bill.json');
       final Map<String, dynamic> jsonData = json.decode(jsonString);
-      final List<dynamic> billingJson = jsonData[''] ?? [];
+      final List<dynamic> billingJson = jsonData['bill'] ?? [];
       return billingJson.map((billing) => BillingModel.fromJson(billing)).toList();
     }
     catch (e)
     {
-      throw Exception('Failed to load notifications: $e');
+      throw Exception('Failed to load bill: $e');
     }
   }
 

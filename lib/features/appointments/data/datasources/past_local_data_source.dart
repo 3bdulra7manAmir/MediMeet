@@ -16,14 +16,14 @@ class PastLocalDataSourceImpl implements PastLocalDataSource
     try
     {
       await Future.delayed(const Duration(seconds: 3));
-      final String jsonString = await rootBundle.loadString('assets/json/.json');
+      final String jsonString = await rootBundle.loadString('assets/jsons/appointments/past_appointments.json');
       final Map<String, dynamic> jsonData = json.decode(jsonString);
-      final List<dynamic> pastJson = jsonData[''] ?? [];
+      final List<dynamic> pastJson = jsonData['past'] ?? [];
       return pastJson.map((past) => PastModel.fromJson(past)).toList();
     }
     catch (e)
     {
-      throw Exception('Failed to load notifications: $e');
+      throw Exception('Failed to load past: $e');
     }
   }
 

@@ -82,4 +82,5 @@ flutter:
     - assets/icons/appointments_details/
     - assets/icons/appointments/
     - assets/imgs/
-    - assets/jsons/
+    - assets/jsons/appointments/
+    - assets/jsons/appointments_details/

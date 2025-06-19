@@ -2,8 +2,8 @@ class LocationModel
 {
   final String? billID;
   final String? billTitle;
-  final String? billLat;
-  final String? billLng;
+  final double? billLat;
+  final double? billLng;
 
   LocationModel({
     this.billID,
@@ -17,8 +17,8 @@ class LocationModel
     return LocationModel(
       billID:  json['id'] as String,
       billTitle: json['title'] as String,
-      billLat: json['lat'] as String,
-      billLng: json['lng'] as String,
+      billLat: json['lat'] as double,
+      billLng: json['lng'] as double,
     );
   }
 
