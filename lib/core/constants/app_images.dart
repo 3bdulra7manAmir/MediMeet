@@ -22,6 +22,7 @@ class _Icons
   final String cancelBannerPNG = "assets/icons/appointments_details/cancel_banner.png";
   final String cancelRed = "assets/icons/appointments_details/cancel_red.svg";
   final String correctGreen = "assets/icons/appointments_details/correct_green.svg";
+  final String inProgressPNG = "assets/icons/appointments_details/in_progress.png";
   final String editPensileWhite = "assets/icons/appointments_details/edit_pensile_white.svg";
   final String hart = "assets/icons/appointments_details/hart.svg";
   final String hartPNG = "assets/icons/appointments_details/hart.png";

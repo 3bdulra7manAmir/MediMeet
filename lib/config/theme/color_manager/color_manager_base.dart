@@ -63,5 +63,14 @@ abstract class ColorManagerBase
   Color get kRed001;
   /// [_E34A4A]
   Color get kRed002;
+  /// [_EEB8B8]
+  Color get kRed003;
+
+
+  // Yellow Color Range
+  /// [FFDE00]
+  Color get kYellow001;
+  /// [_524C39]
+  Color get kYellow002;
 
 }

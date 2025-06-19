@@ -11,8 +11,8 @@ import '../../../../core/widgets/divider.dart';
 import '../widgets/appointment_billing.dart';
 import '../widgets/appointment_info.dart';
 import '../widgets/appointment_location.dart';
-import '../widgets/calendar.dart';
-import '../widgets/nav_bar.dart';
+import '../widgets/appointment_info/calendar_widget.dart';
+import '../../../../core/widgets/nav_bar.dart';
 
 class AppointmentsDetails extends StatelessWidget
 {

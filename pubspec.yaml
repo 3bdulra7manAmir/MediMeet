@@ -31,7 +31,12 @@ dependencies:
 
   # Comparing and Hashing
   equatable: ^2.0.7
+
+  # Either - or
   dartz: ^0.10.1
+
+  # Maps
+  google_maps_flutter: ^2.12.3
 
 dev_dependencies:
   flutter_test:

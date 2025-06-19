@@ -10,9 +10,9 @@ import 'package:medical_appointments/core/constants/app_margins.dart';
 import 'package:medical_appointments/core/constants/app_sizes.dart';
 import 'package:medical_appointments/core/constants/app_styles.dart';
 
-import '../../../../core/constants/app_strings.dart';
-import '../../../../core/widgets/icon_button.dart';
-import 'cancel_dialog.dart';
+import '../constants/app_strings.dart';
+import 'icon_button.dart';
+import '../../features/appointments_details/presentation/widgets/cancel_dialog.dart';
 
 class NavBarWidget extends StatelessWidget
 {

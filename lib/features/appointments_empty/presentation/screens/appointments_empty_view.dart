@@ -6,8 +6,8 @@ import '../../../../core/constants/app_sizes.dart';
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/constants/app_styles.dart';
 import '../../../../core/widgets/appbar.dart';
-import '../widgets/calendar_image.dart';
-import '../widgets/clinics_button.dart';
+import '../widgets/calendar_image_widget.dart';
+import '../widgets/clinics_button_widget.dart';
 
 class AppointmentsEmpty extends StatelessWidget
 {

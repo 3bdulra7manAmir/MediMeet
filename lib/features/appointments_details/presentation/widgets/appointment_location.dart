@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:medical_appointments/config/theme/color_manager/colors.dart';
-import 'package:medical_appointments/core/constants/app_styles.dart';
 
 import '../../../../core/constants/app_sizes.dart';
-import '../../../../core/constants/app_strings.dart';
+import 'appointment_location/google_maps_widget.dart';
+import 'appointment_location/location_title_widget.dart';
 
 class AppointmentLocationWidget extends StatelessWidget
 {
@@ -17,11 +16,12 @@ class AppointmentLocationWidget extends StatelessWidget
       crossAxisAlignment: CrossAxisAlignment.start,
       children:
       [
-        Text(AppStrings.location, style: AppStyles.textStyle18(fontColor: AppColors.color.kBlack001),),
-        Sizes.size8.verticalSpace,
-        Text("Riyadh – King Abdulaziz Road, Building 12", style: AppStyles.textStyle16(),),
+        const LocationTitleWidget(),
         Sizes.size16.verticalSpace,
+        const GoogleMapsWidget(),
       ],
     );
   }
 }
+
+
