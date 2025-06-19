@@ -6,21 +6,21 @@
       "billID": "#JZ-48291",
       "title": "Al Noor Medical Center",
       "price": "Monday, June 3, 2025 - 4:00 PM",
-      "status": "Cardiology"
+      "status": "Paid"
     },
     {
       "id": 102,
       "billID": "#NH-48325435",
       "title": "Al Abeer Clinic 2",
       "price": "Monday, June 7, 2025 - 2:00 PM",
-      "status": "Cardiology 2"
+      "status": "Failed"
     },
     {
       "id": 103,
       "billID": "#TA-234534",
       "title": "Al Abeer Clinic 3",
       "price": "Monday, June 3, 2025 - 1:00 AM",
-      "status": "Cardiology 3"
+      "status": "InProgress"
     }
   ]
 }

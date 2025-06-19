@@ -7,7 +7,6 @@ import '../../../../core/widgets/circular_indicator.dart';
 import '../../../../core/widgets/error_widget.dart';
 import '../../../../core/widgets/listview_builder.dart';
 import 'upcoming_appointment_body.dart';
-import '../../data/model/upcoming_appointments.dart';
 import '../controller/upcoming_appointment_controller.dart';
 
 class UpcomingAppointmentList extends ConsumerWidget
@@ -20,7 +19,7 @@ class UpcomingAppointmentList extends ConsumerWidget
     final upcomingAsync = ref.watch(upcomingAppointmentsProvider);
     return upcomingAsync.when(
       data: (appointments) {
-        final items = appointments as List<UpComingModel>;
+        final items = appointments;
         return AppListviewBuilder(
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) => SizedBox(width: 398.w, child: UpcomingAppointmentWidget(model: items[index])),

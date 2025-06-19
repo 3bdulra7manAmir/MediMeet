@@ -6,7 +6,6 @@ import '../../../../core/constants/app_sizes.dart';
 import '../../../../core/widgets/circular_indicator.dart';
 import '../../../../core/widgets/error_widget.dart';
 import '../../../../core/widgets/listview_builder.dart';
-import '../../data/model/past_appointments.dart';
 import '../controller/past_appointment_controller.dart';
 import 'past_appointment_body.dart';
 
@@ -21,7 +20,7 @@ class PastAppointmentList extends ConsumerWidget
     return pastAsync.when(
       data: (appointments)
       {
-        final items = appointments as List<PastModel>;
+        final items = appointments;
         return AppListviewBuilder(
           itemBuilder: (context, index) => PastAppointmentWidget(model: items[index]),
           separatorBuilder: (context, index) => Sizes.size16.verticalSpace,
