@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:medical_appointments/core/widgets/circular_indicator.dart';
 
 import '../../../../../config/theme/color_manager/colors.dart';
 import '../../../../../core/constants/app_borders.dart';
@@ -12,20 +13,6 @@ import 'google_maps_get_direction_widget.dart';
 class GoogleMapsWidget extends StatelessWidget
 {
   const GoogleMapsWidget({super.key});
-
-  Future<BitmapDescriptor> _createCustomMarker() async
-  {
-    // Create a canvas to draw the custom marker
-    final PictureRecorder recorder = PictureRecorder();
-    final Canvas canvas = Canvas(recorder);
-
-
-    // Convert to image and then to BitmapDescriptor
-    final picture = recorder.endRecording();
-    final image = await picture.toImage(72, 72);
-    final bytes = await image.toByteData(format: ImageByteFormat.png);
-    return BitmapDescriptor.bytes(bytes!.buffer.asUint8List());
-  }
 
   @override
   Widget build(BuildContext context)
@@ -38,7 +25,7 @@ class GoogleMapsWidget extends StatelessWidget
       {
         if (!snapshot.hasData)
         {
-          return const CircularProgressIndicator();
+          return const AppCircularIndicator();
         }
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -80,4 +67,15 @@ class GoogleMapsWidget extends StatelessWidget
   }
 }
 
+Future<BitmapDescriptor> _createCustomMarker() async
+  {
+    // Create a canvas to draw the custom marker
+    final PictureRecorder recorder = PictureRecorder();
+    final Canvas canvas = Canvas(recorder);
 
+    // Convert to image and then to BitmapDescriptor
+    final picture = recorder.endRecording();
+    final image = await picture.toImage(72, 72);
+    final bytes = await image.toByteData(format: ImageByteFormat.png);
+    return BitmapDescriptor.bytes(bytes!.buffer.asUint8List());
+  }

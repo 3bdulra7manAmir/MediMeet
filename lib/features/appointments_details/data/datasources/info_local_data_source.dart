@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
 
-import '../model/details_model.dart';
+import '../model/appointment_info.dart';
 
 abstract class DetailsLocalDataSource
 {

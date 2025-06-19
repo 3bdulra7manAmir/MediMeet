@@ -1,9 +1,8 @@
+import '../../domain/repository/info_repository.dart';
+import '../datasources/info_local_data_source.dart';
+import '../model/appointment_info.dart';
 
-import '../../domain/repository/details_repository.dart';
-import '../datasources/local_data_source.dart';
-import '../model/details_model.dart';
-
-class DetailsRepoImpl implements Detailsepository
+class DetailsRepoImpl implements DetailsRepository
 {
   final DetailsLocalDataSource localDataSource;
   const DetailsRepoImpl({required this.localDataSource});

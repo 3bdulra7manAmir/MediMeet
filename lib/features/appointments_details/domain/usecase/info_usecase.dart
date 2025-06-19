@@ -2,12 +2,12 @@ import 'package:dartz/dartz.dart';
 import 'package:medical_appointments/core/services/network/api_fetch_failure.dart';
 
 import '../../../../core/utils/usecase.dart';
-import '../repository/details_repository.dart';
+import '../repository/info_repository.dart';
 
 
 class DetailsUsecase extends AppUsecase
 {
-  final Detailsepository detailsRepository;
+  final DetailsRepository detailsRepository;
   DetailsUsecase(this.detailsRepository);
 
   @override
