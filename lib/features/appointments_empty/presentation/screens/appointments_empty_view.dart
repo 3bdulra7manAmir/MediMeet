@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:medical_appointments/core/extensions/widget_padding.dart';
+import 'package:medical_appointments/core/extensions/widget_margin.dart';
 
 import '../../../../core/constants/app_sizes.dart';
 import '../../../../core/constants/app_strings.dart';
@@ -28,15 +28,15 @@ class AppointmentsEmpty extends StatelessWidget
               [
                 const CalendarImage(),
                 Sizes.size8.verticalSpace,
-                Text(AppStrings.uDontHaveAnyAppointments, style: AppStyles.textStyle20(),),
+                Text(AppStrings.uDontHaveAnyAppointments, style: AppStyles.textStyle20(), textAlign: TextAlign.center, maxLines: 2,),
                 Sizes.size8.verticalSpace,
-                Text(AppStrings.startExploringClinics, style: AppStyles.textStyle16(),),
+                Text(AppStrings.startExploringClinics, style: AppStyles.textStyle16(), textAlign: TextAlign.center, maxLines: 2,),
                 Sizes.size16.verticalSpace,
                 const ExploreClinicsButton(),
               ],
             ),
           ],
-        ).paddingSymmetric(horizontal: 49.w, vertical: 49.h),
+        ).marginSymmetric(horizontal: 16.w,),
       ),
     );
   }

@@ -32,11 +32,7 @@ class Appointments extends StatelessWidget
               ],
             ),
           ),
-          SliverToBoxAdapter(
-            child: SizedBox(height: 200.h,
-              child: const UpcomingAppointmentList(),
-            ),
-          ),
+          const SliverToBoxAdapter(child: UpcomingAppointmentList(),),
 
           SliverToBoxAdapter(
             child: Column(
