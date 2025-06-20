@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../config/theme/color_manager/colors.dart';
 import '../../../../core/constants/app_sizes.dart';
+import '../../../../core/constants/app_strings.dart';
 import '../../../../core/constants/app_styles.dart';
 import 'appointment_billing/bill_amount_widget.dart';
 import 'appointment_billing/id_widget.dart';
@@ -20,7 +21,7 @@ class AppointmentBillingWidget extends StatelessWidget
       crossAxisAlignment: CrossAxisAlignment.start,
       children:
       [
-        Text("Bill Details", style: AppStyles.textStyle18(fontColor: AppColors.color.kBlack001),),
+        Text(AppStrings.billDetails, style: AppStyles.textStyle18(fontColor: AppColors.color.kBlack001),),
         Sizes.size12.verticalSpace,
         const IDWidget(),
         Sizes.size8.verticalSpace,

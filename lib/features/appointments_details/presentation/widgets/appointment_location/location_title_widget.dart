@@ -1,26 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:medical_appointments/core/widgets/circular_indicator.dart';
+import 'package:medical_appointments/core/widgets/error_widget.dart';
 
 import '../../../../../config/theme/color_manager/colors.dart';
 import '../../../../../core/constants/app_sizes.dart';
 import '../../../../../core/constants/app_strings.dart';
 import '../../../../../core/constants/app_styles.dart';
+import '../../controller/appointments_location_controller.dart';
 
-class LocationTitleWidget extends StatelessWidget
+class LocationTitleWidget extends ConsumerWidget
 {
   const LocationTitleWidget({super.key});
 
   @override
-  Widget build(BuildContext context)
+  Widget build(BuildContext context, WidgetRef ref)
   {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children:
-      [
-        Text(AppStrings.location, style: AppStyles.textStyle18(fontColor: AppColors.color.kBlack001),),
-        Sizes.size8.verticalSpace,
-        Text("Riyadh – King Abdulaziz Road, Building 12", style: AppStyles.textStyle16(),),
-      ],
+    final locationAsync = ref.watch(locationProvider);
+    return locationAsync.when(
+      data: (locations)
+      {
+        final location = locations.isNotEmpty ? locations.first : null;
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children:
+          [
+            Text(AppStrings.location, style: AppStyles.textStyle18(fontColor: AppColors.color.kBlack001)),
+            Sizes.size8.verticalSpace,
+            Text(location?.locationTitle ?? '', style: AppStyles.textStyle16()),
+          ],
+        );
+      },
+      loading: () => const AppCircularIndicator(),
+      error: (e, _) => CustomErrorWidget(e: e),
     );
   }
 }

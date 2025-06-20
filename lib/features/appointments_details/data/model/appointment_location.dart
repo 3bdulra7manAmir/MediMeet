@@ -1,24 +1,24 @@
 class LocationModel
 {
-  final String? billID;
-  final String? billTitle;
-  final double? billLat;
-  final double? billLng;
+  final String? locationID;
+  final String? locationTitle;
+  final double? locationLat;
+  final double? locationLng;
 
   LocationModel({
-    this.billID,
-    this.billTitle, 
-    this.billLat, 
-    this.billLng, 
+    this.locationID,
+    this.locationTitle, 
+    this.locationLat, 
+    this.locationLng, 
     });
 
   factory LocationModel.fromJson(Map<String, dynamic> json)
   {
     return LocationModel(
-      billID:  json['id']?.toString(),
-      billTitle: json['title'] as String?,
-      billLat: double.tryParse(json['lat'].toString()),
-      billLng: double.tryParse(json['lng'].toString()),
+      locationID:  json['id']?.toString(),
+      locationTitle: json['title'] as String?,
+      locationLat: double.tryParse(json['lat'].toString()),
+      locationLng: double.tryParse(json['lng'].toString()),
     );
   }
 
@@ -26,10 +26,10 @@ class LocationModel
   {
     return
     {
-      'id': billID,
-      'title': billTitle,
-      'lat': billLat,
-      'lng': billLng,
+      'id': locationID,
+      'title': locationTitle,
+      'lat': locationLat,
+      'lng': locationLng,
     };
   }
   

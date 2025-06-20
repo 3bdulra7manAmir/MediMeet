@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:medical_appointments/core/widgets/circular_indicator.dart';
+import 'package:medical_appointments/core/widgets/error_widget.dart';
 
 import '../../../../../config/theme/color_manager/colors.dart';
 import '../../../../../core/constants/app_borders.dart';
@@ -24,7 +25,7 @@ class GoogleMapsWidget extends ConsumerWidget
       {
         final location = locations.isNotEmpty ? locations.first : null;
         if (location == null) return const AppCircularIndicator();
-        final LatLng clinicLocation = LatLng(location.billLat ?? 0.0, location.billLng ?? 0.0);
+        final LatLng clinicLocation = LatLng(location.locationLat ?? 0.0, location.locationLng ?? 0.0);
         final CameraPosition initialCameraPosition = CameraPosition(target: clinicLocation, zoom: 15.0,);
         return FutureBuilder(
           future: customPinWidget(),
@@ -76,7 +77,7 @@ class GoogleMapsWidget extends ConsumerWidget
         );
       },
       loading: () => const AppCircularIndicator(),
-      error: (e, _) => Text('Error: $e'),
+      error: (e, _) => CustomErrorWidget(e: e),
     );
   }
 }
