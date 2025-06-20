@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/constants/app_sizes.dart';
 import '../../../../core/widgets/circular_indicator.dart';
 import '../../../../core/widgets/error_widget.dart';
-import '../../../../core/widgets/listview_builder.dart';
 import '../controller/past_appointment_controller.dart';
 import 'past_appointment_body.dart';
 
@@ -20,15 +19,22 @@ class PastAppointmentList extends ConsumerWidget
     return pastAsync.when(
       data: (appointments)
       {
-        final items = appointments;
-        return AppListviewBuilder(
-          itemBuilder: (context, index) => PastAppointmentWidget(model: items[index]),
-          separatorBuilder: (context, index) => Sizes.size16.verticalSpace,
-          itemCount: items.length,
+        return SliverList(
+          delegate: SliverChildBuilderDelegate(
+            (context, index) => Column(
+              children:
+              [
+                PastAppointmentWidget(model: appointments[index]),
+                if (index != appointments.length - 1)
+                  Sizes.size16.verticalSpace,
+              ],
+            ),
+            childCount: appointments.length,
+          ),
         );
       },
-      loading: () => const AppCircularIndicator(),
-      error: (e, _) => CustomErrorWidget(e: e),
+      loading: () => const SliverToBoxAdapter(child: AppCircularIndicator(),),
+      error: (e, _) => SliverToBoxAdapter(child: CustomErrorWidget(e: e),),
     );
   }
 }
