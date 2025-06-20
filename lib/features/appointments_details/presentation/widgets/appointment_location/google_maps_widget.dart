@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:medical_appointments/core/widgets/circular_indicator.dart';
-import 'package:medical_appointments/core/widgets/error_widget.dart';
 
 import '../../../../../config/theme/color_manager/colors.dart';
 import '../../../../../core/constants/app_borders.dart';
 import '../../../../../core/utils/url_launcher.dart';
+import '../../../../../core/widgets/circular_indicator.dart';
+import '../../../../../core/widgets/error_widget.dart';
 import 'google_maps_get_direction_widget.dart';
 import 'google_maps_pin_widget.dart';
 import '../../controller/appointments_location_controller.dart';

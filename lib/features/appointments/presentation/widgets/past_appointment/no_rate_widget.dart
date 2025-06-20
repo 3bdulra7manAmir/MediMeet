@@ -18,7 +18,8 @@ class NoRateWidget extends StatelessWidget
   Widget build(BuildContext context)
   {
     return Container(
-      width: 105.w,
+      alignment: Alignment.center,
+      width: 123.w,
       height: 36.h,
       decoration: BoxDecoration(
         borderRadius: AppRadiuses.circular.xxsmall,
@@ -29,9 +30,11 @@ class NoRateWidget extends StatelessWidget
         mainAxisAlignment: MainAxisAlignment.center,
         children:
         [
+          Sizes.size8.horizontalSpace,
           SvgPicture.asset(AppAssets.icons.emptyRate),
           Sizes.size4.horizontalSpace,
-          Text(AppStrings.rateVisit, style: AppStyles.textStyle14(fontWeight: AppFontWeights.mediumWeight, fontColor: AppColors.color.kBlack002),)
+          Text(AppStrings.rateVisit, style: AppStyles.textStyle14(fontWeight: AppFontWeights.mediumWeight, fontColor: AppColors.color.kBlack002),),
+          Sizes.size10.horizontalSpace,
         ],
       ),
     );

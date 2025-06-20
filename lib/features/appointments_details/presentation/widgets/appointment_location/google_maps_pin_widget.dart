@@ -16,7 +16,7 @@ class GoogleMapsPinWidget extends StatelessWidget
   Widget build(BuildContext context)
   {
     return Container(
-      padding: AppPadding.symmetric.large,
+      padding: AppPadding.symmetric.largeHV,
       width: 72.w,
       height: 72.h,
       decoration: BoxDecoration(

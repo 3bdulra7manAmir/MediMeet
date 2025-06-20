@@ -27,16 +27,15 @@ class UpcomingAppointmentWidget extends StatelessWidget
           Row(
             children:
             [
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children:
-                  [
-                    Text(model.upComingTitle ?? '', style: AppStyles.textStyle18(),),
-                    Text(model.upComingDateTime ?? '', style: AppStyles.textStyle12(),),
-                  ],
-                ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children:
+                [
+                  Text(model.upComingTitle ?? '', style: AppStyles.textStyle18(),),
+                  Text(model.upComingDateTime ?? '', style: AppStyles.textStyle12(),),
+                ],
               ),
+              const Spacer(),
               UpComingDateWidget(dateTime: model.upComingDateTime ?? ''),
             ],
           ),

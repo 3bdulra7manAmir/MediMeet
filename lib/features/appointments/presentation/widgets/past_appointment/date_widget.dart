@@ -17,7 +17,7 @@ class PastDateWidget extends StatelessWidget
   Widget build(BuildContext context)
   {
     return Container(
-      padding: AppPadding.symmetric.largeHV,
+      padding: AppPadding.symmetric.xlargeHV,
       decoration: BoxDecoration(
           color: AppColors.color.kBlue002,
           borderRadius: AppRadiuses.only.xSmall),

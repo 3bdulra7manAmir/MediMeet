@@ -18,7 +18,8 @@ class UpcomingAppointmentList extends ConsumerWidget
   {
     final upcomingAsync = ref.watch(upcomingAppointmentsProvider);
     return upcomingAsync.when(
-      data: (appointments) {
+      data: (appointments)
+      {
         final items = appointments;
         return AppListviewBuilder(
           scrollDirection: Axis.horizontal,

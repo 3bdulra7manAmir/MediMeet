@@ -5,7 +5,7 @@ import '../../../../config/theme/color_manager/colors.dart';
 import '../../../../core/constants/app_sizes.dart';
 import '../../data/model/past_appointments.dart';
 import 'past_appointment/date_widget.dart';
-import 'past_appointment/appointment_info_widget.dart';
+import 'past_appointment/info_widget.dart';
 
 class PastAppointmentWidget extends StatelessWidget
 {

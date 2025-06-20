@@ -26,12 +26,17 @@ class Symmetric
 {
   Symmetric._();
 
+  /// 12px horizontal
+  EdgeInsets get mediumH => EdgeInsets.symmetric(horizontal: 12.w);
+
   /// 16px horizontal
-  EdgeInsets get largeHorizontal => EdgeInsets.symmetric(horizontal: 16.w);
-  /// 16.5px horizontal
-  EdgeInsets get largeHV => EdgeInsets.symmetric(horizontal: (16.5).w, vertical: (44.5).h);
-  /// 20 H,Vpx horizontal
-  EdgeInsets get large => EdgeInsets.symmetric(horizontal: (20).w, vertical: (20).h);
+  EdgeInsets get largeH => EdgeInsets.symmetric(horizontal: 16.w);
+
+  /// 16.5px horizontal 44.5px vertical
+  EdgeInsets get xlargeHV => EdgeInsets.symmetric(horizontal: (16.5).w, vertical: (44.5).h);
+
+  /// 20px horizontal, 20px vertical
+  EdgeInsets get largeHV => EdgeInsets.symmetric(horizontal: (20).w, vertical: (20).h);
 
 }
 

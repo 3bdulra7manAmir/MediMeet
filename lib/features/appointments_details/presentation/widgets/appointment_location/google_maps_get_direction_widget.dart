@@ -19,7 +19,7 @@ class GetDirectionsWidget extends StatelessWidget
   {
     return Container(
       alignment: Alignment.center,
-      width: 128.w, height: 36.h,
+      height: 36.h,
       decoration: BoxDecoration(
         borderRadius: AppRadiuses.circular.xxsmall,
         border: Border.all(color: AppColors.color.kBlue003),
@@ -29,9 +29,11 @@ class GetDirectionsWidget extends StatelessWidget
         mainAxisAlignment: MainAxisAlignment.center,
         children:
         [
+          Sizes.size8.horizontalSpace,
           SvgPicture.asset(AppAssets.icons.locationBlue),
           Sizes.size4.horizontalSpace,
-          Text(AppStrings.getDirection, style: AppStyles.textStyle14(fontColor: AppColors.color.kBlack001, fontWeight: AppFontWeights.mediumWeight),)
+          Text(AppStrings.getDirection, style: AppStyles.textStyle14(fontColor: AppColors.color.kBlack001, fontWeight: AppFontWeights.mediumWeight),),
+          Sizes.size12.horizontalSpace,
         ],
       ),
     );

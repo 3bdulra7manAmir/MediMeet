@@ -23,7 +23,7 @@ class NavBarWidget extends StatelessWidget
   Widget build(BuildContext context)
   {
     return Container(
-      padding: AppPadding.symmetric.largeHorizontal,
+      padding: AppPadding.symmetric.largeH,
       alignment: Alignment.center,
       width: 430.w,
       height: 105.h,

@@ -13,7 +13,7 @@ class Symmetric
 {
   Symmetric._();
 
-  /// [_horizontal_16.w] Small-Medium Margin (16px)
+  /// [_horizontal_16.w]
   EdgeInsets get medium => EdgeInsets.symmetric(horizontal: 16.w); //
 }
 
@@ -21,6 +21,6 @@ class Directional
 {
   Directional._();
 
-  /// [_directional_12.w] Start Directional Margin (12px)
-  //EdgeInsetsDirectional get small => EdgeInsetsDirectional.only(start: 12.w);
+  /// [_directional_6.w] End Directional Margin (6px)
+  EdgeInsetsDirectional get smallEnd => EdgeInsetsDirectional.only(end: 6.w);
 }

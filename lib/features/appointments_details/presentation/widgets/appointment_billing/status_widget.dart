@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:medical_appointments/core/widgets/circular_indicator.dart';
-import 'package:medical_appointments/core/widgets/error_widget.dart';
 
 import '../../../../../config/theme/color_manager/colors.dart';
 import '../../../../../config/theme/font_manager/font_weights.dart';
 import '../../../../../core/constants/app_strings.dart';
 import '../../../../../core/constants/app_styles.dart';
+import '../../../../../core/widgets/circular_indicator.dart';
+import '../../../../../core/widgets/error_widget.dart';
+import '../../../data/model/appointment_bill.dart';
 import '../../controller/appointments_bill_controller.dart';
-import 'package:medical_appointments/features/appointments_details/data/model/appointment_bill.dart';
 import 'status_paid_widget.dart';
 import 'status_failed_widget.dart';
 import 'status_in_progress_widget.dart';

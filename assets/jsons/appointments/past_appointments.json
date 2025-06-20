@@ -4,7 +4,7 @@
     {
       "id": 101,
       "title": "Al Abeer Clinic",
-      "dateTime": "Monday, June 9, 2025 - 3:00 PM",
+      "dateTime": "Monday, June 9, 2025 - 3:30 PM",
       "category": "Pediatrics 3",
       "rate": "",
       "rateDescription": ""
@@ -12,7 +12,7 @@
     {
       "id": 102,
       "title": "Al Abeer Clinic 2",
-      "dateTime": "Monday, June 7, 2025 - 2:00 PM",
+      "dateTime": "Monday, June 7, 2025 - 2:10 PM",
       "category": "Pediatrics 1",
       "rate": "3.5",
       "rateDescription": "Very professional and friendly. 2"
@@ -44,7 +44,7 @@
     {
       "id": 106,
       "title": "Al Abeer Clinic 6",
-      "dateTime": "Monday, June 4, 2025 - 8:00 AM",
+      "dateTime": "Monday, June 4, 2025 - 8:40 AM",
       "category": "Pediatrics 8",
       "rate": "2",
       "rateDescription": ""

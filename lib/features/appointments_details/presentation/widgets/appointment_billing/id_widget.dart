@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:medical_appointments/core/widgets/circular_indicator.dart';
-import 'package:medical_appointments/core/widgets/error_widget.dart';
+
+import '../../../../../core/widgets/circular_indicator.dart';
+import '../../../../../core/widgets/error_widget.dart';
 import '../../controller/appointments_bill_controller.dart';
 import '../../../../../config/theme/color_manager/colors.dart';
 import '../../../../../config/theme/font_manager/font_weights.dart';

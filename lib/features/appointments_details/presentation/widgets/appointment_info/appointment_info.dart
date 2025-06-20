@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:medical_appointments/core/widgets/circular_indicator.dart';
-import 'package:medical_appointments/core/widgets/error_widget.dart';
-import '../../controller/appointments_info_controller.dart';
 
+import '../../../../../core/constants/app_margins.dart';
+import '../../../../../core/constants/app_paddings.dart';
+import '../../../../../core/widgets/circular_indicator.dart';
+import '../../../../../core/widgets/error_widget.dart';
+import '../../controller/appointments_info_controller.dart';
 import '../../../../../config/theme/color_manager/colors.dart';
 import '../../../../../config/theme/font_manager/font_weights.dart';
 import '../../../../../core/constants/app_borders.dart';
@@ -21,7 +23,6 @@ class AppointmentInfoWidget extends ConsumerWidget
   Widget build(BuildContext context, WidgetRef ref)
   {
     final detailsAsync = ref.watch(detailsProvider);
-
     return detailsAsync.when(
       data: (details)
       {
@@ -36,8 +37,10 @@ class AppointmentInfoWidget extends ConsumerWidget
               children:
               [
                 Text(info.detailsTitle ?? '', style: AppStyles.textStyle20(fontColor: AppColors.color.kBlack003)),
+                const Spacer(),
                 Container(
-                  width: 110.w,
+                  margin: AppMargins.directional.smallEnd,
+                  padding: AppPadding.symmetric.mediumH,
                   height: 29.h,
                   decoration: BoxDecoration(color: AppColors.color.kGrey003, borderRadius: AppRadiuses.circular.medium,),
                   child: Row(

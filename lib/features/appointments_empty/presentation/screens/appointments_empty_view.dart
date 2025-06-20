@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-//import 'package:flutter_svg/svg.dart';
+import 'package:medical_appointments/core/extensions/widget_padding.dart';
 
 import '../../../../core/constants/app_sizes.dart';
 import '../../../../core/constants/app_strings.dart';
@@ -32,13 +32,11 @@ class AppointmentsEmpty extends StatelessWidget
                 Sizes.size8.verticalSpace,
                 Text(AppStrings.startExploringClinics, style: AppStyles.textStyle16(),),
                 Sizes.size16.verticalSpace,
-                const ExploreClinicsButton(
-                  
-                ),
+                const ExploreClinicsButton(),
               ],
             ),
           ],
-        ),
+        ).paddingSymmetric(horizontal: 49.w, vertical: 49.h),
       ),
     );
   }
