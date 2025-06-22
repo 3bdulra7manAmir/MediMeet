@@ -15,9 +15,9 @@ abstract class AppStrings
   /// [ Explore Clinics ]
   static const String exploreClinics = "Explore Clinics";
 
-  //-----------------------//
-  // UpComing Appointments //
-  //-----------------------//
+  //----------------------------------//
+  //  UpComing && Past Appointments  //
+  //---------------------------------//
 
   /// [ Upcoming Appointments ]
   static const String upComingAppointments = "Upcoming Appointments";
@@ -27,6 +27,10 @@ abstract class AppStrings
   static const String viewDetails = "View Details";
   /// [ Rate Visit ]
   static const String rateVisit = "Rate Visit";
+  /// [ Comment: ]
+  static const String comment = "Comment:";
+  /// [ Rate Visit ]
+  static const String submit = "Submit";
 
   //-----------------------//
   // Appointments Details  //

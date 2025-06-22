@@ -1,6 +1,10 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import '../../../../../../config/router/app_router.dart';
 import '../../../../../../config/router/app_routes.dart';
@@ -11,7 +15,11 @@ import '../../../../../../core/constants/app_images.dart';
 import '../../../../../../core/constants/app_sizes.dart';
 import '../../../../../../core/constants/app_strings.dart';
 import '../../../../../../core/constants/app_styles.dart';
+import '../../../../../../core/utils/url_launcher.dart';
+import '../../../../../../core/widgets/circular_indicator.dart';
 import '../../../../../../core/widgets/custom_button.dart';
+import '../../../../../../core/widgets/error_widget.dart';
+import '../../../../../appointments_details/presentation/controller/appointments_location_controller.dart';
 
 class AppointmentOptionsWidget extends StatelessWidget
 {
@@ -34,11 +42,39 @@ class AppointmentOptionsWidget extends StatelessWidget
           ),
         ),
         Sizes.size12.horizontalSpace,
-        SvgPicture.asset(AppAssets.icons.locationGreen),
+        Consumer(
+          builder: (context, ref, child)
+          {
+            final locationAsync = ref.watch(locationProvider);
+            return locationAsync.when(
+              data: (locations)
+              {
+                final location = locations.isNotEmpty ? locations.first : null;
+                if (location == null) return const AppCircularIndicator();
+
+                return GestureDetector(
+                  onTap: ()
+                  {
+                    final lat = location.locationLat ?? 0.0;
+                    final lng = location.locationLng ?? 0.0;
+                    launchMapsUrl(LatLng(lat, lng));
+                  },
+                  child: SvgPicture.asset(AppAssets.icons.locationGreen),
+                );
+              },
+              loading: () => SvgPicture.asset(AppAssets.icons.locationGreen),
+              error: (e, _) => CustomErrorWidget(e: e),
+            );
+          },
+        ),
         Sizes.size12.horizontalSpace,
-        SvgPicture.asset(AppAssets.icons.editPensileGreen),
+        GestureDetector(
+          onTap: () => log("Edit"),
+          child: SvgPicture.asset(AppAssets.icons.editPensileGreen)),
         Sizes.size12.horizontalSpace,
-        SvgPicture.asset(AppAssets.icons.cancelGreen)
+        GestureDetector(
+          onTap: () => log("Delete"),
+          child: SvgPicture.asset(AppAssets.icons.cancelGreen))
       ],
     );
   }

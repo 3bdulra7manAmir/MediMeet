@@ -20,7 +20,7 @@ dependencies:
   url_launcher: ^6.3.1
 
   # Rating Star Bar
-  flutter_rating_stars: ^1.1.0
+  flutter_rating_bar: ^4.0.1
 
   # Riverpod (State Management)
   flutter_riverpod: ^2.6.1

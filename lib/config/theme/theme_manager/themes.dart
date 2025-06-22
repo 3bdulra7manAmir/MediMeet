@@ -17,6 +17,7 @@ class AppThemes
 
       appBarTheme: AppLightStyles.appBarTheme,
       dialogTheme: AppLightStyles.dialogTheme,
+      inputDecorationTheme: AppLightStyles.inputBorder,
     );
   }
 }

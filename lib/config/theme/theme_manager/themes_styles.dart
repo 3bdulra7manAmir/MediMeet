@@ -24,6 +24,12 @@ abstract class AppLightStyles
     ),
   );
 
+  static InputDecorationTheme get inputBorder => InputDecorationTheme(
+    border: OutlineInputBorder(
+      borderRadius: AppRadiuses.circular.xsmall,
+    ),
+  );
+
   static CardThemeData get cardTheme => CardThemeData(margin: AppMargins.symmetric.medium,);
   static AppBarTheme get appBarTheme => AppBarTheme(backgroundColor: AppColors.color.kWhite001, surfaceTintColor: AppColors.color.kTransparent);
   static DialogThemeData get dialogTheme => DialogThemeData(backgroundColor: AppColors.color.kWhite002,);

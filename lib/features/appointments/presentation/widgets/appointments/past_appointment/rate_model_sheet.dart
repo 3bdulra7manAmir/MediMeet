@@ -1,11 +1,17 @@
+import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../../config/router/app_router.dart';
+import '../../../../../../config/theme/color_manager/colors.dart';
 import '../../../../../../core/constants/app_borders.dart';
 import '../../../../../../core/constants/app_sizes.dart';
+import '../../../../../../core/constants/app_strings.dart';
+import '../../../../../../core/constants/app_styles.dart';
+import '../../../../../../core/widgets/custom_button.dart';
 import '../../../../../../core/widgets/modal_bottom_sheet.dart';
 import '../../../../../../core/widgets/textform_field.dart';
-import 'rate_stars.dart';
+import 'rate_stars_bar.dart';
 
 void showRateBottomSheet(BuildContext context)
 {
@@ -16,21 +22,31 @@ void showRateBottomSheet(BuildContext context)
     shape: RoundedRectangleBorder(borderRadius: AppRadiuses.only.xSmall2),
     builder: (BuildContext context)
     {
+      final TextEditingController commentController = TextEditingController();
       return  SizedBox(
-        height: 150.h,
-        width: 300.w,
+        height: 250.h, width: double.infinity,
         child: Column(
-          mainAxisSize: MainAxisSize.min,
           children:
           [
             Sizes.size16.verticalSpace,
-            SizedBox(
-              height: 30.h,
-              width: 170.w,
-              child: const CustomTextFormField()
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children:
+              [
+                Text(AppStrings.comment, style: AppStyles.medium(fontColor: AppColors.color.kBlack001),),
+                Sizes.size10.horizontalSpace,
+                SizedBox(height: 50.h, width: 260.w, child: CustomTextFormField(controller: commentController,)
+                ),
+              ],
             ),
             Sizes.size24.verticalSpace,
             const RateStars(),
+            Sizes.size24.verticalSpace,
+            CustomButton(buttonOnPressed: ()
+            {
+              log('Submitted comment: ${commentController.text.trim()}');
+              AppRouter.router.pop(); 
+            } , buttonText: AppStrings.submit, buttonWidth: 300.w,),
             Sizes.size16.verticalSpace,
           ],
         ),
