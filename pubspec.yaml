@@ -88,10 +88,14 @@ flutter:
   # Asset Paths
   assets:
     - assets/fonts/Inter_Tight/
+
     - assets/icons/appointments_empty/
     - assets/icons/appointments_details/
     - assets/icons/appointments/
+    - assets/icons/rating_filter/
+
     - assets/imgs/Logo/
+
     - assets/jsons/
     - assets/jsons/appointments/
     - assets/jsons/appointments_details/

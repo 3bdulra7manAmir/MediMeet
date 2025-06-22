@@ -17,7 +17,7 @@ import '../../../../../../core/constants/app_strings.dart';
 import '../../../../../../core/constants/app_styles.dart';
 import '../../../../../../core/utils/url_launcher.dart';
 import '../../../../../../core/widgets/circular_indicator.dart';
-import '../../../../../../core/widgets/custom_button.dart';
+import '../../../../../../core/widgets/buttons/custom_button.dart';
 import '../../../../../../core/widgets/error_widget.dart';
 import '../../../../../appointments_details/presentation/controller/appointments_location_controller.dart';
 

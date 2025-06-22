@@ -37,6 +37,9 @@ class _Icons
   final String emptyRate = "assets/icons/appointments/empty_rate.svg";
   final String filledRate = "assets/icons/appointments/filled_rate.svg";
   final String locationGreen = "assets/icons/appointments/location_green.svg";
+  
+  /// Rating Filter
+  final String cancelgrey = "assets/icons/rating_filter/cancel_grey.svg";
 
 }
 

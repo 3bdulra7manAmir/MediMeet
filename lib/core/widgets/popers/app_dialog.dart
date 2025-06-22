@@ -8,7 +8,6 @@ void showAppDialog({
   MainAxisAlignment? actionsAlignment,
   Widget? content,
   List<Widget>? actions,
-
   })
   {
     showDialog(

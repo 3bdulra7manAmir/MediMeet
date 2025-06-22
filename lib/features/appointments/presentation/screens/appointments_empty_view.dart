@@ -5,7 +5,7 @@ import 'package:medical_appointments/core/extensions/widget_margin.dart';
 import '../../../../core/constants/app_sizes.dart';
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/constants/app_styles.dart';
-import '../../../../core/widgets/appbar.dart';
+import '../../../../core/widgets/appbars/app_appbar.dart';
 import '../widgets/appointments_empty/calendar_image_widget.dart';
 import '../widgets/appointments_empty/clinics_button_widget.dart';
 

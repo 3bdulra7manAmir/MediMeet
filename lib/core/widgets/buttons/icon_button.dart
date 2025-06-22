@@ -1,15 +1,15 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../config/theme/color_manager/colors.dart';
-import '../../config/theme/font_manager/font_weights.dart';
-import '../constants/app_borders.dart';
-import '../constants/app_sizes.dart';
-import '../constants/app_styles.dart';
+import '../../../config/theme/color_manager/colors.dart';
+import '../../../config/theme/font_manager/font_weights.dart';
+import '../../constants/app_borders.dart';
+import '../../constants/app_sizes.dart';
+import '../../constants/app_styles.dart';
 
-class CustomButton extends ConsumerWidget
+class CustomIconButton extends ConsumerWidget
 {
-  const CustomButton({
+  const CustomIconButton({
     super.key,
     this.buttonWidth,
     this.buttonHeight,
@@ -21,6 +21,7 @@ class CustomButton extends ConsumerWidget
     required this.buttonOnPressed,
     required this.buttonText,
     this.buttonTextStyle,
+    required this.buttonIcon,
   });
 
   final double? buttonWidth;
@@ -33,6 +34,9 @@ class CustomButton extends ConsumerWidget
   final void Function() buttonOnPressed;
   final String buttonText;
   final TextStyle? buttonTextStyle;
+  final Widget? buttonIcon;
+
+
 
   @override
   Widget build(BuildContext context, WidgetRef ref)
@@ -40,7 +44,7 @@ class CustomButton extends ConsumerWidget
     return SizedBox(
       width: buttonWidth,
       height: buttonHeight ?? 52.h,
-      child: ElevatedButton(
+      child: ElevatedButton.icon(
         style: ButtonStyle(
           padding: WidgetStateProperty.all<EdgeInsetsGeometry?>(buttonPadding),
           shape: WidgetStateProperty.all<RoundedRectangleBorder>(RoundedRectangleBorder(
@@ -50,7 +54,8 @@ class CustomButton extends ConsumerWidget
           backgroundColor: WidgetStateProperty.all<Color>(buttonBackgroundColor ?? AppColors.color.kBlue001,),
         ),
         onPressed: buttonOnPressed,
-        child: Text(buttonText, style: buttonTextStyle ?? AppStyles.large(fontColor: AppColors.color.kWhite002, fontWeight: AppFontWeights.semiBoldWeight),),
+        label: Text(buttonText, style: buttonTextStyle ?? AppStyles.large(fontColor: AppColors.color.kWhite002, fontWeight: AppFontWeights.semiBoldWeight),),
+        icon: buttonIcon,
       ),
     );
   }

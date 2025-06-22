@@ -10,20 +10,22 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget
     this.backgroundColor,
     this.isDefaultBack,
     this.barLeading,
+    this.barLeadingWidth,
     this.barTitle,
     this.barActions,
     this.barActionsPadding,
-    this.barLeadingWidth,
+    this.isPaddingTop,
     this.toolbarHeight, 
   });
 
   final Color? backgroundColor;
   final bool? isDefaultBack;
   final Widget? barLeading;
+  final double? barLeadingWidth;
   final Widget? barTitle;
   final List<Widget>? barActions;
   final EdgeInsetsGeometry? barActionsPadding;
-  final double? barLeadingWidth;
+  final bool? isPaddingTop;
   final double? toolbarHeight;
 
 
@@ -38,7 +40,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget
       title: barTitle,
       actions: barActions,
       actionsPadding: barActionsPadding,
-    ).paddingDirectionalOnly(top: 24.h);
+    ).paddingDirectionalOnly(top: (isPaddingTop ?? false) ? 24.h : 0);
   }
   @override
   Size get preferredSize => Size.fromHeight(kToolbarHeight + (toolbarHeight ?? 0));

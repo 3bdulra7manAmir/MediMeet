@@ -1,21 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class RateStars extends StatefulWidget
 {
   final double initialValue;
+  final double? maxRating;
+  final int? starCount;
+  final double? itemSize;
+  final bool? allowHalfRating;
+  final EdgeInsetsGeometry? itemPadding;
+  final Color? unratedColor;
+  final bool? glow;
+  final bool? updateOnDrag;
   final ValueChanged<double>? onChanged;
-  final double itemSize;
-  final int starCount;
-  final bool allowHalfRating;
 
   const RateStars({
     super.key,
     this.initialValue = 1.5,
+    this.maxRating,
+    this.starCount,
+    this.itemSize,
+    this.allowHalfRating,
+    this.itemPadding,
+    this.unratedColor,
+    this.glow,
+    this.updateOnDrag,
     this.onChanged,
-    this.itemSize = 30,
-    this.starCount = 5,
-    this.allowHalfRating = true,
   });
 
   @override
@@ -38,19 +49,14 @@ class _RateStarsState extends State<RateStars>
   {
     return RatingBar.builder(
       initialRating: _value,
-      maxRating: 5,
-      //minRating: 0,
-      //direction: Axis.horizontal,
-      
-      itemCount: widget.starCount,
-      itemSize: widget.itemSize,
-      unratedColor: Colors.grey[300],
-      itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
-
-      glow: false,
-      allowHalfRating: widget.allowHalfRating,
-      updateOnDrag: true,
-
+      maxRating: widget.maxRating ?? 5,
+      itemCount: widget.starCount ?? 5,
+      itemSize: widget.itemSize ?? 20,
+      allowHalfRating: widget.allowHalfRating ?? true,
+      itemPadding: widget.itemPadding ?? EdgeInsets.symmetric(horizontal: 4.0.w),
+      unratedColor: widget.unratedColor ?? Colors.grey[300],
+      glow: widget.glow ??false,
+      updateOnDrag: widget.updateOnDrag ?? true,
       itemBuilder: (context, _) => const Icon(Icons.star, color: Colors.amber,),
       onRatingUpdate: (rating)
       {

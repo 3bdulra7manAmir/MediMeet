@@ -13,11 +13,14 @@ class AppThemes
       brightness: Brightness.light,
       scaffoldBackgroundColor: AppColors.color.kWhite001,
       cardTheme: AppLightStyles.cardTheme,
+
       elevatedButtonTheme: AppLightStyles.elevatedButtonTheme,
+      inputDecorationTheme: AppLightStyles.inputBorder,
 
       appBarTheme: AppLightStyles.appBarTheme,
       dialogTheme: AppLightStyles.dialogTheme,
-      inputDecorationTheme: AppLightStyles.inputBorder,
+      bottomSheetTheme: AppLightStyles.bottomSheetTheme,
+      
     );
   }
 }

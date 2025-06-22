@@ -15,6 +15,9 @@ class Symmetric
 
   /// [_horizontal_16.w]
   EdgeInsets get medium => EdgeInsets.symmetric(horizontal: 16.w); //
+
+  /// [_horizontal_24.w]
+  EdgeInsets get xMedium => EdgeInsets.symmetric(horizontal: 24.w); //
 }
 
 class Directional

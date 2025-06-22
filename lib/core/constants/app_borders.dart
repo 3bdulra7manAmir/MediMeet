@@ -25,6 +25,12 @@ class BorderOnly
     topLeft: Radius.circular(12.r),
     topRight: Radius.circular(12.r),
   );
+
+  ///[topLeft: 16.r ,, topRight: 16.r]
+  BorderRadiusGeometry get meduim => BorderRadius.only(
+    topLeft: Radius.circular(16.r),
+    topRight: Radius.circular(16.r),
+  );
 }
 
 

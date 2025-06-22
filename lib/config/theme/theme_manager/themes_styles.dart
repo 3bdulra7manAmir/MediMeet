@@ -30,8 +30,9 @@ abstract class AppLightStyles
     ),
   );
 
-  static CardThemeData get cardTheme => CardThemeData(margin: AppMargins.symmetric.medium,);
+  static CardThemeData get cardTheme => CardThemeData(margin: AppMargins.symmetric.medium, color: AppColors.color.kWhite002);
   static AppBarTheme get appBarTheme => AppBarTheme(backgroundColor: AppColors.color.kWhite001, surfaceTintColor: AppColors.color.kTransparent);
   static DialogThemeData get dialogTheme => DialogThemeData(backgroundColor: AppColors.color.kWhite002,);
+  static BottomSheetThemeData get bottomSheetTheme => BottomSheetThemeData(backgroundColor: AppColors.color.kWhite002);
 
 }

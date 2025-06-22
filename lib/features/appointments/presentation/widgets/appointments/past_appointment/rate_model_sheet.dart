@@ -8,8 +8,8 @@ import '../../../../../../core/constants/app_borders.dart';
 import '../../../../../../core/constants/app_sizes.dart';
 import '../../../../../../core/constants/app_strings.dart';
 import '../../../../../../core/constants/app_styles.dart';
-import '../../../../../../core/widgets/custom_button.dart';
-import '../../../../../../core/widgets/modal_bottom_sheet.dart';
+import '../../../../../../core/widgets/buttons/custom_button.dart';
+import '../../../../../../core/widgets/popers/modal_bottom_sheet.dart';
 import '../../../../../../core/widgets/textform_field.dart';
 import 'rate_stars_bar.dart';
 
@@ -17,7 +17,6 @@ void showRateBottomSheet(BuildContext context)
 {
   showAppBottomSheet(
     context: context,
-    backgroundColor: Theme.of(context).scaffoldBackgroundColor,
     isDismissible: true,
     shape: RoundedRectangleBorder(borderRadius: AppRadiuses.only.xSmall2),
     builder: (BuildContext context)
