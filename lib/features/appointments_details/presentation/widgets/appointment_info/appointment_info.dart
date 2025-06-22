@@ -36,7 +36,7 @@ class AppointmentInfoWidget extends ConsumerWidget
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children:
               [
-                Text(info.detailsTitle ?? '', style: AppStyles.textStyle20(fontColor: AppColors.color.kBlack003)),
+                Text(info.detailsTitle ?? '', style: AppStyles.xXLarge(fontColor: AppColors.color.kBlack003)),
                 const Spacer(),
                 Container(
                   margin: AppMargins.directional.smallEnd,
@@ -49,14 +49,14 @@ class AppointmentInfoWidget extends ConsumerWidget
                     [
                       Image.asset(AppAssets.icons.hartPNG),
                       Sizes.size4.horizontalSpace,
-                      Text(info.detailsCategory ?? '', style: AppStyles.textStyle14(fontWeight: AppFontWeights.mediumWeight, fontColor: AppColors.color.kBlack001)),
+                      Text(info.detailsCategory ?? '', style: AppStyles.medium(fontWeight: AppFontWeights.mediumWeight, fontColor: AppColors.color.kBlack001)),
                     ],
                   ),
                 ),
               ],
             ),
             Sizes.size8.verticalSpace,
-            Text(info.detailsDateTime ?? '', style: AppStyles.textStyle16()),
+            Text(info.detailsDateTime ?? '', style: AppStyles.large()),
           ],
         );
       },

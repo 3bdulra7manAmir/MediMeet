@@ -38,7 +38,7 @@ class NavBarWidget extends StatelessWidget
           Expanded(
             child: CustomIconButton(
               buttonText: AppStrings.cancel,
-              buttonTextStyle: AppStyles.textStyle16(fontColor: AppColors.color.kRed001),
+              buttonTextStyle: AppStyles.large(fontColor: AppColors.color.kRed001),
               buttonIcon: SvgPicture.asset(AppAssets.icons.cancelRed),
               buttonOnPressed: () => showCancelDialog(context),
               buttonBackgroundColor: AppColors.color.kWhite002,

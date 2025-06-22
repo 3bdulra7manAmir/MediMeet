@@ -21,7 +21,7 @@ class AppointmentBillingWidget extends StatelessWidget
       crossAxisAlignment: CrossAxisAlignment.start,
       children:
       [
-        Text(AppStrings.billDetails, style: AppStyles.textStyle18(fontColor: AppColors.color.kBlack001),),
+        Text(AppStrings.billDetails, style: AppStyles.xLarge(fontColor: AppColors.color.kBlack001),),
         Sizes.size12.verticalSpace,
         const IDWidget(),
         Sizes.size8.verticalSpace,

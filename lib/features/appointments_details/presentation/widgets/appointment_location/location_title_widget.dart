@@ -27,9 +27,9 @@ class LocationTitleWidget extends ConsumerWidget
           crossAxisAlignment: CrossAxisAlignment.start,
           children:
           [
-            Text(AppStrings.location, style: AppStyles.textStyle18(fontColor: AppColors.color.kBlack001)),
+            Text(AppStrings.location, style: AppStyles.xLarge(fontColor: AppColors.color.kBlack001)),
             Sizes.size8.verticalSpace,
-            Text(location?.locationTitle ?? '', style: AppStyles.textStyle16()),
+            Text(location?.locationTitle ?? '', style: AppStyles.large()),
           ],
         );
       },

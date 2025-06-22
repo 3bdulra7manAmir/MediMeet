@@ -6,8 +6,9 @@ import '../../../../core/constants/app_sizes.dart';
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/constants/app_styles.dart';
 import '../../../../core/widgets/appbar.dart';
-import '../widgets/past_appointment_list.dart';
-import '../widgets/upcoming_appointment_list.dart';
+import '../widgets/appointments/past_appointment_list.dart';
+import '../widgets/appointments/upcoming_appointment_body.dart';
+//import '../widgets/appointments/upcoming_appointment_list.dart';
 
 class Appointments extends StatelessWidget
 {
@@ -17,7 +18,7 @@ class Appointments extends StatelessWidget
   Widget build(BuildContext context)
   {
     return Scaffold(
-      appBar: CustomAppBar(barTitle: Text(AppStrings.myAppointments, style: AppStyles.textStyle24(),), isDefaultBack: true,),
+      appBar: CustomAppBar(barTitle: Text(AppStrings.myAppointments, style: AppStyles.xXXLarge(),), isDefaultBack: true,),
       body: CustomScrollView(
         slivers:
         [
@@ -27,12 +28,14 @@ class Appointments extends StatelessWidget
               children:
               [
                 Sizes.size24.verticalSpace,
-                Text(AppStrings.upComingAppointments, style: AppStyles.textStyle20(),).paddingDirectionalOnly(start: 16.w),
+                Text(AppStrings.upComingAppointments, style: AppStyles.xXLarge(),).paddingDirectionalOnly(start: 16.w),
                 Sizes.size16.verticalSpace,
+                const UpcomingAppointmentWidget(),
               ],
             ),
           ),
-          const SliverToBoxAdapter(child: UpcomingAppointmentList(),),
+          
+          //const SliverToBoxAdapter(child: UpcomingAppointmentList(),),
 
           SliverToBoxAdapter(
             child: Column(
@@ -40,7 +43,7 @@ class Appointments extends StatelessWidget
               children:
               [
                 Sizes.size24.verticalSpace,
-                Text(AppStrings.pastAppointments, style: AppStyles.textStyle20(),).paddingDirectionalOnly(start: 16.w),
+                Text(AppStrings.pastAppointments, style: AppStyles.xXLarge(),).paddingDirectionalOnly(start: 16.w),
                 Sizes.size16.verticalSpace,
               ],
             ),

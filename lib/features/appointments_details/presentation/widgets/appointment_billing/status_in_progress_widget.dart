@@ -28,7 +28,7 @@ class StatusInPrograssWidget extends StatelessWidget
         [
           Image.asset(AppAssets.icons.inProgressPNG, color: AppColors.color.kYellow002,),
           Sizes.size4.horizontalSpace,
-          Text("In Progress", style: AppStyles.textStyle14(fontWeight: AppFontWeights.mediumWeight, fontColor: AppColors.color.kYellow002),)
+          Text("In Progress", style: AppStyles.medium(fontWeight: AppFontWeights.mediumWeight, fontColor: AppColors.color.kYellow002),)
         ],
       ),
     );

@@ -54,7 +54,7 @@ class CustomIconButton extends ConsumerWidget
           backgroundColor: WidgetStateProperty.all<Color>(buttonBackgroundColor ?? AppColors.color.kBlue001,),
         ),
         onPressed: buttonOnPressed,
-        label: Text(buttonText, style: buttonTextStyle ?? AppStyles.textStyle16(fontColor: AppColors.color.kWhite002, fontWeight: AppFontWeights.semiBoldWeight),),
+        label: Text(buttonText, style: buttonTextStyle ?? AppStyles.large(fontColor: AppColors.color.kWhite002, fontWeight: AppFontWeights.semiBoldWeight),),
         icon: buttonIcon,
       ),
     );

@@ -28,14 +28,14 @@ class BillAmountWidget extends ConsumerWidget
         return Row(
           children:
           [
-            Text(AppStrings.billAmount, style: AppStyles.textStyle14(fontColor: AppColors.color.kGrey002, fontWeight: AppFontWeights.regularWeight)),
+            Text(AppStrings.billAmount, style: AppStyles.medium(fontColor: AppColors.color.kGrey002, fontWeight: AppFontWeights.regularWeight)),
             const Spacer(),
             Row(
               children:
               [
                 Image.asset(AppAssets.icons.saudiRiyalPNG),
                 Sizes.size4.horizontalSpace,
-                Text(bill?.billPrice ?? '', style: AppStyles.textStyle16(fontColor: AppColors.color.kBlack001, fontWeight: AppFontWeights.mediumWeight)),
+                Text(bill?.billPrice ?? '', style: AppStyles.large(fontColor: AppColors.color.kBlack001, fontWeight: AppFontWeights.mediumWeight)),
               ],
             )
           ],

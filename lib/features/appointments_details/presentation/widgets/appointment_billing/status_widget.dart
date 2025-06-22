@@ -32,7 +32,7 @@ class StatusWidget extends ConsumerWidget
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children:
           [
-            Text(AppStrings.status, style: AppStyles.textStyle14(fontColor: AppColors.color.kGrey002, fontWeight: AppFontWeights.regularWeight,),),
+            Text(AppStrings.status, style: AppStyles.medium(fontColor: AppColors.color.kGrey002, fontWeight: AppFontWeights.regularWeight,),),
             statusWidget,
           ],
         );

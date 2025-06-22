@@ -34,7 +34,7 @@ class AppointmentsDetails extends StatelessWidget
               onTap: () => AppRouter.router.pop(),
               child: SvgPicture.asset(AppAssets.icons.arrowLeft),),
             Sizes.size8.verticalSpace,
-            Text(AppStrings.appointmentsDetails, style: AppStyles.textStyle24(),).paddingDirectionalOnly(),
+            Text(AppStrings.appointmentsDetails, style: AppStyles.xXXLarge(),).paddingDirectionalOnly(),
           ],
         ), isDefaultBack: false, toolbarHeight: 63.h,),
       body: SingleChildScrollView(

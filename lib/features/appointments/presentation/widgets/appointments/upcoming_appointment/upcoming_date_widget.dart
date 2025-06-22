@@ -3,10 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:medical_appointments/core/extensions/string.dart';
 import 'package:medical_appointments/core/extensions/widget_padding.dart';
 
-import '../../../../../config/theme/color_manager/colors.dart';
-import '../../../../../core/constants/app_borders.dart';
-import '../../../../../core/constants/app_styles.dart';
-import '../../../../../core/widgets/divider.dart';
+import '../../../../../../config/theme/color_manager/colors.dart';
+import '../../../../../../core/constants/app_borders.dart';
+import '../../../../../../core/constants/app_styles.dart';
+import '../../../../../../core/widgets/divider.dart';
 
 class UpComingDateWidget extends StatelessWidget
 {
@@ -26,9 +26,9 @@ class UpComingDateWidget extends StatelessWidget
       child: Column(
         children:
         [
-          Text(dateTime.toShortMonth, style: AppStyles.textStyle12(fontColor: AppColors.color.kWhite004), textAlign: TextAlign.center).paddingDirectionalOnly(top: 2.h),
+          Text(dateTime.toShortMonth, style: AppStyles.small(fontColor: AppColors.color.kWhite004), textAlign: TextAlign.center).paddingDirectionalOnly(top: 2.h),
           const AppDivider(),
-          Text(dateTime.toDay, style: AppStyles.textStyle20(fontColor: AppColors.color.kWhite004), textAlign: TextAlign.center,).paddingDirectionalOnly(bottom: 3.h),
+          Text(dateTime.toDay, style: AppStyles.xXLarge(fontColor: AppColors.color.kWhite004), textAlign: TextAlign.center,).paddingDirectionalOnly(bottom: 3.h),
         ],
       ),
     );

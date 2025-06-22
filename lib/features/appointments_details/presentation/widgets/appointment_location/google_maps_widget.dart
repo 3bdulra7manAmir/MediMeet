@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../../config/theme/color_manager/colors.dart';
+
 import '../../../../../core/constants/app_borders.dart';
 import '../../../../../core/utils/url_launcher.dart';
 import '../../../../../core/widgets/circular_indicator.dart';
@@ -41,7 +41,7 @@ class GoogleMapsWidget extends ConsumerWidget
               children:
               [
                 Container(height: 160.h,
-                  decoration: BoxDecoration(borderRadius: AppRadiuses.circular.small, border: Border.all(color: AppColors.color.kGrey002),),
+                  decoration: BoxDecoration(borderRadius: AppRadiuses.circular.small,),
                   child: ClipRRect(
                     borderRadius: AppRadiuses.circular.small,
                     child: Stack(

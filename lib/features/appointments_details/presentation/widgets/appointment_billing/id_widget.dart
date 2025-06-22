@@ -26,8 +26,8 @@ class IDWidget extends ConsumerWidget
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children:
           [
-            Text(AppStrings.appointmentID, style: AppStyles.textStyle14(fontColor: AppColors.color.kGrey002, fontWeight: AppFontWeights.regularWeight)),
-            Text(bill?.billID ?? '', style: AppStyles.textStyle16(fontColor: AppColors.color.kBlack001, fontWeight: AppFontWeights.mediumWeight)),
+            Text(AppStrings.appointmentID, style: AppStyles.medium(fontColor: AppColors.color.kGrey002, fontWeight: AppFontWeights.regularWeight)),
+            Text(bill?.billID ?? '', style: AppStyles.large(fontColor: AppColors.color.kBlack001, fontWeight: AppFontWeights.mediumWeight)),
           ],
         );
       },

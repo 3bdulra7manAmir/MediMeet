@@ -6,8 +6,8 @@ import '../../../../core/constants/app_sizes.dart';
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/constants/app_styles.dart';
 import '../../../../core/widgets/appbar.dart';
-import '../widgets/calendar_image_widget.dart';
-import '../widgets/clinics_button_widget.dart';
+import '../widgets/appointments_empty/calendar_image_widget.dart';
+import '../widgets/appointments_empty/clinics_button_widget.dart';
 
 class AppointmentsEmpty extends StatelessWidget
 {
@@ -17,7 +17,7 @@ class AppointmentsEmpty extends StatelessWidget
   Widget build(BuildContext context)
   {
     return Scaffold(
-      appBar: CustomAppBar(barTitle: Text(AppStrings.myAppointments, style: AppStyles.textStyle24(),),),
+      appBar: CustomAppBar(barTitle: Text(AppStrings.myAppointments, style: AppStyles.xXXLarge(),),),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -28,9 +28,9 @@ class AppointmentsEmpty extends StatelessWidget
               [
                 const CalendarImage(),
                 Sizes.size8.verticalSpace,
-                Text(AppStrings.uDontHaveAnyAppointments, style: AppStyles.textStyle20(), textAlign: TextAlign.center, maxLines: 2,),
+                Text(AppStrings.uDontHaveAnyAppointments, style: AppStyles.xXLarge(), textAlign: TextAlign.center, maxLines: 2,),
                 Sizes.size8.verticalSpace,
-                Text(AppStrings.startExploringClinics, style: AppStyles.textStyle16(), textAlign: TextAlign.center, maxLines: 2,),
+                Text(AppStrings.startExploringClinics, style: AppStyles.large(), textAlign: TextAlign.center, maxLines: 2,),
                 Sizes.size16.verticalSpace,
                 const ExploreClinicsButton(),
               ],

@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../../../config/theme/color_manager/colors.dart';
-import '../../../../../config/theme/font_manager/font_weights.dart';
-import '../../../../../core/constants/app_borders.dart';
-import '../../../../../core/constants/app_images.dart';
-import '../../../../../core/constants/app_sizes.dart';
-import '../../../../../core/constants/app_strings.dart';
-import '../../../../../core/constants/app_styles.dart';
+import '../../../../../../config/theme/color_manager/colors.dart';
+import '../../../../../../config/theme/font_manager/font_weights.dart';
+import '../../../../../../core/constants/app_borders.dart';
+import '../../../../../../core/constants/app_images.dart';
+import '../../../../../../core/constants/app_sizes.dart';
+import '../../../../../../core/constants/app_strings.dart';
+import '../../../../../../core/constants/app_styles.dart';
 
 class NoRateWidget extends StatelessWidget
 {
@@ -33,7 +33,7 @@ class NoRateWidget extends StatelessWidget
           Sizes.size8.horizontalSpace,
           SvgPicture.asset(AppAssets.icons.emptyRate),
           Sizes.size4.horizontalSpace,
-          Text(AppStrings.rateVisit, style: AppStyles.textStyle14(fontWeight: AppFontWeights.mediumWeight, fontColor: AppColors.color.kBlack002),),
+          Text(AppStrings.rateVisit, style: AppStyles.medium(fontWeight: AppFontWeights.mediumWeight, fontColor: AppColors.color.kBlack002),),
           Sizes.size10.horizontalSpace,
         ],
       ),

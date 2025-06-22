@@ -32,7 +32,7 @@ class GetDirectionsWidget extends StatelessWidget
           Sizes.size8.horizontalSpace,
           SvgPicture.asset(AppAssets.icons.locationBlue),
           Sizes.size4.horizontalSpace,
-          Text(AppStrings.getDirection, style: AppStyles.textStyle14(fontColor: AppColors.color.kBlack001, fontWeight: AppFontWeights.mediumWeight),),
+          Text(AppStrings.getDirection, style: AppStyles.medium(fontColor: AppColors.color.kBlack001, fontWeight: AppFontWeights.mediumWeight),),
           Sizes.size12.horizontalSpace,
         ],
       ),

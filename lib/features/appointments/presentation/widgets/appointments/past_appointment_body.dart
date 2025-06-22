@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../config/theme/color_manager/colors.dart';
-import '../../../../core/constants/app_sizes.dart';
-import '../../data/model/past_appointments.dart';
+import '../../../../../config/theme/color_manager/colors.dart';
+import '../../../../../core/constants/app_sizes.dart';
+import '../../../data/model/past_appointments.dart';
 import 'past_appointment/date_widget.dart';
 import 'past_appointment/info_widget.dart';
 

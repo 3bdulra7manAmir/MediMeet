@@ -10,8 +10,17 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # App Name Changer
+  rename_app: ^1.6.3
+
+  # App Icon Changer
+  flutter_launcher_icons: ^0.14.4
+
   # URL Launcher
   url_launcher: ^6.3.1
+
+  # Rating Star Bar
+  flutter_rating_stars: ^1.1.0
 
   # Riverpod (State Management)
   flutter_riverpod: ^2.6.1
@@ -82,7 +91,7 @@ flutter:
     - assets/icons/appointments_empty/
     - assets/icons/appointments_details/
     - assets/icons/appointments/
-    - assets/imgs/
+    - assets/imgs/Logo/
     - assets/jsons/
     - assets/jsons/appointments/
     - assets/jsons/appointments_details/

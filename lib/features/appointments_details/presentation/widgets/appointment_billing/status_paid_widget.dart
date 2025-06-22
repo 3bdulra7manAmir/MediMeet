@@ -29,7 +29,7 @@ class StatusPaidWidget extends StatelessWidget
         [
           SvgPicture.asset(AppAssets.icons.correctGreen),
           Sizes.size4.horizontalSpace,
-          Text("Paid", style: AppStyles.textStyle14(fontWeight: AppFontWeights.mediumWeight, fontColor: AppColors.color.kGreen005),)
+          Text("Paid", style: AppStyles.medium(fontWeight: AppFontWeights.mediumWeight, fontColor: AppColors.color.kGreen005),)
         ],
       ),
     );

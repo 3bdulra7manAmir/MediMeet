@@ -29,7 +29,7 @@ class StatusFailedWidget extends StatelessWidget
         [
           SvgPicture.asset(AppAssets.icons.cancelRed),
           Sizes.size4.horizontalSpace,
-          Text("Failed", style: AppStyles.textStyle14(fontWeight: AppFontWeights.mediumWeight, fontColor: AppColors.color.kRed001),)
+          Text("Failed", style: AppStyles.medium(fontWeight: AppFontWeights.mediumWeight, fontColor: AppColors.color.kRed001),)
         ],
       ),
     );
