@@ -11,11 +11,12 @@ import '../../../../core/constants/app_strings.dart';
 import '../../../../core/constants/app_styles.dart';
 import '../../../../core/widgets/custom_button.dart';
 
-void showCancelDialog(BuildContext context)
+void showAppDialog(BuildContext context)
 {
   showDialog(
     context: context, builder: (BuildContext context) => 
     AlertDialog(
+      alignment: Alignment.bottomCenter,
       actionsAlignment: MainAxisAlignment.center,
       content:  Column(
         mainAxisSize: MainAxisSize.min,
@@ -26,13 +27,13 @@ void showCancelDialog(BuildContext context)
             decoration: BoxDecoration(color: AppColors.color.kGrey004, borderRadius: AppRadiuses.circular.xlarge),
           ),
           Sizes.size24.verticalSpace,
-          Image.asset(AppAssets.icons.cancelBannerPNG),
+          Image.asset(AppAssets.icons.cancelBannerPNG,),
           Sizes.size24.verticalSpace,
           Text(AppStrings.cancelAppointment, style: AppStyles.xXXLarge(), textAlign: TextAlign.center,),
           Sizes.size8.verticalSpace,
           Text(AppStrings.areYouSure, style: AppStyles.medium(
             fontWeight: AppFontWeights.regularWeight, fontColor: AppColors.color.kGrey001),
-            maxLines: 2, textAlign: TextAlign.center,
+            maxLines: 3, textAlign: TextAlign.center,
           ),
         ],
       ),
