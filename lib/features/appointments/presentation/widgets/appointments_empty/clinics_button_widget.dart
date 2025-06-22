@@ -9,7 +9,11 @@ import '../../../../../config/router/app_routes.dart';
 import '../../../../../core/constants/app_strings.dart';
 import '../../../../../core/widgets/buttons/custom_button.dart';
 import 'filters/clinic_filter/clinic_type_filter_body.dart';
+import 'filters/final_filter/final_filter_body.dart';
+import 'filters/insurance_filter/insurance_filter_body.dart';
+import 'filters/location_filter/location_filter_body.dart';
 import 'filters/rate_filter/rate_filter_body.dart';
+import 'filters/specialty_filter/specialty_filter_body.dart';
 
 class ExploreClinicsButton extends StatelessWidget
 {
@@ -25,7 +29,11 @@ class ExploreClinicsButton extends StatelessWidget
           log("AppRouter...");
           //AppRouter.router.pushNamed(AppRoutes.appointments);
           //showRateFilterBottomModalSheet(context);
-          showClinicFilterBottomModalSheet(context);
+          //showClinicFilterBottomModalSheet(context);
+          //showSpecialtyFilterBottomModalSheet(context);
+          //showInsuranceFilterBottomModalSheet(context);
+          //showLocationFilterBottomModalSheet(context);
+          showFinalFilterBottomModalSheet(context);
         //---------------------------------------------------//
       },
     );

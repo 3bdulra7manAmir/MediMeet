@@ -64,6 +64,10 @@ abstract class AppStrings
   /// [ "Appointment ID" ]
   static const String appointmentID = "Appointment ID";
 
+  //-----------------------//
+  //        Filters        //
+  //-----------------------//
+
   /// [ Rate Filter ]
  static const String minimumRating = "Minimum Rating";
  static const String addFilter = "Add Filter";
@@ -79,6 +83,17 @@ abstract class AppStrings
 
  /// [ Filters ]
  static const String filters = "Filters";
+ static const String insurance = "Insurance";
+ static const String specialties = "Specialties";
+ static const String rating = "Rating";
+
+
+
+  //------------------------//
+  //       Not Yet          //
+  //-----------------------//
+
+
 
 
 }
