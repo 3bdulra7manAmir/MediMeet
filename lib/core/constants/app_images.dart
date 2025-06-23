@@ -41,6 +41,10 @@ class _Icons
   /// Rating Filter
   final String cancelgrey = "assets/icons/rating_filter/cancel_grey.svg";
 
+  /// Final Filter
+  final String rightArrowGrey = "assets/icons/final_filter/right_grey_arrow.svg";
+  final String cancelBlack = "assets/icons/final_filter/cancel_black.svg";
+
 }
 
 ///-----------------------------------------------------------------//

@@ -1,9 +1,8 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:medical_appointments/core/extensions/widget_padding.dart';
+import 'package:medical_appointments/core/extensions/widget_margin.dart';
 
 import '../../../../config/router/app_router.dart';
 import '../../../../config/theme/color_manager/colors.dart';
@@ -45,7 +44,6 @@ class AppointmentsDetails extends StatelessWidget
           crossAxisAlignment: CrossAxisAlignment.start,
           children:
           [
-            //Sizes.size16.verticalSpace,
             const AppointmentInfoBody(),
             Sizes.size16.verticalSpace,
             AppDivider(color: AppColors.color.kWhite003, thickness: 2.h,),
@@ -56,7 +54,7 @@ class AppointmentsDetails extends StatelessWidget
             Sizes.size16.verticalSpace,
             const AppointmentLocationWidget(),
           ],
-        ).paddingSymmetric(horizontal: 16.w),
+        ).marginSymmetric(horizontal: 16.w),
       ),
       bottomNavigationBar: NavBarWidget(
         navBarChildren:

@@ -2,16 +2,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
 import '../../config/theme/color_manager/colors.dart';
 import '../constants/app_borders.dart';
-import '../constants/app_paddings.dart';
+import '../constants/app_margins.dart';
 
 class NavBarWidget extends StatelessWidget
 {
-  const NavBarWidget({super.key, this.padding, this.alignment, this.width, this.height, this.borderRadius, this.color, required this.navBarChildren});
+  const NavBarWidget({super.key, this.margin, this.alignment, this.width, this.height, this.borderRadius, this.color, required this.navBarChildren});
 
-  final EdgeInsetsGeometry? padding;
+  final EdgeInsetsGeometry? margin;
   final AlignmentGeometry? alignment;
   final double? width;
   final double? height;
@@ -23,9 +22,9 @@ class NavBarWidget extends StatelessWidget
   Widget build(BuildContext context)
   {
     return Container(
-      padding: padding ?? AppPadding.symmetric.largeH,
+      margin: margin ?? AppMargins.symmetric.medium,
       alignment: alignment ?? Alignment.center,
-      width: width ?? 430.w,
+      //width: width ?? 430.w,
       height: height ?? 105.h,
       decoration: BoxDecoration(
         borderRadius: borderRadius ?? AppRadiuses.circular.xxsmall,

@@ -93,6 +93,7 @@ flutter:
     - assets/icons/appointments_details/
     - assets/icons/appointments/
     - assets/icons/rating_filter/
+    - assets/icons/final_filter/
 
     - assets/imgs/Logo/
 

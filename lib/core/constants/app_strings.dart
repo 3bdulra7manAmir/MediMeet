@@ -87,6 +87,9 @@ abstract class AppStrings
  static const String specialties = "Specialties";
  static const String rating = "Rating";
 
+ // [ Final Filter ]
+ static const String reset = "Rest";
+ static const String showResults = "Show Results";
 
 
   //------------------------//
