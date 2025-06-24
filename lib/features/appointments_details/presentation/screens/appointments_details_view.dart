@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:medical_appointments/core/extensions/widget_margin.dart';
 
-import '../../../../config/router/app_router.dart';
+import '../../../../config/router/app_router/app_router.dart';
 import '../../../../config/theme/color_manager/colors.dart';
 import '../../../../core/constants/app_images.dart';
 import '../../../../core/constants/app_sizes.dart';

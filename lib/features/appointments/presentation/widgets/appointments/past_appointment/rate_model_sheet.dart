@@ -2,7 +2,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../../config/router/app_router.dart';
+import '../../../../../../config/router/app_router/app_router.dart';
 import '../../../../../../config/theme/color_manager/colors.dart';
 import '../../../../../../core/constants/app_borders.dart';
 import '../../../../../../core/constants/app_sizes.dart';
@@ -41,11 +41,11 @@ void showRateBottomSheet(BuildContext context)
             Sizes.size24.verticalSpace,
             const RateStars(),
             Sizes.size24.verticalSpace,
-            CustomButton(buttonOnPressed: ()
+            CustomButton(onPressed: ()
             {
               log('Submitted comment: ${commentController.text.trim()}');
               AppRouter.router.pop(); 
-            } , buttonText: AppStrings.submit, buttonWidth: 300.w,),
+            } , text: AppStrings.submit, width: 300.w,),
             Sizes.size16.verticalSpace,
           ],
         ),

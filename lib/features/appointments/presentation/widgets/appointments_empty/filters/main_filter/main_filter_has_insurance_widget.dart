@@ -4,9 +4,9 @@ import '../../../../../../../config/theme/font_manager/font_weights.dart';
 import '../../../../../../../core/constants/app_strings.dart';
 import '../../../../../../../core/constants/app_styles.dart';
 
-class InsuranceWidget extends StatelessWidget
+class HasInsuranceWidget extends StatelessWidget
 {
-  const InsuranceWidget({super.key});
+  const HasInsuranceWidget({super.key});
 
   @override
   Widget build(BuildContext context)

@@ -11,46 +11,46 @@ class CustomButton extends ConsumerWidget
 {
   const CustomButton({
     super.key,
-    this.buttonWidth,
-    this.buttonHeight,
-    this.buttonPadding,
-    this.buttonBorderRadius,
-    this.buttonBorderWidth,
-    this.buttonBorderColor,
-    this.buttonBackgroundColor,
-    required this.buttonOnPressed,
-    required this.buttonText,
-    this.buttonTextStyle,
+    this.width,
+    this.height,
+    this.padding,
+    this.borderRadius,
+    this.borderWidth,
+    this.borderColor,
+    this.backgroundColor,
+    required this.onPressed,
+    required this.text,
+    this.textStyle,
   });
 
-  final double? buttonWidth;
-  final double? buttonHeight;
-  final EdgeInsetsGeometry? buttonPadding;
-  final BorderRadiusGeometry? buttonBorderRadius;
-  final double? buttonBorderWidth;
-  final Color? buttonBorderColor;
-  final Color? buttonBackgroundColor;
-  final void Function() buttonOnPressed;
-  final String buttonText;
-  final TextStyle? buttonTextStyle;
+  final double? width;
+  final double? height;
+  final EdgeInsetsGeometry? padding;
+  final BorderRadiusGeometry? borderRadius;
+  final double? borderWidth;
+  final Color? borderColor;
+  final Color? backgroundColor;
+  final void Function() onPressed;
+  final String text;
+  final TextStyle? textStyle;
 
   @override
   Widget build(BuildContext context, WidgetRef ref)
   {
     return SizedBox(
-      width: buttonWidth,
-      height: buttonHeight ?? 52.h,
+      width: width,
+      height: height ?? 52.h,
       child: ElevatedButton(
         style: ButtonStyle(
-          padding: WidgetStateProperty.all<EdgeInsetsGeometry?>(buttonPadding),
+          padding: WidgetStateProperty.all<EdgeInsetsGeometry?>(padding),
           shape: WidgetStateProperty.all<RoundedRectangleBorder>(RoundedRectangleBorder(
-            borderRadius: buttonBorderRadius ?? AppRadiuses.circular.small,
-            side: BorderSide(width: buttonBorderWidth ?? (Sizes.size1).w, color: buttonBorderColor ?? AppColors.color.kTransparent)
+            borderRadius: borderRadius ?? AppRadiuses.circular.small,
+            side: BorderSide(width: borderWidth ?? (Sizes.size1).w, color: borderColor ?? AppColors.color.kTransparent)
             ),),
-          backgroundColor: WidgetStateProperty.all<Color>(buttonBackgroundColor ?? AppColors.color.kBlue001,),
+          backgroundColor: WidgetStateProperty.all<Color>(backgroundColor ?? AppColors.color.kBlue001,),
         ),
-        onPressed: buttonOnPressed,
-        child: Text(buttonText, style: buttonTextStyle ?? AppStyles.large(fontColor: AppColors.color.kWhite002, fontWeight: AppFontWeights.semiBoldWeight),),
+        onPressed: onPressed,
+        child: Text(text, style: textStyle ?? AppStyles.large(fontColor: AppColors.color.kWhite002, fontWeight: AppFontWeights.semiBoldWeight),),
       ),
     );
   }

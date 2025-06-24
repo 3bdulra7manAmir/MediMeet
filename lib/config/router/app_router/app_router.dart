@@ -1,10 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../../core/widgets/circular_indicator.dart';
-import '../../features/appointments/presentation/screens/appointments_view.dart';
-import '../../features/appointments_details/presentation/screens/appointments_details_view.dart';
-import '../../features/appointments/presentation/screens/appointments_empty_view.dart';
+import '../../../core/widgets/circular_indicator.dart';
+import '../../../features/appointments/presentation/screens/appointments_view.dart';
+import '../../../features/appointments_details/presentation/screens/appointments_details_view.dart';
+import '../../../features/appointments/presentation/screens/appointments_empty_view.dart';
 import 'app_routes.dart';
 
 

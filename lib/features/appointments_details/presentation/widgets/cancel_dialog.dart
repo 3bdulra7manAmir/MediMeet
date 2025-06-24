@@ -2,7 +2,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../config/router/app_router.dart';
+import '../../../../config/router/app_router/app_router.dart';
 import '../../../../config/theme/color_manager/colors.dart';
 import '../../../../config/theme/font_manager/font_weights.dart';
 import '../../../../core/constants/app_borders.dart';
@@ -41,20 +41,20 @@ void showCancelDialog(BuildContext context)
         crossAxisAlignment: CrossAxisAlignment.start,
         children:
         [
-          CustomButton(buttonWidth: 334.w, buttonHeight: 56.h,
-            buttonBackgroundColor: AppColors.color.kRed002,
-            buttonText: AppStrings.confirmCancel,
-            buttonTextStyle: AppStyles.xLarge(fontWeight: AppFontWeights.mediumWeight,),
-            buttonOnPressed: () => log("Cancel"),
+          CustomButton(width: 334.w, height: 56.h,
+            backgroundColor: AppColors.color.kRed002,
+            text: AppStrings.confirmCancel,
+            textStyle: AppStyles.xLarge(fontWeight: AppFontWeights.mediumWeight,),
+            onPressed: () => log("Cancel"),
           ),
           Sizes.size8.verticalSpace,
-          CustomButton(buttonWidth: 334.w, buttonHeight: 56.h,
-            buttonText: AppStrings.back,
-            buttonTextStyle: AppStyles.xLarge(fontWeight: AppFontWeights.mediumWeight, fontColor: AppColors.color.kBlack001,),
-            buttonBackgroundColor: AppColors.color.kWhite002,
-            buttonBorderColor: AppColors.color.kWhite001,
-            buttonBorderWidth: Sizes.size4.w,
-            buttonOnPressed: () => AppRouter.router.pop(),
+          CustomButton(width: 334.w, height: 56.h,
+            text: AppStrings.back,
+            textStyle: AppStyles.xLarge(fontWeight: AppFontWeights.mediumWeight, fontColor: AppColors.color.kBlack001,),
+            backgroundColor: AppColors.color.kWhite002,
+            borderColor: AppColors.color.kWhite001,
+            borderWidth: Sizes.size4.w,
+            onPressed: () => AppRouter.router.pop(),
           ),
         ],
       ),

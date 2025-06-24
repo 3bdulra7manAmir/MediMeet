@@ -1,21 +1,50 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../../../config/router/bottom_modal_sheet_router/modal_sheet_router.dart';
+import '../../../../../../../config/theme/color_manager/colors.dart';
+import '../../../../../../../core/constants/app_sizes.dart';
 import '../../../../../../../core/constants/app_strings.dart';
-import '../../../../../../../core/widgets/popers/filters_modal_bottom_sheet.dart';
+import '../../../../../../../core/widgets/appbars/filters_appbar.dart';
+import '../../../../../../../core/widgets/buttons/custom_button.dart';
+import '../../../../../../../core/widgets/nav_bar.dart';
 import 'insurance_filter_widget.dart';
 
-void showInsuranceFilterBottomModalSheet(BuildContext context)
+class InsuranceFilter extends StatelessWidget
 {
-  showFilterBottomModalSheet(
-    context: context,
-    appBarTitle: AppStrings.insuranceProvider,
-    children: const [InsuranceFilterWidget(),],
-    buttonText: AppStrings.addFilter,
-    onButtonPressed: ()
-    {
-      log("${AppStrings.insuranceProvider}...Out");
-      // You can navigate or apply filter logic here
-    },
-  );
+  const InsuranceFilter({super.key});
+
+  @override
+  Widget build(BuildContext context)
+  {
+    return Scaffold(
+      backgroundColor: AppColors.color.kWhite002,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children:
+        [
+          Sizes.size16.verticalSpace,
+          const FiltersAppbar(appbarText: AppStrings.insuranceProvider),
+          Sizes.size24.verticalSpace,
+          const InsuranceFilterWidget(),
+        ],
+      ),
+      bottomNavigationBar: NavBarWidget(
+        navBarChildren:
+        [
+          Expanded(
+            child: CustomButton(
+              text: AppStrings.addFilter,
+              onPressed: ()
+              {
+                log("${AppStrings.insuranceProvider}...Out");
+                ModalSheetRouter.router.pop();
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 }

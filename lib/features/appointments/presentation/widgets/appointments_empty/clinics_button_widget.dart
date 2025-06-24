@@ -1,19 +1,8 @@
-
-// ignore_for_file: unused_import
-
-import 'dart:developer';
 import 'package:flutter/material.dart';
 
-import '../../../../../config/router/app_router.dart';
-import '../../../../../config/router/app_routes.dart';
 import '../../../../../core/constants/app_strings.dart';
 import '../../../../../core/widgets/buttons/custom_button.dart';
-import 'filters/clinic_filter/clinic_type_filter_body.dart';
-import 'filters/final_filter/final_filter_body.dart';
-import 'filters/insurance_filter/insurance_filter_body.dart';
-import 'filters/location_filter/location_filter_body.dart';
-import 'filters/rate_filter/rate_filter_body.dart';
-import 'filters/specialty_filter/specialty_filter_body.dart';
+import 'filters/main_modal_bottom_sheet.dart';
 
 class ExploreClinicsButton extends StatelessWidget
 {
@@ -22,21 +11,7 @@ class ExploreClinicsButton extends StatelessWidget
   @override
   Widget build(BuildContext context)
   {
-    return CustomButton(
-      buttonText: AppStrings.exploreClinics, buttonOnPressed: ()
-      {
-        //---------------------------------------------------//
-          log("AppRouter...");
-          //AppRouter.router.pushNamed(AppRoutes.appointments);
-          //showRateFilterBottomModalSheet(context);
-          //showClinicFilterBottomModalSheet(context);
-          //showSpecialtyFilterBottomModalSheet(context);
-          //showInsuranceFilterBottomModalSheet(context);
-          //showLocationFilterBottomModalSheet(context);
-          showFinalFilterBottomModalSheet(context);
-        //---------------------------------------------------//
-      },
-    );
+    return CustomButton(text: AppStrings.exploreClinics, onPressed: () => filterBottomModalSheet(context));
   }
 }
 

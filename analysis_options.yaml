@@ -1,6 +1,8 @@
 include: package:flutter_lints/flutter.yaml
 
 analyzer:
+  errors:
+    unused_catch_stack: ignore
   #errors:
     #deprecated_member_use: ignore
     #avoid_print: ignore
