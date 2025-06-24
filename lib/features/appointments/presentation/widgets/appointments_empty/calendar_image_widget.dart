@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import '../../../../../core/constants/app_images.dart';
 
-class CalendarImage extends StatelessWidget
+class CalendarImageWidget extends StatelessWidget
 {
-  const CalendarImage({super.key});
+  const CalendarImageWidget({super.key});
 
   @override
   Widget build(BuildContext context)

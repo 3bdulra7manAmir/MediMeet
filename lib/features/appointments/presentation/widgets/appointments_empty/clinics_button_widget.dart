@@ -8,9 +8,9 @@ import '../../../../../core/constants/app_strings.dart';
 import '../../../../../core/widgets/buttons/custom_button.dart';
 import 'filters/main_filter/main_modal_bottom_sheet.dart';
 
-class ExploreClinicsButton extends StatelessWidget
+class ExploreClinicsButtonWidget extends StatelessWidget
 {
-  const ExploreClinicsButton({super.key});
+  const ExploreClinicsButtonWidget({super.key});
 
   @override
   Widget build(BuildContext context)

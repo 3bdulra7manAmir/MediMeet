@@ -7,6 +7,7 @@ import '../../../../../../../../core/constants/app_sizes.dart';
 import '../../../../../../../../core/constants/app_strings.dart';
 import '../choice_widget.dart';
 import '../filters_title_widget.dart';
+import 'rate_amount_list.dart';
 
 class RateAmountWidget extends StatelessWidget
 {
@@ -21,7 +22,8 @@ class RateAmountWidget extends StatelessWidget
       [
         FiltersTitleWidget(title: AppStrings.rating, onTap: () => ModalSheetRouter.router.pushNamed(ModalSheetRoutes.minimumRating),),
         Sizes.size8.verticalSpace,
-        const ChoiceWidget(choice: "Riyadh",),
+        //const ChoiceWidget(choice: "Riyadh",),
+        SizedBox(height: 29.h, child: const RatingFilterListWidget()),
       ],
     );
   }

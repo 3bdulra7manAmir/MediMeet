@@ -8,6 +8,7 @@ import '../../../../../../../../core/constants/app_sizes.dart';
 import '../../../../../../../../core/constants/app_strings.dart';
 import '../choice_widget.dart';
 import '../filters_title_widget.dart';
+import 'clinic_type_list.dart';
 
 class ClinicTypeWidget extends StatelessWidget
 {
@@ -22,7 +23,8 @@ class ClinicTypeWidget extends StatelessWidget
       [
         FiltersTitleWidget(title: AppStrings.clinicType, onTap: () => ModalSheetRouter.router.pushNamed(ModalSheetRoutes.clinicType),),
         Sizes.size8.verticalSpace,
-        const ChoiceWidget(choice: "Hospitals",),
+        //const ChoiceWidget(choice: "Hospitals",),
+        SizedBox(height: 29.h, child: const ClinicTypeFilterListWidget()),
       ],
     );
   }
