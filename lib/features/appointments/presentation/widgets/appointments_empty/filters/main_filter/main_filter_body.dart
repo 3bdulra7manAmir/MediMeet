@@ -68,22 +68,22 @@ class ModalSheetMainScreen extends StatelessWidget
       ),
       bottomNavigationBar: NavBarWidget(
         navBarChildren:
-        [
           Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children:
               [
-                CustomButton(
-                  text: AppStrings.reset, width: 171.w,
-                  textStyle: AppStyles.large(fontColor: AppColors.color.kBlack001, fontWeight: AppFontWeights.semiBoldWeight,),
-                  backgroundColor: AppColors.color.kWhite002, borderColor: AppColors.color.kWhite001, borderWidth: (Sizes.size2).w,
-                  onPressed: () {},
+                Expanded(
+                  child: CustomButton(
+                    text: AppStrings.reset,
+                    textStyle: AppStyles.large(fontColor: AppColors.color.kBlack001, fontWeight: AppFontWeights.semiBoldWeight,),
+                    backgroundColor: AppColors.color.kWhite002, borderColor: AppColors.color.kWhite001, borderWidth: (Sizes.size2).w,
+                    onPressed: () {},
+                  ),
                 ),
                 Sizes.size24.horizontalSpace,
-                CustomButton(text: AppStrings.showResults, onPressed: () {},),
+                Expanded(child: CustomButton(text: AppStrings.showResults, onPressed: () {},)),
               ],
             )
-          ],
         ),
     );
   }

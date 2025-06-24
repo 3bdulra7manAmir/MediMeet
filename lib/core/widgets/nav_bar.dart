@@ -16,7 +16,7 @@ class NavBarWidget extends StatelessWidget
   final double? height;
   final BorderRadiusGeometry? borderRadius;
   final Color? color;
-  final List<Widget> navBarChildren;
+  final Widget navBarChildren;
 
   @override
   Widget build(BuildContext context)
@@ -27,13 +27,10 @@ class NavBarWidget extends StatelessWidget
       //width: width ?? 430.w,
       height: height ?? 105.h,
       decoration: BoxDecoration(
-        borderRadius: borderRadius ?? AppRadiuses.circular.xxsmall,
+        borderRadius: borderRadius ?? AppRadiuses.circular.xxsmall, 
         color: color ?? AppColors.color.kWhite002,
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: navBarChildren,
-      ),
+      child: navBarChildren,
     );
   }
 }

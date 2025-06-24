@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -32,18 +31,9 @@ class InsuranceFilter extends StatelessWidget
       ),
       bottomNavigationBar: NavBarWidget(
         navBarChildren:
-        [
-          Expanded(
-            child: CustomButton(
-              text: AppStrings.addFilter,
-              onPressed: ()
-              {
-                log("${AppStrings.insuranceProvider}...Out");
-                ModalSheetRouter.router.pop();
-              },
-            ),
-          ),
-        ],
+        Expanded(
+          child: CustomButton(text: AppStrings.addFilter, onPressed: () => ModalSheetRouter.router.pop(),),
+        ),
       ),
     );
   }

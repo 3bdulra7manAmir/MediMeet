@@ -58,27 +58,30 @@ class AppointmentsDetails extends StatelessWidget
       ),
       bottomNavigationBar: NavBarWidget(
         navBarChildren:
-        [
-          Expanded(
-            child: CustomIconButton(
-              buttonText: AppStrings.cancel,
-              buttonTextStyle: AppStyles.large(fontColor: AppColors.color.kRed001),
-              buttonIcon: SvgPicture.asset(AppAssets.icons.cancelRed),
-              buttonOnPressed: () => showCancelDialog(context),
-              buttonBackgroundColor: AppColors.color.kWhite002,
-              buttonBorderWidth: Sizes.size4,
-              buttonBorderColor: AppColors.color.kWhite001,
+        Row(
+          children:
+          [
+            Expanded(
+              child: CustomIconButton(
+                buttonText: AppStrings.cancel,
+                buttonTextStyle: AppStyles.large(fontColor: AppColors.color.kRed001),
+                buttonIcon: SvgPicture.asset(AppAssets.icons.cancelRed),
+                buttonOnPressed: () => showCancelDialog(context),
+                buttonBackgroundColor: AppColors.color.kWhite002,
+                buttonBorderWidth: Sizes.size4,
+                buttonBorderColor: AppColors.color.kWhite001,
+              ),
             ),
-          ),
-          Sizes.size16.horizontalSpace,
-          Expanded(
-            child: CustomIconButton(
-              buttonText: AppStrings.edit,
-              buttonIcon: SvgPicture.asset(AppAssets.icons.editPensileWhite),
-              buttonOnPressed: () => log("Edit"),
+            Sizes.size16.horizontalSpace,
+            Expanded(
+              child: CustomIconButton(
+                buttonText: AppStrings.edit,
+                buttonIcon: SvgPicture.asset(AppAssets.icons.editPensileWhite),
+                buttonOnPressed: () => log("Edit"),
+              ),
             ),
-          ),
-        ],
+          ]
+        ),
       ),
     );
   }

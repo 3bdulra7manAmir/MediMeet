@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -32,18 +31,10 @@ class RateFilter extends StatelessWidget
       ),
       bottomNavigationBar: NavBarWidget(
         navBarChildren:
-        [
+        
           Expanded(
-            child: CustomButton(
-              text: AppStrings.addFilter,
-              onPressed: ()
-              {
-                log("${AppStrings.minimumRating}...Out");
-                ModalSheetRouter.router.pop();
-              },
-            ),
+            child: CustomButton(text: AppStrings.addFilter, onPressed: () => ModalSheetRouter.router.pop(),),
           ),
-        ],
       ),
     );
   }

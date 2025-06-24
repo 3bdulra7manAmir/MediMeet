@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -31,18 +30,9 @@ class SpecialtyFilter extends StatelessWidget
       ),
       bottomNavigationBar: NavBarWidget(
         navBarChildren:
-        [
-          Expanded(
-            child: CustomButton(
-              text: AppStrings.addFilter,
-              onPressed: ()
-              {
-                log("${AppStrings.specialty}...Out");
-                ModalSheetRouter.router.pop();
-              },
-            ),
-          ),
-        ],
+        Expanded(
+          child: CustomButton(text: AppStrings.addFilter, onPressed: () => ModalSheetRouter.router.pop(),),
+        ),
       ),
     );
   }
