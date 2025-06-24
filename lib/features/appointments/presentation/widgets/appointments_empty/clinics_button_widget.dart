@@ -32,8 +32,8 @@ class ExploreClinicsButton extends StatelessWidget
           //showClinicFilterBottomModalSheet(context);
           //showSpecialtyFilterBottomModalSheet(context);
           //showInsuranceFilterBottomModalSheet(context);
-          showLocationFilterBottomModalSheet(context);
-          //showFinalFilterBottomModalSheet(context);
+          //showLocationFilterBottomModalSheet(context);
+          showFinalFilterBottomModalSheet(context);
         //---------------------------------------------------//
       },
     );

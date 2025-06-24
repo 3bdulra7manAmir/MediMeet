@@ -8,7 +8,7 @@ import '../../../../../../../core/constants/app_strings.dart';
 import '../../../../../../../core/widgets/divider.dart';
 import '../../../../../../../core/widgets/popers/filters_modal_bottom_sheet.dart';
 import 'clinic_type_widget.dart';
-import 'final_filter_widget.dart';
+import 'final_filter_has_insurance_widget.dart';
 import 'insurance_provider_widget.dart';
 import 'location_widget.dart';
 import 'rate_amount_widget.dart';

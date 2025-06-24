@@ -18,7 +18,7 @@ class All
   All._();
 
   /// 16px all sides
-  final EdgeInsets smallAll = const EdgeInsets.all(16); // smallAll
+  final EdgeInsets smallAll = const EdgeInsets.all(16);
 }
 
 
