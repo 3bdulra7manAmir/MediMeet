@@ -30,9 +30,7 @@ class SpecialtyFilter extends StatelessWidget
       ),
       bottomNavigationBar: NavBarWidget(
         navBarChildren:
-        Expanded(
-          child: CustomButton(text: AppStrings.addFilter, onPressed: () => ModalSheetRouter.router.pop(),),
-        ),
+        CustomButton(text: AppStrings.addFilter, onPressed: () => ModalSheetRouter.router.pop(), width: double.infinity,),
       ),
     );
   }

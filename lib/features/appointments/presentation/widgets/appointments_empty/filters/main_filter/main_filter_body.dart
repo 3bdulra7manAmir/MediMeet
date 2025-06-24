@@ -10,12 +10,12 @@ import '../../../../../../../core/widgets/appbars/filters_appbar.dart';
 import '../../../../../../../core/widgets/buttons/custom_button.dart';
 import '../../../../../../../core/widgets/divider.dart';
 import '../../../../../../../core/widgets/nav_bar.dart';
-import 'clinic_type_widget.dart';
-import 'insurance_provider_widget.dart';
-import 'location_widget.dart';
+import 'clinic_type/clinic_type_widget.dart';
+import 'insurance_provider/insurance_provider_widget.dart';
+import 'location/location_widget.dart';
 import 'main_filter_has_insurance_widget.dart';
-import 'rate_amount_widget.dart';
-import 'specialties_widget.dart';
+import 'rate_amount/rate_amount_widget.dart';
+import 'specialties/specialties_widget.dart';
 
 class ModalSheetMainScreen extends StatelessWidget
 {

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../../../config/router/bottom_modal_sheet_router/modal_sheet_router.dart';
-import '../../../../../../../config/router/bottom_modal_sheet_router/modal_sheet_routes.dart';
-import '../../../../../../../core/constants/app_sizes.dart';
-import '../../../../../../../core/constants/app_strings.dart';
-import 'choice_widget.dart';
-import 'filters_title_widget.dart';
+import '../../../../../../../../config/router/bottom_modal_sheet_router/modal_sheet_router.dart';
+import '../../../../../../../../config/router/bottom_modal_sheet_router/modal_sheet_routes.dart';
+import '../../../../../../../../core/constants/app_sizes.dart';
+import '../../../../../../../../core/constants/app_strings.dart';
+import '../choice_widget.dart';
+import '../filters_title_widget.dart';
 
 class SpecialtiesWidget extends StatelessWidget
 {
@@ -21,7 +21,7 @@ class SpecialtiesWidget extends StatelessWidget
       [
         FiltersTitleWidget(title: AppStrings.specialties, onTap: () => ModalSheetRouter.router.pushNamed(ModalSheetRoutes.specialtyFilter),),
         Sizes.size8.verticalSpace,
-        const ChoiceWidget(),
+        const ChoiceWidget(choice: "Dermatology",),
       ],
     );
   }
