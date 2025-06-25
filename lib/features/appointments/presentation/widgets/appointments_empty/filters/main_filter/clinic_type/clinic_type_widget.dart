@@ -6,7 +6,6 @@ import '../../../../../../../../config/router/bottom_modal_sheet_router/modal_sh
 import '../../../../../../../../config/router/bottom_modal_sheet_router/modal_sheet_routes.dart';
 import '../../../../../../../../core/constants/app_sizes.dart';
 import '../../../../../../../../core/constants/app_strings.dart';
-import '../choice_widget.dart';
 import '../filters_title_widget.dart';
 import 'clinic_type_list.dart';
 
