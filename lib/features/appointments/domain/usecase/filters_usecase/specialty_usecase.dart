@@ -2,20 +2,20 @@ import 'package:dartz/dartz.dart';
 
 import '../../../../../core/services/network/api_fetch_failure.dart';
 import '../../../../../core/utils/usecase.dart';
-import '../../repository/filters_repo/clinic_type_repository.dart';
+import '../../repository/filters_repo/specialty_repository.dart';
 
 
-class ClinicTypeUsecase extends AppUsecase
+class SpecialtyUsecase extends AppUsecase
 {
-  final ClinicTypeRepository clinicTypeRepository;
-  ClinicTypeUsecase(this.clinicTypeRepository);
+  final SpecialtyRepository specialtyRepository;
+  SpecialtyUsecase(this.specialtyRepository);
 
   @override
   Future<Either<ApiFetchFailure, dynamic>> call([param]) async
   {
     try
     {
-      final result = await clinicTypeRepository.getClinicTypes();
+      final result = await specialtyRepository.getSpecialtys();
       return Right(result);
     }
     catch (e)

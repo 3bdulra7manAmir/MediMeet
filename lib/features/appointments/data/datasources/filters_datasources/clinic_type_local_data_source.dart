@@ -17,7 +17,7 @@ class ClinicTypeLocalDataSourceImpl implements ClinicTypeLocalDataSource
     try
     {
       await Future.delayed(const Duration(seconds: 3));
-      final String jsonString = await rootBundle.loadString('assets/jsons/filters/clinic_type.json.json');
+      final String jsonString = await rootBundle.loadString('assets/jsons/filters/clinic_type.json');
       final Map<String, dynamic> jsonData = json.decode(jsonString);
       final List<dynamic> clinicTypeJson = jsonData['clinic_type'] ?? [];
       return clinicTypeJson.map((past) => ClinicTypeModel.fromJson(past)).toList();
