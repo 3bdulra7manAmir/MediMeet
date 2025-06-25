@@ -15,6 +15,7 @@ class ExploreClinicsButtonWidget extends StatelessWidget
   @override
   Widget build(BuildContext context)
   {
+    //return CustomButton(text: AppStrings.exploreClinics, onPressed: () => AppRouter.router.pushNamed(AppRoutes.appointments));
     return CustomButton(text: AppStrings.exploreClinics, onPressed: () => filterBottomModalSheet(context));
     //return CustomButton(text: AppStrings.exploreClinics, onPressed: () => AppRouter.router.pushNamed(AppRoutes.appointmentsDetails));
   }

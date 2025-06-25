@@ -1,6 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../../../config/router/app_router/app_router.dart';
 import '../../../../../../../config/theme/color_manager/colors.dart';
 import '../../../../../../../config/theme/font_manager/font_weights.dart';
 import '../../../../../../../core/constants/app_sizes.dart';
@@ -81,7 +84,13 @@ class MainFilterApply extends StatelessWidget
                   ),
                 ),
                 Sizes.size24.horizontalSpace,
-                Expanded(child: CustomButton(text: AppStrings.showResults, onPressed: () {},)),
+                Expanded(child: CustomButton(text: AppStrings.showResults, onPressed: ()
+                    {
+                      log("All Selected Data HERE!!!");
+                      AppRouter.router.pop();
+                    },
+                  ),
+                ),
               ],
             )
         ),

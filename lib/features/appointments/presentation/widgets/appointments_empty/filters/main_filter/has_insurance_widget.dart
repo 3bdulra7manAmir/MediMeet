@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:medical_appointments/config/theme/color_manager/colors.dart';
@@ -43,7 +45,11 @@ class _CustomToggleSwitchState extends State<CustomToggleSwitch>
   Widget build(BuildContext context)
   {
     return GestureDetector(
-      onTap: () => setState(() => isSwitched = !isSwitched),
+      onTap: () => setState(()
+      {
+        isSwitched ? log("True") : log("False");
+        isSwitched = !isSwitched;
+      } ),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 250),
         width: 40.w, height: 24.h,
@@ -59,7 +65,8 @@ class _CustomToggleSwitchState extends State<CustomToggleSwitch>
           decoration:  BoxDecoration(
             color: AppColors.color.kWhite002,
             shape: BoxShape.circle,
-            boxShadow: const [
+            boxShadow: const
+            [
               BoxShadow(
                 color: Color.fromARGB(15, 16, 24, 40),
                 offset: Offset(0, 1),
