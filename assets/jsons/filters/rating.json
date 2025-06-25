@@ -1,0 +1,45 @@
+{
+  "rate":
+  [
+    {
+      "id": 101,
+      "rate_value": "5",
+      "rate_text": "(5.0+ only)"
+    },
+    {
+      "id": 102,
+      "rate_value": "4.5",
+      "rate_text": "(4.5+)"
+    },
+    {
+      "id": 103,
+      "rate_value": "4",
+      "rate_text": "(4.0+)"
+    },
+    {
+      "id": 104,
+      "rate_value": "3.5",
+      "rate_text": "(3.5+)"
+    },
+    {
+      "id": 105,
+      "rate_value": "2.5",
+      "rate_text": "(2.5+)"
+    },
+    {
+      "id": 106,
+      "rate_value": "2",
+      "rate_text": "(2.0+)"
+    },
+    {
+      "id": 107,
+      "rate_value": "1.5",
+      "rate_text": "(1.5+)"
+    },
+    {
+      "id": 108,
+      "rate_value": "1",
+      "rate_text": "(1.0+)"
+    }
+  ]
+}

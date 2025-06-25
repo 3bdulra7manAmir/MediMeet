@@ -1,0 +1,37 @@
+{
+  "specialty":
+  [
+    {
+      "id": 101,
+      "title": "Dermatology"
+    },
+    {
+      "id": 102,
+      "title": "Dentistry"
+    },
+    {
+      "id": 103,
+      "title": "Cardiology"
+    },
+    {
+      "id": 104,
+      "title": "Pediatrics"
+    },
+    {
+      "id": 105,
+      "title": "ENT"
+    },
+    {
+      "id": 106,
+      "title": "Orthopedics"
+    },
+    {
+      "id": 107,
+      "title": "Internal Medicine"
+    },
+    {
+      "id": 108,
+      "title": "Urology"
+    }
+  ]
+}

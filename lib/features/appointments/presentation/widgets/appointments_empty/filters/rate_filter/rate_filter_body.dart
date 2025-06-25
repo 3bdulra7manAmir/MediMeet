@@ -8,7 +8,7 @@ import '../../../../../../../core/constants/app_strings.dart';
 import '../../../../../../../core/widgets/appbars/filters_appbar.dart';
 import '../../../../../../../core/widgets/buttons/custom_button.dart';
 import '../../../../../../../core/widgets/custom_nav_bar.dart';
-import 'rate_widget.dart';
+import 'rate_filter_list.dart';
 
 class RatingFilterBody extends StatelessWidget
 {
@@ -27,7 +27,7 @@ class RatingFilterBody extends StatelessWidget
             Sizes.size16.verticalSpace,
             const CustomFiltersAppbar(appbarText: AppStrings.minimumRating),
             Sizes.size24.verticalSpace,
-            const RatingFilterChooseWidget(),
+            const RatingFilterChosseListWidget(),
           ],
         ),
       ),

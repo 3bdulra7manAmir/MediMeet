@@ -1,0 +1,21 @@
+{
+  "clinic_type":
+  [
+    {
+      "id": 101,
+      "title": "All"
+    },
+    {
+      "id": 102,
+      "title": "Hospitals"
+    },
+    {
+      "id": 103,
+      "title": "Clinics"
+    },
+    {
+      "id": 104,
+      "title": "Medical Centers"
+    }
+  ]
+}

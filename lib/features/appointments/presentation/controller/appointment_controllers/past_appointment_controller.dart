@@ -1,10 +1,10 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../data/datasources/past_local_data_source.dart';
-import '../../data/model/past_appointments.dart';
-import '../../data/repository/past_repository_impl.dart';
-import '../../domain/usecase/past_usecase.dart';
+import '../../../data/datasources/past_local_data_source.dart';
+import '../../../data/model/past_appointments.dart';
+import '../../../data/repository/past_repository_impl.dart';
+import '../../../domain/usecase/past_usecase.dart';
 
 part 'past_appointment_controller.g.dart';
 
