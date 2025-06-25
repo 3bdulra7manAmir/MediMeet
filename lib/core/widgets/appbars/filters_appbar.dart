@@ -7,9 +7,9 @@ import '../../constants/app_images.dart';
 import '../../constants/app_styles.dart';
 
 
-class FiltersAppbar extends StatelessWidget
+class CustomFiltersAppbar extends StatelessWidget
 {
-  const FiltersAppbar({super.key, required this.appbarText});
+  const CustomFiltersAppbar({super.key, required this.appbarText});
 
   final String appbarText;
 

@@ -7,29 +7,31 @@ import '../../../../../../../core/constants/app_sizes.dart';
 import '../../../../../../../core/constants/app_strings.dart';
 import '../../../../../../../core/widgets/appbars/filters_appbar.dart';
 import '../../../../../../../core/widgets/buttons/custom_button.dart';
-import '../../../../../../../core/widgets/nav_bar.dart';
-import 'clinic_type_filter_widget.dart';
+import '../../../../../../../core/widgets/custom_nav_bar.dart';
+import 'clinic_type_filter_list.dart';
 
-class ClinicTypeFilter extends StatelessWidget
+class ClinicTypeFilterBody extends StatelessWidget
 {
-  const ClinicTypeFilter({super.key});
+  const ClinicTypeFilterBody({super.key});
 
   @override
   Widget build(BuildContext context)
   {
     return Scaffold(
       backgroundColor: AppColors.color.kWhite002,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children:
-        [
-          Sizes.size16.verticalSpace,
-          const FiltersAppbar(appbarText: AppStrings.clinicType),
-          Sizes.size24.verticalSpace,
-          const FiltersClinicWidget(),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children:
+          [
+            Sizes.size16.verticalSpace,
+            const CustomFiltersAppbar(appbarText: AppStrings.clinicType),
+            Sizes.size24.verticalSpace,
+            const ClinicTypeFilterChooseListWidget(),
+          ],
+        ),
       ),
-      bottomNavigationBar: NavBarWidget(
+      bottomNavigationBar: CustomNavBar(
         navBarChildren:
         CustomButton(text: AppStrings.addFilter, onPressed: () => ModalSheetRouter.router.pop(), width: double.infinity,),
       ),

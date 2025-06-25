@@ -7,29 +7,31 @@ import '../../../../../../../core/constants/app_sizes.dart';
 import '../../../../../../../core/constants/app_strings.dart';
 import '../../../../../../../core/widgets/appbars/filters_appbar.dart';
 import '../../../../../../../core/widgets/buttons/custom_button.dart';
-import '../../../../../../../core/widgets/nav_bar.dart';
-import 'insurance_filter_widget.dart';
+import '../../../../../../../core/widgets/custom_nav_bar.dart';
+import 'insurance_filter_list.dart';
 
-class InsuranceFilter extends StatelessWidget
+class InsuranceFilterBody extends StatelessWidget
 {
-  const InsuranceFilter({super.key});
+  const InsuranceFilterBody({super.key});
 
   @override
   Widget build(BuildContext context)
   {
     return Scaffold(
       backgroundColor: AppColors.color.kWhite002,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children:
-        [
-          Sizes.size16.verticalSpace,
-          const FiltersAppbar(appbarText: AppStrings.insuranceProvider),
-          Sizes.size24.verticalSpace,
-          const InsuranceFilterWidget(),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children:
+          [
+            Sizes.size16.verticalSpace,
+            const CustomFiltersAppbar(appbarText: AppStrings.insuranceProvider),
+            Sizes.size24.verticalSpace,
+            const InsuranceFilterChooseListWidget(),
+          ],
+        ),
       ),
-      bottomNavigationBar: NavBarWidget(
+      bottomNavigationBar: CustomNavBar(
         navBarChildren:
         CustomButton(text: AppStrings.addFilter, onPressed: () => ModalSheetRouter.router.pop(), width: double.infinity,),
       ),

@@ -1,13 +1,13 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../../core/constants/app_sizes.dart';
 import '../../../../../../../core/constants/app_styles.dart';
+import '../check_box_widget.dart';
 
-class SpecialtyFilterWidget extends StatelessWidget
+class SpecialtyFilterChooseWidget extends StatelessWidget
 {
-  const SpecialtyFilterWidget({super.key});
+  const SpecialtyFilterChooseWidget({super.key});
 
   @override
   Widget build(BuildContext context)
@@ -16,7 +16,7 @@ class SpecialtyFilterWidget extends StatelessWidget
       children:
       [
         Sizes.size16.horizontalSpace,
-        Checkbox.adaptive(value: false, onChanged: (value) => log("Checked"),),
+        const CheckBoxWidget(),
         Sizes.size8.horizontalSpace,
         Text("Dermatology", style: AppStyles.large(),),
       ],

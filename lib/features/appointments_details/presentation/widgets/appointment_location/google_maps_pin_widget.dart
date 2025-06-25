@@ -27,7 +27,7 @@ class GoogleMapsPinWidget extends StatelessWidget
         width: 32.w,
         height: 32.h,
         decoration: BoxDecoration(
-          borderRadius: AppRadiuses.circular.xsmall,
+          borderRadius: AppRadiuses.circular.xSmall,
           border: Border.all(color: AppColors.color.kBlue001, width: Sizes.size10.w),
         ),
       ),

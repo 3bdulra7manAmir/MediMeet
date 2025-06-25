@@ -6,9 +6,9 @@ import '../../config/theme/color_manager/colors.dart';
 import '../constants/app_borders.dart';
 import '../constants/app_margins.dart';
 
-class NavBarWidget extends StatelessWidget
+class CustomNavBar extends StatelessWidget
 {
-  const NavBarWidget({super.key, this.margin, this.alignment, this.width, this.height, this.borderRadius, this.color, required this.navBarChildren});
+  const CustomNavBar({super.key, this.margin, this.alignment, this.width, this.height, this.borderRadius, this.color, required this.navBarChildren});
 
   final EdgeInsetsGeometry? margin;
   final AlignmentGeometry? alignment;
@@ -27,7 +27,7 @@ class NavBarWidget extends StatelessWidget
       //width: width ?? 430.w,
       height: height ?? 105.h,
       decoration: BoxDecoration(
-        borderRadius: borderRadius ?? AppRadiuses.circular.xxsmall, 
+        borderRadius: borderRadius ?? AppRadiuses.circular.xXSmall, 
         color: color ?? AppColors.color.kWhite002,
       ),
       child: navBarChildren,

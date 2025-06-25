@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/constants/app_strings.dart';
-import '../../../core/widgets/circular_indicator.dart';
+import '../../../core/widgets/custom_circular_indicator.dart';
 import '../../../features/appointments/presentation/widgets/appointments_empty/filters/clinic_filter/clinic_type_filter_body.dart';
 import '../../../features/appointments/presentation/widgets/appointments_empty/filters/insurance_filter/insurance_filter_body.dart';
 import '../../../features/appointments/presentation/widgets/appointments_empty/filters/location_filter/location_filter_body.dart';
@@ -22,49 +22,49 @@ class ModalSheetRouter extends StatelessWidget
     navigatorKey: navigatorState,
     debugLogDiagnostics: kDebugMode,
     initialLocation: ModalSheetRoutes.mainFilter,
-    errorBuilder: (_, _) => const Scaffold(body: Center(child: AppCircularIndicator()),),
+    errorBuilder: (_, _) => const Scaffold(body: Center(child: CustomCircularIndicator()),),
     routes:
     [
       /// [ Main Filter ]
       GoRoute(
         path: ModalSheetRoutes.mainFilter,
         name: ModalSheetRoutes.mainFilter,
-        builder: (context, state) => const ModalSheetMainScreen(appBarTitle: AppStrings.filters),
+        builder: (context, state) => const MainFilterApply(appBarTitle: AppStrings.filters),
       ),
 
       /// [ Insurance Provider ]
       GoRoute(
         path: ModalSheetRoutes.insuranceProvider,
         name: ModalSheetRoutes.insuranceProvider,
-        builder: (context, state) => const InsuranceFilter(),
+        builder: (context, state) => const InsuranceFilterBody(),
       ),
       
       /// [ Location Filter ]
       GoRoute(
         path: ModalSheetRoutes.locationFilter,
         name: ModalSheetRoutes.locationFilter,
-        builder: (context, state) => const LocationFilter(),
+        builder: (context, state) => const LocationFilterBody(),
       ),
 
       /// [ Specialty Filter ]
       GoRoute(
         path: ModalSheetRoutes.specialtyFilter,
         name: ModalSheetRoutes.specialtyFilter,
-        builder: (context, state) => const SpecialtyFilter(),
+        builder: (context, state) => const SpecialtyFilterBody(),
       ),
 
       /// [ Clinic Type Filter ]
       GoRoute(
         path: ModalSheetRoutes.clinicType,
         name: ModalSheetRoutes.clinicType,
-        builder: (context, state) => const ClinicTypeFilter(),
+        builder: (context, state) => const ClinicTypeFilterBody(),
       ),
 
       /// [ Minimum Rating Filter ]
       GoRoute(
         path: ModalSheetRoutes.minimumRating,
         name: ModalSheetRoutes.minimumRating,
-        builder: (context, state) => const RateFilter(),
+        builder: (context, state) => const RatingFilterBody(),
       ),
     ],
   );

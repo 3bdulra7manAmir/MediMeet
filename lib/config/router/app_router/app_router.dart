@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../../../core/widgets/circular_indicator.dart';
+import '../../../core/widgets/custom_circular_indicator.dart';
 import '../../../features/appointments/presentation/screens/appointments_view.dart';
 import '../../../features/appointments_details/presentation/screens/appointments_details_view.dart';
 import '../../../features/appointments/presentation/screens/appointments_empty_view.dart';
@@ -16,7 +16,7 @@ abstract class AppRouter
     navigatorKey: navigatorState,
     debugLogDiagnostics: kDebugMode,
     initialLocation: AppRoutes.appointmentsEmpty,
-    errorBuilder: (_, _) => const Scaffold(body: Center(child: AppCircularIndicator()),),
+    errorBuilder: (_, _) => const Scaffold(body: Center(child: CustomCircularIndicator()),),
     routes:
     [
       /// [Appointments Empty]

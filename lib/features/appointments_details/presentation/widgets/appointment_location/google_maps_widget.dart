@@ -6,8 +6,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../../core/constants/app_borders.dart';
 import '../../../../../core/utils/url_launcher.dart';
-import '../../../../../core/widgets/circular_indicator.dart';
-import '../../../../../core/widgets/error_widget.dart';
+import '../../../../../core/widgets/custom_circular_indicator.dart';
+import '../../../../../core/widgets/custom_error_widget.dart';
 import 'google_maps_get_direction_widget.dart';
 import 'google_maps_pin_widget.dart';
 import '../../controller/appointments_location_controller.dart';
@@ -24,7 +24,7 @@ class GoogleMapsWidget extends ConsumerWidget
       data: (locations)
       {
         final location = locations.isNotEmpty ? locations.first : null;
-        if (location == null) return const AppCircularIndicator();
+        if (location == null) return const CustomCircularIndicator();
         final LatLng clinicLocation = LatLng(location.locationLat ?? 0.0, location.locationLng ?? 0.0);
         final CameraPosition initialCameraPosition = CameraPosition(target: clinicLocation, zoom: 15.0,);
         return FutureBuilder(
@@ -33,7 +33,7 @@ class GoogleMapsWidget extends ConsumerWidget
           {
             if (!snapshot.hasData)
             {
-              return const AppCircularIndicator();
+              return const CustomCircularIndicator();
             }
             final markerData = snapshot.data!;
             return Column(
@@ -76,7 +76,7 @@ class GoogleMapsWidget extends ConsumerWidget
           },
         );
       },
-      loading: () => const AppCircularIndicator(),
+      loading: () => const CustomCircularIndicator(),
       error: (e, _) => CustomErrorWidget(e: e),
     );
   }

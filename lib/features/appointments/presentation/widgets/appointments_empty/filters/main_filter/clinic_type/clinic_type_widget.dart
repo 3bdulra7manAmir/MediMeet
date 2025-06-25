@@ -9,9 +9,9 @@ import '../../../../../../../../core/constants/app_strings.dart';
 import '../filters_title_widget.dart';
 import 'clinic_type_list.dart';
 
-class ClinicTypeWidget extends StatelessWidget
+class ClinicTypeApplyWidget extends StatelessWidget
 {
-  const ClinicTypeWidget({super.key});
+  const ClinicTypeApplyWidget({super.key});
 
   @override
   Widget build(BuildContext context)
@@ -22,8 +22,7 @@ class ClinicTypeWidget extends StatelessWidget
       [
         FiltersTitleWidget(title: AppStrings.clinicType, onTap: () => ModalSheetRouter.router.pushNamed(ModalSheetRoutes.clinicType),),
         Sizes.size8.verticalSpace,
-        //const ChoiceWidget(choice: "Hospitals",),
-        SizedBox(height: 29.h, child: const ClinicTypeFilterListWidget()),
+        SizedBox(height: 29.h, child: const ClinicTypeApplyListWidget()),
       ],
     );
   }

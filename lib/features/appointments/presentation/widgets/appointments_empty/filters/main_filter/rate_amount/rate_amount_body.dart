@@ -6,11 +6,11 @@ import '../../../../../../../../config/router/bottom_modal_sheet_router/modal_sh
 import '../../../../../../../../core/constants/app_sizes.dart';
 import '../../../../../../../../core/constants/app_strings.dart';
 import '../filters_title_widget.dart';
-import 'insurance_provider_list.dart';
+import 'rate_amount_list.dart';
 
-class InsuranceProviderApplyWidget extends StatelessWidget
+class RateAmountApplyBody extends StatelessWidget
 {
-  const InsuranceProviderApplyWidget({super.key});
+  const RateAmountApplyBody({super.key});
 
   @override
   Widget build(BuildContext context)
@@ -19,9 +19,9 @@ class InsuranceProviderApplyWidget extends StatelessWidget
       crossAxisAlignment: CrossAxisAlignment.start,
       children:
       [
-        FiltersTitleWidget(title: AppStrings.insuranceProvider, onTap: () => ModalSheetRouter.router.pushNamed(ModalSheetRoutes.insuranceProvider),),
+        FiltersTitleWidget(title: AppStrings.rating, onTap: () => ModalSheetRouter.router.pushNamed(ModalSheetRoutes.minimumRating),),
         Sizes.size8.verticalSpace,
-        SizedBox(height: 29.h, child: const InsuranceApplyListWidget()),
+        SizedBox(height: 29.h, child: const RateAmountApplyListWidget()),
       ],
     );
   }

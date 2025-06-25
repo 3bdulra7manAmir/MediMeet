@@ -11,12 +11,12 @@ import '../../../../core/constants/app_sizes.dart';
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/constants/app_styles.dart';
 import '../../../../core/widgets/appbars/app_appbar.dart';
-import '../../../../core/widgets/buttons/icon_button.dart';
-import '../../../../core/widgets/divider.dart';
+import '../../../../core/widgets/buttons/custom_icon_button.dart';
+import '../../../../core/widgets/custom_divider.dart';
 import '../widgets/appointment_billing_body.dart';
 import '../widgets/appointment_info_body.dart';
 import '../widgets/appointment_location_body.dart';
-import '../../../../core/widgets/nav_bar.dart';
+import '../../../../core/widgets/custom_nav_bar.dart';
 import '../widgets/cancel_dialog.dart';
 
 class AppointmentsDetails extends StatelessWidget
@@ -46,17 +46,17 @@ class AppointmentsDetails extends StatelessWidget
           [
             const AppointmentInfoBody(),
             Sizes.size16.verticalSpace,
-            AppDivider(color: AppColors.color.kWhite003, thickness: 2.h,),
+            CustomDivider(color: AppColors.color.kWhite003, thickness: 2.h,),
             Sizes.size16.verticalSpace,
             const AppointmentBillingWidget(),
             Sizes.size16.verticalSpace,
-            AppDivider(color: AppColors.color.kWhite003, thickness: 2.h,),
+            CustomDivider(color: AppColors.color.kWhite003, thickness: 2.h,),
             Sizes.size16.verticalSpace,
             const AppointmentLocationWidget(),
           ],
         ).marginSymmetric(horizontal: 16.w),
       ),
-      bottomNavigationBar: NavBarWidget(
+      bottomNavigationBar: CustomNavBar(
         navBarChildren:
         Row(
           children:

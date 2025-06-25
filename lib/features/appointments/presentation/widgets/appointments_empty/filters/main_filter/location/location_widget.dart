@@ -8,9 +8,9 @@ import '../../../../../../../../core/constants/app_strings.dart';
 import '../choice_widget.dart';
 import '../filters_title_widget.dart';
 
-class LocationWidget extends StatelessWidget
+class LocationApplyWidget extends StatelessWidget
 {
-  const LocationWidget({super.key});
+  const LocationApplyWidget({super.key});
 
   @override
   Widget build(BuildContext context)

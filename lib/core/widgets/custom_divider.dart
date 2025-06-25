@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../config/theme/color_manager/colors.dart';
+import '../constants/app_sizes.dart';
 
-class AppDivider extends StatelessWidget
+class CustomDivider extends StatelessWidget
 {
-  const AppDivider({super.key, this.color, this.thickness, this.indent, this.endIndent});
+  const CustomDivider({super.key, this.color, this.thickness, this.indent, this.endIndent});
 
   final Color? color;
   final double? thickness;
@@ -14,8 +16,8 @@ class AppDivider extends StatelessWidget
   Widget build(BuildContext context)
   {
     return Divider(
-      color: color ?? AppColors.color.kGreen002, 
-      thickness: thickness,
+      color: color ?? AppColors.color.kGrey005, 
+      thickness: thickness ?? (Sizes.size2).h,
       indent: indent,
       endIndent: endIndent,
     );

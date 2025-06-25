@@ -2,20 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../../../core/constants/app_sizes.dart';
-import '../../../../../../../../core/widgets/listview_builder.dart';
-import '../choice_widget.dart';
+import '../../../../../../../../core/widgets/custom_listview_builder.dart';
+import 'rate_amount_widget.dart';
 
-class RatingFilterListWidget extends StatelessWidget
+
+class RateAmountApplyListWidget extends StatelessWidget
 {
-  const RatingFilterListWidget({super.key});
+  const RateAmountApplyListWidget({super.key});
 
   @override
   Widget build(BuildContext context)
   {
-    return AppListviewBuilder(
-      itemCount: 4,
+    return CustomListviewBuilder(
+      itemCount: 3,
       scrollDirection: Axis.horizontal,
-      itemBuilder: (context, index) => const ChoiceWidget(choice: "Rating",),
+      itemBuilder: (context, index) => const RateAmountApplyWidget(initialValue: 4, ratingText: "(4.0+)",),
       separatorBuilder: (context, index) => Sizes.size8.horizontalSpace,
     );
   }

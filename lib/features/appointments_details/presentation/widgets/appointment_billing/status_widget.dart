@@ -5,8 +5,8 @@ import '../../../../../config/theme/color_manager/colors.dart';
 import '../../../../../config/theme/font_manager/font_weights.dart';
 import '../../../../../core/constants/app_strings.dart';
 import '../../../../../core/constants/app_styles.dart';
-import '../../../../../core/widgets/circular_indicator.dart';
-import '../../../../../core/widgets/error_widget.dart';
+import '../../../../../core/widgets/custom_circular_indicator.dart';
+import '../../../../../core/widgets/custom_error_widget.dart';
 import '../../../data/model/appointment_bill.dart';
 import '../../controller/appointments_bill_controller.dart';
 import 'status_paid_widget.dart';
@@ -25,7 +25,7 @@ class StatusWidget extends ConsumerWidget
       data: (bills)
       {
         final bill = bills.isNotEmpty ? bills.first : null;
-        if (bill == null) return const AppCircularIndicator();
+        if (bill == null) return const CustomCircularIndicator();
 
         final StatelessWidget statusWidget = statusWidgetChecker(bill);
         return Row(
@@ -37,7 +37,7 @@ class StatusWidget extends ConsumerWidget
           ],
         );
       },
-      loading: () => const AppCircularIndicator(),
+      loading: () => const CustomCircularIndicator(),
       error: (e, _) => CustomErrorWidget(e: e),
     );
   }
@@ -49,7 +49,7 @@ class StatusWidget extends ConsumerWidget
       'paid' => const StatusPaidWidget(),
       'failed' => const StatusFailedWidget(),
       'inprogress' => const StatusInPrograssWidget(),
-      _ => const AppCircularIndicator(),
+      _ => const CustomCircularIndicator(),
     };
     return statusWidget;
   }

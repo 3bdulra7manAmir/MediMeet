@@ -1,14 +1,13 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:medical_appointments/core/constants/app_styles.dart';
 
 import '../../../../../../../core/constants/app_sizes.dart';
+import '../../../../../../../core/constants/app_styles.dart';
+import '../check_box_widget.dart';
 
-class FiltersClinicWidget extends StatelessWidget
+class ClinicTypeChooseWidget extends StatelessWidget
 {
-  const FiltersClinicWidget({super.key});
+  const ClinicTypeChooseWidget({super.key});
 
   @override
   Widget build(BuildContext context)
@@ -17,7 +16,7 @@ class FiltersClinicWidget extends StatelessWidget
       children: 
       [
         Sizes.size16.horizontalSpace,
-        Checkbox.adaptive(value: false, onChanged: (value) => log("Checked"),),
+        const CheckBoxWidget(),
         Sizes.size8.horizontalSpace,
         Text("All", style: AppStyles.large(),)
       ],

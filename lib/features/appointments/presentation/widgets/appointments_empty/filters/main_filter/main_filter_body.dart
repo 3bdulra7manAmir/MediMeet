@@ -8,19 +8,19 @@ import '../../../../../../../core/constants/app_strings.dart';
 import '../../../../../../../core/constants/app_styles.dart';
 import '../../../../../../../core/widgets/appbars/filters_appbar.dart';
 import '../../../../../../../core/widgets/buttons/custom_button.dart';
-import '../../../../../../../core/widgets/divider.dart';
-import '../../../../../../../core/widgets/nav_bar.dart';
+import '../../../../../../../core/widgets/custom_divider.dart';
+import '../../../../../../../core/widgets/custom_nav_bar.dart';
 import 'clinic_type/clinic_type_widget.dart';
 import 'insurance_provider/insurance_provider_widget.dart';
 import 'location/location_widget.dart';
-import 'main_filter_has_insurance_widget.dart';
-import 'rate_amount/rate_amount_widget.dart';
+import 'has_insurance_widget.dart';
+import 'rate_amount/rate_amount_body.dart';
 import 'specialties/specialties_widget.dart';
 
-class ModalSheetMainScreen extends StatelessWidget
+class MainFilterApply extends StatelessWidget
 {
   final String appBarTitle;
-  const ModalSheetMainScreen({super.key, required this.appBarTitle});
+  const MainFilterApply({super.key, required this.appBarTitle});
 
   @override
   Widget build(BuildContext context)
@@ -33,40 +33,40 @@ class ModalSheetMainScreen extends StatelessWidget
           children:
           [
             Sizes.size16.verticalSpace,
-            FiltersAppbar(appbarText: appBarTitle),
+            CustomFiltersAppbar(appbarText: appBarTitle),
             Sizes.size24.verticalSpace,
       
             const HasInsuranceWidget(),
             Sizes.size16.verticalSpace,
-            AppDivider(color: AppColors.color.kGrey005, thickness: Sizes.size2.h),
+            const CustomDivider(),
             Sizes.size32.verticalSpace,
       
-            const InsuranceProviderWidget(),
+            const InsuranceProviderApplyWidget(),
             Sizes.size16.verticalSpace,
-            AppDivider(color: AppColors.color.kGrey005, thickness: Sizes.size2.h),
+            const CustomDivider(),
             Sizes.size32.verticalSpace,
       
-            const LocationWidget(),
+            const LocationApplyWidget(),
             Sizes.size16.verticalSpace,
-            AppDivider(color: AppColors.color.kGrey005, thickness: Sizes.size2.h),
+            const CustomDivider(),
             Sizes.size32.verticalSpace,
       
-            const SpecialtiesWidget(),
+            const SpecialtiesApplyWidget(),
             Sizes.size16.verticalSpace,
-            AppDivider(color: AppColors.color.kGrey005, thickness: Sizes.size2.h),
+            const CustomDivider(),
             Sizes.size32.verticalSpace,
       
-            const ClinicTypeWidget(),
+            const ClinicTypeApplyWidget(),
             Sizes.size16.verticalSpace,
-            AppDivider(color: AppColors.color.kGrey005, thickness: Sizes.size2.h),
+            const CustomDivider(),
             Sizes.size32.verticalSpace,
       
-            const RateAmountWidget(),
+            const RateAmountApplyBody(),
             Sizes.size16.verticalSpace,
           ],
         ),
       ),
-      bottomNavigationBar: NavBarWidget(
+      bottomNavigationBar: CustomNavBar(
         navBarChildren:
           Row(
               mainAxisAlignment: MainAxisAlignment.center,

@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:medical_appointments/core/services/network/api_fetch_failure.dart';
 
+import '../../../../core/services/network/api_fetch_failure.dart';
 import '../../../../core/utils/usecase.dart';
 import '../repository/info_repository.dart';
 

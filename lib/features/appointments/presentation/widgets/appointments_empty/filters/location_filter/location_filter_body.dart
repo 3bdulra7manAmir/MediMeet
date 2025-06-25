@@ -7,29 +7,31 @@ import '../../../../../../../core/constants/app_sizes.dart';
 import '../../../../../../../core/constants/app_strings.dart';
 import '../../../../../../../core/widgets/appbars/filters_appbar.dart';
 import '../../../../../../../core/widgets/buttons/custom_button.dart';
-import '../../../../../../../core/widgets/nav_bar.dart';
+import '../../../../../../../core/widgets/custom_nav_bar.dart';
 import 'location_filter_widget.dart';
 
-class LocationFilter extends StatelessWidget
+class LocationFilterBody extends StatelessWidget
 {
-  const LocationFilter({super.key});
+  const LocationFilterBody({super.key});
 
   @override
   Widget build(BuildContext context)
   {
     return Scaffold(
       backgroundColor: AppColors.color.kWhite002,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children:
-        [
-          Sizes.size16.verticalSpace,
-          const FiltersAppbar(appbarText: AppStrings.location),
-          Sizes.size24.verticalSpace,
-          const LocationFilterWidget(),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children:
+          [
+            Sizes.size16.verticalSpace,
+            const CustomFiltersAppbar(appbarText: AppStrings.location),
+            Sizes.size24.verticalSpace,
+            const LocationFilterChooseWidget(),
+          ],
+        ),
       ),
-      bottomNavigationBar: NavBarWidget(
+      bottomNavigationBar: CustomNavBar(
         navBarChildren:
         CustomButton(text: AppStrings.addFilter, onPressed: () => ModalSheetRouter.router.pop(), width: double.infinity,),
       ),

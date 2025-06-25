@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../../core/widgets/circular_indicator.dart';
-import '../../../../../core/widgets/error_widget.dart';
+import '../../../../../core/widgets/custom_circular_indicator.dart';
+import '../../../../../core/widgets/custom_error_widget.dart';
 import '../../controller/appointments_bill_controller.dart';
 import '../../../../../config/theme/color_manager/colors.dart';
 import '../../../../../config/theme/font_manager/font_weights.dart';
@@ -41,7 +41,7 @@ class BillAmountWidget extends ConsumerWidget
           ],
         );
       },
-      loading: () => const AppCircularIndicator(),
+      loading: () => const CustomCircularIndicator(),
       error: (e, _) => CustomErrorWidget(e: e),
     );
   }

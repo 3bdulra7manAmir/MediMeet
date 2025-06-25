@@ -4,8 +4,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../../core/constants/app_margins.dart';
 import '../../../../../core/constants/app_paddings.dart';
-import '../../../../../core/widgets/circular_indicator.dart';
-import '../../../../../core/widgets/error_widget.dart';
+import '../../../../../core/widgets/custom_circular_indicator.dart';
+import '../../../../../core/widgets/custom_error_widget.dart';
 import '../../controller/appointments_info_controller.dart';
 import '../../../../../config/theme/color_manager/colors.dart';
 import '../../../../../config/theme/font_manager/font_weights.dart';
@@ -27,7 +27,7 @@ class AppointmentInfoWidget extends ConsumerWidget
       data: (details)
       {
         final info = details.isNotEmpty ? details.first : null;
-        if (info == null) return const AppCircularIndicator();
+        if (info == null) return const CustomCircularIndicator();
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children:
@@ -60,7 +60,7 @@ class AppointmentInfoWidget extends ConsumerWidget
           ],
         );
       },
-      loading: () => const AppCircularIndicator(),
+      loading: () => const CustomCircularIndicator(),
       error: (e, _) => CustomErrorWidget(e: e),
     );
   }

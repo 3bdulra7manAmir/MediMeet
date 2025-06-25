@@ -8,9 +8,9 @@ import '../../../../../../../../core/constants/app_strings.dart';
 import '../filters_title_widget.dart';
 import 'specialties_list.dart';
 
-class SpecialtiesWidget extends StatelessWidget
+class SpecialtiesApplyWidget extends StatelessWidget
 {
-  const SpecialtiesWidget({super.key});
+  const SpecialtiesApplyWidget({super.key});
 
   @override
   Widget build(BuildContext context)
@@ -22,7 +22,7 @@ class SpecialtiesWidget extends StatelessWidget
         FiltersTitleWidget(title: AppStrings.specialties, onTap: () => ModalSheetRouter.router.pushNamed(ModalSheetRoutes.specialtyFilter),),
         Sizes.size8.verticalSpace,
         //const ChoiceWidget(choice: "Dermatology",),
-        SizedBox(height: 29.h, child: const SpecialtiesFilterListWidget()),
+        SizedBox(height: 29.h, child: const SpecialtiesApplyListWidget()),
       ],
     );
   }

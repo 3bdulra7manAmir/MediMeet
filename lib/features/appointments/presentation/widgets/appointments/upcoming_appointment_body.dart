@@ -7,8 +7,8 @@ import 'package:medical_appointments/core/extensions/widget_padding.dart';
 import '../../../../../config/theme/color_manager/colors.dart';
 import '../../../../../core/constants/app_sizes.dart';
 import '../../../../../core/constants/app_styles.dart';
-import '../../../../../core/widgets/circular_indicator.dart';
-import '../../../../../core/widgets/error_widget.dart';
+import '../../../../../core/widgets/custom_circular_indicator.dart';
+import '../../../../../core/widgets/custom_error_widget.dart';
 import '../../controller/upcoming_appointment_controller.dart';
 import 'upcoming_appointment/upcoming_appointment_options_widget.dart';
 import 'upcoming_appointment/upcoming_date_widget.dart';
@@ -23,13 +23,13 @@ class UpcomingAppointmentWidget extends ConsumerWidget
     final upcomingAsync = ref.watch(upcomingAppointmentsProvider);
 
     return upcomingAsync.when(
-      loading: () => const AppCircularIndicator(),
+      loading: () => const CustomCircularIndicator(),
       error: (e, _) => CustomErrorWidget(e: e),
       data: (appointments)
       {
         if (appointments.isEmpty)
         {
-          return const AppCircularIndicator();
+          return const CustomCircularIndicator();
         }
         final model = appointments.first;
         return Card(

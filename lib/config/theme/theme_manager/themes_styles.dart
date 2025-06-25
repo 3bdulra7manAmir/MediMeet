@@ -26,7 +26,7 @@ abstract class AppLightStyles
 
   static InputDecorationTheme get inputBorder => InputDecorationTheme(
     border: OutlineInputBorder(
-      borderRadius: AppRadiuses.circular.xsmall,
+      borderRadius: AppRadiuses.circular.xSmall,
     ),
   );
 

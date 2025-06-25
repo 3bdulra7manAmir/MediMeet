@@ -10,7 +10,7 @@ import '../../../../../../core/constants/app_strings.dart';
 import '../../../../../../core/constants/app_styles.dart';
 import '../../../../../../core/widgets/buttons/custom_button.dart';
 import '../../../../../../core/widgets/popers/modal_bottom_sheet.dart';
-import '../../../../../../core/widgets/textform_field.dart';
+import '../../../../../../core/widgets/custom_textform_field.dart';
 import 'rate_stars_bar.dart';
 
 void showRateBottomSheet(BuildContext context)

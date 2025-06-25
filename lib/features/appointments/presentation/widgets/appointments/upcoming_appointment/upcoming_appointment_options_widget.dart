@@ -16,9 +16,9 @@ import '../../../../../../core/constants/app_sizes.dart';
 import '../../../../../../core/constants/app_strings.dart';
 import '../../../../../../core/constants/app_styles.dart';
 import '../../../../../../core/utils/url_launcher.dart';
-import '../../../../../../core/widgets/circular_indicator.dart';
+import '../../../../../../core/widgets/custom_circular_indicator.dart';
 import '../../../../../../core/widgets/buttons/custom_button.dart';
-import '../../../../../../core/widgets/error_widget.dart';
+import '../../../../../../core/widgets/custom_error_widget.dart';
 import '../../../../../appointments_details/presentation/controller/appointments_location_controller.dart';
 
 class AppointmentOptionsWidget extends StatelessWidget
@@ -50,7 +50,7 @@ class AppointmentOptionsWidget extends StatelessWidget
               data: (locations)
               {
                 final location = locations.isNotEmpty ? locations.first : null;
-                if (location == null) return const AppCircularIndicator();
+                if (location == null) return const CustomCircularIndicator();
 
                 return GestureDetector(
                   onTap: ()
