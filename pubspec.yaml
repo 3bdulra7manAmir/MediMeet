@@ -100,3 +100,4 @@ flutter:
     - assets/jsons/
     - assets/jsons/appointments/
     - assets/jsons/appointments_details/
+    - assets/jsons/filters/

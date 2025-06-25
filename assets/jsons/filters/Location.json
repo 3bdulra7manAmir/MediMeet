@@ -1,0 +1,25 @@
+{
+  "location":
+  [
+    {
+      "id": 101,
+      "title": "Riyadh"
+    },
+    {
+      "id": 102,
+      "title": "Jeddah"
+    },
+    {
+      "id": 103,
+      "title": "Madinah"
+    },
+    {
+      "id": 104,
+      "title": "Dammam"
+    },
+    {
+      "id": 104,
+      "title": "Khobar"
+    }
+  ]
+}
