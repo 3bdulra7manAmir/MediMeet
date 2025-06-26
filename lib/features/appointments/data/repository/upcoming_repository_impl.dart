@@ -19,9 +19,4 @@ class UpComingRepoImpl implements UpComingRepository
       throw Exception('Failed to get notifications: $e');
     }
   }
-
-
-  
-
-  
 }

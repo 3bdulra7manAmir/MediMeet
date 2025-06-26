@@ -27,5 +27,4 @@ class SpecialtyLocalDataSourceImpl implements SpecialtyLocalDataSource
       throw Exception('Failed to load Specialty Filter: $e');
     }
   }
-
 }

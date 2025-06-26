@@ -10,7 +10,8 @@ import '../../../../../../../core/constants/app_paddings.dart';
 import '../../../../../../../core/constants/app_sizes.dart';
 import '../../../../../../../core/constants/app_styles.dart';
 
-class ChoiceWidget extends StatelessWidget {
+class ChoiceWidget extends StatelessWidget
+{
   const ChoiceWidget({
     super.key,
     required this.choice,
@@ -25,31 +26,19 @@ class ChoiceWidget extends StatelessWidget {
   final VoidCallback onRemove;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)
+  {
     return Container(
       padding: AppPadding.symmetric.xXSmall,
       height: 29.h,
-      decoration: BoxDecoration(
-        borderRadius: AppRadiuses.circular.xXSmall,
-        color: AppColors.color.kGrey005,
-      ),
+      decoration: BoxDecoration(borderRadius: AppRadiuses.circular.xXSmall, color: AppColors.color.kGrey005,),
       child: Row(
         mainAxisSize: MainAxisSize.min,
-        children: [
-          isText
-              ? Text(
-                  choice,
-                  style: AppStyles.medium(
-                    fontWeight: AppFontWeights.regularWeight,
-                    fontColor: AppColors.color.kBlack004,
-                  ),
-                )
-              : widget!,
+        children:
+        [
+          isText ? Text(choice, style: AppStyles.medium(fontWeight: AppFontWeights.regularWeight, fontColor: AppColors.color.kBlack004,),) : widget!,
           Sizes.size4.horizontalSpace,
-          GestureDetector(
-            onTap: onRemove,
-            child: SvgPicture.asset(AppAssets.icons.cancelBlack),
-          )
+          GestureDetector(onTap: onRemove, child: SvgPicture.asset(AppAssets.icons.cancelBlack),)
         ],
       ),
     );

@@ -19,9 +19,4 @@ class InsuranceProviderRepositoryImpl implements InsuranceProviderRepository
       throw Exception('Failed to get Insurance Provider: $e');
     }
   }
-
-
-  
-
-  
 }

@@ -27,5 +27,4 @@ class RatingLocalDataSourceImpl implements RatingLocalDataSource
       throw Exception('Failed to load Rating Filter: $e');
     }
   }
-
 }

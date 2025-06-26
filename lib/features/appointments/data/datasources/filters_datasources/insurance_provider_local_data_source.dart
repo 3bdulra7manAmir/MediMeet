@@ -27,5 +27,4 @@ class InsuranceProviderLocalDataSourceImpl implements InsuranceProviderLocalData
       throw Exception('Failed to load Insurance Provider: $e');
     }
   }
-
 }

@@ -7,9 +7,7 @@ import '../../../../../../../core/constants/app_styles.dart';
 
 class FiltersTitleWidget extends StatelessWidget
 {
-  const FiltersTitleWidget({
-    super.key, required this.title, required this.onTap,
-  });
+  const FiltersTitleWidget({super.key, required this.title, required this.onTap,});
 
   final String title;
   final void Function() onTap;
@@ -26,10 +24,7 @@ class FiltersTitleWidget extends StatelessWidget
           children:
           [
             Text(title, style: AppStyles.large(fontWeight: AppFontWeights.mediumWeight)),
-            GestureDetector(
-              onTap: onTap,
-              child: SvgPicture.asset(AppAssets.icons.rightArrowGrey)
-            ),
+            GestureDetector(onTap: onTap, child: SvgPicture.asset(AppAssets.icons.rightArrowGrey)),
           ],
         )
       ],

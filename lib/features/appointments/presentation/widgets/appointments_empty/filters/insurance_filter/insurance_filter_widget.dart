@@ -8,7 +8,8 @@ import '../../../../controller/filters_controllers/shared_checkbox_notifier.dart
 import '../../../../controller/filters_controllers/selected_filter_choices_controller.dart';
 import '../check_box_widget.dart';
 
-class InsuranceFilterChooseWidget extends ConsumerWidget {
+class InsuranceFilterChooseWidget extends ConsumerWidget
+{
   const InsuranceFilterChooseWidget({
     super.key,
     required this.index,
@@ -21,24 +22,24 @@ class InsuranceFilterChooseWidget extends ConsumerWidget {
   final String? insuranceId;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context, WidgetRef ref)
+  {
     final id = insuranceId ?? index.toString();
     return Row(
-      children: [
+      children:
+      [
         Sizes.size16.horizontalSpace,
-        CheckBoxWidget(
-          id: id,
-          provider: insuranceCheckboxProvider,
-          onChanged: (val) {
+        CheckBoxWidget(id: id, provider: insuranceCheckboxProvider,
+          onChanged: (val)
+          {
             final notifier = ref.read(selectedFilterChoicesProvider.notifier);
-            final choice = SelectedFilterChoice(
-              type: FilterType.insuranceProvider,
-              id: id,
-              label: insuranceName,
-            );
-            if (val) {
+            final choice = SelectedFilterChoice(type: FilterType.insuranceProvider, id: id, label: insuranceName,);
+            if (val)
+            {
               notifier.addChoice(choice);
-            } else {
+            }
+            else
+            {
               notifier.removeChoice(choice);
             }
           },

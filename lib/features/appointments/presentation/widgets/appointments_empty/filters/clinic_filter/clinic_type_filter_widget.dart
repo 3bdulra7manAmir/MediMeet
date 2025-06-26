@@ -8,7 +8,8 @@ import '../../../../controller/filters_controllers/selected_filter_choices_contr
 import '../../../../controller/filters_controllers/shared_checkbox_notifier.dart';
 import '../check_box_widget.dart';
 
-class ClinicTypeChooseWidget extends ConsumerWidget {
+class ClinicTypeChooseWidget extends ConsumerWidget
+{
   const ClinicTypeChooseWidget({
     super.key,
     required this.index,
@@ -21,24 +22,26 @@ class ClinicTypeChooseWidget extends ConsumerWidget {
   final String? clinicTypeId;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context, WidgetRef ref)
+  {
     final id = clinicTypeId ?? index.toString();
     return Row(
-      children: [
+      children:
+      [
         Sizes.size16.horizontalSpace,
         CheckBoxWidget(
           id: id,
           provider: clinicTypeCheckboxProvider,
-          onChanged: (val) {
+          onChanged: (val)
+          {
             final notifier = ref.read(selectedFilterChoicesProvider.notifier);
-            final choice = SelectedFilterChoice(
-              type: FilterType.clinicType,
-              id: id,
-              label: clinicTypeName,
-            );
-            if (val) {
+            final choice = SelectedFilterChoice(type: FilterType.clinicType, id: id, label: clinicTypeName,);
+            if (val)
+            {
               notifier.addChoice(choice);
-            } else {
+            }
+            else
+            {
               notifier.removeChoice(choice);
             }
           },

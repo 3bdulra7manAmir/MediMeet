@@ -4,14 +4,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../../../core/constants/app_sizes.dart';
 import '../../../../../../../../core/widgets/custom_listview_builder.dart';
+import '../../../../../../../core/widgets/custom_circular_indicator.dart';
+import '../../../../../../../core/widgets/custom_error_widget.dart';
 import '../../../../controller/filters_controllers/rating/rating_filter_controller.dart';
 import 'rate_widget.dart';
 
-class RatingFilterChosseListWidget extends ConsumerWidget {
+class RatingFilterChosseListWidget extends ConsumerWidget
+{
   const RatingFilterChosseListWidget({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context, WidgetRef ref)
+  {
     final asyncRatings = ref.watch(ratingFilterProvider);
     return asyncRatings.when(
       data: (ratings) => CustomListviewBuilder(
@@ -24,8 +28,8 @@ class RatingFilterChosseListWidget extends ConsumerWidget {
         ),
         separatorBuilder: (context, index) => Sizes.size8.horizontalSpace,
       ),
-      loading: () => const Center(child: CircularProgressIndicator()),
-      error: (e, st) => Center(child: Text('Error: \\${e.toString()}')),
+      loading: () => const CustomCircularIndicator(),
+      error: (e, st) => CustomErrorWidget(e: e),
     );
   }
 }

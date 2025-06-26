@@ -3,12 +3,15 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../../core/constants/app_sizes.dart';
+import '../../../../../../../core/widgets/custom_circular_indicator.dart';
 import '../../../../../../../core/widgets/custom_divider.dart';
+import '../../../../../../../core/widgets/custom_error_widget.dart';
 import '../../../../../../../core/widgets/custom_listview_builder.dart';
 import '../../../../controller/filters_controllers/insurance_provider/insurance_provider_filter_controller.dart';
 import 'insurance_filter_widget.dart';
 
-class InsuranceFilterChooseListWidget extends ConsumerWidget {
+class InsuranceFilterChooseListWidget extends ConsumerWidget
+{
   const InsuranceFilterChooseListWidget({super.key});
 
   @override
@@ -17,10 +20,7 @@ class InsuranceFilterChooseListWidget extends ConsumerWidget {
     return asyncInsurances.when(
       data: (insurances) => CustomListviewBuilder(
         itemCount: insurances.length,
-        itemBuilder: (context, index) => InsuranceFilterChooseWidget(
-          index: index,
-          insuranceName: insurances[index].title ?? '',
-        ),
+        itemBuilder: (context, index) => InsuranceFilterChooseWidget(index: index, insuranceName: insurances[index].title ?? '',),
         separatorBuilder: (context, index) => Column(
           children:
           [
@@ -30,8 +30,8 @@ class InsuranceFilterChooseListWidget extends ConsumerWidget {
           ],
         ),
       ),
-      loading: () => const Center(child: CircularProgressIndicator()),
-      error: (e, st) => Center(child: Text('Error: ${e.toString()}')),
+      loading: () => const CustomCircularIndicator(),
+      error: (e, st) => CustomErrorWidget(e: e),
     );
   }
 }

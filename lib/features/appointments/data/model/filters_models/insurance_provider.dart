@@ -21,5 +21,4 @@ class InsuranceProviderModel
       'title': title,
     };
   }
-
 }

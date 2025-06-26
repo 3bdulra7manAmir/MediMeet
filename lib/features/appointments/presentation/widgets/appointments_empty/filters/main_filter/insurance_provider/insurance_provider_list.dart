@@ -8,7 +8,8 @@ import '../../../../../controller/filters_controllers/shared_checkbox_notifier.d
 import '../choice_widget.dart';
 import '../../../../../../presentation/controller/filters_controllers/selected_filter_choices_controller.dart';
 
-class InsuranceApplyListWidget extends ConsumerWidget {
+class InsuranceApplyListWidget extends ConsumerWidget
+{
   const InsuranceApplyListWidget({super.key});
 
   @override

@@ -23,6 +23,4 @@ class PastAppointmentUsecase extends AppUsecase
       return Left(ApiFetchFailure()); //message: e.toString()
     }
   }
-
-
 }

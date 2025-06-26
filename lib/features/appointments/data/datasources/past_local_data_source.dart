@@ -26,5 +26,4 @@ class PastLocalDataSourceImpl implements PastLocalDataSource
       throw Exception('Failed to load past: $e');
     }
   }
-
 }

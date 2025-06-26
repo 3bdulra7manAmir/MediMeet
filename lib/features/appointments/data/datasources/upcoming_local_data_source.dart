@@ -26,5 +26,4 @@ class UpComingLocalDataSourceImpl implements UpComingLocalDataSource
       throw Exception('Failed to load upcoming: $e');
     }
   }
-
 }

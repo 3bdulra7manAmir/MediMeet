@@ -19,9 +19,4 @@ class RatingRepositoryImpl implements RatingRepository
       throw Exception('Failed to get Clinic Type: $e');
     }
   }
-
-
-  
-
-  
 }

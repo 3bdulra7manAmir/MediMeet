@@ -8,7 +8,8 @@ import '../../../../controller/filters_controllers/shared_checkbox_notifier.dart
 import '../../../../controller/filters_controllers/selected_filter_choices_controller.dart';
 import '../check_box_widget.dart';
 
-class SpecialtyFilterChooseWidget extends ConsumerWidget {
+class SpecialtyFilterChooseWidget extends ConsumerWidget
+{
   const SpecialtyFilterChooseWidget({
     super.key,
     required this.index,
@@ -25,21 +26,20 @@ class SpecialtyFilterChooseWidget extends ConsumerWidget {
   {
     final id = specialtyId ?? index.toString();
     return Row(
-      children: [
+      children:
+      [
         Sizes.size16.horizontalSpace,
-        CheckBoxWidget(
-          id: id,
-          provider: specialtyCheckboxProvider,
-          onChanged: (val) {
+        CheckBoxWidget(id: id, provider: specialtyCheckboxProvider,
+          onChanged: (val)
+          {
             final notifier = ref.read(selectedFilterChoicesProvider.notifier);
-            final choice = SelectedFilterChoice(
-              type: FilterType.specialty,
-              id: id,
-              label: specialtyName,
-            );
-            if (val) {
+            final choice = SelectedFilterChoice(type: FilterType.specialty, id: id, label: specialtyName,);
+            if (val)
+            {
               notifier.addChoice(choice);
-            } else {
+            }
+            else
+            {
               notifier.removeChoice(choice);
             }
           },

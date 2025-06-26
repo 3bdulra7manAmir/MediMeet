@@ -8,7 +8,6 @@ import '../../../../core/constants/app_styles.dart';
 import '../../../../core/widgets/appbars/app_appbar.dart';
 import '../widgets/appointments/past_appointment_list.dart';
 import '../widgets/appointments/upcoming_appointment_body.dart';
-//import '../widgets/appointments/upcoming_appointment_list.dart';
 
 class Appointments extends StatelessWidget
 {
@@ -36,8 +35,6 @@ class Appointments extends StatelessWidget
             ),
           ),
           
-          //const SliverToBoxAdapter(child: UpcomingAppointmentList(),),
-
           SliverToBoxAdapter(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

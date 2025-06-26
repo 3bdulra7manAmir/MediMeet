@@ -24,5 +24,4 @@ class RatingModel
       'rate_text': rateText,
     };
   }
-
 }

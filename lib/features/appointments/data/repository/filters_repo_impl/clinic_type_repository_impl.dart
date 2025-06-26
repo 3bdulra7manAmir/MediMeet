@@ -19,9 +19,4 @@ class ClinicTypeRepositoryImpl implements ClinicTypeRepository
       throw Exception('Failed to get Clinic Type: $e');
     }
   }
-
-
-  
-
-  
 }

@@ -19,9 +19,4 @@ class SpecialtyRepositoryImpl implements SpecialtyRepository
       throw Exception('Failed to get Clinic Type: $e');
     }
   }
-
-
-  
-
-  
 }

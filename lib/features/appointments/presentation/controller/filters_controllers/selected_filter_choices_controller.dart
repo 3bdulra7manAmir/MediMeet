@@ -1,7 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 /// Enum for filter types
-enum FilterType {
+enum FilterType
+{
   specialty,
   rating,
   location,
@@ -10,7 +11,8 @@ enum FilterType {
 }
 
 /// Model for a selected filter choice
-class SelectedFilterChoice {
+class SelectedFilterChoice
+{
   final FilterType type;
   final String id; // Unique identifier for the choice (e.g., id or value)
   final String label; // Display label
@@ -36,24 +38,30 @@ class SelectedFilterChoice {
 }
 
 /// StateNotifier for managing selected filter choices
-class SelectedFilterChoicesNotifier extends StateNotifier<List<SelectedFilterChoice>> {
+class SelectedFilterChoicesNotifier extends StateNotifier<List<SelectedFilterChoice>>
+{
   SelectedFilterChoicesNotifier() : super([]);
 
-  void addChoice(SelectedFilterChoice choice) {
-    if (!state.contains(choice)) {
+  void addChoice(SelectedFilterChoice choice)
+  {
+    if (!state.contains(choice))
+    {
       state = [...state, choice];
     }
   }
 
-  void removeChoice(SelectedFilterChoice choice) {
+  void removeChoice(SelectedFilterChoice choice)
+  {
     state = state.where((c) => c != choice).toList();
   }
 
-  void removeByTypeAndId(FilterType type, String id) {
+  void removeByTypeAndId(FilterType type, String id)
+  {
     state = state.where((c) => c.type != type || c.id != id).toList();
   }
 
-  void clearAll() {
+  void clearAll()
+  {
     state = [];
   }
 }

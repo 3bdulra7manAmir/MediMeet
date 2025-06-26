@@ -28,5 +28,4 @@ class LocationFilterLocalDataSourceImpl implements LocationFilterLocalDataSource
       throw Exception('Failed to load Location Filter: $e');
     }
   }
-
 }

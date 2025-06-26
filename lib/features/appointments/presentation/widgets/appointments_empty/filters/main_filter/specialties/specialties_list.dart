@@ -8,23 +8,24 @@ import '../choice_widget.dart';
 import '../../../../../../presentation/controller/filters_controllers/selected_filter_choices_controller.dart';
 import '../../../../../controller/filters_controllers/shared_checkbox_notifier.dart';
 
-class SpecialtiesApplyListWidget extends ConsumerWidget {
+class SpecialtiesApplyListWidget extends ConsumerWidget
+{
   const SpecialtiesApplyListWidget({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final selectedChoices = ref
-        .watch(selectedFilterChoicesProvider)
-        .where((c) => c.type == FilterType.specialty)
-        .toList();
+  Widget build(BuildContext context, WidgetRef ref)
+  {
+    final selectedChoices = ref.watch(selectedFilterChoicesProvider).where((c) => c.type == FilterType.specialty).toList();
     return CustomListviewBuilder(
       itemCount: selectedChoices.length,
       scrollDirection: Axis.horizontal,
-      itemBuilder: (context, index) {
+      itemBuilder: (context, index)
+      {
         final choice = selectedChoices[index];
         return ChoiceWidget(
           choice: choice.label,
-          onRemove: () {
+          onRemove: ()
+          {
             ref.read(selectedFilterChoicesProvider.notifier).removeChoice(choice);
             ref.read(specialtyCheckboxProvider.notifier).setValue(choice.id, false);
           },

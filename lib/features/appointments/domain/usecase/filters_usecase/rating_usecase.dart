@@ -23,5 +23,4 @@ class RatingUsecase extends AppUsecase
       return Left(ApiFetchFailure()); //message: e.toString()
     }
   }
-
 }

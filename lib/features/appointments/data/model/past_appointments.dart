@@ -51,5 +51,4 @@ class PastModel
       'rateDescription': pastRateDescription,
     };
   }
-  
 }

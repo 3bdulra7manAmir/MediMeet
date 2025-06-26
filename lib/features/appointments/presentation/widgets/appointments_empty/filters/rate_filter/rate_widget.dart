@@ -10,7 +10,8 @@ import '../../../../controller/filters_controllers/shared_checkbox_notifier.dart
 import '../../../appointments/past_appointment/rate_stars_bar.dart';
 import '../check_box_widget.dart';
 
-class RatingFilterChooseWidget extends ConsumerWidget {
+class RatingFilterChooseWidget extends ConsumerWidget
+{
   const RatingFilterChooseWidget({
     super.key,
     required this.index,
@@ -25,25 +26,24 @@ class RatingFilterChooseWidget extends ConsumerWidget {
   final String? ratingId;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context, WidgetRef ref)
+  {
     final id = ratingId ?? index.toString();
     return Row(
-      children: [
+      children:
+      [
         Sizes.size16.horizontalSpace,
-        CheckBoxWidget(
-          id: id,
-          provider: ratingCheckboxProvider,
-          onChanged: (val) {
+        CheckBoxWidget(id: id, provider: ratingCheckboxProvider,
+          onChanged: (val)
+          {
             final notifier = ref.read(selectedFilterChoicesProvider.notifier);
-            final choice = SelectedFilterChoice(
-              type: FilterType.rating,
-              id: id,
-              label: ratingLabel,
-              extra: starsCount,
-            );
-            if (val) {
+            final choice = SelectedFilterChoice(type: FilterType.rating, id: id, label: ratingLabel, extra: starsCount,);
+            if (val)
+            {
               notifier.addChoice(choice);
-            } else {
+            }
+            else
+            {
               notifier.removeChoice(choice);
             }
           },

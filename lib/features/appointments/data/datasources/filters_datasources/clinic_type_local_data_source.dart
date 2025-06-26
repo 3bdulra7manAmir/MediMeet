@@ -27,5 +27,4 @@ class ClinicTypeLocalDataSourceImpl implements ClinicTypeLocalDataSource
       throw Exception('Failed to load Clinic Type: $e');
     }
   }
-
 }

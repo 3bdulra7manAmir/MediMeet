@@ -23,5 +23,4 @@ class ClinicTypeUsecase extends AppUsecase
       return Left(ApiFetchFailure()); //message: e.toString()
     }
   }
-
 }

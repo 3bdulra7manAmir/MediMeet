@@ -32,8 +32,7 @@ class RatingFilterBody extends StatelessWidget
         ),
       ),
       bottomNavigationBar: CustomNavBar(
-        navBarChildren:
-          CustomButton(text: AppStrings.addFilter, onPressed: () => ModalSheetRouter.router.pop(), width: double.infinity,),
+        navBarChildren: CustomButton(text: AppStrings.addFilter, onPressed: () => ModalSheetRouter.router.pop(), width: double.infinity,),
       ),
     );
   }

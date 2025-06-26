@@ -23,5 +23,4 @@ class InsuranceProviderUsecase extends AppUsecase
       return Left(ApiFetchFailure()); //message: e.toString()
     }
   }
-
 }

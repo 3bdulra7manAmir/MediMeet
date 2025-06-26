@@ -10,19 +10,22 @@ part 'appointments_location_controller.g.dart';
 
 // Local Data Source
 @riverpod
-LocationLocalDataSource locationLocalDataSource(Ref ref) {
+LocationLocalDataSource locationLocalDataSource(Ref ref)
+{
   return LocationLocalDataSourceImpl();
 }
 
 // Repository
 @riverpod
-LocationRepoImpl locationRepository(Ref ref) {
+LocationRepoImpl locationRepository(Ref ref)
+{
   final local = ref.watch(locationLocalDataSourceProvider);
   return LocationRepoImpl(localDataSource: local);
 }
 
 // Async Data Provider
 @riverpod
-Future<List<LocationModel>> location(Ref ref) {
+Future<List<LocationModel>> location(Ref ref)
+{
   return ref.watch(locationRepositoryProvider).getLocationDetails();
 }

@@ -17,13 +17,15 @@ DetailsLocalDataSource detailsLocalDataSource(Ref ref)
 
 // Repository
 @riverpod
-DetailsRepoImpl detailsRepository(Ref ref) {
+DetailsRepoImpl detailsRepository(Ref ref)
+{
   final local = ref.watch(detailsLocalDataSourceProvider);
   return DetailsRepoImpl(localDataSource: local);
 }
 
 // Async Data Provider
 @riverpod
-Future<List<DetailsModel>> details(Ref ref) {
+Future<List<DetailsModel>> details(Ref ref)
+{
   return ref.watch(detailsRepositoryProvider).getAppointmentDetails();
 }

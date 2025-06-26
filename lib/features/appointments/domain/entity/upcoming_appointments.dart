@@ -5,5 +5,4 @@ class UpComingEntity
   final String? upComingLocation;
 
   UpComingEntity(this.upComingTitle, this.upComingDateTime, this.upComingLocation);
-  
 }

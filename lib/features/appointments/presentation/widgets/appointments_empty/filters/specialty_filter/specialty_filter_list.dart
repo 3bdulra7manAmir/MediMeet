@@ -3,7 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../../core/constants/app_sizes.dart';
+import '../../../../../../../core/widgets/custom_circular_indicator.dart';
 import '../../../../../../../core/widgets/custom_divider.dart';
+import '../../../../../../../core/widgets/custom_error_widget.dart';
 import '../../../../../../../core/widgets/custom_listview_builder.dart';
 import '../../../../controller/filters_controllers/specialty/specialty_filter_controller.dart';
 import 'specialty_filter_widget.dart';
@@ -36,8 +38,8 @@ class SpecialtyFilterChooseListWidget extends ConsumerWidget
           ],
         ),
       ),
-      loading: () => const Center(child: CircularProgressIndicator()),
-      error: (e, st) => Center(child: Text('Error: \\${e.toString()}')),
+      loading: () => const CustomCircularIndicator(),
+      error: (e, st) => CustomErrorWidget(e: e),
     );
   }
 }

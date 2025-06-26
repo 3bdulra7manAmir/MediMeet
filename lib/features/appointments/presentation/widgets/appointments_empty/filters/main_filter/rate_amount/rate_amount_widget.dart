@@ -39,10 +39,7 @@ class RateAmountApplyWidget extends StatelessWidget
           Text(ratingText, style: AppStyles.large(fontColor: AppColors.color.kBlack002),),
           Sizes.size4.horizontalSpace,
           if (onRemove != null)
-            GestureDetector(
-              onTap: onRemove,
-              child: SvgPicture.asset(AppAssets.icons.cancelBlack)
-            ),
+            GestureDetector(onTap: onRemove, child: SvgPicture.asset(AppAssets.icons.cancelBlack)),
           Sizes.size8.horizontalSpace,
         ],
       ),

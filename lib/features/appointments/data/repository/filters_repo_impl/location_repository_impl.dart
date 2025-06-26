@@ -19,9 +19,4 @@ class LocationFilterRepositoryImpl implements LocationFilterRepository
       throw Exception('Failed to get Clinic Type: $e');
     }
   }
-
-
-  
-
-  
 }

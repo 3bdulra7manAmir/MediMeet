@@ -19,9 +19,4 @@ class PastRepoImpl implements PastRepository
       throw Exception('Failed to get notifications: $e');
     }
   }
-
-
-  
-
-  
 }

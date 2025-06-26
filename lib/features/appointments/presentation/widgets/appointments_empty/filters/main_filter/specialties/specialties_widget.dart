@@ -21,7 +21,6 @@ class SpecialtiesApplyWidget extends StatelessWidget
       [
         FiltersTitleWidget(title: AppStrings.specialties, onTap: () => ModalSheetRouter.router.pushNamed(ModalSheetRoutes.specialtyFilter),),
         Sizes.size8.verticalSpace,
-        //const ChoiceWidget(choice: "Dermatology",),
         SizedBox(height: 29.h, child: const SpecialtiesApplyListWidget()),
       ],
     );

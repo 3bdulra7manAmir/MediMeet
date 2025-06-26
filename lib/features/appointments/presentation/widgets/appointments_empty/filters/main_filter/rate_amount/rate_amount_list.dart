@@ -8,24 +8,23 @@ import '../../../../../../presentation/controller/filters_controllers/selected_f
 import '../../../../../controller/filters_controllers/shared_checkbox_notifier.dart';
 import 'rate_amount_widget.dart';
 
-class RateAmountApplyListWidget extends ConsumerWidget {
+class RateAmountApplyListWidget extends ConsumerWidget
+{
   const RateAmountApplyListWidget({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final selectedChoices = ref
-        .watch(selectedFilterChoicesProvider)
-        .where((c) => c.type == FilterType.rating)
-        .toList();
+  Widget build(BuildContext context, WidgetRef ref)
+  {
+    final selectedChoices = ref.watch(selectedFilterChoicesProvider).where((c) => c.type == FilterType.rating).toList();
     return CustomListviewBuilder(
       itemCount: selectedChoices.length,
       scrollDirection: Axis.horizontal,
-      itemBuilder: (context, index) {
+      itemBuilder: (context, index)
+      {
         final choice = selectedChoices[index];
-        return RateAmountApplyWidget(
-          initialValue: choice.extra is double ? choice.extra : 0.0,
-          ratingText: choice.label,
-          onRemove: () {
+        return RateAmountApplyWidget(initialValue: choice.extra is double ? choice.extra : 0.0, ratingText: choice.label,
+          onRemove: ()
+          {
             ref.read(selectedFilterChoicesProvider.notifier).removeChoice(choice);
             ref.read(ratingCheckboxProvider.notifier).setValue(choice.id, false);
           },

@@ -6,6 +6,4 @@ class UpComingEntity
   final double? pastRate;
 
   UpComingEntity(this.pastTitle, this.pastDateTime, this.pastCategory, this.pastRate);
-
-  
 }

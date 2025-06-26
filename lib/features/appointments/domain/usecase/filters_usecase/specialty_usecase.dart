@@ -23,5 +23,4 @@ class SpecialtyUsecase extends AppUsecase
       return Left(ApiFetchFailure()); //message: e.toString()
     }
   }
-
 }
