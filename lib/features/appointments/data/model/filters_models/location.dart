@@ -8,7 +8,7 @@ class LocationFilterModel
   factory LocationFilterModel.fromJson(Map<String, dynamic> json)
   {
     return LocationFilterModel(
-      id: json['id'] as String?,
+      id: json['id']?.toString(),
       title: json['title'] as String?,
     );
   }

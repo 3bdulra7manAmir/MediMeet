@@ -8,7 +8,7 @@ class InsuranceProviderModel
   factory InsuranceProviderModel.fromJson(Map<String, dynamic> json)
   {
     return InsuranceProviderModel(
-      id: json['id'] as String?,
+      id: json['id']?.toString(),
       title: json['title'] as String?,
     );
   }

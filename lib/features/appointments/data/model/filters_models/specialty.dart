@@ -8,7 +8,7 @@ class SpecialtyModel
   factory SpecialtyModel.fromJson(Map<String, dynamic> json)
   {
     return SpecialtyModel(
-      id: json['id'] as String?,
+      id: json['id']?.toString(),
       title: json['title'] as String?,
     );
   }

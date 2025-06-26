@@ -9,9 +9,9 @@ class RatingModel
   factory RatingModel.fromJson(Map<String, dynamic> json)
   {
     return RatingModel(
-      id: json['id'] as String?,
-      rateValue: json['title'] as String?,
-      rateText: json['title'] as String?,
+      id: json['id']?.toString(),
+      rateValue: json['rate_value'] as String?,
+      rateText: json['rate_text'] as String?,
     );
   }
   

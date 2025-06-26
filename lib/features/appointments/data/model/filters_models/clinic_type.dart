@@ -8,7 +8,7 @@ class ClinicTypeModel
   factory ClinicTypeModel.fromJson(Map<String, dynamic> json)
   {
     return ClinicTypeModel(
-      id: json['id'] as String?,
+      id: json['id']?.toString(),
       title: json['title'] as String?,
     );
   }

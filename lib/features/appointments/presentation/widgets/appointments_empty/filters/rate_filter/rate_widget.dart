@@ -36,7 +36,7 @@ class RatingFilterChooseWidget extends StatelessWidget
         Sizes.size6.horizontalSpace,
         RateStars(initialValue: starsCount, itemPadding: AppPadding.symmetric.xXXSmall),
         Sizes.size8.horizontalSpace,
-        Text("($ratingLabel only)", style: AppStyles.large()),
+        Text(ratingLabel, style: AppStyles.large()),
       ],
     );
   }
