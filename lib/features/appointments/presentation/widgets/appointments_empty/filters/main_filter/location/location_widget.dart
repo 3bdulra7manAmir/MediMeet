@@ -29,7 +29,7 @@ class LocationApplyWidget extends ConsumerWidget
         FiltersTitleWidget(title: AppStrings.location, onTap: () => ModalSheetRouter.router.pushNamed(ModalSheetRoutes.locationFilter),),
         Sizes.size8.verticalSpace,
         if (selectedChoices.isEmpty)
-          const CustomCircularIndicator()
+          const SizedBox.shrink()
         else
           SizedBox(
             height: 29.h,

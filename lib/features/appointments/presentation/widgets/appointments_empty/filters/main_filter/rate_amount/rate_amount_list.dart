@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -25,6 +26,7 @@ class RateAmountApplyListWidget extends ConsumerWidget
         return RateAmountApplyWidget(initialValue: choice.extra is double ? choice.extra : 0.0, ratingText: choice.label,
           onRemove: ()
           {
+            log('Removed rating: \\${selectedChoices[index].label}');
             ref.read(selectedFilterChoicesProvider.notifier).removeChoice(choice);
             ref.read(ratingCheckboxProvider.notifier).setValue(choice.id, false);
           },

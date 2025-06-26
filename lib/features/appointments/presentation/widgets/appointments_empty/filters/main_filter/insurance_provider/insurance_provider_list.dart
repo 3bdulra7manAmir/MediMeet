@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,6 +24,7 @@ class InsuranceApplyListWidget extends ConsumerWidget
         choice: selectedChoices[index].label,
         onRemove: ()
         {
+          log('Removed insurance: \\${selectedChoices[index].label}');
           ref.read(selectedFilterChoicesProvider.notifier).removeChoice(selectedChoices[index]);
           ref.read(insuranceCheckboxProvider.notifier).setValue(selectedChoices[index].id, false);
         },

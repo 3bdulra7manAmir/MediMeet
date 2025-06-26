@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -26,6 +27,7 @@ class ClinicTypeApplyListWidget extends ConsumerWidget
           choice: choice.label,
           onRemove: ()
           {
+            log('Removed clinic type: \\${selectedChoices[index].label}');
             ref.read(selectedFilterChoicesProvider.notifier).removeChoice(choice);
             ref.read(clinicTypeCheckboxProvider.notifier).setValue(choice.id, false);
           },

@@ -1,3 +1,4 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -12,6 +13,7 @@ import '../../../../../../../core/widgets/appbars/filters_appbar.dart';
 import '../../../../../../../core/widgets/buttons/custom_button.dart';
 import '../../../../../../../core/widgets/custom_divider.dart';
 import '../../../../../../../core/widgets/custom_nav_bar.dart';
+import '../../../../controller/filters_controllers/selected_filter_choices_controller.dart';
 import 'clinic_type/clinic_type_widget.dart';
 import 'insurance_provider/insurance_provider_widget.dart';
 import 'location/location_widget.dart';
@@ -25,7 +27,7 @@ class MainFilterApply extends StatelessWidget
   const MainFilterApply({super.key, required this.appBarTitle});
 
   @override
-  Widget build(BuildContext context)
+  Widget build(BuildContext context,)
   {
     return Scaffold(
       backgroundColor: AppColors.color.kWhite002,
@@ -79,15 +81,21 @@ class MainFilterApply extends StatelessWidget
                     text: AppStrings.reset,
                     textStyle: AppStyles.large(fontColor: AppColors.color.kBlack001, fontWeight: AppFontWeights.semiBoldWeight,),
                     backgroundColor: AppColors.color.kWhite002, borderColor: AppColors.color.kWhite001, borderWidth: (Sizes.size2).w,
-                    onPressed: () => log("Clear All Fields..."),
+                    onPressed: () {log("Clear All Fields...");},
                   ),
                 ),
                 Sizes.size24.horizontalSpace,
-                Expanded(child: CustomButton(text: AppStrings.showResults, onPressed: ()
-                    {
-                      log("All Selected Data HERE!!!");
-                      AppRouter.router.pop();
-                    },
+                Expanded(
+                  child: Consumer(
+                    builder: (context, ref, _) => CustomButton(
+                      text: AppStrings.showResults,
+                      onPressed: ()
+                      {
+                        final selectedChoices = ref.read(selectedFilterChoicesProvider);
+                        log('Selected filter choices: ${selectedChoices.map((c) => '{type: \\${c.type}, id: \\${c.id}, label: \\${c.label}, extra: \\${c.extra}}').join(', ')}');
+                        AppRouter.router.pop();
+                      },
+                    ),
                   ),
                 ),
               ],
