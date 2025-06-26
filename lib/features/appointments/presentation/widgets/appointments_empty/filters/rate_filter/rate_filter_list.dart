@@ -1,33 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../../../core/constants/app_sizes.dart';
 import '../../../../../../../../core/widgets/custom_listview_builder.dart';
+import '../../../../../presentation/controller/filters_controllers/rating_filter_controller.dart';
 import 'rate_widget.dart';
 
-class RatingFilterChosseListWidget extends StatelessWidget
-{
+class RatingFilterChosseListWidget extends ConsumerWidget {
   const RatingFilterChosseListWidget({super.key});
 
   @override
-  Widget build(BuildContext context)
-  {
-    final ratings =
-    [
-      {'stars': 5, 'label': '5.0+'},
-      {'stars': 4, 'label': '4.0+'},
-      {'stars': 3, 'label': '3.0+'},
-      {'stars': 2, 'label': '2.0+'},
-    ];
-
-    return CustomListviewBuilder(
-      itemCount: ratings.length,
-      itemBuilder: (context, index) => RatingFilterChooseWidget(
-        index: index,
-        ratingLabel: ratings[index]['label'] as String,
-        starsCount: ratings[index]['stars'] as double,
+  Widget build(BuildContext context, WidgetRef ref) {
+    final asyncRatings = ref.watch(ratingFilterProvider);
+    return asyncRatings.when(
+      data: (ratings) => CustomListviewBuilder(
+        itemCount: ratings.length,
+        itemBuilder: (context, index) => RatingFilterChooseWidget(
+          index: index,
+          ratingLabel: ratings[index].rateText ?? '',
+          starsCount: double.tryParse(ratings[index].rateValue ?? '') ?? 0,
+        ),
+        separatorBuilder: (context, index) => Sizes.size8.horizontalSpace,
       ),
-      separatorBuilder: (context, index) => Sizes.size8.horizontalSpace,
+      loading: () => const Center(child: CircularProgressIndicator()),
+      error: (e, st) => Center(child: Text('Error: \\${e.toString()}')),
     );
   }
 }

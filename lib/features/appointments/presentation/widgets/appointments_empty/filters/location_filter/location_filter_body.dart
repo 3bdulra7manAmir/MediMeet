@@ -8,7 +8,7 @@ import '../../../../../../../core/constants/app_strings.dart';
 import '../../../../../../../core/widgets/appbars/filters_appbar.dart';
 import '../../../../../../../core/widgets/buttons/custom_button.dart';
 import '../../../../../../../core/widgets/custom_nav_bar.dart';
-import 'location_filter_widget.dart';
+import 'location_filter_list.dart';
 
 class LocationFilterBody extends StatelessWidget
 {
@@ -27,7 +27,7 @@ class LocationFilterBody extends StatelessWidget
             Sizes.size16.verticalSpace,
             const CustomFiltersAppbar(appbarText: AppStrings.location),
             Sizes.size24.verticalSpace,
-            const LocationFilterChooseWidget(),
+            const LocationFilterChooseListWidget(),
           ],
         ),
       ),
