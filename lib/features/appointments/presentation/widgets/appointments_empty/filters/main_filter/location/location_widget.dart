@@ -7,7 +7,7 @@ import '../../../../../../../../config/router/bottom_modal_sheet_router/modal_sh
 import '../../../../../../../../core/constants/app_sizes.dart';
 import '../../../../../../../../core/constants/app_strings.dart';
 import '../../../../../../presentation/controller/filters_controllers/selected_filter_choices_controller.dart';
-import '../../../../../controller/filters_controllers/location_filter_controller.dart';
+import '../../../../../controller/filters_controllers/location/location_filter_controller.dart';
 import '../../../../../controller/filters_controllers/shared_checkbox_notifier.dart';
 import '../choice_widget.dart';
 import '../filters_title_widget.dart';

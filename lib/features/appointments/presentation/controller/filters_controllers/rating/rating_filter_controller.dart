@@ -1,10 +1,10 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../../data/datasources/filters_datasources/rating_local_data_source.dart';
-import '../../../data/model/filters_models/rating.dart';
-import '../../../data/repository/filters_repo_impl/rating_repository_impl.dart';
-import '../../../domain/usecase/filters_usecase/rating_usecase.dart';
+import '../../../../data/datasources/filters_datasources/rating_local_data_source.dart';
+import '../../../../data/model/filters_models/rating.dart';
+import '../../../../data/repository/filters_repo_impl/rating_repository_impl.dart';
+import '../../../../domain/usecase/filters_usecase/rating_usecase.dart';
 
 part 'rating_filter_controller.g.dart';
 

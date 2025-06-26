@@ -1,10 +1,10 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../../data/datasources/filters_datasources/location_local_data_source.dart';
-import '../../../data/model/filters_models/location.dart';
-import '../../../data/repository/filters_repo_impl/location_repository_impl.dart';
-import '../../../domain/usecase/filters_usecase/location_usecase.dart';
+import '../../../../data/datasources/filters_datasources/location_local_data_source.dart';
+import '../../../../data/model/filters_models/location.dart';
+import '../../../../data/repository/filters_repo_impl/location_repository_impl.dart';
+import '../../../../domain/usecase/filters_usecase/location_usecase.dart';
 
 
 part 'location_filter_controller.g.dart';

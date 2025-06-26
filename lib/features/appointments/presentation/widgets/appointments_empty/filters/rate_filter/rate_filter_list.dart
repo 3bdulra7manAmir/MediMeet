@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../../../core/constants/app_sizes.dart';
 import '../../../../../../../../core/widgets/custom_listview_builder.dart';
-import '../../../../../presentation/controller/filters_controllers/rating_filter_controller.dart';
+import '../../../../controller/filters_controllers/rating/rating_filter_controller.dart';
 import 'rate_widget.dart';
 
 class RatingFilterChosseListWidget extends ConsumerWidget {
@@ -20,6 +20,7 @@ class RatingFilterChosseListWidget extends ConsumerWidget {
           index: index,
           ratingLabel: ratings[index].rateText ?? '',
           starsCount: double.tryParse(ratings[index].rateValue ?? '') ?? 0,
+          ratingId: ratings[index].id?.toString()
         ),
         separatorBuilder: (context, index) => Sizes.size8.horizontalSpace,
       ),

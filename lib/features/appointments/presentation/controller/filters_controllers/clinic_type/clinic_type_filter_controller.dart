@@ -1,10 +1,10 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../../data/datasources/filters_datasources/clinic_type_local_data_source.dart';
-import '../../../data/model/filters_models/clinic_type.dart';
-import '../../../data/repository/filters_repo_impl/clinic_type_repository_impl.dart';
-import '../../../domain/usecase/filters_usecase/clinic_type_usecase.dart';
+import '../../../../data/datasources/filters_datasources/clinic_type_local_data_source.dart';
+import '../../../../data/model/filters_models/clinic_type.dart';
+import '../../../../data/repository/filters_repo_impl/clinic_type_repository_impl.dart';
+import '../../../../domain/usecase/filters_usecase/clinic_type_usecase.dart';
 
 part 'clinic_type_filter_controller.g.dart';
 

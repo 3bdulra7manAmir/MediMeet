@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../../../core/constants/app_sizes.dart';
 import '../../../../../../../core/widgets/custom_divider.dart';
 import '../../../../../../../core/widgets/custom_listview_builder.dart';
-import '../../../../../presentation/controller/filters_controllers/clinic_type_filter_controller.dart';
+import '../../../../controller/filters_controllers/clinic_type/clinic_type_filter_controller.dart';
 import 'clinic_type_filter_widget.dart';
 
 class ClinicTypeFilterChooseListWidget extends ConsumerWidget {

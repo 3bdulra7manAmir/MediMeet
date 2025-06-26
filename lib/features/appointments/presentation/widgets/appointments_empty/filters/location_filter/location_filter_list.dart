@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../../core/constants/app_sizes.dart';
 import '../../../../../../../core/widgets/custom_divider.dart';
-import '../../../../../presentation/controller/filters_controllers/location_filter_controller.dart';
+import '../../../../controller/filters_controllers/location/location_filter_controller.dart';
 import 'location_filter_widget.dart';
 
 class LocationFilterChooseListWidget extends ConsumerWidget {
