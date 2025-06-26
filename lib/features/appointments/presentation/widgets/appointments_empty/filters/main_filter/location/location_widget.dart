@@ -6,7 +6,6 @@ import '../../../../../../../../config/router/bottom_modal_sheet_router/modal_sh
 import '../../../../../../../../config/router/bottom_modal_sheet_router/modal_sheet_routes.dart';
 import '../../../../../../../../core/constants/app_sizes.dart';
 import '../../../../../../../../core/constants/app_strings.dart';
-import '../../../../../../../../core/widgets/custom_circular_indicator.dart';
 import '../../../../../../../../core/widgets/custom_listview_builder.dart';
 import '../../../../../../presentation/controller/filters_controllers/selected_filter_choices_controller.dart';
 import '../../../../../controller/filters_controllers/location/location_filter_controller.dart';

@@ -16,7 +16,7 @@ class RatingLocalDataSourceImpl implements RatingLocalDataSource
   {
     try
     {
-      await Future.delayed(const Duration(seconds: 3));
+      await Future.delayed(const Duration(seconds: 1));
       final String jsonString = await rootBundle.loadString('assets/jsons/filters/rating.json');
       final Map<String, dynamic> jsonData = json.decode(jsonString);
       final List<dynamic> ratingJson = jsonData['rate'] ?? [];

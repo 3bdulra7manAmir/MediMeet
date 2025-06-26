@@ -17,7 +17,7 @@ class LocationFilterLocalDataSourceImpl implements LocationFilterLocalDataSource
   {
     try
     {
-      await Future.delayed(const Duration(seconds: 3));
+      await Future.delayed(const Duration(seconds: 1));
       final String jsonString = await rootBundle.loadString('assets/jsons/filters/location.json');
       final Map<String, dynamic> jsonData = json.decode(jsonString);
       final List<dynamic> locationJson = jsonData['location'] ?? [];
