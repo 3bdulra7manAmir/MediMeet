@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -11,23 +10,22 @@ import '../../../../../../../core/constants/app_paddings.dart';
 import '../../../../../../../core/constants/app_sizes.dart';
 import '../../../../../../../core/constants/app_styles.dart';
 
-class ChoiceWidget extends StatelessWidget
-{
-  const ChoiceWidget({super.key, 
-  required this.choice, 
-  this.isText = true, 
-  this.widget = const SizedBox.shrink(),
-  //required this.onRemove,
+class ChoiceWidget extends StatelessWidget {
+  const ChoiceWidget({
+    super.key,
+    required this.choice,
+    this.isText = true,
+    this.widget = const SizedBox.shrink(),
+    required this.onRemove,
   });
 
   final String choice;
   final bool isText;
   final Widget? widget;
-  //final VoidCallback onRemove;
+  final VoidCallback onRemove;
 
   @override
-  Widget build(BuildContext context)
-  {
+  Widget build(BuildContext context) {
     return Container(
       padding: AppPadding.symmetric.xXSmall,
       height: 29.h,
@@ -37,16 +35,20 @@ class ChoiceWidget extends StatelessWidget
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
-        children:
-        [
-          isText ? Text(choice, style: AppStyles.medium(fontWeight: AppFontWeights.regularWeight, fontColor: AppColors.color.kBlack004),) : widget!,
+        children: [
+          isText
+              ? Text(
+                  choice,
+                  style: AppStyles.medium(
+                    fontWeight: AppFontWeights.regularWeight,
+                    fontColor: AppColors.color.kBlack004,
+                  ),
+                )
+              : widget!,
           Sizes.size4.horizontalSpace,
           GestureDetector(
-            onTap: () {
-              //onRemove;
-              log("Remove");
-            },
-            child: SvgPicture.asset(AppAssets.icons.cancelBlack)
+            onTap: onRemove,
+            child: SvgPicture.asset(AppAssets.icons.cancelBlack),
           )
         ],
       ),

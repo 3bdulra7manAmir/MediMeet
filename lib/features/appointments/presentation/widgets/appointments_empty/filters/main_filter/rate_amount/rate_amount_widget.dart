@@ -14,10 +14,11 @@ import '../../../../appointments/past_appointment/rate_stars_bar.dart';
 
 class RateAmountApplyWidget extends StatelessWidget
 {
-  const RateAmountApplyWidget({super.key, required this.initialValue, required this.ratingText});
+  const RateAmountApplyWidget({super.key, required this.initialValue, required this.ratingText, this.onRemove});
 
   final double initialValue;
   final String ratingText;
+  final VoidCallback? onRemove;
 
   @override
   Widget build(BuildContext context)
@@ -38,10 +39,11 @@ class RateAmountApplyWidget extends StatelessWidget
           Sizes.size2.horizontalSpace,
           Text(ratingText, style: AppStyles.large(fontColor: AppColors.color.kBlack002),),
           Sizes.size4.horizontalSpace,
-          GestureDetector(
-            //onTap: () => ,
-            child: SvgPicture.asset(AppAssets.icons.cancelBlack)
-          ),
+          if (onRemove != null)
+            GestureDetector(
+              onTap: onRemove,
+              child: SvgPicture.asset(AppAssets.icons.cancelBlack)
+            ),
           Sizes.size8.horizontalSpace,
         ],
       ),

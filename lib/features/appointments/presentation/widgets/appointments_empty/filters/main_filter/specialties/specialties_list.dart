@@ -1,21 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../../../core/constants/app_sizes.dart';
 import '../../../../../../../../core/widgets/custom_listview_builder.dart';
 import '../choice_widget.dart';
+import '../../../../../../presentation/controller/filters_controllers/selected_filter_choices_controller.dart';
 
-class SpecialtiesApplyListWidget extends StatelessWidget
-{
+class SpecialtiesApplyListWidget extends ConsumerWidget {
   const SpecialtiesApplyListWidget({super.key});
 
   @override
-  Widget build(BuildContext context)
-  {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final selectedChoices = ref
+        .watch(selectedFilterChoicesProvider)
+        .where((c) => c.type == FilterType.specialty)
+        .toList();
     return CustomListviewBuilder(
-      itemCount: 9,
+      itemCount: selectedChoices.length,
       scrollDirection: Axis.horizontal,
-      itemBuilder: (context, index) => const ChoiceWidget(choice: "Dermatology",),
+      itemBuilder: (context, index) => ChoiceWidget(
+        choice: selectedChoices[index].label,
+        onRemove: () {
+          ref.read(selectedFilterChoicesProvider.notifier).removeChoice(selectedChoices[index]);
+        },
+      ),
       separatorBuilder: (context, index) => Sizes.size8.horizontalSpace,
     );
   }

@@ -1,27 +1,52 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../../../../../config/router/bottom_modal_sheet_router/modal_sheet_router.dart';
 import '../../../../../../../../config/router/bottom_modal_sheet_router/modal_sheet_routes.dart';
 import '../../../../../../../../core/constants/app_sizes.dart';
 import '../../../../../../../../core/constants/app_strings.dart';
+import '../../../../../../presentation/controller/filters_controllers/selected_filter_choices_controller.dart';
 import '../choice_widget.dart';
 import '../filters_title_widget.dart';
 
-class LocationApplyWidget extends StatelessWidget
-{
+class LocationApplyWidget extends ConsumerWidget {
   const LocationApplyWidget({super.key});
 
   @override
-  Widget build(BuildContext context)
-  {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final selectedChoices = ref
+        .watch(selectedFilterChoicesProvider)
+        .where((c) => c.type == FilterType.location)
+        .toList();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children:
-      [
-        FiltersTitleWidget(title: AppStrings.location, onTap: () => ModalSheetRouter.router.pushNamed(ModalSheetRoutes.locationFilter),),
+      children: [
+        FiltersTitleWidget(
+          title: AppStrings.location,
+          onTap: () =>
+              ModalSheetRouter.router.pushNamed(ModalSheetRoutes.locationFilter),
+        ),
         Sizes.size8.verticalSpace,
-        const ChoiceWidget(choice: "Riyadh",),
+        if (selectedChoices.isEmpty)
+          const SizedBox.shrink()
+        else
+          SizedBox(
+            height: 29.h,
+            child: ListView.separated(
+              scrollDirection: Axis.horizontal,
+              itemCount: selectedChoices.length,
+              itemBuilder: (context, index) => ChoiceWidget(
+                choice: selectedChoices[index].label,
+                onRemove: () {
+                  ref
+                      .read(selectedFilterChoicesProvider.notifier)
+                      .removeChoice(selectedChoices[index]);
+                },
+              ),
+              separatorBuilder: (context, index) => Sizes.size8.horizontalSpace,
+            ),
+          ),
       ],
     );
   }
