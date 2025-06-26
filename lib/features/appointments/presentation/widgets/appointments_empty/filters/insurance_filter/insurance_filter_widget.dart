@@ -22,17 +22,18 @@ class InsuranceFilterChooseWidget extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final id = insuranceId ?? index.toString();
     return Row(
       children: [
         Sizes.size16.horizontalSpace,
         CheckBoxWidget(
-          index: index,
+          id: id,
           provider: insuranceCheckboxProvider,
           onChanged: (val) {
             final notifier = ref.read(selectedFilterChoicesProvider.notifier);
             final choice = SelectedFilterChoice(
               type: FilterType.insuranceProvider,
-              id: insuranceId ?? index.toString(),
+              id: id,
               label: insuranceName,
             );
             if (val) {

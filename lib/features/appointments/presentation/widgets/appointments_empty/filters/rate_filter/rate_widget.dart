@@ -26,17 +26,18 @@ class RatingFilterChooseWidget extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final id = ratingId ?? index.toString();
     return Row(
       children: [
         Sizes.size16.horizontalSpace,
         CheckBoxWidget(
-          index: index,
+          id: id,
           provider: ratingCheckboxProvider,
           onChanged: (val) {
             final notifier = ref.read(selectedFilterChoicesProvider.notifier);
             final choice = SelectedFilterChoice(
               type: FilterType.rating,
-              id: ratingId ?? index.toString(),
+              id: id,
               label: ratingLabel,
               extra: starsCount,
             );

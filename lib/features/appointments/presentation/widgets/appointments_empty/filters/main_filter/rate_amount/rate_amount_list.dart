@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../../../../core/constants/app_sizes.dart';
 import '../../../../../../../../core/widgets/custom_listview_builder.dart';
 import '../../../../../../presentation/controller/filters_controllers/selected_filter_choices_controller.dart';
+import '../../../../../controller/filters_controllers/shared_checkbox_notifier.dart';
 import 'rate_amount_widget.dart';
 
 class RateAmountApplyListWidget extends ConsumerWidget {
@@ -19,17 +20,17 @@ class RateAmountApplyListWidget extends ConsumerWidget {
     return CustomListviewBuilder(
       itemCount: selectedChoices.length,
       scrollDirection: Axis.horizontal,
-      itemBuilder: (context, index) => RateAmountApplyWidget(
-        initialValue: selectedChoices[index].extra is double
-            ? selectedChoices[index].extra
-            : 0.0,
-        ratingText: selectedChoices[index].label,
-        onRemove: () {
-          ref.read(selectedFilterChoicesProvider.notifier).removeChoice(
-                selectedChoices[index],
-              );
-        },
-      ),
+      itemBuilder: (context, index) {
+        final choice = selectedChoices[index];
+        return RateAmountApplyWidget(
+          initialValue: choice.extra is double ? choice.extra : 0.0,
+          ratingText: choice.label,
+          onRemove: () {
+            ref.read(selectedFilterChoicesProvider.notifier).removeChoice(choice);
+            ref.read(ratingCheckboxProvider.notifier).setValue(choice.id, false);
+          },
+        );
+      },
       separatorBuilder: (context, index) => Sizes.size8.horizontalSpace,
     );
   }

@@ -20,6 +20,7 @@ class ClinicTypeFilterChooseListWidget extends ConsumerWidget {
         itemBuilder: (context, index) => ClinicTypeChooseWidget(
           index: index,
           clinicTypeName: clinicTypes[index].title ?? '',
+          clinicTypeId: clinicTypes[index].id?.toString(),
         ),
         separatorBuilder: (context, index) => Column(
           children: [
@@ -30,7 +31,7 @@ class ClinicTypeFilterChooseListWidget extends ConsumerWidget {
         ),
       ),
       loading: () => const Center(child: CircularProgressIndicator()),
-      error: (e, st) => Center(child: Text('Error: ${e.toString()}')),
+      error: (e, st) => Center(child: Text('Error: \\${e.toString()}')),
     );
   }
 }

@@ -1,17 +1,17 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class CheckboxValuesNotifier extends StateNotifier<Map<int, bool>>
+class CheckboxValuesNotifier extends StateNotifier<Map<String, bool>>
 {
   CheckboxValuesNotifier() : super({});
 
-  void setValue(int index, bool value)
+  void setValue(String id, bool value)
   {
-    state = {...state, index: value};
+    state = {...state, id: value};
   }
 
-  bool getValue(int index)
+  bool getValue(String id)
   {
-    return state[index] ?? false;
+    return state[id] ?? false;
   }
 
   void clearAll()
@@ -20,7 +20,8 @@ class CheckboxValuesNotifier extends StateNotifier<Map<int, bool>>
   }
 }
 
-final clinicTypeCheckboxProvider = StateNotifierProvider<CheckboxValuesNotifier, Map<int, bool>>((ref) => CheckboxValuesNotifier(),);
-final insuranceCheckboxProvider = StateNotifierProvider<CheckboxValuesNotifier, Map<int, bool>>((ref) => CheckboxValuesNotifier(),);
-final ratingCheckboxProvider = StateNotifierProvider<CheckboxValuesNotifier, Map<int, bool>>((ref) => CheckboxValuesNotifier(),);
-final specialtyCheckboxProvider = StateNotifierProvider<CheckboxValuesNotifier, Map<int, bool>>((ref) => CheckboxValuesNotifier(),);
+final clinicTypeCheckboxProvider = StateNotifierProvider<CheckboxValuesNotifier, Map<String, bool>>((ref) => CheckboxValuesNotifier(),);
+final insuranceCheckboxProvider = StateNotifierProvider<CheckboxValuesNotifier, Map<String, bool>>((ref) => CheckboxValuesNotifier(),);
+final ratingCheckboxProvider = StateNotifierProvider<CheckboxValuesNotifier, Map<String, bool>>((ref) => CheckboxValuesNotifier(),);
+final specialtyCheckboxProvider = StateNotifierProvider<CheckboxValuesNotifier, Map<String, bool>>((ref) => CheckboxValuesNotifier(),);
+final locationCheckboxProvider = StateNotifierProvider<CheckboxValuesNotifier, Map<String, bool>>((ref) => CheckboxValuesNotifier(),);

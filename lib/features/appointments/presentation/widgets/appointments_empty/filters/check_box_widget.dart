@@ -10,25 +10,25 @@ class CheckBoxWidget extends ConsumerWidget
 {
   const CheckBoxWidget({
     super.key,
-    required this.index,
+    required this.id,
     required this.provider,
     this.onChanged,
   });
 
-  final int index;
-  final StateNotifierProvider<CheckboxValuesNotifier, Map<int, bool>> provider;
+  final String id;
+  final StateNotifierProvider<CheckboxValuesNotifier, Map<String, bool>> provider;
   final void Function(bool)? onChanged;
 
   @override
   Widget build(BuildContext context, WidgetRef ref)
   {
     final checkboxState = ref.watch(provider);
-    final isChecked = checkboxState[index] ?? false;
+    final isChecked = checkboxState[id] ?? false;
     return Checkbox(
       value: isChecked,
       onChanged: (value)
       {
-        ref.read(provider.notifier).setValue(index, value!);
+        ref.read(provider.notifier).setValue(id, value!);
         if (onChanged != null) onChanged!(value);
       },
       side: BorderSide(color: AppColors.color.kGrey003, width: 2.w,),
