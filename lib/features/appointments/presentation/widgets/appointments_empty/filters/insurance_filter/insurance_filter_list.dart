@@ -14,9 +14,15 @@ class InsuranceFilterChooseListWidget extends StatelessWidget
   Widget build(BuildContext context)
   {
     return CustomListviewBuilder(
-      itemCount: 25, 
-      itemBuilder: (context, index) => const InsuranceFilterChooseWidget(),
-      separatorBuilder: (context, index) => Column(children:[Sizes.size5.verticalSpace, CustomDivider(endIndent: 20.w, indent: 30.w,), Sizes.size5.verticalSpace,],
+      itemCount: 25,
+      itemBuilder: (context, index) => InsuranceFilterChooseWidget(index: index, insuranceName: "Bupa $index",),
+      separatorBuilder: (context, index) => Column(
+        children:
+        [
+          Sizes.size5.verticalSpace,
+          CustomDivider(endIndent: 20.w, indent: 30.w),
+          Sizes.size5.verticalSpace,
+        ],
       ),
     );
   }

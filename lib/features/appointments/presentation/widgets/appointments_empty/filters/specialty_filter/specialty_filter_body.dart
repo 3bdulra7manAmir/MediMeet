@@ -22,7 +22,8 @@ class SpecialtyFilterBody extends StatelessWidget
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children:
+          [
             Sizes.size16.verticalSpace,
             const CustomFiltersAppbar(appbarText: AppStrings.specialty),
             Sizes.size24.verticalSpace,
@@ -31,8 +32,7 @@ class SpecialtyFilterBody extends StatelessWidget
         ),
       ),
       bottomNavigationBar: CustomNavBar(
-        navBarChildren:
-        CustomButton(text: AppStrings.addFilter, onPressed: () => ModalSheetRouter.router.pop(), width: double.infinity,),
+        navBarChildren: CustomButton(text: AppStrings.addFilter, onPressed: () => ModalSheetRouter.router.pop(), width: double.infinity,),
       ),
     );
   }

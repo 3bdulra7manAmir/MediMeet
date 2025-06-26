@@ -13,10 +13,18 @@ class ClinicTypeFilterChooseListWidget extends StatelessWidget
   @override
   Widget build(BuildContext context)
   {
+    final clinicTypes = ["All", "General", "Dental", "Cardiology", "Dermatology"];
     return CustomListviewBuilder(
-      itemBuilder: (context, index) => const ClinicTypeChooseWidget(),
-      separatorBuilder: (context, index) => Column(children:[Sizes.size5.verticalSpace, CustomDivider(endIndent: 20.w, indent: 30.w,), Sizes.size5.verticalSpace,],),
-      itemCount: 5,
+      itemCount: clinicTypes.length,
+      itemBuilder: (context, index) => ClinicTypeChooseWidget(index: index, clinicTypeName: clinicTypes[index],),
+      separatorBuilder: (context, index) => Column(
+        children:
+        [
+          Sizes.size5.verticalSpace,
+          CustomDivider(endIndent: 20.w, indent: 30.w),
+          Sizes.size5.verticalSpace,
+        ],
+      ),
     );
   }
 }

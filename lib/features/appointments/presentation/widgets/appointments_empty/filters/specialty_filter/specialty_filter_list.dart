@@ -13,10 +13,45 @@ class SpecialtyFilterChooseListWidget extends StatelessWidget
   @override
   Widget build(BuildContext context)
   {
+    final specialties =
+    [
+      "Dermatology",
+      "Cardiology",
+      "Orthopedics",
+      "Neurology",
+      "Pediatrics",
+      "ENT",
+      "Gynecology",
+      "Urology",
+      "Oncology",
+      "Psychiatry",
+      "Dentistry",
+      "Endocrinology",
+      "Nephrology",
+      "Gastroenterology",
+      "Rheumatology",
+      "Ophthalmology",
+      "Pulmonology",
+      "Hematology",
+      "Allergy & Immunology",
+      "Anesthesiology",
+      "Plastic Surgery",
+      "General Surgery",
+      "Family Medicine",
+      "Infectious Diseases",
+      "Internal Medicine",
+    ];
+
     return CustomListviewBuilder(
-      itemCount: 25, 
-      itemBuilder: (context, index) => const SpecialtyFilterChooseWidget(),
-      separatorBuilder: (context, index) => Column(children:[Sizes.size5.verticalSpace, CustomDivider(endIndent: 30.w, indent: 30.w,), Sizes.size5.verticalSpace,],
+      itemCount: specialties.length,
+      itemBuilder: (context, index) => SpecialtyFilterChooseWidget(index: index, specialtyName: specialties[index],),
+      separatorBuilder: (context, index) => Column(
+        children:
+        [
+          Sizes.size5.verticalSpace,
+          CustomDivider(endIndent: 30.w, indent: 30.w),
+          Sizes.size5.verticalSpace,
+        ],
       ),
     );
   }

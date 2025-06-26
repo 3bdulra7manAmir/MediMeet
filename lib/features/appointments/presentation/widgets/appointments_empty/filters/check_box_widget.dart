@@ -4,20 +4,34 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../config/theme/color_manager/colors.dart';
 import '../../../../../../core/constants/app_borders.dart';
-import '../../../controller/filters_controllers/checkbox_controller.dart';
+import '../../../controller/filters_controllers/shared_checkbox_notifier.dart';
 
 class CheckBoxWidget extends ConsumerWidget
 {
-  const CheckBoxWidget({super.key, this.onChanged});
+  const CheckBoxWidget({
+    super.key,
+    required this.index,
+    required this.provider,
+    this.onChanged,
+  });
 
-  final void Function(bool?)? onChanged;
+  final int index;
+  final StateNotifierProvider<CheckboxValuesNotifier, Map<int, bool>> provider;
+  final void Function(bool)? onChanged;
 
   @override
   Widget build(BuildContext context, WidgetRef ref)
   {
-    final isRememberMe = ref.watch(checkboxValueProvider);
-    return Checkbox(value: isRememberMe, onChanged: (value) => ref.read(checkboxValueProvider.notifier).state = value!, 
-      side: BorderSide(color: AppColors.color.kGrey003, width: (2).w,),
+    final checkboxState = ref.watch(provider);
+    final isChecked = checkboxState[index] ?? false;
+    return Checkbox(
+      value: isChecked,
+      onChanged: (value)
+      {
+        ref.read(provider.notifier).setValue(index, value!);
+        if (onChanged != null) onChanged!(value);
+      },
+      side: BorderSide(color: AppColors.color.kGrey003, width: 2.w,),
       shape: RoundedRectangleBorder(borderRadius: AppRadiuses.circular.xXXSmall),
     );
   }
