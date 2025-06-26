@@ -14,6 +14,7 @@ import '../../../../../../../core/widgets/buttons/custom_button.dart';
 import '../../../../../../../core/widgets/custom_divider.dart';
 import '../../../../../../../core/widgets/custom_nav_bar.dart';
 import '../../../../controller/filters_controllers/selected_filter_choices_controller.dart';
+import '../../../../controller/filters_controllers/shared_checkbox_notifier.dart';
 import 'clinic_type/clinic_type_widget.dart';
 import 'insurance_provider/insurance_provider_widget.dart';
 import 'location/location_widget.dart';
@@ -77,11 +78,22 @@ class MainFilterApply extends StatelessWidget
               children:
               [
                 Expanded(
-                  child: CustomButton(
-                    text: AppStrings.reset,
-                    textStyle: AppStyles.large(fontColor: AppColors.color.kBlack001, fontWeight: AppFontWeights.semiBoldWeight,),
-                    backgroundColor: AppColors.color.kWhite002, borderColor: AppColors.color.kWhite001, borderWidth: (Sizes.size2).w,
-                    onPressed: () {log("Clear All Fields...");},
+                  child: Consumer(
+                    builder: (context, ref, _) => CustomButton(
+                      text: AppStrings.reset,
+                      textStyle: AppStyles.large(fontColor: AppColors.color.kBlack001, fontWeight: AppFontWeights.semiBoldWeight,),
+                      backgroundColor: AppColors.color.kWhite002, borderColor: AppColors.color.kWhite001, borderWidth: (Sizes.size2).w,
+                      onPressed: ()
+                      {
+                        log("Clear All Fields...");
+                        ref.read(selectedFilterChoicesProvider.notifier).clearAll();
+                        ref.read(clinicTypeCheckboxProvider.notifier).clearAll();
+                        ref.read(insuranceCheckboxProvider.notifier).clearAll();
+                        ref.read(ratingCheckboxProvider.notifier).clearAll();
+                        ref.read(specialtyCheckboxProvider.notifier).clearAll();
+                        ref.read(locationCheckboxProvider.notifier).clearAll();
+                      },
+                    ),
                   ),
                 ),
                 Sizes.size24.horizontalSpace,
