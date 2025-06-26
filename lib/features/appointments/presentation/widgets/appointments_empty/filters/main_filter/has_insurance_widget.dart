@@ -2,8 +2,8 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:medical_appointments/config/theme/color_manager/colors.dart';
 
+import '../../../../../../../config/theme/color_manager/colors.dart';
 import '../../../../../../../config/theme/font_manager/font_weights.dart';
 import '../../../../../../../core/constants/app_borders.dart';
 import '../../../../../../../core/constants/app_paddings.dart';
@@ -47,9 +47,9 @@ class _CustomToggleSwitchState extends State<CustomToggleSwitch>
     return GestureDetector(
       onTap: () => setState(()
       {
-        isSwitched ? log("True") : log("False");
+        isSwitched ? log("False") : log("True");
         isSwitched = !isSwitched;
-      } ),
+      }),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 250),
         width: 40.w, height: 24.h,

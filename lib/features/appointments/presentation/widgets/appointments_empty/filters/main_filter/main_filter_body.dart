@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -80,7 +79,7 @@ class MainFilterApply extends StatelessWidget
                     text: AppStrings.reset,
                     textStyle: AppStyles.large(fontColor: AppColors.color.kBlack001, fontWeight: AppFontWeights.semiBoldWeight,),
                     backgroundColor: AppColors.color.kWhite002, borderColor: AppColors.color.kWhite001, borderWidth: (Sizes.size2).w,
-                    onPressed: () {},
+                    onPressed: () => log("Clear All Fields..."),
                   ),
                 ),
                 Sizes.size24.horizontalSpace,
