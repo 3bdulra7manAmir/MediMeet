@@ -16,11 +16,14 @@ class ChoiceWidget extends StatelessWidget
   const ChoiceWidget({super.key, 
   required this.choice, 
   this.isText = true, 
-  this.widget = const SizedBox.shrink(),});
+  this.widget = const SizedBox.shrink(),
+  //required this.onRemove,
+  });
 
   final String choice;
   final bool isText;
   final Widget? widget;
+  //final VoidCallback onRemove;
 
   @override
   Widget build(BuildContext context)
@@ -39,7 +42,10 @@ class ChoiceWidget extends StatelessWidget
           isText ? Text(choice, style: AppStyles.medium(fontWeight: AppFontWeights.regularWeight, fontColor: AppColors.color.kBlack004),) : widget!,
           Sizes.size4.horizontalSpace,
           GestureDetector(
-            onTap: () => log("Remove"),
+            onTap: () {
+              //onRemove;
+              log("Remove");
+            },
             child: SvgPicture.asset(AppAssets.icons.cancelBlack)
           )
         ],
