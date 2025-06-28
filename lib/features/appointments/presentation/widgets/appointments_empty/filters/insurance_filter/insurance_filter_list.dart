@@ -13,7 +13,8 @@ class InsuranceFilterChooseListWidget extends ConsumerWidget
   const InsuranceFilterChooseListWidget({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context, WidgetRef ref)
+  {
     final asyncInsurances = ref.watch(insuranceProviderFilterProvider);
     return asyncInsurances.when(
       data: (insurances) => CustomListviewBuilder(

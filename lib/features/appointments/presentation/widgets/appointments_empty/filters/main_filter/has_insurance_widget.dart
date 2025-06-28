@@ -1,5 +1,6 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../../config/theme/color_manager/colors.dart';
@@ -8,6 +9,7 @@ import '../../../../../../../core/constants/app_borders.dart';
 import '../../../../../../../core/constants/app_paddings.dart';
 import '../../../../../../../core/constants/app_strings.dart';
 import '../../../../../../../core/constants/app_styles.dart';
+import '../../../../controller/filters_controllers/has_insurance_controller.dart';
 
 class HasInsuranceWidget extends StatelessWidget
 {
@@ -28,27 +30,21 @@ class HasInsuranceWidget extends StatelessWidget
 }
 
 
-class CustomToggleSwitch extends StatefulWidget
+
+class CustomToggleSwitch extends ConsumerWidget
 {
   const CustomToggleSwitch({super.key});
 
   @override
-  State<CustomToggleSwitch> createState() => _CustomToggleSwitchState();
-}
-
-class _CustomToggleSwitchState extends State<CustomToggleSwitch>
-{
-  bool isSwitched = false;
-
-  @override
-  Widget build(BuildContext context)
+  Widget build(BuildContext context, WidgetRef ref)
   {
+    final isSwitched = ref.watch(toggleSwitchProvider);
     return GestureDetector(
-      onTap: () => setState(()
+      onTap: ()
       {
-        isSwitched ? log("False") : log("True");
-        isSwitched = !isSwitched;
-      }),
+        log(!isSwitched ? "True" : "False");
+        ref.read(toggleSwitchProvider.notifier).state = !isSwitched;
+      },
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 250),
         width: 40.w, height: 24.h,
@@ -61,7 +57,7 @@ class _CustomToggleSwitchState extends State<CustomToggleSwitch>
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 250),
           width: 20.w, height: 20.h,
-          decoration:  BoxDecoration(
+          decoration: BoxDecoration(
             color: AppColors.color.kWhite002,
             shape: BoxShape.circle,
             boxShadow: const

@@ -31,9 +31,7 @@ class ClinicTypeChooseWidget extends ConsumerWidget
         CheckBoxWidget(
           id: id,
           provider: clinicTypeCheckboxProvider,
-          onChanged: (val) {
-            ref.read(clinicTypeCheckboxProvider.notifier).setValue(id, val);
-          },
+          onChanged: (val) => ref.read(clinicTypeCheckboxProvider.notifier).setValue(id, val),
         ),
         Sizes.size8.horizontalSpace,
         Text(clinicTypeName, style: AppStyles.large()),

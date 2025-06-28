@@ -15,17 +15,20 @@ import '../../../../controller/filters_controllers/selected_filter_choices_contr
 import '../../../../controller/filters_controllers/shared_checkbox_notifier.dart';
 import 'clinic_type_filter_list.dart';
 
-class ClinicTypeFilterBody extends StatelessWidget {
+class ClinicTypeFilterBody extends StatelessWidget
+{
   const ClinicTypeFilterBody({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)
+  {
     return Scaffold(
       backgroundColor: AppColors.color.kWhite002,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children:
+          [
             Sizes.size16.verticalSpace,
             const CustomFiltersAppbar(appbarText: AppStrings.clinicType),
             Sizes.size24.verticalSpace,
@@ -37,20 +40,27 @@ class ClinicTypeFilterBody extends StatelessWidget {
         navBarChildren: Consumer(
           builder: (context, ref, _) => CustomButton(
             text: AppStrings.addFilter,
-            onPressed: () {
+            onPressed: ()
+            {
               final checked = ref.read(clinicTypeCheckboxProvider);
               final clinicTypes = ref.read(clinicTypeFilterProvider).asData?.value ?? [];
               final notifier = ref.read(selectedFilterChoicesProvider.notifier);
               notifier.clearByType(FilterType.clinicType);
-              checked.forEach((id, isChecked) {
-                if (isChecked) {
+              checked.forEach((id, isChecked)
+              {
+                if (isChecked)
+                {
                   ClinicTypeModel? clinic;
-                  try {
+                  try
+                  {
                     clinic = clinicTypes.firstWhere((c) => c.id?.toString() == id);
-                  } catch (_) {
+                  }
+                  catch (_)
+                  {
                     clinic = null;
                   }
-                  if (clinic != null) {
+                  if (clinic != null)
+                  {
                     notifier.addChoice(
                       SelectedFilterChoice(type: FilterType.clinicType, id: id, label: clinic.title ?? ''),
                     );

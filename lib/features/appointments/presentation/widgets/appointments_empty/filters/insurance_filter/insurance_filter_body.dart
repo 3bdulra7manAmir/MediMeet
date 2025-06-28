@@ -36,16 +36,19 @@ class InsuranceFilterBody extends StatelessWidget
         ),
       ),
       bottomNavigationBar: Consumer(
-        builder: (context, ref, _) {
+        builder: (context, ref, _)
+        {
           return CustomNavBar(
             navBarChildren: CustomButton(
               text: AppStrings.addFilter,
-              onPressed: () {
+              onPressed: ()
+              {
                 final insurances = ref.read(insuranceProviderFilterProvider).asData?.value ?? [];
                 final checked = ref.read(insuranceCheckboxProvider);
                 final notifier = ref.read(selectedFilterChoicesProvider.notifier);
                 notifier.clearByType(FilterType.insuranceProvider);
-                for (var i = 0; i < insurances.length; i++) {
+                for (var i = 0; i < insurances.length; i++)
+                {
                   final id = insurances[i].id?.toString() ?? i.toString();
                   if (checked[id] == true)
                   {

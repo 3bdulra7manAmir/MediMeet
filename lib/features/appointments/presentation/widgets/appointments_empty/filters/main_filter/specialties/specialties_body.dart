@@ -26,8 +26,7 @@ class SpecialtiesApplyWidget extends StatelessWidget
         Consumer(
           builder: (context, ref, _)
           {
-            final selected = ref.watch(selectedFilterChoicesProvider).where((c) => c.type == FilterType.specialty)
-            .toList();
+            final selected = ref.watch(selectedFilterChoicesProvider).where((c) => c.type == FilterType.specialty).toList();
             if (selected.isEmpty)
             {
               return const SizedBox.shrink();

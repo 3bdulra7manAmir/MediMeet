@@ -17,7 +17,7 @@ import '../../../../controller/filters_controllers/selected_filter_choices_contr
 import '../../../../controller/filters_controllers/shared_checkbox_notifier.dart';
 import 'clinic_type/clinic_type_body.dart';
 import 'insurance_provider/insurance_provider_body.dart';
-import 'location/location_widget.dart';
+import 'location/location_body.dart';
 import 'has_insurance_widget.dart';
 import 'rate_amount/rate_amount_body.dart';
 import 'specialties/specialties_body.dart';
