@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../../../config/router/bottom_modal_sheet_router/modal_sheet_router.dart';
 import '../../../../../../../../config/router/bottom_modal_sheet_router/modal_sheet_routes.dart';
 import '../../../../../../../../core/constants/app_sizes.dart';
 import '../../../../../../../../core/constants/app_strings.dart';
+import '../../../../../controller/filters_controllers/selected_filter_choices_controller.dart';
 import '../filters_title_widget.dart';
 import 'rate_amount_list.dart';
 
@@ -21,7 +23,18 @@ class RateAmountApplyBody extends StatelessWidget
       [
         FiltersTitleWidget(title: AppStrings.rating, onTap: () => ModalSheetRouter.router.pushNamed(ModalSheetRoutes.minimumRating),),
         Sizes.size8.verticalSpace,
-        SizedBox(height: 29.h, child: const RateAmountApplyListWidget()),
+        Consumer(
+          builder: (context, ref, _)
+          {
+            final selected = ref.watch(selectedFilterChoicesProvider).where((c) => c.type == FilterType.rating)
+            .toList();
+            if (selected.isEmpty)
+            {
+              return const SizedBox.shrink();
+            }
+            return SizedBox(height: 29.h, child: const RateAmountApplyListWidget());
+          },
+        ),
       ],
     );
   }
