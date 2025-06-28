@@ -7,7 +7,6 @@ import '../../../../../../../../config/router/bottom_modal_sheet_router/modal_sh
 import '../../../../../../../../core/constants/app_sizes.dart';
 import '../../../../../../../../core/constants/app_strings.dart';
 import '../../../../../../presentation/controller/filters_controllers/selected_filter_choices_controller.dart';
-import '../../../../../controller/filters_controllers/location/location_filter_controller.dart';
 import '../../../../../controller/filters_controllers/shared_checkbox_notifier.dart';
 import '../choice_widget.dart';
 import '../filters_title_widget.dart';
@@ -37,15 +36,7 @@ class LocationApplyWidget extends ConsumerWidget
               {
                 final choice = selectedChoices.first;
                 ref.read(selectedFilterChoicesProvider.notifier).removeChoice(choice);
-                final locations = ref.read(locationFilterProvider).asData?.value;
-                if (locations != null)
-                {
-                  final idx = locations.indexWhere((l) => l.id?.toString() == choice.id);
-                  if (idx != -1)
-                  {
-                    ref.read(locationCheckboxProvider.notifier).setValue(choice.id, false);
-                  }
-                }
+                ref.read(locationCheckboxProvider.notifier).clearAll();
               },
             ),
           ),
