@@ -77,42 +77,82 @@ class MainFilterApply extends StatelessWidget
               mainAxisAlignment: MainAxisAlignment.center,
               children:
               [
-                Expanded(
-                  child: Consumer(
-                    builder: (context, ref, _) => CustomButton(
-                      text: AppStrings.reset,
-                      textStyle: AppStyles.large(fontColor: AppColors.color.kBlack001, fontWeight: AppFontWeights.semiBoldWeight,),
-                      backgroundColor: AppColors.color.kWhite002, borderColor: AppColors.color.kWhite001, borderWidth: (Sizes.size2).w,
-                      onPressed: ()
-                      {
-                        log("Clear All Fields...");
-                        ref.read(selectedFilterChoicesProvider.notifier).clearAll();
-                        ref.read(clinicTypeCheckboxProvider.notifier).clearAll();
-                        ref.read(insuranceCheckboxProvider.notifier).clearAll();
-                        ref.read(ratingCheckboxProvider.notifier).clearAll();
-                        ref.read(specialtyCheckboxProvider.notifier).clearAll();
-                        ref.read(locationCheckboxProvider.notifier).clearAll();
-                      },
-                    ),
-                  ),
-                ),
+                const Expanded(child: RestButton(),),
                 Sizes.size24.horizontalSpace,
-                Expanded(
-                  child: Consumer(
-                    builder: (context, ref, _) => CustomButton(
-                      text: AppStrings.showResults,
-                      onPressed: ()
-                      {
-                        final selectedChoices = ref.read(selectedFilterChoicesProvider);
-                        log('Selected filter choices: ${selectedChoices.map((c) => '{type: \\${c.type}, id: \\${c.id}, label: \\${c.label}, extra: \\${c.extra}}').join(', ')}');
-                        AppRouter.router.pop();
-                      },
-                    ),
-                  ),
-                ),
+                const Expanded(child: ShowResultsButton(),),
               ],
             )
         ),
+    );
+  }
+}
+
+class ShowResultsButton extends StatelessWidget
+{
+  const ShowResultsButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context)
+  {
+    return Consumer(
+      builder: (context, ref, _)
+      {
+        final hasSelectedFilters = ref.watch(selectedFilterChoicesProvider).isNotEmpty;
+        return CustomButton(
+          text: AppStrings.showResults,
+          backgroundColor: hasSelectedFilters ? AppColors.color.kBlue001 : const Color(0xFFD0DFFE),
+          textStyle: AppStyles.large(
+            fontColor: hasSelectedFilters ? AppColors.color.kWhite002 : AppColors.color.kWhite002,
+            fontWeight: AppFontWeights.semiBoldWeight,
+          ),
+          onPressed: hasSelectedFilters
+          ? ()
+            {
+              final selectedChoices = ref.read(selectedFilterChoicesProvider);
+              log('Selected filter choices: \\${selectedChoices.map((c) => '{type: \\${c.type}, id: \\${c.id}, label: \\${c.label}, extra: \\${c.extra}}').join(', ')}');
+              AppRouter.router.pop();
+            }
+          : () => log("DIM... NO DATA To Show"), 
+        );
+      },
+    );
+  }
+}
+
+class RestButton extends StatelessWidget
+{
+  const RestButton({super.key,});
+
+  @override
+  Widget build(BuildContext context)
+  {
+    return Consumer(
+      builder: (context, ref, _)
+      {
+        final hasSelectedFilters = ref.watch(selectedFilterChoicesProvider).isNotEmpty;
+        return CustomButton(
+          text: AppStrings.reset,
+          textStyle: AppStyles.large(
+            fontColor: hasSelectedFilters ? AppColors.color.kBlack001 : const Color(0xFFC1C7D0),
+            fontWeight: AppFontWeights.semiBoldWeight,
+          ),
+          backgroundColor: hasSelectedFilters ? AppColors.color.kWhite002 : AppColors.color.kWhite002,
+          onPressed: hasSelectedFilters
+            ? ()
+              {
+                log("Clear All Fields...");
+                ref.read(selectedFilterChoicesProvider.notifier).clearAll();
+                ref.read(clinicTypeCheckboxProvider.notifier).clearAll();
+                ref.read(insuranceCheckboxProvider.notifier).clearAll();
+                ref.read(ratingCheckboxProvider.notifier).clearAll();
+                ref.read(specialtyCheckboxProvider.notifier).clearAll();
+                ref.read(locationCheckboxProvider.notifier).clearAll();
+              }
+            : () => log("DIM... NO DATA To rest"), 
+        );
+      },
     );
   }
 }
