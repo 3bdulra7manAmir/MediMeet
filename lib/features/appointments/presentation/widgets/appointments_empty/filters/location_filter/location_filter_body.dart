@@ -21,13 +21,15 @@ class LocationFilterBody extends StatelessWidget
   const LocationFilterBody({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)
+  {
     return Scaffold(
       backgroundColor: AppColors.color.kWhite002,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children:
+          [
             Sizes.size16.verticalSpace,
             const CustomFiltersAppbar(appbarText: AppStrings.location),
             Sizes.size24.verticalSpace,
@@ -36,31 +38,28 @@ class LocationFilterBody extends StatelessWidget
         ),
       ),
       bottomNavigationBar: Consumer(
-        builder: (context, ref, _) {
+        builder: (context, ref, _)
+        {
           return CustomNavBar(
             navBarChildren: CustomButton(
               text: AppStrings.addFilter,
-              onPressed: () {
+              onPressed: ()
+              {
                 final locations = ref.read(locationFilterProvider).asData?.value ?? [];
                 final checked = ref.read(locationCheckboxProvider);
                 final notifier = ref.read(selectedFilterChoicesProvider.notifier);
-                // Remove all previous location choices
                 notifier.clearByType(FilterType.location);
-                for (var i = 0; i < locations.length; i++) {
+                for (var i = 0; i < locations.length; i++)
+                {
                   final id = locations[i].id ?? i.toString();
-                  if (checked[id] == true) {
+                  if (checked[id] == true)
+                  {
                     final label = locations[i].title ?? '';
-                    notifier.addChoice(SelectedFilterChoice(
-                      type: FilterType.location,
-                      id: id,
-                      label: label,
-                    ));
+                    notifier.addChoice(SelectedFilterChoice(type: FilterType.location, id: id, label: label,));
                   }
                 }
-                // Debug log
-                // ignore: avoid_print
                 final selected = ref.read(selectedFilterChoicesProvider).where((c) => c.type == FilterType.location).toList();
-                log('[DEBUG] Location Add Filter pressed. Selected: $selected');
+                log('Location Add Filter pressed. Selected: $selected');
                 ModalSheetRouter.router.pop();
               },
               width: double.infinity,

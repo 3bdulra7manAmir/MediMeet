@@ -14,14 +14,13 @@ class LocationFilterChooseListBuilder extends ConsumerWidget
   const LocationFilterChooseListBuilder({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context, WidgetRef ref)
+  {
     final asyncLocations = ref.watch(locationFilterProvider);
     final checked = ref.watch(locationCheckboxProvider);
-    // Only allow one selection (radio button logic)
     return asyncLocations.when(
       data: (locations)
       {
-        // Find the selected id
         final String selectedId = checked.entries.firstWhere((e) => e.value, orElse: () => const MapEntry('', false)).key;
         return CustomListviewBuilder(
           itemCount: locations.length,
@@ -34,8 +33,8 @@ class LocationFilterChooseListBuilder extends ConsumerWidget
             return LocationFilterItem(
               title: title,
               isSelected: isSelected,
-              onTap: () {
-                // Clear all, then set only this id to true
+              onTap: ()
+              {
                 final notifier = ref.read(locationCheckboxProvider.notifier);
                 notifier.clearAll();
                 notifier.setValue(id, true);
