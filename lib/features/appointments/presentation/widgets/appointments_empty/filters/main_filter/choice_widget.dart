@@ -36,9 +36,11 @@ class ChoiceWidget extends StatelessWidget
         mainAxisSize: MainAxisSize.min,
         children:
         [
+          Sizes.size8.horizontalSpace,
           isText ? Text(choice, style: AppStyles.medium(fontWeight: AppFontWeights.regularWeight, fontColor: AppColors.color.kBlack004,),) : widget!,
           Sizes.size4.horizontalSpace,
-          GestureDetector(onTap: onRemove, child: SvgPicture.asset(AppAssets.icons.cancelBlack),)
+          GestureDetector(onTap: onRemove, child: SvgPicture.asset(AppAssets.icons.cancelBlack),),
+          Sizes.size8.horizontalSpace,
         ],
       ),
     );

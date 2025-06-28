@@ -50,6 +50,9 @@ dependencies:
   # Maps
   google_maps_flutter: ^2.12.3
 
+  #
+  collection: ^1.18.0
+
 
 dev_dependencies:
   flutter_test:

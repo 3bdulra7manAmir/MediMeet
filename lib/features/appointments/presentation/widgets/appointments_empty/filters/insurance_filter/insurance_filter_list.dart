@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../../../core/constants/app_sizes.dart';
 import '../../../../../../../core/widgets/custom_circular_indicator.dart';
-import '../../../../../../../core/widgets/custom_divider.dart';
 import '../../../../../../../core/widgets/custom_error_widget.dart';
 import '../../../../../../../core/widgets/custom_listview_builder.dart';
 import '../../../../controller/filters_controllers/insurance_provider/insurance_provider_filter_controller.dart';
+import '../list_builder_separator_widget.dart';
 import 'insurance_filter_widget.dart';
 
 class InsuranceFilterChooseListWidget extends ConsumerWidget
@@ -21,14 +19,7 @@ class InsuranceFilterChooseListWidget extends ConsumerWidget
       data: (insurances) => CustomListviewBuilder(
         itemCount: insurances.length,
         itemBuilder: (context, index) => InsuranceFilterChooseWidget(index: index, insuranceName: insurances[index].title ?? '',),
-        separatorBuilder: (context, index) => Column(
-          children:
-          [
-            Sizes.size5.verticalSpace,
-            CustomDivider(endIndent: 20.w, indent: 30.w),
-            Sizes.size5.verticalSpace,
-          ],
-        ),
+        separatorBuilder: (context, index) => const ListBuilderSeparatorWidget(),
       ),
       loading: () => const CustomCircularIndicator(),
       error: (e, st) => CustomErrorWidget(e: e),

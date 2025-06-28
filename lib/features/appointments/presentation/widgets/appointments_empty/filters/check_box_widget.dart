@@ -25,6 +25,14 @@ class CheckBoxWidget extends ConsumerWidget
     final checkboxState = ref.watch(provider);
     final isChecked = checkboxState[id] ?? false;
     return Checkbox(
+      fillColor: WidgetStateProperty.resolveWith((states)
+      {
+        if (states.contains(WidgetState.selected))
+        {
+          return AppColors.color.kBlue005;
+        }
+        return null;
+      }),
       value: isChecked,
       onChanged: (value)
       {

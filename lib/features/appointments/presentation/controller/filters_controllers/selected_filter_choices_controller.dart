@@ -1,8 +1,9 @@
+import 'dart:developer';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+
 /// Enum for filter types
-enum FilterType
-{
+enum FilterType {
   specialty,
   rating,
   location,
@@ -11,12 +12,11 @@ enum FilterType
 }
 
 /// Model for a selected filter choice
-class SelectedFilterChoice
-{
+class SelectedFilterChoice {
   final FilterType type;
-  final String id; // Unique identifier for the choice (e.g., id or value)
-  final String label; // Display label
-  final dynamic extra; // Optional: for widget or additional info
+  final String id;
+  final String label;
+  final dynamic extra;
 
   SelectedFilterChoice({
     required this.type,
@@ -38,31 +38,62 @@ class SelectedFilterChoice
 }
 
 /// StateNotifier for managing selected filter choices
-class SelectedFilterChoicesNotifier extends StateNotifier<List<SelectedFilterChoice>>
-{
+class SelectedFilterChoicesNotifier extends StateNotifier<List<SelectedFilterChoice>> {
   SelectedFilterChoicesNotifier() : super([]);
 
-  void addChoice(SelectedFilterChoice choice)
-  {
-    if (!state.contains(choice))
-    {
-      state = [...state, choice];
+  /// Add a choice (multi or single depending on type)
+  void addChoice(SelectedFilterChoice choice) {
+    if (_isSingleSelectionFilter(choice.type)) {
+      // Replace any existing choice of the same type
+      state = [
+        ...state.where((c) => c.type != choice.type),
+        choice,
+      ];
+    } else {
+      // Allow multiple selections
+      if (!state.contains(choice)) {
+        state = [...state, choice];
+      }
     }
   }
 
-  void removeChoice(SelectedFilterChoice choice)
-  {
+  /// Remove a specific choice
+  void removeChoice(SelectedFilterChoice choice) {
     state = state.where((c) => c != choice).toList();
   }
 
-  void removeByTypeAndId(FilterType type, String id)
-  {
+  /// Remove a choice by type and id
+  void removeByTypeAndId(FilterType type, String id) {
     state = state.where((c) => c.type != type || c.id != id).toList();
   }
 
-  void clearAll()
-  {
+  /// Clear all filters
+  void clearAll() {
     state = [];
+  }
+
+  /// Clear filters by type (optional)
+  void clearByType(FilterType type)
+  {
+    state = state.where((c) => c.type != type).toList();
+  }
+
+  /// Get selected location (for radio)
+  SelectedFilterChoice? get selectedLocation
+  {
+  try
+  {
+    return state.firstWhere((c) => c.type == FilterType.location);
+  }
+  catch (_)
+  {
+    log("NULL");
+    return null;
+  }
+}
+
+  bool _isSingleSelectionFilter(FilterType type) {
+    return type == FilterType.location;
   }
 }
 

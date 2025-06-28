@@ -27,13 +27,12 @@ class LocationFilterBody extends StatelessWidget
             Sizes.size16.verticalSpace,
             const CustomFiltersAppbar(appbarText: AppStrings.location),
             Sizes.size24.verticalSpace,
-            const LocationFilterChooseListWidget(),
+            const LocationFilterChooseListBuilder(),
           ],
         ),
       ),
       bottomNavigationBar: CustomNavBar(
-        navBarChildren:
-        CustomButton(text: AppStrings.addFilter, onPressed: () => ModalSheetRouter.router.pop(), width: double.infinity,),
+        navBarChildren: CustomButton(text: AppStrings.addFilter, onPressed: () => ModalSheetRouter.router.pop(), width: double.infinity,),
       ),
     );
   }

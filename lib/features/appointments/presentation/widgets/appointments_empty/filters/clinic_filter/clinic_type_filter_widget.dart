@@ -46,7 +46,7 @@ class ClinicTypeChooseWidget extends ConsumerWidget
             }
           },
         ),
-        Sizes.size8.horizontalSpace,
+        Sizes.size4.horizontalSpace,
         Text(clinicTypeName, style: AppStyles.large()),
       ],
     );

@@ -15,12 +15,12 @@ import '../../../../../../../core/widgets/custom_divider.dart';
 import '../../../../../../../core/widgets/custom_nav_bar.dart';
 import '../../../../controller/filters_controllers/selected_filter_choices_controller.dart';
 import '../../../../controller/filters_controllers/shared_checkbox_notifier.dart';
-import 'clinic_type/clinic_type_widget.dart';
-import 'insurance_provider/insurance_provider_widget.dart';
+import 'clinic_type/clinic_type_body.dart';
+import 'insurance_provider/insurance_provider_body.dart';
 import 'location/location_widget.dart';
 import 'has_insurance_widget.dart';
 import 'rate_amount/rate_amount_body.dart';
-import 'specialties/specialties_widget.dart';
+import 'specialties/specialties_body.dart';
 
 class MainFilterApply extends StatelessWidget
 {
@@ -39,7 +39,7 @@ class MainFilterApply extends StatelessWidget
           [
             Sizes.size16.verticalSpace,
             CustomFiltersAppbar(appbarText: appBarTitle),
-            Sizes.size24.verticalSpace,
+            Sizes.size32.verticalSpace,
       
             const HasInsuranceWidget(),
             Sizes.size16.verticalSpace,
