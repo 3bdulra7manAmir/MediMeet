@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../../../core/constants/app_sizes.dart';
 import '../../../../../../../core/constants/app_styles.dart';
 import '../../../../controller/filters_controllers/shared_checkbox_notifier.dart';
-import '../../../../controller/filters_controllers/selected_filter_choices_controller.dart';
 import '../check_box_widget.dart';
 
 class SpecialtyFilterChooseWidget extends ConsumerWidget
@@ -30,18 +29,8 @@ class SpecialtyFilterChooseWidget extends ConsumerWidget
       [
         Sizes.size16.horizontalSpace,
         CheckBoxWidget(id: id, provider: specialtyCheckboxProvider,
-          onChanged: (val)
-          {
-            final notifier = ref.read(selectedFilterChoicesProvider.notifier);
-            final choice = SelectedFilterChoice(type: FilterType.specialty, id: id, label: specialtyName,);
-            if (val)
-            {
-              notifier.addChoice(choice);
-            }
-            else
-            {
-              notifier.removeChoice(choice);
-            }
+          onChanged: (val) {
+            ref.read(specialtyCheckboxProvider.notifier).setValue(id, val);
           },
         ),
         Sizes.size8.horizontalSpace,

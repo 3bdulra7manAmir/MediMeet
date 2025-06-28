@@ -23,10 +23,10 @@ class SpecialtyFilterChooseListWidget extends ConsumerWidget
       data: (specialties) => CustomListviewBuilder
       (
         itemCount: specialties.length,
-        itemBuilder: (context, index) => SpecialtyFilterChooseWidget
-        (
+        itemBuilder: (context, index) => SpecialtyFilterChooseWidget(
           index: index,
           specialtyName: specialties[index].title ?? '',
+          specialtyId: specialties[index].id?.toString(),
         ),
         separatorBuilder: (context, index) => Column
         (

@@ -18,7 +18,11 @@ class InsuranceFilterChooseListWidget extends ConsumerWidget
     return asyncInsurances.when(
       data: (insurances) => CustomListviewBuilder(
         itemCount: insurances.length,
-        itemBuilder: (context, index) => InsuranceFilterChooseWidget(index: index, insuranceName: insurances[index].title ?? '',),
+        itemBuilder: (context, index) => InsuranceFilterChooseWidget(
+          index: index,
+          insuranceName: insurances[index].title ?? '',
+          insuranceId: insurances[index].id?.toString(),
+        ),
         separatorBuilder: (context, index) => const ListBuilderSeparatorWidget(),
       ),
       loading: () => const CustomCircularIndicator(),

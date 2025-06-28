@@ -40,6 +40,8 @@ class ClinicTypeFilterBody extends StatelessWidget {
             onPressed: () {
               final checked = ref.read(clinicTypeCheckboxProvider);
               final clinicTypes = ref.read(clinicTypeFilterProvider).asData?.value ?? [];
+              final notifier = ref.read(selectedFilterChoicesProvider.notifier);
+              notifier.clearByType(FilterType.clinicType);
               checked.forEach((id, isChecked) {
                 if (isChecked) {
                   ClinicTypeModel? clinic;
@@ -49,7 +51,7 @@ class ClinicTypeFilterBody extends StatelessWidget {
                     clinic = null;
                   }
                   if (clinic != null) {
-                    ref.read(selectedFilterChoicesProvider.notifier).addChoice(
+                    notifier.addChoice(
                       SelectedFilterChoice(type: FilterType.clinicType, id: id, label: clinic.title ?? ''),
                     );
                   }

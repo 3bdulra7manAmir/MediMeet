@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../../config/router/bottom_modal_sheet_router/modal_sheet_router.dart';
@@ -8,6 +11,9 @@ import '../../../../../../../core/constants/app_strings.dart';
 import '../../../../../../../core/widgets/appbars/filters_appbar.dart';
 import '../../../../../../../core/widgets/buttons/custom_button.dart';
 import '../../../../../../../core/widgets/custom_nav_bar.dart';
+import '../../../../controller/filters_controllers/location/location_filter_controller.dart';
+import '../../../../controller/filters_controllers/shared_checkbox_notifier.dart';
+import '../../../../controller/filters_controllers/selected_filter_choices_controller.dart';
 import 'location_filter_list.dart';
 
 class LocationFilterBody extends StatelessWidget
@@ -15,15 +21,13 @@ class LocationFilterBody extends StatelessWidget
   const LocationFilterBody({super.key});
 
   @override
-  Widget build(BuildContext context)
-  {
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.color.kWhite002,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children:
-          [
+          children: [
             Sizes.size16.verticalSpace,
             const CustomFiltersAppbar(appbarText: AppStrings.location),
             Sizes.size24.verticalSpace,
@@ -31,8 +35,38 @@ class LocationFilterBody extends StatelessWidget
           ],
         ),
       ),
-      bottomNavigationBar: CustomNavBar(
-        navBarChildren: CustomButton(text: AppStrings.addFilter, onPressed: () => ModalSheetRouter.router.pop(), width: double.infinity,),
+      bottomNavigationBar: Consumer(
+        builder: (context, ref, _) {
+          return CustomNavBar(
+            navBarChildren: CustomButton(
+              text: AppStrings.addFilter,
+              onPressed: () {
+                final locations = ref.read(locationFilterProvider).asData?.value ?? [];
+                final checked = ref.read(locationCheckboxProvider);
+                final notifier = ref.read(selectedFilterChoicesProvider.notifier);
+                // Remove all previous location choices
+                notifier.clearByType(FilterType.location);
+                for (var i = 0; i < locations.length; i++) {
+                  final id = locations[i].id ?? i.toString();
+                  if (checked[id] == true) {
+                    final label = locations[i].title ?? '';
+                    notifier.addChoice(SelectedFilterChoice(
+                      type: FilterType.location,
+                      id: id,
+                      label: label,
+                    ));
+                  }
+                }
+                // Debug log
+                // ignore: avoid_print
+                final selected = ref.read(selectedFilterChoicesProvider).where((c) => c.type == FilterType.location).toList();
+                log('[DEBUG] Location Add Filter pressed. Selected: $selected');
+                ModalSheetRouter.router.pop();
+              },
+              width: double.infinity,
+            ),
+          );
+        },
       ),
     );
   }

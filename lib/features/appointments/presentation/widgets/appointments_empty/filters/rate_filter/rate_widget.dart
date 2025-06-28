@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../../../core/constants/app_paddings.dart';
 import '../../../../../../../core/constants/app_sizes.dart';
 import '../../../../../../../core/constants/app_styles.dart';
-import '../../../../controller/filters_controllers/selected_filter_choices_controller.dart';
 import '../../../../controller/filters_controllers/shared_checkbox_notifier.dart';
 import '../../../appointments/past_appointment/rate_stars_bar.dart';
 import '../check_box_widget.dart';
@@ -30,22 +29,13 @@ class RatingFilterChooseWidget extends ConsumerWidget
   {
     final id = ratingId ?? index.toString();
     return Row(
-      children:
-      [
+      children: [
         Sizes.size16.horizontalSpace,
-        CheckBoxWidget(id: id, provider: ratingCheckboxProvider,
-          onChanged: (val)
-          {
-            final notifier = ref.read(selectedFilterChoicesProvider.notifier);
-            final choice = SelectedFilterChoice(type: FilterType.rating, id: id, label: ratingLabel, extra: starsCount,);
-            if (val)
-            {
-              notifier.addChoice(choice);
-            }
-            else
-            {
-              notifier.removeChoice(choice);
-            }
+        CheckBoxWidget(
+          id: id,
+          provider: ratingCheckboxProvider,
+          onChanged: (val) {
+            ref.read(ratingCheckboxProvider.notifier).setValue(id, val);
           },
         ),
         Sizes.size6.horizontalSpace,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../../../../config/router/bottom_modal_sheet_router/modal_sheet_router.dart';
 import '../../../../../../../config/theme/color_manager/colors.dart';
@@ -9,6 +10,9 @@ import '../../../../../../../core/widgets/appbars/filters_appbar.dart';
 import '../../../../../../../core/widgets/buttons/custom_button.dart';
 import '../../../../../../../core/widgets/custom_nav_bar.dart';
 import 'specialty_filter_list.dart';
+import '../../../../controller/filters_controllers/specialty/specialty_filter_controller.dart';
+import '../../../../controller/filters_controllers/shared_checkbox_notifier.dart';
+import '../../../../controller/filters_controllers/selected_filter_choices_controller.dart';
 
 class SpecialtyFilterBody extends StatelessWidget
 {
@@ -31,8 +35,33 @@ class SpecialtyFilterBody extends StatelessWidget
           ],
         ),
       ),
-      bottomNavigationBar: CustomNavBar(
-        navBarChildren: CustomButton(text: AppStrings.addFilter, onPressed: () => ModalSheetRouter.router.pop(), width: double.infinity,),
+      bottomNavigationBar: Consumer(
+        builder: (context, ref, _) {
+          return CustomNavBar(
+            navBarChildren: CustomButton(
+              text: AppStrings.addFilter,
+              onPressed: () {
+                final specialties = ref.read(specialtyFilterProvider).asData?.value ?? [];
+                final checked = ref.read(specialtyCheckboxProvider);
+                final notifier = ref.read(selectedFilterChoicesProvider.notifier);
+                notifier.clearByType(FilterType.specialty);
+                for (var i = 0; i < specialties.length; i++) {
+                  final id = specialties[i].id?.toString() ?? i.toString();
+                  if (checked[id] == true) {
+                    final label = specialties[i].title ?? '';
+                    notifier.addChoice(SelectedFilterChoice(
+                      type: FilterType.specialty,
+                      id: id,
+                      label: label,
+                    ));
+                  }
+                }
+                ModalSheetRouter.router.pop();
+              },
+              width: double.infinity,
+            ),
+          );
+        },
       ),
     );
   }
