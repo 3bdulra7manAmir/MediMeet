@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -6,7 +7,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../config/theme/color_manager/colors.dart';
 import '../../../../config/theme/font_manager/font_weights.dart';
 import '../../../../core/constants/app_borders.dart';
-import '../../../../core/constants/app_paddings.dart';
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/constants/app_styles.dart';
 import '../controller/has_insurance_controller.dart';
@@ -31,6 +31,8 @@ class HasInsuranceWidget extends StatelessWidget
 
 
 
+
+
 class CustomToggleSwitch extends ConsumerWidget
 {
   const CustomToggleSwitch({super.key});
@@ -39,6 +41,18 @@ class CustomToggleSwitch extends ConsumerWidget
   Widget build(BuildContext context, WidgetRef ref)
   {
     final isSwitched = ref.watch(toggleSwitchProvider);
+    final bool isIOS = Platform.isIOS;
+
+    // iOS: full pill shape, Android: less rounded
+    final BorderRadius borderRadius = isIOS
+        ? AppRadiuses.circular.xMedium
+        : AppRadiuses.circular.medium;
+
+    final double width = isIOS ? 50.w : 44.w;
+    final double height = isIOS ? 30.h : 24.h;
+    final double circleSize = isIOS ? 26.w : 20.w;
+    final EdgeInsetsGeometry padding = isIOS ? EdgeInsets.all(2.w) : EdgeInsets.all(2.w);
+
     return GestureDetector(
       onTap: ()
       {
@@ -47,20 +61,22 @@ class CustomToggleSwitch extends ConsumerWidget
       },
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 250),
-        width: 40.w, height: 24.h,
-        padding: AppPadding.all.smallAll,
+        width: width,
+        height: height,
+        padding: padding,
         decoration: BoxDecoration(
           color: isSwitched ? AppColors.color.kBlue002 : Colors.grey.shade300,
-          borderRadius: AppRadiuses.circular.small,
+          borderRadius: borderRadius,
         ),
         alignment: isSwitched ? Alignment.centerRight : Alignment.centerLeft,
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 250),
-          width: 20.w, height: 20.h,
-          decoration: BoxDecoration(
-            color: AppColors.color.kWhite002,
+          width: circleSize,
+          height: circleSize,
+          decoration: const BoxDecoration(
+            color: Colors.white,
             shape: BoxShape.circle,
-            boxShadow: const
+            boxShadow:
             [
               BoxShadow(
                 color: Color.fromARGB(15, 16, 24, 40),

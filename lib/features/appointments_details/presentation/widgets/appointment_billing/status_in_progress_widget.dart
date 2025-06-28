@@ -20,7 +20,7 @@ class StatusInPrograssWidget extends StatelessWidget
       height: 28.h,
       decoration: BoxDecoration(
         color: AppColors.color.kYellow001,
-        borderRadius: AppRadiuses.circular.xMedium,
+        borderRadius: AppRadiuses.circular.xXMedium,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,

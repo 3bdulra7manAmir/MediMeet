@@ -21,7 +21,7 @@ class StatusFailedWidget extends StatelessWidget
       height: 28.h,
       decoration: BoxDecoration(
         color: AppColors.color.kRed003,
-        borderRadius: AppRadiuses.circular.xMedium,
+        borderRadius: AppRadiuses.circular.xXMedium,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
