@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../../../../config/router/bottom_modal_sheet_router/modal_sheet_router.dart';
 import '../../../../../../../config/theme/color_manager/colors.dart';
@@ -8,22 +9,23 @@ import '../../../../../../../core/constants/app_strings.dart';
 import '../../../../../../../core/widgets/appbars/filters_appbar.dart';
 import '../../../../../../../core/widgets/buttons/custom_button.dart';
 import '../../../../../../../core/widgets/custom_nav_bar.dart';
+import '../../../../../data/model/filters_models/clinic_type.dart';
+import '../../../../controller/filters_controllers/clinic_type/clinic_type_filter_controller.dart';
+import '../../../../controller/filters_controllers/selected_filter_choices_controller.dart';
+import '../../../../controller/filters_controllers/shared_checkbox_notifier.dart';
 import 'clinic_type_filter_list.dart';
 
-class ClinicTypeFilterBody extends StatelessWidget
-{
+class ClinicTypeFilterBody extends StatelessWidget {
   const ClinicTypeFilterBody({super.key});
 
   @override
-  Widget build(BuildContext context)
-  {
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.color.kWhite002,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children:
-          [
+          children: [
             Sizes.size16.verticalSpace,
             const CustomFiltersAppbar(appbarText: AppStrings.clinicType),
             Sizes.size24.verticalSpace,
@@ -32,7 +34,32 @@ class ClinicTypeFilterBody extends StatelessWidget
         ),
       ),
       bottomNavigationBar: CustomNavBar(
-        navBarChildren: CustomButton(text: AppStrings.addFilter, onPressed: () => ModalSheetRouter.router.pop(), width: double.infinity,),
+        navBarChildren: Consumer(
+          builder: (context, ref, _) => CustomButton(
+            text: AppStrings.addFilter,
+            onPressed: () {
+              final checked = ref.read(clinicTypeCheckboxProvider);
+              final clinicTypes = ref.read(clinicTypeFilterProvider).asData?.value ?? [];
+              checked.forEach((id, isChecked) {
+                if (isChecked) {
+                  ClinicTypeModel? clinic;
+                  try {
+                    clinic = clinicTypes.firstWhere((c) => c.id?.toString() == id);
+                  } catch (_) {
+                    clinic = null;
+                  }
+                  if (clinic != null) {
+                    ref.read(selectedFilterChoicesProvider.notifier).addChoice(
+                      SelectedFilterChoice(type: FilterType.clinicType, id: id, label: clinic.title ?? ''),
+                    );
+                  }
+                }
+              });
+              ModalSheetRouter.router.pop();
+            },
+            width: double.infinity,
+          ),
+        ),
       ),
     );
   }

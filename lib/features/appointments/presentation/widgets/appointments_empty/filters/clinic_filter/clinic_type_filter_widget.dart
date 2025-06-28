@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../../core/constants/app_sizes.dart';
 import '../../../../../../../core/constants/app_styles.dart';
-import '../../../../controller/filters_controllers/selected_filter_choices_controller.dart';
 import '../../../../controller/filters_controllers/shared_checkbox_notifier.dart';
 import '../check_box_widget.dart';
 
@@ -32,21 +31,11 @@ class ClinicTypeChooseWidget extends ConsumerWidget
         CheckBoxWidget(
           id: id,
           provider: clinicTypeCheckboxProvider,
-          onChanged: (val)
-          {
-            final notifier = ref.read(selectedFilterChoicesProvider.notifier);
-            final choice = SelectedFilterChoice(type: FilterType.clinicType, id: id, label: clinicTypeName,);
-            if (val)
-            {
-              notifier.addChoice(choice);
-            }
-            else
-            {
-              notifier.removeChoice(choice);
-            }
+          onChanged: (val) {
+            ref.read(clinicTypeCheckboxProvider.notifier).setValue(id, val);
           },
         ),
-        Sizes.size4.horizontalSpace,
+        Sizes.size8.horizontalSpace,
         Text(clinicTypeName, style: AppStyles.large()),
       ],
     );
