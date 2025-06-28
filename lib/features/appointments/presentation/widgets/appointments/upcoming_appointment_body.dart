@@ -9,7 +9,7 @@ import '../../../../../core/constants/app_sizes.dart';
 import '../../../../../core/constants/app_styles.dart';
 import '../../../../../core/widgets/custom_circular_indicator.dart';
 import '../../../../../core/widgets/custom_error_widget.dart';
-import '../../controller/appointment_controllers/upcoming_appointment_controller.dart';
+import '../../controller/upcoming_appointment_controller.dart';
 import 'upcoming_appointment/upcoming_appointment_options_widget.dart';
 import 'upcoming_appointment/upcoming_date_widget.dart';
 

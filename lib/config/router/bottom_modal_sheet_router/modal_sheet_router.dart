@@ -4,12 +4,12 @@ import 'package:go_router/go_router.dart';
 
 import '../../../core/constants/app_strings.dart';
 import '../../../core/widgets/custom_circular_indicator.dart';
-import '../../../features/appointments/presentation/widgets/appointments_empty/filters/clinic_filter/clinic_type_filter_body.dart';
-import '../../../features/appointments/presentation/widgets/appointments_empty/filters/insurance_filter/insurance_filter_body.dart';
-import '../../../features/appointments/presentation/widgets/appointments_empty/filters/location_filter/location_filter_body.dart';
-import '../../../features/appointments/presentation/widgets/appointments_empty/filters/main_filter/main_filter_body.dart';
-import '../../../features/appointments/presentation/widgets/appointments_empty/filters/rate_filter/rate_filter_body.dart';
-import '../../../features/appointments/presentation/widgets/appointments_empty/filters/specialty_filter/specialty_filter_body.dart';
+import '../../../features/filters/presentation/screens/other_filters_view/clinic_filter/clinic_type_filter_body.dart';
+import '../../../features/filters/presentation/screens/other_filters_view/insurance_filter/insurance_filter_body.dart';
+import '../../../features/filters/presentation/screens/other_filters_view/location_filter/location_filter_body.dart';
+import '../../../features/filters/presentation/screens/main_filter_view/main_filter_body.dart';
+import '../../../features/filters/presentation/screens/other_filters_view/rate_filter/rate_filter_body.dart';
+import '../../../features/filters/presentation/screens/other_filters_view/specialty_filter/specialty_filter_body.dart';
 import 'modal_sheet_routes.dart';
 
 class ModalSheetRouter extends StatelessWidget
