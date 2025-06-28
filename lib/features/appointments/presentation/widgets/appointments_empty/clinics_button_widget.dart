@@ -1,5 +1,3 @@
-// ignore_for_file: unused_import
-
 import 'package:flutter/material.dart';
 
 import '../../../../../config/router/app_router/app_router.dart';
@@ -15,9 +13,11 @@ class ExploreClinicsButtonWidget extends StatelessWidget
   @override
   Widget build(BuildContext context)
   {
-    //return CustomButton(text: AppStrings.exploreClinics, onPressed: () => AppRouter.router.pushNamed(AppRoutes.appointments));
-    return CustomButton(text: AppStrings.exploreClinics, onPressed: () => filterBottomModalSheet(context));
-    //return CustomButton(text: AppStrings.exploreClinics, onPressed: () => AppRouter.router.pushNamed(AppRoutes.appointmentsDetails));
+    return CustomButton(
+      text: AppStrings.exploreClinics, 
+      onLongPress: () =>  AppRouter.router.pushNamed(AppRoutes.appointments),
+      onPressed: () => filterBottomModalSheet(context),
+    );
   }
 }
 

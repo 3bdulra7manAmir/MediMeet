@@ -19,6 +19,7 @@ class CustomButton extends ConsumerWidget
     this.borderColor,
     this.backgroundColor,
     required this.onPressed,
+    this.onLongPress,
     required this.text,
     this.textStyle,
   });
@@ -31,6 +32,7 @@ class CustomButton extends ConsumerWidget
   final Color? borderColor;
   final Color? backgroundColor;
   final void Function() onPressed;
+  final void Function()? onLongPress;
   final String text;
   final TextStyle? textStyle;
 
@@ -50,6 +52,7 @@ class CustomButton extends ConsumerWidget
           backgroundColor: WidgetStateProperty.all<Color>(backgroundColor ?? AppColors.color.kBlue001,),
         ),
         onPressed: onPressed,
+        onLongPress: onLongPress,
         child: Text(text, style: textStyle ?? AppStyles.large(fontColor: AppColors.color.kWhite002, fontWeight: AppFontWeights.semiBoldWeight),),
       ),
     );
