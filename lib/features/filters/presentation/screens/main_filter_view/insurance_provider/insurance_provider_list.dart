@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../core/constants/app_sizes.dart';
 import '../../../../../../core/widgets/custom_listview_builder.dart';
-import '../../../controller/shared_checkbox_notifier.dart';
+import '../../../controller/shared_checkbox_controller.dart';
 import '../../../widget/choice_widget.dart';
 import '../../../controller/selected_filter_choices_controller.dart';
 

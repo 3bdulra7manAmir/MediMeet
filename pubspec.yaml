@@ -29,7 +29,7 @@ dependencies:
   # Routing
   go_router: ^14.8.1
 
-  # Cached NetWork IMG
+  # Cached Network Image
   cached_network_image: ^3.4.1
 
   # Device Preview (for responsive testing)
@@ -44,39 +44,36 @@ dependencies:
   # Comparing and Hashing
   equatable: ^2.0.7
 
-  # Either - or
+  # Either type
   dartz: ^0.10.1
 
   # Maps
   google_maps_flutter: ^2.12.3
 
-  #
+  # Collection helpers
   collection: ^1.18.0
-
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  # Flutter Lints
+  # Linting
   flutter_lints: ^5.0.0
+  riverpod_lint: ^2.6.1
 
-  # Riverpod Lints
-  riverpod_lint: any
+  # Code generation
+  build_runner: ^2.4.9
+  riverpod_generator: ^2.6.1
 
-  # Code Generation & runner
-  build_runner: ^2.4.15
-  riverpod_generator: ^2.6.3
-  analyzer: ^6.11.0
-
+  # Manually pinned to avoid analyzer conflicts
+  analyzer: 6.11.0
+  analyzer_plugin: 0.11.3
 
 flutter:
   uses-material-design: true
   generate: true
-  
-  # Fonts Configuration
+
   fonts:
-    # InterTight Fonts
     - family: InterTight
       fonts:
         - asset: assets/fonts/Inter_Tight/InterTight-Black.ttf
@@ -88,7 +85,6 @@ flutter:
         - asset: assets/fonts/Inter_Tight/InterTight-Regular.ttf
         - asset: assets/fonts/Inter_Tight/InterTight-SemiBold.ttf
 
-  # Asset Paths
   assets:
     - assets/fonts/Inter_Tight/
 

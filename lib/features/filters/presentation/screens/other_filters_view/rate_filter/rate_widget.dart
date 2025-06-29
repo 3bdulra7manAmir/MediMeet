@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../../core/constants/app_paddings.dart';
 import '../../../../../../core/constants/app_sizes.dart';
 import '../../../../../../core/constants/app_styles.dart';
-import '../../../controller/shared_checkbox_notifier.dart';
+import '../../../controller/shared_checkbox_controller.dart';
 import '../../../../../appointments/presentation/widgets/appointments/past_appointment/rate_stars_bar.dart';
 import '../../../widget/check_box_widget.dart';
 

@@ -11,7 +11,7 @@ import '../../../../../../core/widgets/appbars/filters_appbar.dart';
 import '../../../../../../core/widgets/buttons/custom_button.dart';
 import '../../../../../../core/widgets/custom_nav_bar.dart';
 import '../../../controller/location/location_filter_controller.dart';
-import '../../../controller/shared_checkbox_notifier.dart';
+import '../../../controller/shared_checkbox_controller.dart';
 import '../../../controller/selected_filter_choices_controller.dart';
 import 'location_filter_list.dart';
 

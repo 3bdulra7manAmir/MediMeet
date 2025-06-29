@@ -11,7 +11,7 @@ import '../../../../../../core/widgets/buttons/custom_button.dart';
 import '../../../../../../core/widgets/custom_nav_bar.dart';
 import 'specialty_filter_list.dart';
 import '../../../controller/specialty/specialty_filter_controller.dart';
-import '../../../controller/shared_checkbox_notifier.dart';
+import '../../../controller/shared_checkbox_controller.dart';
 import '../../../controller/selected_filter_choices_controller.dart';
 
 class SpecialtyFilterBody extends StatelessWidget

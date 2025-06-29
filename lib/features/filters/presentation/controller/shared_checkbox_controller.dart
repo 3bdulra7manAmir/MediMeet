@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+
 class CheckboxValuesNotifier extends StateNotifier<Map<String, bool>>
 {
   CheckboxValuesNotifier() : super({});

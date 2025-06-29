@@ -30,9 +30,6 @@ class HasInsuranceWidget extends StatelessWidget
 }
 
 
-
-
-
 class CustomToggleSwitch extends ConsumerWidget
 {
   const CustomToggleSwitch({super.key});
@@ -95,3 +92,4 @@ class CustomToggleSwitch extends ConsumerWidget
     );
   }
 }
+

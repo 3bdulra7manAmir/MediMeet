@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../config/theme/color_manager/colors.dart';
 import '../../../../core/constants/app_borders.dart';
-import '../controller/shared_checkbox_notifier.dart';
+import '../controller/shared_checkbox_controller.dart';
 
 class CheckBoxWidget extends ConsumerWidget
 {

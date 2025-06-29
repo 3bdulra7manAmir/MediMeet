@@ -12,7 +12,7 @@ import '../../../../../../core/widgets/custom_nav_bar.dart';
 import '../../../../data/model/clinic_type.dart';
 import '../../../controller/clinic_type/clinic_type_filter_controller.dart';
 import '../../../controller/selected_filter_choices_controller.dart';
-import '../../../controller/shared_checkbox_notifier.dart';
+import '../../../controller/shared_checkbox_controller.dart';
 import 'clinic_type_filter_list.dart';
 
 class ClinicTypeFilterBody extends StatelessWidget

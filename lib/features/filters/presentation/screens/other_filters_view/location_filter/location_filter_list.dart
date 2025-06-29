@@ -5,7 +5,7 @@ import '../../../../../../core/widgets/custom_circular_indicator.dart';
 import '../../../../../../core/widgets/custom_error_widget.dart';
 import '../../../../../../core/widgets/custom_listview_builder.dart';
 import '../../../controller/location/location_filter_controller.dart';
-import '../../../controller/shared_checkbox_notifier.dart';
+import '../../../controller/shared_checkbox_controller.dart';
 import '../../../widget/list_builder_separator_widget.dart';
 import 'location_filter_widget.dart';
 
