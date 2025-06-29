@@ -8,9 +8,9 @@ import '../constants/app_margins.dart';
 
 class CustomNavBar extends StatelessWidget
 {
-  const CustomNavBar({super.key, this.margin, this.alignment, this.width, this.height, this.borderRadius, this.color, required this.navBarChildren});
+  const CustomNavBar({super.key, this.padding, this.alignment, this.width, this.height, this.borderRadius, this.color, required this.navBarChildren});
 
-  final EdgeInsetsGeometry? margin;
+  final EdgeInsetsGeometry? padding;
   final AlignmentGeometry? alignment;
   final double? width;
   final double? height;
@@ -22,7 +22,7 @@ class CustomNavBar extends StatelessWidget
   Widget build(BuildContext context)
   {
     return Container(
-      margin: margin ?? AppMargins.symmetric.medium,
+      padding: padding ?? AppMargins.symmetric.medium,
       alignment: alignment ?? Alignment.center,
       //width: width ?? 430.w,
       height: height ?? 105.h,
