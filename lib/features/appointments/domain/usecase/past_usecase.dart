@@ -1,26 +1,29 @@
-import 'package:dartz/dartz.dart';
+import 'dart:developer';
 
-import '../../../../core/services/network/api_fetch_failure.dart';
-import '../../../../core/utils/usecase.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+import '../../data/model/past_appointments.dart';
 import '../repository/past_repository.dart';
 
+part 'past_usecase.g.dart';
 
-class PastAppointmentUsecase extends AppUsecase
+@riverpod
+Future<List<PastModel>> pastAppointmentUseCase(Ref ref) async
 {
-  final PastRepository pastRepository;
-  PastAppointmentUsecase(this.pastRepository);
-
-  @override
-  Future<Either<ApiFetchFailure, dynamic>> call([param]) async
+  try
   {
-    try
-    {
-      final result = await pastRepository.getPastAppointments();
-      return Right(result);
-    }
-    catch (e)
-    {
-      return Left(ApiFetchFailure()); //message: e.toString()
-    }
+    return await ref.read(pastRepositoryProvider).getPastAppointments();
+  }
+  catch (e, stack)
+  {
+    log("Err is: $e And Stack is: $stack");
+    return [PastModel(
+      pastCategory: "NuLL", 
+      pastDateTime: "NuLL", 
+      pastID: "NuLL", 
+      pastRate: 0.0, 
+      pastRateDescription: "NuLL", 
+      pastTitle: "NuLL",)];
   }
 }

@@ -1,29 +1,30 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'clinic_type_usecase.dart';
+part of 'past_usecase.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$clinicTypeUseCaseHash() => r'a98e9ab4afc82cbfb3e541b63a41615dee2cb914';
+String _$pastAppointmentUseCaseHash() =>
+    r'0a689e1e7c4b86c956cd6afed5b9e3ca362e6974';
 
-/// See also [clinicTypeUseCase].
-@ProviderFor(clinicTypeUseCase)
-final clinicTypeUseCaseProvider =
-    AutoDisposeFutureProvider<List<ClinicTypeModel>>.internal(
-  clinicTypeUseCase,
-  name: r'clinicTypeUseCaseProvider',
+/// See also [pastAppointmentUseCase].
+@ProviderFor(pastAppointmentUseCase)
+final pastAppointmentUseCaseProvider =
+    AutoDisposeFutureProvider<List<PastModel>>.internal(
+  pastAppointmentUseCase,
+  name: r'pastAppointmentUseCaseProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$clinicTypeUseCaseHash,
+      : _$pastAppointmentUseCaseHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
-typedef ClinicTypeUseCaseRef
-    = AutoDisposeFutureProviderRef<List<ClinicTypeModel>>;
+typedef PastAppointmentUseCaseRef
+    = AutoDisposeFutureProviderRef<List<PastModel>>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/constants/app_sizes.dart';
 import '../../../../../core/widgets/custom_circular_indicator.dart';
 import '../../../../../core/widgets/custom_error_widget.dart';
-import '../../controller/past_appointment_controller.dart';
+import '../../../domain/usecase/past_usecase.dart';
 import 'past_appointment_body.dart';
 
 class PastAppointmentList extends ConsumerWidget
@@ -15,7 +15,7 @@ class PastAppointmentList extends ConsumerWidget
   @override
   Widget build(BuildContext context, WidgetRef ref)
   {
-    final pastAsync = ref.watch(pastAppointmentsProvider);
+    final pastAsync = ref.watch(pastAppointmentUseCaseProvider);
     return pastAsync.when(
       data: (appointments)
       {

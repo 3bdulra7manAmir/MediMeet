@@ -1,11 +1,21 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../model/upcoming_appointments.dart';
+
+part 'upcoming_local_data_source.g.dart';
 
 abstract class UpComingLocalDataSource
 {
   Future<List<UpComingModel>> getUpComingAppointments();
+}
+
+@riverpod
+UpComingLocalDataSource upComingLocalDataSource(Ref ref)
+{
+  return UpComingLocalDataSourceImpl();
 }
 
 class UpComingLocalDataSourceImpl implements UpComingLocalDataSource

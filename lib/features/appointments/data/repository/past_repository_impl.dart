@@ -2,10 +2,10 @@ import '../../domain/repository/past_repository.dart';
 import '../datasources/past_local_data_source.dart';
 import '../model/past_appointments.dart';
 
-class PastRepoImpl implements PastRepository
+class PastRepositoryImpl implements PastRepository
 {
   final PastLocalDataSource localDataSource;
-  const PastRepoImpl({required this.localDataSource});
+  const PastRepositoryImpl({required this.localDataSource});
 
   @override
   Future<List<PastModel>> getPastAppointments() async

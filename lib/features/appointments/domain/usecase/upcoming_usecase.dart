@@ -1,26 +1,28 @@
-import 'package:dartz/dartz.dart';
+import 'dart:developer';
 
-import '../../../../core/services/network/api_fetch_failure.dart';
-import '../../../../core/utils/usecase.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+import '../../data/model/upcoming_appointments.dart';
 import '../repository/upcoming_repository.dart';
 
+part 'upcoming_usecase.g.dart';
 
-class UpComingAppointmentUsecase extends AppUsecase
+@riverpod
+Future<List<UpComingModel>> upComingAppointmentUseCase(Ref ref) async
 {
-  final UpComingRepository upComingRepository;
-  UpComingAppointmentUsecase(this.upComingRepository);
-
-  @override
-  Future<Either<ApiFetchFailure, dynamic>> call([param]) async
+  try
   {
-    try
-    {
-      final result = await upComingRepository.getUpComingAppointments();
-      return Right(result);
-    }
-    catch (e)
-    {
-      return Left(ApiFetchFailure()); //message: e.toString()
-    }
+    return await ref.read(upComingRepositoryProvider).getUpComingAppointments();
+  }
+  catch (e, stack)
+  {
+    log("Err is: $e And Stack is: $stack");
+    return [UpComingModel(
+
+      upComingDateTime: "NuLL", 
+      upComingID: "NuLL", 
+      upComingLocation: "NuLL", 
+      upComingTitle: "NuLL", )];
   }
 }

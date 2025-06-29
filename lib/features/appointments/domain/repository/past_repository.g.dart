@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'selected_filter_choices_controller.dart';
+part of 'past_repository.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$selectedFilterChoicesHash() =>
-    r'f5741265e42b13e730543ec5a9f0d0d5e0457ebe';
+String _$pastRepositoryHash() => r'8eca9982cb9423fee4f84e244e14777a51ac828b';
 
-/// See also [SelectedFilterChoices].
-@ProviderFor(SelectedFilterChoices)
-final selectedFilterChoicesProvider = AutoDisposeNotifierProvider<
-    SelectedFilterChoices, List<SelectedFilterChoice>>.internal(
-  SelectedFilterChoices.new,
-  name: r'selectedFilterChoicesProvider',
+/// See also [pastRepository].
+@ProviderFor(pastRepository)
+final pastRepositoryProvider = AutoDisposeProvider<PastRepository>.internal(
+  pastRepository,
+  name: r'pastRepositoryProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$selectedFilterChoicesHash,
+      : _$pastRepositoryHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$SelectedFilterChoices
-    = AutoDisposeNotifier<List<SelectedFilterChoice>>;
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
+typedef PastRepositoryRef = AutoDisposeProviderRef<PastRepository>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'selected_filter_choices_controller.g.dart';
@@ -57,8 +59,9 @@ class SelectedFilterChoices extends _$SelectedFilterChoices
     {
       return state.firstWhere((c) => c.type == FilterType.location);
     }
-    catch (_)
+    catch (e, stack)
     {
+      log("Err: $e,, Stack is: $stack");
       return null;
     }
 }

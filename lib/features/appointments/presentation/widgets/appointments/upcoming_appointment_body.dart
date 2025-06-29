@@ -9,7 +9,7 @@ import '../../../../../core/constants/app_sizes.dart';
 import '../../../../../core/constants/app_styles.dart';
 import '../../../../../core/widgets/custom_circular_indicator.dart';
 import '../../../../../core/widgets/custom_error_widget.dart';
-import '../../controller/upcoming_appointment_controller.dart';
+import '../../../domain/usecase/upcoming_usecase.dart';
 import 'upcoming_appointment/upcoming_appointment_options_widget.dart';
 import 'upcoming_appointment/upcoming_date_widget.dart';
 
@@ -20,7 +20,7 @@ class UpcomingAppointmentWidget extends ConsumerWidget
   @override
   Widget build(BuildContext context, WidgetRef ref)
   {
-    final upcomingAsync = ref.watch(upcomingAppointmentsProvider);
+    final upcomingAsync = ref.watch(upComingAppointmentUseCaseProvider);
 
     return upcomingAsync.when(
       loading: () => const CustomCircularIndicator(),

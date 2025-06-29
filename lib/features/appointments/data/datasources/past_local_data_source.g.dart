@@ -1,28 +1,29 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'selected_filter_choices_controller.dart';
+part of 'past_local_data_source.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$selectedFilterChoicesHash() =>
-    r'f5741265e42b13e730543ec5a9f0d0d5e0457ebe';
+String _$pastLocalDataSourceHash() =>
+    r'4c55302d8378d7e1764f4ec7cad0908032b7dc59';
 
-/// See also [SelectedFilterChoices].
-@ProviderFor(SelectedFilterChoices)
-final selectedFilterChoicesProvider = AutoDisposeNotifierProvider<
-    SelectedFilterChoices, List<SelectedFilterChoice>>.internal(
-  SelectedFilterChoices.new,
-  name: r'selectedFilterChoicesProvider',
+/// See also [pastLocalDataSource].
+@ProviderFor(pastLocalDataSource)
+final pastLocalDataSourceProvider =
+    AutoDisposeProvider<PastLocalDataSource>.internal(
+  pastLocalDataSource,
+  name: r'pastLocalDataSourceProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$selectedFilterChoicesHash,
+      : _$pastLocalDataSourceHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$SelectedFilterChoices
-    = AutoDisposeNotifier<List<SelectedFilterChoice>>;
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
+typedef PastLocalDataSourceRef = AutoDisposeProviderRef<PastLocalDataSource>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

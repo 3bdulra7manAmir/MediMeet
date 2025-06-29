@@ -2,10 +2,10 @@ import '../../domain/repository/upcoming_repository.dart';
 import '../datasources/upcoming_local_data_source.dart';
 import '../model/upcoming_appointments.dart';
 
-class UpComingRepoImpl implements UpComingRepository
+class UpComingRepositoryImpl implements UpComingRepository
 {
   final UpComingLocalDataSource localDataSource;
-  const UpComingRepoImpl({required this.localDataSource});
+  const UpComingRepositoryImpl({required this.localDataSource});
 
   @override
   Future<List<UpComingModel>> getUpComingAppointments() async

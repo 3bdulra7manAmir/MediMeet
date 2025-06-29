@@ -1,11 +1,22 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../model/past_appointments.dart';
+
+part 'past_local_data_source.g.dart';
+
 
 abstract class PastLocalDataSource
 {
   Future<List<PastModel>> getPastAppointments();
+}
+
+@riverpod
+PastLocalDataSource pastLocalDataSource(Ref ref)
+{
+  return PastLocalDataSourceImpl();
 }
 
 class PastLocalDataSourceImpl implements PastLocalDataSource
