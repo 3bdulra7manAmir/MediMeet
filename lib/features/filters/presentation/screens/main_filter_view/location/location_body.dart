@@ -36,7 +36,7 @@ class LocationApplyWidget extends ConsumerWidget
               {
                 final choice = selectedChoices.first;
                 ref.read(selectedFilterChoicesProvider.notifier).removeChoice(choice);
-                ref.read(locationCheckboxProvider.notifier).clearAll();
+                ref.read(checkboxValuesNotifierProvider.notifier).clearAll();
               },
             ),
           ),

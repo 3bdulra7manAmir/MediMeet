@@ -33,10 +33,8 @@ class RatingFilterChooseWidget extends ConsumerWidget
         Sizes.size16.horizontalSpace,
         CheckBoxWidget(
           id: id,
-          provider: ratingCheckboxProvider,
-          onChanged: (val) {
-            ref.read(ratingCheckboxProvider.notifier).setValue(id, val);
-          },
+          group: CheckboxGroup.rating,
+          onChanged: (val) => ref.read(checkboxValuesNotifierProvider.notifier).setValue(CheckboxGroup.rating, id, val),
         ),
         Sizes.size6.horizontalSpace,
         RateStars(initialValue: starsCount, itemPadding: AppPadding.symmetric.xXXSmall),

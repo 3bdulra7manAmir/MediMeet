@@ -42,13 +42,14 @@ class RatingFilterBody extends StatelessWidget
               text: AppStrings.addFilter,
               onPressed: () {
                 final ratings = ref.read(ratingFilterProvider).asData?.value ?? [];
-                final checked = ref.read(ratingCheckboxProvider);
+                final checked = ref.read(checkboxValuesNotifierProvider);
+                final ratingChecked = checked[CheckboxGroup.rating] ?? {};
                 final notifier = ref.read(selectedFilterChoicesProvider.notifier);
                 // Remove all previous rating choices
                 notifier.clearByType(FilterType.rating);
                 for (var i = 0; i < ratings.length; i++) {
                   final id = ratings[i].id?.toString() ?? i.toString();
-                  if (checked[id] == true) {
+                  if (ratingChecked[id] == true) {
                     final label = ratings[i].rateText ?? '';
                     final stars = double.tryParse(ratings[i].rateValue ?? '') ?? 0;
                     notifier.addChoice(SelectedFilterChoice(

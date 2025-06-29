@@ -42,7 +42,7 @@ class ClinicTypeFilterBody extends StatelessWidget
             text: AppStrings.addFilter,
             onPressed: ()
             {
-              final checked = ref.read(clinicTypeCheckboxProvider);
+              final checked = ref.read(checkboxValuesNotifierProvider)[CheckboxGroup.clinicType] ?? {};
               final clinicTypes = ref.read(clinicTypeFilterProvider).asData?.value ?? [];
               final notifier = ref.read(selectedFilterChoicesProvider.notifier);
               notifier.clearByType(FilterType.clinicType);
@@ -61,9 +61,7 @@ class ClinicTypeFilterBody extends StatelessWidget
                   }
                   if (clinic != null)
                   {
-                    notifier.addChoice(
-                      SelectedFilterChoice(type: FilterType.clinicType, id: id, label: clinic.title ?? ''),
-                    );
+                    notifier.addChoice(SelectedFilterChoice(type: FilterType.clinicType, id: id, label: clinic.title ?? '',),);
                   }
                 }
               });

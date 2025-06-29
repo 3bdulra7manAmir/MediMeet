@@ -44,13 +44,14 @@ class InsuranceFilterBody extends StatelessWidget
               onPressed: ()
               {
                 final insurances = ref.read(insuranceProviderFilterProvider).asData?.value ?? [];
-                final checked = ref.read(insuranceCheckboxProvider);
+                final checked = ref.read(checkboxValuesNotifierProvider);
+                final insurancesChecked = checked[CheckboxGroup.insurance] ?? {};
                 final notifier = ref.read(selectedFilterChoicesProvider.notifier);
                 notifier.clearByType(FilterType.insuranceProvider);
                 for (var i = 0; i < insurances.length; i++)
                 {
                   final id = insurances[i].id?.toString() ?? i.toString();
-                  if (checked[id] == true)
+                  if (insurancesChecked[id] == true)
                   {
                     final label = insurances[i].title ?? '';
                     notifier.addChoice(SelectedFilterChoice(type: FilterType.insuranceProvider, id: id, label: label,

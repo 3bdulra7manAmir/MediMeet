@@ -29,7 +29,7 @@ class ClinicTypeApplyListWidget extends ConsumerWidget
           {
             log('Removed clinic type: \\${selectedChoices[index].label}');
             ref.read(selectedFilterChoicesProvider.notifier).removeChoice(choice);
-            ref.read(clinicTypeCheckboxProvider.notifier).setValue(choice.id, false);
+            ref.read(checkboxValuesNotifierProvider.notifier).setValue(CheckboxGroup.clinicType , choice.id, false);
           },
         );
       },

@@ -28,10 +28,8 @@ class SpecialtyFilterChooseWidget extends ConsumerWidget
       children:
       [
         Sizes.size16.horizontalSpace,
-        CheckBoxWidget(id: id, provider: specialtyCheckboxProvider,
-          onChanged: (val) {
-            ref.read(specialtyCheckboxProvider.notifier).setValue(id, val);
-          },
+        CheckBoxWidget(id: id, group: CheckboxGroup.specialty,
+          onChanged: (val) => ref.read(checkboxValuesNotifierProvider.notifier).setValue(CheckboxGroup.specialty, id, val),
         ),
         Sizes.size8.horizontalSpace,
         Text(specialtyName, style: AppStyles.large()),

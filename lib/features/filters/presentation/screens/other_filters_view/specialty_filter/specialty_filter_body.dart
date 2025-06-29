@@ -42,12 +42,13 @@ class SpecialtyFilterBody extends StatelessWidget
               text: AppStrings.addFilter,
               onPressed: () {
                 final specialties = ref.read(specialtyFilterProvider).asData?.value ?? [];
-                final checked = ref.read(specialtyCheckboxProvider);
+                final checked = ref.read(checkboxValuesNotifierProvider);
+                final specialtiesChecked = checked[CheckboxGroup.specialty] ?? {};
                 final notifier = ref.read(selectedFilterChoicesProvider.notifier);
                 notifier.clearByType(FilterType.specialty);
                 for (var i = 0; i < specialties.length; i++) {
                   final id = specialties[i].id?.toString() ?? i.toString();
-                  if (checked[id] == true) {
+                  if (specialtiesChecked[id] == true) {
                     final label = specialties[i].title ?? '';
                     notifier.addChoice(SelectedFilterChoice(
                       type: FilterType.specialty,

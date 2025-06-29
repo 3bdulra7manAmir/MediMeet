@@ -26,7 +26,7 @@ class InsuranceApplyListWidget extends ConsumerWidget
         {
           log('Removed insurance: \\${selectedChoices[index].label}');
           ref.read(selectedFilterChoicesProvider.notifier).removeChoice(selectedChoices[index]);
-          ref.read(insuranceCheckboxProvider.notifier).setValue(selectedChoices[index].id, false);
+          ref.read(checkboxValuesNotifierProvider.notifier).setValue(CheckboxGroup.insurance , selectedChoices[index].id, false);
         },
       ),
       separatorBuilder: (context, index) => Sizes.size8.horizontalSpace,
