@@ -21,13 +21,15 @@ class RatingFilterBody extends StatelessWidget
   const RatingFilterBody({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)
+  {
     return Scaffold(
       backgroundColor: AppColors.color.kWhite002,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children:
+          [
             Sizes.size16.verticalSpace,
             const CustomFiltersAppbar(appbarText: AppStrings.minimumRating),
             Sizes.size24.verticalSpace,
@@ -36,31 +38,27 @@ class RatingFilterBody extends StatelessWidget
         ),
       ),
       bottomNavigationBar: Consumer(
-        builder: (context, ref, _) {
+        builder: (context, ref, _)
+        {
           return CustomNavBar(
             navBarChildren: CustomButton(
               text: AppStrings.addFilter,
-              onPressed: () {
+              onPressed: ()
+              {
                 final ratings = ref.read(ratingFilterProvider).asData?.value ?? [];
-                final checked = ref.read(ratingCheckboxProvider);
+                final checked = ref.read(checkboxValuesNotifierProvider);
+                final ratingChecked = checked[CheckboxGroup.rating] ?? {};
                 final notifier = ref.read(selectedFilterChoicesProvider.notifier);
-                // Remove all previous rating choices
                 notifier.clearByType(FilterType.rating);
-                for (var i = 0; i < ratings.length; i++) {
+                for (var i = 0; i < ratings.length; i++)
+                {
                   final id = ratings[i].id?.toString() ?? i.toString();
-                  if (checked[id] == true) {
+                  if (ratingChecked[id] == true) {
                     final label = ratings[i].rateText ?? '';
                     final stars = double.tryParse(ratings[i].rateValue ?? '') ?? 0;
-                    notifier.addChoice(SelectedFilterChoice(
-                      type: FilterType.rating,
-                      id: id,
-                      label: label,
-                      extra: stars,
-                    ));
+                    notifier.addChoice(SelectedFilterChoice(type: FilterType.rating, id: id, label: label, extra: stars,),);
                   }
                 }
-                // Debug log
-                // ignore: avoid_print
                 final selected = ref.read(selectedFilterChoicesProvider).where((c) => c.type == FilterType.rating).toList();
                 log('[DEBUG] Rating Add Filter pressed. Selected: $selected');
                 ModalSheetRouter.router.pop();

@@ -36,18 +36,22 @@ class SpecialtyFilterBody extends StatelessWidget
         ),
       ),
       bottomNavigationBar: Consumer(
-        builder: (context, ref, _) {
+        builder: (context, ref, _)
+        {
           return CustomNavBar(
             navBarChildren: CustomButton(
               text: AppStrings.addFilter,
-              onPressed: () {
+              onPressed: ()
+              {
                 final specialties = ref.read(specialtyFilterProvider).asData?.value ?? [];
-                final checked = ref.read(specialtyCheckboxProvider);
+                final checked = ref.read(checkboxValuesNotifierProvider);
+                final specialtyChecked = checked[CheckboxGroup.specialty] ?? {};
                 final notifier = ref.read(selectedFilterChoicesProvider.notifier);
                 notifier.clearByType(FilterType.specialty);
-                for (var i = 0; i < specialties.length; i++) {
+                for (var i = 0; i < specialties.length; i++)
+                {
                   final id = specialties[i].id?.toString() ?? i.toString();
-                  if (checked[id] == true) {
+                  if (specialtyChecked[id] == true) {
                     final label = specialties[i].title ?? '';
                     notifier.addChoice(SelectedFilterChoice(
                       type: FilterType.specialty,

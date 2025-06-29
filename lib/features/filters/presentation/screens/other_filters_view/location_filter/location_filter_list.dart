@@ -17,11 +17,13 @@ class LocationFilterChooseListBuilder extends ConsumerWidget
   Widget build(BuildContext context, WidgetRef ref)
   {
     final asyncLocations = ref.watch(locationFilterProvider);
-    final checked = ref.watch(locationCheckboxProvider);
+    final checked = ref.watch(checkboxValuesNotifierProvider);
+
     return asyncLocations.when(
       data: (locations)
       {
-        final String selectedId = checked.entries.firstWhere((e) => e.value, orElse: () => const MapEntry('', false)).key;
+        final locationChecked = checked[CheckboxGroup.location] ?? {};
+        final String selectedId = locationChecked.entries.firstWhere((e) => e.value, orElse: () => const MapEntry('', false)).key;
         return CustomListviewBuilder(
           itemCount: locations.length,
           separatorBuilder: (context, index) => const ListBuilderSeparatorWidget(),
@@ -35,9 +37,9 @@ class LocationFilterChooseListBuilder extends ConsumerWidget
               isSelected: isSelected,
               onTap: ()
               {
-                final notifier = ref.read(locationCheckboxProvider.notifier);
-                notifier.clearAll();
-                notifier.setValue(id, true);
+                final notifier =ref.read(checkboxValuesNotifierProvider.notifier);
+                notifier.clearGroup(CheckboxGroup.location);
+                notifier.setValue(CheckboxGroup.location, id, true);
               },
             );
           },
@@ -47,5 +49,4 @@ class LocationFilterChooseListBuilder extends ConsumerWidget
       error: (e, st) => CustomErrorWidget(e: e),
     );
   }
-
 }

@@ -7,7 +7,7 @@ part of 'selected_filter_choices_controller.dart';
 // **************************************************************************
 
 String _$selectedFilterChoicesHash() =>
-    r'9952bdba27aa9295350e47bb2162792d78fe02b6';
+    r'f2391e61c56f4148d950f0c7caa5652862715f72';
 
 /// Auto-generated StateNotifier for managing selected filter choices
 ///

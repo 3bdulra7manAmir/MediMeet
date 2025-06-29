@@ -2,23 +2,23 @@
   "insurance_provider":
   [
     {
-      "id": 101,
+      "id": 201,
       "title": "Bupa"
     },
     {
-      "id": 102,
+      "id": 202,
       "title": "Tawuniya"
     },
     {
-      "id": 103,
+      "id": 203,
       "title": "MedGulf"
     },
     {
-      "id": 104,
+      "id": 204,
       "title": "Al Rajhi Takaful"
     },
     {
-      "id": 105,
+      "id": 205,
       "title": "Walaa"
     }
   ]

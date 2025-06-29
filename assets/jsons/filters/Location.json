@@ -2,23 +2,23 @@
   "location":
   [
     {
-      "id": 101,
+      "id": 301,
       "title": "Riyadh"
     },
     {
-      "id": 102,
+      "id": 302,
       "title": "Jeddah"
     },
     {
-      "id": 103,
+      "id": 303,
       "title": "Madinah"
     },
     {
-      "id": 104,
+      "id": 304,
       "title": "Dammam"
     },
     {
-      "id": 105,
+      "id": 305,
       "title": "Khobar"
     }
   ]

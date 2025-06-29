@@ -45,13 +45,14 @@ class LocationFilterBody extends StatelessWidget
               onPressed: ()
               {
                 final locations = ref.read(locationFilterProvider).asData?.value ?? [];
-                final checked = ref.read(locationCheckboxProvider);
+                final checked = ref.read(checkboxValuesNotifierProvider);
+                final locationChecked = checked[CheckboxGroup.location] ?? {};
                 final notifier = ref.read(selectedFilterChoicesProvider.notifier);
                 notifier.clearByType(FilterType.location);
                 for (var i = 0; i < locations.length; i++)
                 {
                   final id = locations[i].id ?? i.toString();
-                  if (checked[id] == true)
+                  if (locationChecked[id] == true)
                   {
                     final label = locations[i].title ?? '';
                     notifier.addChoice(SelectedFilterChoice(type: FilterType.location, id: id, label: label,));

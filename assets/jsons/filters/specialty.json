@@ -2,35 +2,35 @@
   "specialty":
   [
     {
-      "id": 101,
+      "id": 501,
       "title": "Dermatology"
     },
     {
-      "id": 102,
+      "id": 502,
       "title": "Dentistry"
     },
     {
-      "id": 103,
+      "id": 503,
       "title": "Cardiology"
     },
     {
-      "id": 104,
+      "id": 504,
       "title": "Pediatrics"
     },
     {
-      "id": 105,
+      "id": 505,
       "title": "ENT"
     },
     {
-      "id": 106,
+      "id": 506,
       "title": "Orthopedics"
     },
     {
-      "id": 107,
+      "id": 507,
       "title": "Internal Medicine"
     },
     {
-      "id": 108,
+      "id": 508,
       "title": "Urology"
     }
   ]

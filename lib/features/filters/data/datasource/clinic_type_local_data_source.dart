@@ -9,6 +9,7 @@ abstract class ClinicTypeLocalDataSource
   Future<List<ClinicTypeModel>> getClinicTypes();
 }
 
+
 class ClinicTypeLocalDataSourceImpl implements ClinicTypeLocalDataSource
 {
   @override
@@ -28,3 +29,4 @@ class ClinicTypeLocalDataSourceImpl implements ClinicTypeLocalDataSource
     }
   }
 }
+

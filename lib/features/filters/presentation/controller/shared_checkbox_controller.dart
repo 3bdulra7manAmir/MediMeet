@@ -1,28 +1,54 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+part 'shared_checkbox_controller.g.dart';
 
-class CheckboxValuesNotifier extends StateNotifier<Map<String, bool>>
+/// Enum to distinguish different checkbox groups
+enum CheckboxGroup
 {
-  CheckboxValuesNotifier() : super({});
+  clinicType,
+  insurance,
+  rating,
+  specialty,
+  location,
+}
 
-  void setValue(String id, bool value)
+@riverpod
+class CheckboxValuesNotifier extends _$CheckboxValuesNotifier
+{
+  @override
+  Map<CheckboxGroup, Map<String, bool>> build()
   {
-    state = {...state, id: value};
+    return {for (var group in CheckboxGroup.values) group: {},};
   }
 
-  bool getValue(String id)
+  void setValue(CheckboxGroup group, String id, bool value)
   {
-    return state[id] ?? false;
+    final currentGroup = state[group] ?? {};
+    state =
+    {
+      ...state, group:
+      {
+        ...currentGroup,
+        id: value,
+      },
+    };
+  }
+
+  bool getValue(CheckboxGroup group, String id)
+  {
+    return state[group]?[id] ?? false;
+  }
+
+  void clearGroup(CheckboxGroup group)
+  {
+    state =
+    {
+      ...state, group: {},
+    };
   }
 
   void clearAll()
   {
-    state = {};
+    state = {for (var group in CheckboxGroup.values) group: {},};
   }
 }
-
-final clinicTypeCheckboxProvider = StateNotifierProvider<CheckboxValuesNotifier, Map<String, bool>>((ref) => CheckboxValuesNotifier(),);
-final insuranceCheckboxProvider = StateNotifierProvider<CheckboxValuesNotifier, Map<String, bool>>((ref) => CheckboxValuesNotifier(),);
-final ratingCheckboxProvider = StateNotifierProvider<CheckboxValuesNotifier, Map<String, bool>>((ref) => CheckboxValuesNotifier(),);
-final specialtyCheckboxProvider = StateNotifierProvider<CheckboxValuesNotifier, Map<String, bool>>((ref) => CheckboxValuesNotifier(),);
-final locationCheckboxProvider = StateNotifierProvider<CheckboxValuesNotifier, Map<String, bool>>((ref) => CheckboxValuesNotifier(),);

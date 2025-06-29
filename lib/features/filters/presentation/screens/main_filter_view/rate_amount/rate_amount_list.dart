@@ -28,7 +28,7 @@ class RateAmountApplyListWidget extends ConsumerWidget
           {
             log('Removed rating: \\${selectedChoices[index].label}');
             ref.read(selectedFilterChoicesProvider.notifier).removeChoice(choice);
-            ref.read(ratingCheckboxProvider.notifier).setValue(choice.id, false);
+            ref.read(checkboxValuesNotifierProvider.notifier).setValue(CheckboxGroup.rating, choice.id, false);
           },
         );
       },
