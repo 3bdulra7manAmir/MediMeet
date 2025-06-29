@@ -11,8 +11,8 @@ import '../../../../../../core/constants/app_strings.dart';
 import '../../../../../../core/widgets/appbars/filters_appbar.dart';
 import '../../../../../../core/widgets/buttons/custom_button.dart';
 import '../../../../../../core/widgets/custom_nav_bar.dart';
+import '../../../../domain/usecase/rating_usecase.dart';
 import 'rate_filter_list.dart';
-import '../../../controller/rating/rating_filter_controller.dart';
 import '../../../controller/shared_checkbox_controller.dart';
 import '../../../controller/selected_filter_choices_controller.dart';
 
@@ -41,7 +41,7 @@ class RatingFilterBody extends StatelessWidget
             navBarChildren: CustomButton(
               text: AppStrings.addFilter,
               onPressed: () {
-                final ratings = ref.read(ratingFilterProvider).asData?.value ?? [];
+                final ratings = ref.read(ratingUseCaseProvider).asData?.value ?? [];
                 final checked = ref.read(checkboxValuesNotifierProvider);
                 final ratingChecked = checked[CheckboxGroup.rating] ?? {};
                 final notifier = ref.read(selectedFilterChoicesProvider.notifier);

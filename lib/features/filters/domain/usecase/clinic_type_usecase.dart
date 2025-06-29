@@ -1,26 +1,13 @@
-import 'package:dartz/dartz.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../../../core/services/network/api_fetch_failure.dart';
-import '../../../../core/utils/usecase.dart';
-import '../repository/clinic_type_repository.dart';
+import '../../data/model/clinic_type.dart';
+import '../repository/filters_repository.dart';
 
+part 'clinic_type_usecase.g.dart';
 
-class ClinicTypeUsecase extends AppUsecase
+@riverpod
+Future<List<ClinicTypeModel>> clinicTypeUseCase(Ref ref)
 {
-  final ClinicTypeRepository clinicTypeRepository;
-  ClinicTypeUsecase(this.clinicTypeRepository);
-
-  @override
-  Future<Either<ApiFetchFailure, dynamic>> call([param]) async
-  {
-    try
-    {
-      final result = await clinicTypeRepository.getClinicTypes();
-      return Right(result);
-    }
-    catch (e)
-    {
-      return Left(ApiFetchFailure()); //message: e.toString()
-    }
-  }
+  return ref.read(filtersRepositoryProvider).getClinicTypes();
 }

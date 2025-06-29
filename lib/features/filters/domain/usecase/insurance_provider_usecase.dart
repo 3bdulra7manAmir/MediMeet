@@ -1,26 +1,23 @@
-import 'package:dartz/dartz.dart';
+import 'dart:developer';
 
-import '../../../../core/services/network/api_fetch_failure.dart';
-import '../../../../core/utils/usecase.dart';
-import '../repository/insurance_provider_repository.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+import '../../data/model/insurance_provider.dart';
+import '../repository/filters_repository.dart';
 
-class InsuranceProviderUsecase extends AppUsecase
+part 'insurance_provider_usecase.g.dart';
+
+@riverpod
+Future<List<InsuranceProviderModel>> insuranceProviderUseCase(Ref ref) async
 {
-  final InsuranceProviderRepository insuranceProviderRepository;
-  InsuranceProviderUsecase(this.insuranceProviderRepository);
-
-  @override
-  Future<Either<ApiFetchFailure, dynamic>> call([param]) async
+  try
   {
-    try
-    {
-      final result = await insuranceProviderRepository.getInsuranceProviders();
-      return Right(result);
-    }
-    catch (e)
-    {
-      return Left(ApiFetchFailure()); //message: e.toString()
-    }
+    return await ref.read(filtersRepositoryProvider).getInsuranceProviders();
+  }
+  catch (e, stack)
+  {
+    log("Err is: $e And Stack is: $stack");
+    return [InsuranceProviderModel(id: "0", title: "NULL")];
   }
 }

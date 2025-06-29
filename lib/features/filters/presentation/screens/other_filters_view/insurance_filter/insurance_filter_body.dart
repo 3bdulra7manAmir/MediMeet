@@ -9,8 +9,8 @@ import '../../../../../../core/constants/app_strings.dart';
 import '../../../../../../core/widgets/appbars/filters_appbar.dart';
 import '../../../../../../core/widgets/buttons/custom_button.dart';
 import '../../../../../../core/widgets/custom_nav_bar.dart';
+import '../../../../domain/usecase/insurance_provider_usecase.dart';
 import 'insurance_filter_list.dart';
-import '../../../controller/insurance_provider/insurance_provider_filter_controller.dart';
 import '../../../controller/shared_checkbox_controller.dart';
 import '../../../controller/selected_filter_choices_controller.dart';
 
@@ -43,7 +43,7 @@ class InsuranceFilterBody extends StatelessWidget
               text: AppStrings.addFilter,
               onPressed: ()
               {
-                final insurances = ref.read(insuranceProviderFilterProvider).asData?.value ?? [];
+                final insurances = ref.read(insuranceProviderUseCaseProvider).asData?.value ?? [];
                 final checked = ref.read(checkboxValuesNotifierProvider);
                 final insurancesChecked = checked[CheckboxGroup.insurance] ?? {};
                 final notifier = ref.read(selectedFilterChoicesProvider.notifier);

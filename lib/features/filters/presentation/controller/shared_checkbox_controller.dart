@@ -11,7 +11,6 @@ enum CheckboxGroup {
   location,
 }
 
-/// ✅ Riverpod auto-gen class using `@riverpod` and `Notifier`
 @riverpod
 class CheckboxValuesNotifier extends _$CheckboxValuesNotifier {
   @override
@@ -24,11 +23,7 @@ class CheckboxValuesNotifier extends _$CheckboxValuesNotifier {
   void setValue(CheckboxGroup group, String id, bool value) {
     final currentGroup = state[group] ?? {};
     state = {
-      ...state,
-      group: {
-        ...currentGroup,
-        id: value,
-      },
+      ...state, group: {...currentGroup, id: value,},
     };
   }
 
@@ -38,14 +33,11 @@ class CheckboxValuesNotifier extends _$CheckboxValuesNotifier {
 
   void clearGroup(CheckboxGroup group) {
     state = {
-      ...state,
-      group: {},
+      ...state, group: {},
     };
   }
 
   void clearAll() {
-    state = {
-      for (var group in CheckboxGroup.values) group: {},
-    };
+    state = {for (var group in CheckboxGroup.values) group: {},};
   }
 }

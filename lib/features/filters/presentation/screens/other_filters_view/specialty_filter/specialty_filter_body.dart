@@ -9,8 +9,8 @@ import '../../../../../../core/constants/app_strings.dart';
 import '../../../../../../core/widgets/appbars/filters_appbar.dart';
 import '../../../../../../core/widgets/buttons/custom_button.dart';
 import '../../../../../../core/widgets/custom_nav_bar.dart';
+import '../../../../domain/usecase/specialty_usecase.dart';
 import 'specialty_filter_list.dart';
-import '../../../controller/specialty/specialty_filter_controller.dart';
 import '../../../controller/shared_checkbox_controller.dart';
 import '../../../controller/selected_filter_choices_controller.dart';
 
@@ -41,7 +41,7 @@ class SpecialtyFilterBody extends StatelessWidget
             navBarChildren: CustomButton(
               text: AppStrings.addFilter,
               onPressed: () {
-                final specialties = ref.read(specialtyFilterProvider).asData?.value ?? [];
+                final specialties = ref.read(specialtyUseCaseProvider).asData?.value ?? [];
                 final checked = ref.read(checkboxValuesNotifierProvider);
                 final specialtiesChecked = checked[CheckboxGroup.specialty] ?? {};
                 final notifier = ref.read(selectedFilterChoicesProvider.notifier);

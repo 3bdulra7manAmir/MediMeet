@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../../../core/widgets/custom_circular_indicator.dart';
 import '../../../../../../core/widgets/custom_error_widget.dart';
 import '../../../../../../core/widgets/custom_listview_builder.dart';
-import '../../../controller/insurance_provider/insurance_provider_filter_controller.dart';
+import '../../../../domain/usecase/insurance_provider_usecase.dart';
 import '../../../widget/list_builder_separator_widget.dart';
 import 'insurance_filter_widget.dart';
 
@@ -15,7 +15,7 @@ class InsuranceFilterChooseListWidget extends ConsumerWidget
   @override
   Widget build(BuildContext context, WidgetRef ref)
   {
-    final asyncInsurances = ref.watch(insuranceProviderFilterProvider);
+    final asyncInsurances = ref.watch(insuranceProviderUseCaseProvider);
     return asyncInsurances.when(
       data: (insurances) => CustomListviewBuilder(
         itemCount: insurances.length,

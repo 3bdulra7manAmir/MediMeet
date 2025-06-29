@@ -10,7 +10,7 @@ import '../../../../../../core/constants/app_strings.dart';
 import '../../../../../../core/widgets/appbars/filters_appbar.dart';
 import '../../../../../../core/widgets/buttons/custom_button.dart';
 import '../../../../../../core/widgets/custom_nav_bar.dart';
-import '../../../controller/location/location_filter_controller.dart';
+import '../../../../domain/usecase/location_usecase.dart';
 import '../../../controller/shared_checkbox_controller.dart';
 import '../../../controller/selected_filter_choices_controller.dart';
 import 'location_filter_list.dart';
@@ -44,7 +44,7 @@ class LocationFilterBody extends StatelessWidget
               text: AppStrings.addFilter,
               onPressed: ()
               {
-                final locations = ref.read(locationFilterProvider).asData?.value ?? [];
+                final locations = ref.read(locationFilterUseCaseProvider).asData?.value ?? [];
                 final checked = ref.read(checkboxValuesNotifierProvider);
                 final locationChecked = checked[CheckboxGroup.location] ?? {};
                 final notifier = ref.read(selectedFilterChoicesProvider.notifier);

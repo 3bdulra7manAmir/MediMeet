@@ -54,7 +54,7 @@ class CustomToggleSwitch extends ConsumerWidget
       onTap: ()
       {
         log(!isSwitched ? "True" : "False");
-        ref.read(toggleSwitchProvider.notifier).state = !isSwitched;
+        ref.read(toggleSwitchProvider.notifier).toggle();
       },
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 250),

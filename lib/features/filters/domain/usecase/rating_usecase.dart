@@ -1,26 +1,23 @@
-import 'package:dartz/dartz.dart';
+import 'dart:developer';
 
-import '../../../../core/services/network/api_fetch_failure.dart';
-import '../../../../core/utils/usecase.dart';
-import '../repository/rating_repository.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+import '../../data/model/rating.dart';
+import '../repository/filters_repository.dart';
 
-class RatingUsecase extends AppUsecase
+part 'rating_usecase.g.dart';
+
+@riverpod
+Future<List<RatingModel>> ratingUseCase(Ref ref) async
 {
-  final RatingRepository ratingRepository;
-  RatingUsecase(this.ratingRepository);
-
-  @override
-  Future<Either<ApiFetchFailure, dynamic>> call([param]) async
+  try
   {
-    try
-    {
-      final result = await ratingRepository.getRatings();
-      return Right(result);
-    }
-    catch (e)
-    {
-      return Left(ApiFetchFailure()); //message: e.toString()
-    }
+    return await ref.read(filtersRepositoryProvider).getRatings();
+  }
+  catch (e, stack)
+  {
+    log("Err is: $e And Stack is: $stack");
+    return [RatingModel(id: "0", rateText: "NULL", rateValue: "0")];
   }
 }

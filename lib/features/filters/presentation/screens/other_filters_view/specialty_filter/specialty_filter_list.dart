@@ -7,7 +7,7 @@ import '../../../../../../core/widgets/custom_circular_indicator.dart';
 import '../../../../../../core/widgets/custom_divider.dart';
 import '../../../../../../core/widgets/custom_error_widget.dart';
 import '../../../../../../core/widgets/custom_listview_builder.dart';
-import '../../../controller/specialty/specialty_filter_controller.dart';
+import '../../../../domain/usecase/specialty_usecase.dart';
 import 'specialty_filter_widget.dart';
 
 class SpecialtyFilterChooseListWidget extends ConsumerWidget
@@ -17,7 +17,7 @@ class SpecialtyFilterChooseListWidget extends ConsumerWidget
   @override
   Widget build(BuildContext context, WidgetRef ref)
   {
-    final asyncSpecialties = ref.watch(specialtyFilterProvider);
+    final asyncSpecialties = ref.watch(specialtyUseCaseProvider);
     return asyncSpecialties.when
     (
       data: (specialties) => CustomListviewBuilder

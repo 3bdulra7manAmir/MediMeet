@@ -6,7 +6,7 @@ import '../../../../../../../core/constants/app_sizes.dart';
 import '../../../../../../../core/widgets/custom_listview_builder.dart';
 import '../../../../../../core/widgets/custom_circular_indicator.dart';
 import '../../../../../../core/widgets/custom_error_widget.dart';
-import '../../../controller/rating/rating_filter_controller.dart';
+import '../../../../domain/usecase/rating_usecase.dart';
 import 'rate_widget.dart';
 
 class RatingFilterChosseListWidget extends ConsumerWidget
@@ -16,7 +16,7 @@ class RatingFilterChosseListWidget extends ConsumerWidget
   @override
   Widget build(BuildContext context, WidgetRef ref)
   {
-    final asyncRatings = ref.watch(ratingFilterProvider);
+    final asyncRatings = ref.watch(ratingUseCaseProvider);
     return asyncRatings.when(
       data: (ratings) => CustomListviewBuilder(
         itemCount: ratings.length,

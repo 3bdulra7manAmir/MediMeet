@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../../../core/widgets/custom_circular_indicator.dart';
 import '../../../../../../core/widgets/custom_error_widget.dart';
 import '../../../../../../core/widgets/custom_listview_builder.dart';
-import '../../../controller/location/location_filter_controller.dart';
+import '../../../../domain/usecase/location_usecase.dart';
 import '../../../controller/shared_checkbox_controller.dart';
 import '../../../widget/list_builder_separator_widget.dart';
 import 'location_filter_widget.dart';
@@ -15,7 +15,7 @@ class LocationFilterChooseListBuilder extends ConsumerWidget
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final asyncLocations = ref.watch(locationFilterProvider);
+    final asyncLocations = ref.watch(locationFilterUseCaseProvider);
     final checked = ref.watch(checkboxValuesNotifierProvider);
 
     return asyncLocations.when(

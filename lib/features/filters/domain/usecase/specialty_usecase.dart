@@ -1,26 +1,23 @@
-import 'package:dartz/dartz.dart';
+import 'dart:developer';
 
-import '../../../../core/services/network/api_fetch_failure.dart';
-import '../../../../core/utils/usecase.dart';
-import '../repository/specialty_repository.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+import '../../data/model/specialty.dart';
+import '../repository/filters_repository.dart';
 
-class SpecialtyUsecase extends AppUsecase
+part 'specialty_usecase.g.dart';
+
+@riverpod
+Future<List<SpecialtyModel>> specialtyUseCase(Ref ref) async
 {
-  final SpecialtyRepository specialtyRepository;
-  SpecialtyUsecase(this.specialtyRepository);
-
-  @override
-  Future<Either<ApiFetchFailure, dynamic>> call([param]) async
+  try
   {
-    try
-    {
-      final result = await specialtyRepository.getSpecialtys();
-      return Right(result);
-    }
-    catch (e)
-    {
-      return Left(ApiFetchFailure()); //message: e.toString()
-    }
+    return await ref.read(filtersRepositoryProvider).getSpecialtys();
+  }
+  catch (e, stack)
+  {
+    log("Err is: $e And Stack is: $stack");
+    return [SpecialtyModel(id: "0", title: "NULL")];
   }
 }

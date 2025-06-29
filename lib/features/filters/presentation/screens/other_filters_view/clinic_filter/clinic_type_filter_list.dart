@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../../../core/widgets/custom_circular_indicator.dart';
 import '../../../../../../core/widgets/custom_error_widget.dart';
 import '../../../../../../core/widgets/custom_listview_builder.dart';
-import '../../../controller/clinic_type/clinic_type_filter_controller.dart';
+import '../../../../domain/usecase/clinic_type_usecase.dart';
 import '../../../widget/list_builder_separator_widget.dart';
 import 'clinic_type_filter_widget.dart';
 
@@ -15,7 +15,7 @@ class ClinicTypeFilterChooseListWidget extends ConsumerWidget
   @override
   Widget build(BuildContext context, WidgetRef ref)
   {
-    final asyncClinicTypes = ref.watch(clinicTypeFilterProvider);
+    final asyncClinicTypes = ref.watch(clinicTypeUseCaseProvider);
     return asyncClinicTypes.when(
       data: (clinicTypes) => CustomListviewBuilder(
         itemCount: clinicTypes.length,

@@ -9,9 +9,7 @@ part of 'shared_checkbox_controller.dart';
 String _$checkboxValuesNotifierHash() =>
     r'2241b275683adf5a14fc17410fb382f24b8149d9';
 
-/// ✅ Riverpod auto-gen class using `@riverpod` and `Notifier`
-///
-/// Copied from [CheckboxValuesNotifier].
+/// See also [CheckboxValuesNotifier].
 @ProviderFor(CheckboxValuesNotifier)
 final checkboxValuesNotifierProvider = AutoDisposeNotifierProvider<
     CheckboxValuesNotifier, Map<CheckboxGroup, Map<String, bool>>>.internal(

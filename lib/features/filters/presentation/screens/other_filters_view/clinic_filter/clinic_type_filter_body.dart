@@ -10,7 +10,7 @@ import '../../../../../../core/widgets/appbars/filters_appbar.dart';
 import '../../../../../../core/widgets/buttons/custom_button.dart';
 import '../../../../../../core/widgets/custom_nav_bar.dart';
 import '../../../../data/model/clinic_type.dart';
-import '../../../controller/clinic_type/clinic_type_filter_controller.dart';
+import '../../../../domain/usecase/clinic_type_usecase.dart';
 import '../../../controller/selected_filter_choices_controller.dart';
 import '../../../controller/shared_checkbox_controller.dart';
 import 'clinic_type_filter_list.dart';
@@ -43,7 +43,7 @@ class ClinicTypeFilterBody extends StatelessWidget
             onPressed: ()
             {
               final checked = ref.read(checkboxValuesNotifierProvider)[CheckboxGroup.clinicType] ?? {};
-              final clinicTypes = ref.read(clinicTypeFilterProvider).asData?.value ?? [];
+              final clinicTypes = ref.read(clinicTypeUseCaseProvider).asData?.value ?? [];
               final notifier = ref.read(selectedFilterChoicesProvider.notifier);
               notifier.clearByType(FilterType.clinicType);
               checked.forEach((id, isChecked)
