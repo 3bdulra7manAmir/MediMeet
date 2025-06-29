@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../data/model/upcoming_appointments.dart';
-import '../repository/upcoming_repository.dart';
+import '../repository/appointments_repository.dart';
 
 part 'upcoming_usecase.g.dart';
 
@@ -13,7 +13,7 @@ Future<List<UpComingModel>> upComingAppointmentUseCase(Ref ref) async
 {
   try
   {
-    return await ref.read(upComingRepositoryProvider).getUpComingAppointments();
+    return await ref.read(appointmentsRepositoryProvider).getUpComingAppointments();
   }
   catch (e, stack)
   {

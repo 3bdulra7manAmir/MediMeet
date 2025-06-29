@@ -7,7 +7,7 @@ part of 'past_usecase.dart';
 // **************************************************************************
 
 String _$pastAppointmentUseCaseHash() =>
-    r'0a689e1e7c4b86c956cd6afed5b9e3ca362e6974';
+    r'f925d27a4524092ce70b77b6ab25bd1e46d637b8';
 
 /// See also [pastAppointmentUseCase].
 @ProviderFor(pastAppointmentUseCase)

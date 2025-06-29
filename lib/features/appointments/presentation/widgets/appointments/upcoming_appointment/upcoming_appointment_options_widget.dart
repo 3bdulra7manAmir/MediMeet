@@ -19,7 +19,7 @@ import '../../../../../../core/utils/url_launcher.dart';
 import '../../../../../../core/widgets/custom_circular_indicator.dart';
 import '../../../../../../core/widgets/buttons/custom_button.dart';
 import '../../../../../../core/widgets/custom_error_widget.dart';
-import '../../../../../appointments_details/presentation/controller/appointments_location_controller.dart';
+import '../../../../../appointments_details/domain/usecase/location_usecase.dart';
 
 class AppointmentOptionsWidget extends StatelessWidget
 {
@@ -45,7 +45,7 @@ class AppointmentOptionsWidget extends StatelessWidget
         Consumer(
           builder: (context, ref, child)
           {
-            final locationAsync = ref.watch(locationProvider);
+            final locationAsync = ref.watch(locationUseCaseProvider);
             return locationAsync.when(
               data: (locations)
               {

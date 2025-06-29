@@ -1,28 +1,28 @@
-import 'package:dartz/dartz.dart';
+import 'dart:developer';
 
-import '../../../../core/services/network/api_fetch_failure.dart';
-import '../../../../core/utils/usecase.dart';
-import '../repository/location_repository.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+import '../../data/model/appointment_location.dart';
+import '../repository/appointments_details_repository.dart';
 
-class LocationUsecase extends AppUsecase
+part 'location_usecase.g.dart';
+
+@riverpod
+Future<List<LocationModel>> locationUseCase(Ref ref) async
 {
-  final LocationRepository billingRepository;
-  LocationUsecase(this.billingRepository);
-
-  @override
-  Future<Either<ApiFetchFailure, dynamic>> call([param]) async
+  try
   {
-    try
-    {
-      final result = await billingRepository.getLocationDetails();
-      return Right(result);
-    }
-    catch (e)
-    {
-      return Left(ApiFetchFailure()); //message: e.toString()
-    }
+    return await ref.read(appointmentsDetailsRepositoryProvider).getLocationDetails();
   }
-
-
+  catch (e, stack)
+  {
+    log("Err is: $e And Stack is: $stack");
+    return [LocationModel(
+      locationID: "0", 
+      locationLat: 0,
+      locationLng: 0,
+      locationTitle: "NULL",
+      )];
+  }
 }

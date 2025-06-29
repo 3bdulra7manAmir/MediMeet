@@ -1,28 +1,28 @@
-import 'package:dartz/dartz.dart';
+import 'dart:developer';
 
-import '../../../../core/services/network/api_fetch_failure.dart';
-import '../../../../core/utils/usecase.dart';
-import '../repository/info_repository.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+import '../../data/model/appointment_info.dart';
+import '../repository/appointments_details_repository.dart';
 
-class DetailsUsecase extends AppUsecase
+part 'info_usecase.g.dart';
+
+@riverpod
+Future<List<DetailsModel>> detailsUseCase(Ref ref) async
 {
-  final DetailsRepository detailsRepository;
-  DetailsUsecase(this.detailsRepository);
-
-  @override
-  Future<Either<ApiFetchFailure, dynamic>> call([param]) async
+  try
   {
-    try
-    {
-      final result = await detailsRepository.getAppointmentDetails();
-      return Right(result);
-    }
-    catch (e)
-    {
-      return Left(ApiFetchFailure()); //message: e.toString()
-    }
+    return await ref.read(appointmentsDetailsRepositoryProvider).getAppointmentDetails();
   }
-
-
+  catch (e, stack)
+  {
+    log("Err is: $e And Stack is: $stack");
+    return [DetailsModel(
+      detailsID: "0", 
+      detailsCategory: "NULL",
+      detailsDateTime: "NULL",
+      detailsTitle: "NULL",
+      )];
+  }
 }

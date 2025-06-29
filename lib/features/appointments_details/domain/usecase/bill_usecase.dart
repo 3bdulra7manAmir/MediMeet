@@ -1,28 +1,28 @@
-import 'package:dartz/dartz.dart';
+import 'dart:developer';
 
-import '../../../../core/services/network/api_fetch_failure.dart';
-import '../../../../core/utils/usecase.dart';
-import '../repository/bill_repository.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+import '../../data/model/appointment_bill.dart';
+import '../repository/appointments_details_repository.dart';
 
-class BillingUsecase extends AppUsecase
+part 'bill_usecase.g.dart';
+
+@riverpod
+Future<List<BillingModel>> billingUseCase(Ref ref) async
 {
-  final BillingRepository billingRepository;
-  BillingUsecase(this.billingRepository);
-
-  @override
-  Future<Either<ApiFetchFailure, dynamic>> call([param]) async
+  try
   {
-    try
-    {
-      final result = await billingRepository.getBillingDetails();
-      return Right(result);
-    }
-    catch (e)
-    {
-      return Left(ApiFetchFailure()); //message: e.toString()
-    }
+    return await ref.read(appointmentsDetailsRepositoryProvider).getBillingDetails();
   }
-
-
+  catch (e, stack)
+  {
+    log("Err is: $e And Stack is: $stack");
+    return [BillingModel(
+      id: "0", 
+      billTitle: "NULL", 
+      billID: "NULL", 
+      billPrice: "NULL", 
+      billStatus: "NULL")];
+  }
 }

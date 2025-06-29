@@ -8,7 +8,7 @@ import '../../../../../core/constants/app_styles.dart';
 import '../../../../../core/widgets/custom_circular_indicator.dart';
 import '../../../../../core/widgets/custom_error_widget.dart';
 import '../../../data/model/appointment_bill.dart';
-import '../../controller/appointments_bill_controller.dart';
+import '../../../domain/usecase/bill_usecase.dart';
 import 'status_paid_widget.dart';
 import 'status_failed_widget.dart';
 import 'status_in_progress_widget.dart';
@@ -20,7 +20,7 @@ class StatusWidget extends ConsumerWidget
   @override
   Widget build(BuildContext context, WidgetRef ref)
   {
-    final billAsync = ref.watch(billProvider);
+    final billAsync = ref.watch(billingUseCaseProvider);
     return billAsync.when(
       data: (bills)
       {

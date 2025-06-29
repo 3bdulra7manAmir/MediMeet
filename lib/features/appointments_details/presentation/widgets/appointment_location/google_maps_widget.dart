@@ -7,9 +7,9 @@ import '../../../../../core/constants/app_borders.dart';
 import '../../../../../core/utils/url_launcher.dart';
 import '../../../../../core/widgets/custom_circular_indicator.dart';
 import '../../../../../core/widgets/custom_error_widget.dart';
+import '../../../domain/usecase/location_usecase.dart';
 import 'google_maps_get_direction_widget.dart';
 import 'google_maps_pin_widget.dart';
-import '../../controller/appointments_location_controller.dart';
 
 class GoogleMapsWidget extends ConsumerWidget
 {
@@ -18,7 +18,7 @@ class GoogleMapsWidget extends ConsumerWidget
   @override
   Widget build(BuildContext context, WidgetRef ref)
   {
-    final locationAsync = ref.watch(locationProvider);
+    final locationAsync = ref.watch(locationUseCaseProvider);
     return locationAsync.when(
       data: (locations)
       {

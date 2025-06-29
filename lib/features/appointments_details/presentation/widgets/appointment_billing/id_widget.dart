@@ -3,11 +3,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../../core/widgets/custom_circular_indicator.dart';
 import '../../../../../core/widgets/custom_error_widget.dart';
-import '../../controller/appointments_bill_controller.dart';
 import '../../../../../config/theme/color_manager/colors.dart';
 import '../../../../../config/theme/font_manager/font_weights.dart';
 import '../../../../../core/constants/app_strings.dart';
 import '../../../../../core/constants/app_styles.dart';
+import '../../../domain/usecase/bill_usecase.dart';
 
 
 class IDWidget extends ConsumerWidget
@@ -17,7 +17,7 @@ class IDWidget extends ConsumerWidget
   @override
   Widget build(BuildContext context, WidgetRef ref)
   {
-    final billAsync = ref.watch(billProvider);
+    final billAsync = ref.watch(billingUseCaseProvider);
     return billAsync.when(
       data: (bills)
       {

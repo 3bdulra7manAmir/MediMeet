@@ -6,13 +6,13 @@ import '../../../../../core/constants/app_margins.dart';
 import '../../../../../core/constants/app_paddings.dart';
 import '../../../../../core/widgets/custom_circular_indicator.dart';
 import '../../../../../core/widgets/custom_error_widget.dart';
-import '../../controller/appointments_info_controller.dart';
 import '../../../../../config/theme/color_manager/colors.dart';
 import '../../../../../config/theme/font_manager/font_weights.dart';
 import '../../../../../core/constants/app_borders.dart';
 import '../../../../../core/constants/app_images.dart';
 import '../../../../../core/constants/app_sizes.dart';
 import '../../../../../core/constants/app_styles.dart';
+import '../../../domain/usecase/info_usecase.dart';
 
 
 class AppointmentInfoWidget extends ConsumerWidget
@@ -22,7 +22,7 @@ class AppointmentInfoWidget extends ConsumerWidget
   @override
   Widget build(BuildContext context, WidgetRef ref)
   {
-    final detailsAsync = ref.watch(detailsProvider);
+    final detailsAsync = ref.watch(detailsUseCaseProvider);
     return detailsAsync.when(
       data: (details)
       {
