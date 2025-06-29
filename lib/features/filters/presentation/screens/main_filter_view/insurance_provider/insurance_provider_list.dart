@@ -9,29 +9,24 @@ import '../../../controller/shared_checkbox_controller.dart';
 import '../../../widget/choice_widget.dart';
 import '../../../controller/selected_filter_choices_controller.dart';
 
-
-class InsuranceApplyListWidget extends ConsumerWidget {
+class InsuranceApplyListWidget extends ConsumerWidget
+{
   const InsuranceApplyListWidget({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final selectedChoices = ref
-        .watch(selectedFilterChoicesProvider)
-        .where((c) => c.type == FilterType.insuranceProvider)
-        .toList();
-
+  Widget build(BuildContext context, WidgetRef ref)
+  {
+    final selectedChoices = ref.watch(selectedFilterChoicesProvider).where((c) => c.type == FilterType.insuranceProvider).toList();
     return CustomListviewBuilder(
       itemCount: selectedChoices.length,
       scrollDirection: Axis.horizontal,
       itemBuilder: (context, index) => ChoiceWidget(
         choice: selectedChoices[index].label,
-        onRemove: () {
-          log('Removed insurance: ${selectedChoices[index].label}');
-          ref
-              .read(selectedFilterChoicesProvider.notifier)
-              .removeChoice(selectedChoices[index]);
-          ref
-              .read(checkboxValuesNotifierProvider.notifier).setValue(CheckboxGroup.insurance, selectedChoices[index].id, false);
+        onRemove: ()
+        {
+          log('Removed insurance: \\${selectedChoices[index].label}');
+          ref.read(selectedFilterChoicesProvider.notifier).removeChoice(selectedChoices[index]);
+          ref.read(insuranceCheckboxProvider.notifier).setValue(selectedChoices[index].id, false);
         },
       ),
       separatorBuilder: (context, index) => Sizes.size8.horizontalSpace,

@@ -144,7 +144,11 @@ class RestButton extends StatelessWidget
               {
                 log("Clear All Fields...");
                 ref.read(selectedFilterChoicesProvider.notifier).clearAll();
-                ref.read(checkboxValuesNotifierProvider.notifier).clearAll();
+                ref.read(clinicTypeCheckboxProvider.notifier).clearAll();
+                ref.read(insuranceCheckboxProvider.notifier).clearAll();
+                ref.read(ratingCheckboxProvider.notifier).clearAll();
+                ref.read(specialtyCheckboxProvider.notifier).clearAll();
+                ref.read(locationCheckboxProvider.notifier).clearAll();
               }
             : () => log("DIM... NO DATA To rest"), 
         );

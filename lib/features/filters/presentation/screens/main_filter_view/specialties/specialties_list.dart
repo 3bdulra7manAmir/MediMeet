@@ -29,7 +29,7 @@ class SpecialtiesApplyListWidget extends ConsumerWidget
           {
             log('Removed specialty: \\${choice.label}');
             ref.read(selectedFilterChoicesProvider.notifier).removeChoice(choice);
-            ref.read(checkboxValuesNotifierProvider.notifier).setValue(CheckboxGroup.specialty, choice.id, false);
+            ref.read(specialtyCheckboxProvider.notifier).setValue(choice.id, false);
           },
         );
       },

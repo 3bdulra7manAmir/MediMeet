@@ -28,8 +28,8 @@ class InsuranceFilterChooseWidget extends ConsumerWidget
       children:
       [
         Sizes.size16.horizontalSpace,
-        CheckBoxWidget(id: id, group: CheckboxGroup.insurance,
-          onChanged: (val) => ref.read(checkboxValuesNotifierProvider.notifier).setValue(CheckboxGroup.insurance, id, val),
+        CheckBoxWidget(id: id, provider: insuranceCheckboxProvider,
+          onChanged: (val) => ref.read(insuranceCheckboxProvider.notifier).setValue(id, val),
         ),
         Sizes.size4.horizontalSpace,
         Text(insuranceName, style: AppStyles.large()),

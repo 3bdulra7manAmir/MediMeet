@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,18 +11,19 @@ class CheckBoxWidget extends ConsumerWidget
   const CheckBoxWidget({
     super.key,
     required this.id,
-    required this.group,
+    required this.provider,
     this.onChanged,
   });
 
   final String id;
-  final CheckboxGroup group;
+  final StateNotifierProvider<CheckboxValuesNotifier, Map<String, bool>> provider;
   final void Function(bool)? onChanged;
 
   @override
   Widget build(BuildContext context, WidgetRef ref)
   {
-    final isChecked = ref.watch(checkboxValuesNotifierProvider.select((state) => state[group]?[id] ?? false,),);
+    final checkboxState = ref.watch(provider);
+    final isChecked = checkboxState[id] ?? false;
     return Checkbox(
       fillColor: WidgetStateProperty.resolveWith((states)
       {
@@ -32,18 +31,16 @@ class CheckBoxWidget extends ConsumerWidget
         {
           return AppColors.color.kBlue005;
         }
-        log("NuLL....");
         return null;
       }),
       value: isChecked,
       onChanged: (value)
       {
-        if (value == null) return;
-        ref.read(checkboxValuesNotifierProvider.notifier).setValue(group, id, value);
+        ref.read(provider.notifier).setValue(id, value!);
         if (onChanged != null) onChanged!(value);
       },
       side: BorderSide(color: AppColors.color.kGrey003, width: 2.w,),
-      shape: RoundedRectangleBorder(borderRadius: AppRadiuses.circular.xXXSmall,),
+      shape: RoundedRectangleBorder(borderRadius: AppRadiuses.circular.xXXSmall),
     );
   }
 }

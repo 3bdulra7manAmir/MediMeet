@@ -76,6 +76,12 @@ class SelectedFilterChoices extends _$SelectedFilterChoices
     state = state.where((c) => c != choice).toList();
   }
 
+  /// Remove a choice by type and id
+  void removeByTypeAndId(FilterType type, String id)
+  {
+    state = state.where((c) => c.type != type || c.id != id).toList();
+  }
+
   /// Clear all filters
   void clearAll()
   {
